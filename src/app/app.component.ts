@@ -1,9 +1,10 @@
 import {Component, DoCheck, Inject, KeyValueDiffer, KeyValueDiffers, NgZone} from '@angular/core';
-import {DataService} from "./service/data.service";
-import {ProgressModel} from "./model/user/progress.model";
-import {PlayedLevelModel} from "./model/user/played-level.model";
-import {AnswerModel} from "./model/user/answer.model";
-import {DebounceUtils} from "./utils/debounce.utils";
+import {DataService} from './service/data.service';
+import {ProgressModel} from './model/user/progress.model';
+import {PlayedLevelModel} from './model/user/played-level.model';
+import {AnswerModel} from './model/user/answer.model';
+import {DebounceUtils} from './utils/debounce.utils';
+import {HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -11,24 +12,30 @@ import {DebounceUtils} from "./utils/debounce.utils";
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements DoCheck {
-  public progressAvailable: boolean = false;
-  public loadingProgress: boolean = true;
+  public progressAvailable = false;
+  public loadingProgress = true;
   public progress: ProgressModel;
 
   private readonly differ: KeyValueDiffer<string, string>;
 
-  private debounceCheckForSave: Function;
+  private debounceCheckForSave: (...args: any[]) => void;
 
   // -- START TEST - REMOVE THIS SHIT
   private number = 0;
-  private checked: boolean = false;
+  private checked = false;
+
   // -- END TEST - REMOVE THIS SHIT
 
   constructor(@Inject(DataService) private readonly dataService: DataService,
               @Inject(NgZone) private readonly ngZone: NgZone,
-              @Inject(KeyValueDiffers) readonly differs: KeyValueDiffers) {
+              @Inject(KeyValueDiffers) readonly differs: KeyValueDiffers,
+              @Inject(HttpClient) private readonly http: HttpClient) {
     this.differ = differs.find([]).create();
     this.loadProgress();
+    /* http backend test */
+    this.http.post('/api/write', '').subscribe(() => {
+      console.log('works');
+    });
   }
 
   public ngDoCheck() {
@@ -57,7 +64,7 @@ export class AppComponent implements DoCheck {
     if (!this.debounceCheckForSave) {
       this.debounceCheckForSave = DebounceUtils.debounce(() => {
         if (this.progressAvailable && !this.loadingProgress) {
-          console.log("CHECK");
+          console.log('CHECK');
           const changes = this.differ.diff(this.getDiffObject());
           if (changes) {
             this.dataService.saveProgress(this.progress);
@@ -98,5 +105,6 @@ export class AppComponent implements DoCheck {
     }
     this.number++;
   }
+
   // -- END TEST - REMOVE THIS SHIT
 }

@@ -1,9 +1,11 @@
-<div *ngIf="!loadingProgress && !progressAvailable"> <!-- ersetzen durch eine welcome-component -->
+<div *ngIf="!loadingProgress && !progressAvailable">
+  <!-- ersetzen durch eine welcome-component -->
   WILLKOMMEN, SIE SIND NEU HIER! STARTEN?<br/>
   <button (click)="startGame()">GAME STARTEN</button>
 </div>
-<div *ngIf="!loadingProgress && progressAvailable"> <!-- ersetzen durch eine game-component -->
-  <h1>JUHU GAME IST AM LAUFEN!!</h1>
+<div *ngIf="!loadingProgress && progressAvailable">
+  <!-- ersetzen durch eine game-component -->
+  <h1>JUHU GAME IST AM LAUFEN, BOII!!</h1>
   <button (click)="change()">CHANGE</button>
   <input type="checkbox" [checked]="checked" (change)="checked = !checked">
 </div>

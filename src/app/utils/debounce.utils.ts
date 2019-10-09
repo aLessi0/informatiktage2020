@@ -3,18 +3,23 @@ export class DebounceUtils {
     // is a utils. Never call the constructor!
   }
 
-  public static debounce(func, wait, immediate): Function {
+  public static debounce(func, wait, immediate): () => void {
     let timeout;
     return function () {
-      let context = this, args = arguments;
-      let later = function () {
+      const context = this;
+      const args = arguments;
+      const later = () => {
         timeout = null;
-        if (!immediate) func.apply(context, args);
+        if (!immediate) {
+          func.apply(context, args);
+        }
       };
-      let callNow = immediate && !timeout;
+      const callNow = immediate && !timeout;
       clearTimeout(timeout);
       timeout = setTimeout(later, wait);
-      if (callNow) func.apply(context, args);
+      if (callNow) {
+        func.apply(context, args);
+      }
     };
-  };
+  }
 }
