@@ -3,4 +3,5 @@ export class QuestionModel {
   public questionText: string;
   public correctAnswer: string;
   public clientAnswer: string;
+  public isCorrect: boolean;
 }
