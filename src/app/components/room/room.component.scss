@@ -13,8 +13,12 @@
       --room-color: blue;
     }
 
-    &.room-green {
-      --room-color: green;
+    &.room-red {
+      --room-color: red;
+    }
+
+    &.room-yellow {
+      --room-color: yellow;
     }
 
     .bg-street {
@@ -26,19 +30,13 @@
       }
     }
 
-    .bg-rectangle {
-      flex: 1;
-      margin: 1rem 0;
-
-      .stretch-bg {
-        height: 100%;
-
-
-
-      }
+    .room-content {
+      position: absolute;
+      top: 10%;
+      left: 25%;
+      display: flex;
+      width: 50%;
+      height: 90%;
     }
-
-
   }
-
 }
