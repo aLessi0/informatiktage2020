@@ -11,7 +11,7 @@ export class RoomModel {
   public intro: string;
   public attachments: AttachmentModel[];
   public questions: QuestionModel[];
-  public feedback: number; // 1-3 -> feedback is set, 0 -> not set
+  public feedback: number; // 1-4 -> feedback is set, 0 -> not set
 
   public set level(level: number) {
     this._level = level;
