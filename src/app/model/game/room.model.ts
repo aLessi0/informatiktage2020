@@ -1,5 +1,5 @@
-import {AttachmentModel} from "./attachment.model";
-import {QuestionModel} from "./question.model";
+import {AttachmentModel} from './attachment.model';
+import {QuestionModel} from './question.model';
 
 export class RoomModel {
   private _level: number;

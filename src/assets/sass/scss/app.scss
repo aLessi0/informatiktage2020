@@ -1,5 +1,19 @@
 @import "colors";
 
+//base
+
+html {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  flex: 1 0 auto;
+}
+
 //texts
 h1 {
   font-family: 'Rubik', sans-serif;

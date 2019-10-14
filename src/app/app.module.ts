@@ -3,10 +3,12 @@ import {NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
 import {HttpClientModule} from '@angular/common/http';
+import {QuizRoomComponent} from './components/quiz-room/quiz-room.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    QuizRoomComponent,
   ],
   imports: [
     BrowserModule,
