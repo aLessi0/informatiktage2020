@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="320px" height="741px" viewBox="0 0 320 741" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg viewBox="0 0 338 863" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 58 (84663) - https://sketch.com -->
-    <title>Background/Room</title>
+    <title>Background/Room-new</title>
     <desc>Created with Sketch.</desc>
-    <g id="Background/Room" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Group-3-Copy-6" transform="translate(160.000000, 370.500000) rotate(90.000000) translate(-160.000000, -370.500000) translate(-210.000000, 211.000000)" fill="var(--room-color)">
-            <path d="M48.800282,37.3759378 C87.1241813,8.2314177 644.923518,-10.1454056 699.116539,7.72424913 C753.30956,25.5939038 753.30956,279.336389 699.116539,297.887203 C644.923518,316.438017 71.9361778,333.488027 24.1670905,297.887203 C-23.6019969,262.286379 10.4763828,66.520458 48.800282,37.3759378 Z" id="Rectangle"></path>
+    <g id="Background/Room-new" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-3-Copy-6" transform="translate(168.500000, 429.500000) rotate(90.000000) translate(-168.500000, -429.500000) translate(-257.500000, 264.500000)" fill="var(--room-color)">
+            <path d="M30.9552241,16.1270046 C73.0372517,-7.61588116 757.84119,-1.58504926 805.043047,16.1270046 C852.244904,33.8390585 875.865712,302.055068 815.009843,320.591363 C754.153975,339.127658 92.2111016,326.023477 40.542149,306.062866 C-11.1268035,286.102254 -11.1268035,39.8698904 30.9552241,16.1270046 Z" id="Rectangle"></path>
+        </g>
+        <g id="Group-3-Copy-6" transform="translate(169.000000, 431.500000) rotate(90.000000) translate(-169.000000, -431.500000) translate(-262.000000, 263.000000)" stroke="#000000" stroke-width="2">
+            <path d="M30.8488874,16.0069926 C73.474866,-8.31322781 767.13056,-2.13574955 814.942546,16.0069926 C862.754533,34.1497347 886.680663,308.887714 825.038173,327.87474 C763.395683,346.861765 92.8965565,333.438941 40.5597326,312.992966 C-11.7770912,292.54699 -11.7770912,40.327213 30.8488874,16.0069926 Z" id="Rectangle"></path>
         </g>
     </g>
 </svg>

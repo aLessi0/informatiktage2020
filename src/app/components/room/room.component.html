@@ -1,9 +1,15 @@
 <div class="room room-{{roomColor}}">
-  <div class="bg-street">
-    <img src="/assets/sprites/Icon/Room/Street.svg" class="stretch-street"/>
+  <div class="bg-street" (click)="onClose.emit()">
+    <svg-icon src="/assets/sprites/Icon/Room/Street.svg" [svgStyle]="{'height': '100%'}"
+              class="stretch-street"></svg-icon>
   </div>
   <div class="bg-rectangle">
-    <svg-icon src="/assets/sprites/Background/Room.svg"></svg-icon>
+    <svg-icon src="/assets/sprites/Background/Room.svg" [svgStyle]="{'width': '100%'}" class="stretch-bg"></svg-icon>
+
+    <div class="room-content">
+      <ng-content></ng-content>
+    </div>
   </div>
+
 </div>
 

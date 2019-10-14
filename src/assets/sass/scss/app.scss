@@ -1,7 +1,6 @@
 @import "colors";
 
 //base
-
 html {
   height: 100vh;
   width: 100vw;
@@ -59,22 +58,4 @@ h2 {
   line-height: normal;
   letter-spacing: normal;
   color: #000000;
-}
-
-//buttons
-.btn {
-  width: 118px;
-  height: 29px;
-  border-radius: 2px;
-  border: solid 2px #000000;
-  background-color: $beige;
-}
-
-//overlay card
-.card {
-  width: 313px;
-  height: 374px;
-  border-radius: 12px;
-  border: solid 2px #000000;
-  background-color: #ffffff;
 }
