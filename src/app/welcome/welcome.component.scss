@@ -2,72 +2,58 @@
   display: flex;
 
   .background {
+    position: absolute;
+    max-height: 100%;
     max-width: 100%;
-    display: flex;
-    flex: 1 0 auto;
-    align-items: center;
-    justify-content: center;
-    background: url('../../assets/sprites/Onboarding/Background/Background1.svg') no-repeat;
-    background-size: cover;
-    background-position: center center;
-    color: white;
-    flex-direction: column;
-    align-content: center;
+  }
+  .content {
+    position: absolute;
+    max-height: 88%;
+    max-width: 90%;
+    margin-top:13%;
+    margin-left:6%;
   }
 
   .child-title {
-    position: relative;
     display: flex;
     flex: 1 0 auto;
-    top: 5%;
-    left: 3%;
-    max-width: 100%;
-    max-height: 20%;
-    flex-direction: column;
+    justify-content: center;
+    margin-top:10%;
+    margin-left:5%;
+    text-align: center;
   }
 
   .child-subtext {
-    position: relative;
     display: flex;
     flex: 1 0 auto;
-    top: 0%;
-    left: 3%;
-    max-width: 90%;
-    max-height:20%;
+    justify-content: center;
+    margin-top:10%;
+    margin-left:5%;
     text-align: center;
-    flex-direction: column;
   }
 
   .child-logo {
-    position: relative;
     display: flex;
     flex: 1 0 auto;
-    left: 3%;
-    max-width: 90%;
-    max-height: 20%;
-    flex-direction: column;
-  }
-
-  .child-swipe {
-    position: relative;
-    display: flex;
-    flex: 1 0 auto;
-    bottom: 0%;
-    left: 3%;
-    max-width: 90%;
-    max-height: 10%;
-    flex-direction: column;
+    justify-content: center;
+    margin-top:10%;
+    margin-left:5%;
+    text-align: center;
   }
 
   .child-button {
-    position: relative;
     display: flex;
-    justify-content: center;
     flex: 1 0 auto;
-    top: 5%;
-    left: -12%;
-    max-width: 100%;
-    max-height: 100%;
-    flex-direction: column;
+    margin-top:20%;
+    margin-left: 26%;
+    text-align: center;
+  }
+
+  .child-swipe {
+    display: flex;
+    flex: 1 0 auto;
+    margin-top:40%;
+    margin-left: 36%;
+    text-align: center;
   }
 }

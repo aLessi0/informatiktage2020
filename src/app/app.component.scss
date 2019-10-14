@@ -1,10 +1,8 @@
 
 :host {
   display: flex;
+  position: relative;
 
-  .welcome-container{
-    display: flex;
-  }
   .game-is_running {
     display: flex;
     flex-direction: column;
