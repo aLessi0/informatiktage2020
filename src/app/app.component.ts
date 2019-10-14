@@ -22,7 +22,7 @@ export class AppComponent implements DoCheck {
 
   // -- START TEST - REMOVE THIS SHIT
   private number = 0;
-  private checked = false;
+  private activeRoomColor = '';
 
   // -- END TEST - REMOVE THIS SHIT
 
