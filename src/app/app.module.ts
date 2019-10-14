@@ -4,11 +4,13 @@ import {NgModule} from '@angular/core';
 import {AppComponent} from './app.component';
 import {HttpClientModule} from '@angular/common/http';
 import {WelcomeComponent} from './welcome/welcome.component';
+import { DescriptionComponent } from './description/description.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    DescriptionComponent
   ],
   imports: [
     BrowserModule,
