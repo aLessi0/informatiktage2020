@@ -14,13 +14,17 @@
       justify-content: center;
       align-items: center;
       display: flex;
-      flex: 0.2;
+      flex: 0.1;
+
+      .quiz-room-logo {
+        margin-right: .5rem;
+      }
 
     }
 
     .quiz-room-intro {
       display: flex;
-      flex: 0.2;
+      flex: 0.3;
       justify-content: center;
       align-items: center;
 
@@ -37,7 +41,13 @@
       flex-direction: column;
 
       .quiz-room-question {
-        margin-bottom: 1rem;
+        margin-bottom: .5rem;
+        display: flex;
+        flex-direction: column;
+
+        .quiz-room-answer {
+          margin-bottom: .5rem;
+        }
       }
     }
 

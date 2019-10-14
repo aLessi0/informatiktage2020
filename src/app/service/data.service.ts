@@ -1,10 +1,10 @@
 import {Injectable} from '@angular/core';
-import {GameModel} from "../model/game/game.model";
-import {RoomModel} from "../model/game/room.model";
-import {AttachmentModel} from "../model/game/attachment.model";
-import {QuestionModel} from "../model/game/question.model";
-import {ProgressModel} from "../model/user/progress.model";
-import {BehaviorSubject, Observable, Subject} from "rxjs";
+import {GameModel} from '../model/game/game.model';
+import {RoomModel} from '../model/game/room.model';
+import {AttachmentModel} from '../model/game/attachment.model';
+import {QuestionModel} from '../model/game/question.model';
+import {ProgressModel} from '../model/user/progress.model';
+import {BehaviorSubject, Observable} from 'rxjs';
 
 class AsyncLocalStorage {
   public static setItem(key, value): Promise<void> {
@@ -21,22 +21,40 @@ class AsyncLocalStorage {
 })
 export class DataService {
   public activeRoom$: Observable<RoomModel>;
+  public game$: Observable<GameModel>;
 
   private activeRoomSubject: BehaviorSubject<RoomModel> = new BehaviorSubject(undefined);
+  private gameSource: BehaviorSubject<GameModel> = new BehaviorSubject(DataService.createGameData());
 
   constructor() {
-    const gameData: GameModel = DataService.createGameData();
+    this.game$ = this.gameSource.asObservable();
     this.activeRoom$ = this.activeRoomSubject.asObservable();
 
-    this.activeRoomSubject.next(gameData.rooms[0]);
+    this.activeRoomSubject.next(this.gameSource.getValue().rooms[0]);
   }
 
+  public activateRoom(room: RoomModel): void {
+    this.activeRoomSubject.next(room);
+  }
+
+  public leaveActiveRoom(): void {
+    this.activeRoomSubject.next(undefined);
+  }
+
+  public unlockNextRoom(currentRoom: RoomModel): void {
+    const game = this.gameSource.getValue();
+    game.rooms.forEach((room) => {
+      if (currentRoom.level + 1 === room.level) {
+        room.isUnlocked = true;
+        room.justUnlocked = true;
+      }
+    });
+  }
 
   public saveProgress(progress: ProgressModel): Promise<void> {
     console.log('SAVE');
     return AsyncLocalStorage.setItem('progress', JSON.stringify(progress));
   }
-
 
   public initData(): Promise<void> {
     const game: GameModel = DataService.createGameData();
@@ -74,6 +92,8 @@ export class DataService {
     room1.intro = 'In diesem Raum geht es um Requirements und Design!';
     room1.attachments = [];
     room1.questions = [];
+    room1.isUnlocked = true;
+    room1.justUnlocked = true;
 
     const room1Attachment1: AttachmentModel = new AttachmentModel();
     room1Attachment1.file = 'url to path';
