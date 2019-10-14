@@ -34,10 +34,16 @@
       position: absolute;
       left: 10%;
 
+      .map-nav {
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+
       .room-content {
         position: absolute;
         height: 85%;
-        width: 80%;
+        width: 85%;
       }
 
     }
