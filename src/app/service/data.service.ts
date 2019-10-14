@@ -4,6 +4,7 @@ import {RoomModel} from "../model/game/room.model";
 import {AttachmentModel} from "../model/game/attachment.model";
 import {QuestionModel} from "../model/game/question.model";
 import {ProgressModel} from "../model/user/progress.model";
+import {BehaviorSubject, Observable, Subject} from "rxjs";
 
 class AsyncLocalStorage {
   public static setItem(key, value): Promise<void> {
@@ -19,11 +20,23 @@ class AsyncLocalStorage {
   providedIn: 'root'
 })
 export class DataService {
+  public activeRoom$: Observable<RoomModel>;
+
+  private activeRoomSubject: BehaviorSubject<RoomModel> = new BehaviorSubject(undefined);
+
+  constructor() {
+    const gameData: GameModel = DataService.createGameData();
+    this.activeRoom$ = this.activeRoomSubject.asObservable();
+
+    this.activeRoomSubject.next(gameData.rooms[0]);
+  }
+
 
   public saveProgress(progress: ProgressModel): Promise<void> {
     console.log('SAVE');
     return AsyncLocalStorage.setItem('progress', JSON.stringify(progress));
   }
+
 
   public initData(): Promise<void> {
     const game: GameModel = DataService.createGameData();
