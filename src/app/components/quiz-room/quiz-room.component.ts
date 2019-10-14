@@ -1,6 +1,7 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {DataService} from '../../service/data.service';
 import {RoomModel} from '../../model/game/room.model';
+import {QuestionModel} from '../../model/game/question.model';
 
 @Component({
   selector: 'app-quiz-room',
@@ -15,6 +16,11 @@ export class QuizRoomComponent implements OnInit {
       this.activeRoom = activeRoom;
       console.log(this.activeRoom);
     });
+  }
+
+  public checkAnswer(question: QuestionModel): void {
+    question.isCorrect = question.clientAnswer === question.correctAnswer;
+    console.log(question);
   }
 
   ngOnInit() {
