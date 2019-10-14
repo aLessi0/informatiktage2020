@@ -10,14 +10,12 @@
   }
 
   @media (max-aspect-ratio: 9/20) {
-    background: blue;
     height: calc(100vw / 9 * 20);
     width: 100vw;
   }
 
   /* Maximum aspect ratio */
   @media (min-aspect-ratio: 9/20) {
-    background: green;
     height: 100vh;
     width: calc(100vh / 20 * 9);
   }

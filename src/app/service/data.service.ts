@@ -29,8 +29,6 @@ export class DataService {
   constructor() {
     this.game$ = this.gameSource.asObservable();
     this.activeRoom$ = this.activeRoomSubject.asObservable();
-
-    this.activeRoomSubject.next(this.gameSource.getValue().rooms[0]);
   }
 
   public activateRoom(room: RoomModel): void {

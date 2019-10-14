@@ -14,6 +14,7 @@
   }
 
   .forest {
+    pointer-events: none;
     position: absolute;
     width: 32%;
     top: 48%;
@@ -21,6 +22,7 @@
   }
 
   .bank {
+    pointer-events: none;
     position: absolute;
     width: 52%;
     top: 58%;
@@ -28,13 +30,23 @@
   }
 
   .lake {
+    pointer-events: none;
     position: absolute;
     width: 55%;
     top: 71%;
     left: -13%;
   }
 
+  .kajak {
+    pointer-events: none;
+    position: absolute;
+    width: 14%;
+    top: 82%;
+    left: 8%;
+  }
+
   .trees {
+    pointer-events: none;
     position: absolute;
     width: 21%;
     top: 72%;
@@ -42,6 +54,7 @@
   }
 
   .mountains {
+    pointer-events: none;
     position: absolute;
     width: 35%;
     top: 37%;
@@ -49,6 +62,7 @@
   }
 
   .gondel {
+    pointer-events: none;
     position: absolute;
     width: 110%;
     top: 21%;
