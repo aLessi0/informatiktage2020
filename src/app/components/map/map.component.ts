@@ -1,8 +1,8 @@
 import {Component, Inject, Input} from '@angular/core';
-import {DataService} from "../../service/data.service";
-import {GameModel} from "../../model/game/game.model";
-import {ProgressModel} from "../../model/user/progress.model";
-import {RoomModel} from "../../model/game/room.model";
+import {DataService} from '../../service/data.service';
+import {GameModel} from '../../model/game/game.model';
+import {ProgressModel} from '../../model/user/progress.model';
+import {RoomModel} from '../../model/game/room.model';
 
 @Component({
   selector: 'app-map',
@@ -18,8 +18,17 @@ export class MapComponent {
   }
 
   public activateRoom(roomNumber: number): void {
-    this.dataService.activateRoom(this.getRoomByNumber(roomNumber));
+    const roomToActivate = this.getRoomByNumber(roomNumber);
+    if (roomToActivate && roomToActivate.isUnlocked) {
+      this.dataService.activateRoom(this.getRoomByNumber(roomNumber));
+    }
   }
+
+  public isRoomUnlocked(roomNumber: number): void {
+    const room = this.getRoomByNumber(roomNumber);
+    return room && room.isUnlocked;
+  }
+
 
   private getRoomByNumber(roomNumber: number): RoomModel {
     return this.game.rooms[roomNumber];
