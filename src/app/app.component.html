@@ -3,11 +3,12 @@
   WILLKOMMEN, SIE SIND NEU HIER! STARTEN?<br/>
   <button (click)="startGame()">GAME STARTEN</button>
 </div>
-<div *ngIf="!loadingProgress && progressAvailable">
+<div class="game-is_running" *ngIf="!loadingProgress && progressAvailable">
+  <app-quiz-room></app-quiz-room>
   <!-- ersetzen durch eine game-component -->
-  <h1>JUHU GAME IST AM LAUFEN, BOII!!</h1>
-  <button (click)="change()">CHANGE</button>
-  <input type="checkbox" [checked]="checked" (change)="checked = !checked">
+  <!--<h1>JUHU GAME IST AM LAUFEN, BOII!!</h1>-->
+  <!--<button (click)="change()">CHANGE</button>-->
+  <!--<input type="checkbox" [checked]="checked" (change)="checked = !checked">-->
 </div>
 <div *ngIf="loadingProgress">
   <!-- Evtl. wird es nicht gebraucht, da es sehr schnell und nie sichtbar ist. Sonst schön machen! -->
