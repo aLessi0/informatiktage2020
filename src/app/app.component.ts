@@ -1,8 +1,6 @@
 import {Component, DoCheck, Inject, KeyValueDiffer, KeyValueDiffers, NgZone} from '@angular/core';
 import {DataService} from './service/data.service';
 import {ProgressModel} from './model/user/progress.model';
-import {PlayedLevelModel} from './model/user/played-level.model';
-import {AnswerModel} from './model/user/answer.model';
 import {DebounceUtils} from './utils/debounce.utils';
 import {HttpClient} from '@angular/common/http';
 import {RoomModel} from './model/game/room.model';
@@ -42,10 +40,18 @@ export class AppComponent implements DoCheck {
       this.progress = progress;
     });
 
+    this.dataService.avatar$.subscribe(created => {
+      console.log(created);
+      if (created == true) {
+        this.startGame();
+      }
+    });
+
     /* http backend test */
     // this.http.post('/api/write', '').subscribe(() => {
     //   console.log('works');
     // });
+
   }
 
   public leaveActiveRoom(): void {
@@ -59,8 +65,20 @@ export class AppComponent implements DoCheck {
   }
 
   public startGame(): void {
+    console.log("start game");
     this.dataService.initData().then(() => {
-      // this.loadProgress();
+      this.loadProgress();
+    });
+  }
+
+  private loadProgress(): void {
+    this.loadingProgress = true;
+    this.dataService.loadProgress().then((progress: ProgressModel) => {
+      this.loadingProgress = false;
+      this.progressAvailable = !!progress;
+      this.progress = progress;
+      this.differ.diff(this.getDiffObject());
+      console.log(this.progress);
     });
   }
 

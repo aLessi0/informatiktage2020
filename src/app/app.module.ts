@@ -10,6 +10,9 @@ import {WelcomeComponent} from './components/welcome/welcome.component';
 import {RoomComponent} from './components/room/room.component';
 import {AngularSvgIconModule} from 'angular-svg-icon';
 import {ButtonComponent} from './components/base/button/button.component';
+import { AvatarComponent } from './components/avatar/avatar.component';
+import { AvatarSelectorComponent } from './components/avatar-selector/avatar-selector.component';
+import { ImageMapComponent } from './components/image-map/image-map.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import {ButtonComponent} from './components/base/button/button.component';
     RoomComponent,
     QuizRoomComponent,
     ButtonComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    AvatarComponent,
+    AvatarSelectorComponent,
+    ImageMapComponent
   ],
   imports: [
     BrowserModule,

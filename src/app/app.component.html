@@ -1,11 +1,23 @@
 <div class="welcome-container" *ngIf="!progressAvailable">
   <app-welcome></app-welcome>
 </div>
+
+<div *ngIf="!loadingProgress && !progressAvailable">
+  <div class="avatar-container">
+    <app-avatar-selector *ngIf="!selectAvatar"></app-avatar-selector>
+  </div>
+</div>
+
 <div class="game-is_running" *ngIf="progressAvailable">
   <app-map [game]="game" [progress]="progress" *ngIf="!currentRoom"></app-map>
   <app-room [room]="currentRoom" *ngIf="currentRoom" (onClose)="leaveActiveRoom()">
     <app-quiz-room *ngIf="currentRoom"></app-quiz-room>
     <!-- SUPER DUPER LAST ROOM MIT NGIF="!CURRENTROOM"-->
   </app-room>
+
+  <!-- ersetzen durch eine game-component -->
+  <!--<h1>JUHU GAME IST AM LAUFEN, BOII!!</h1>-->
+  <!--<button (click)="change()">CHANGE</button>-->
+  <!--<input type="checkbox" [checked]="checked" (change)="checked = !checked">-->
 </div>
 
