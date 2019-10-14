@@ -8,6 +8,8 @@ import {FormsModule} from '@angular/forms';
 import {MapComponent} from './components/map/map.component';
 import {RoomComponent} from './components/room/room.component';
 import {AngularSvgIconModule} from 'angular-svg-icon';
+import {OverlayCardComponent} from './components/base/overlay-card/overlay-card.component';
+import {ButtonComponent} from './components/base/button/button.component';
 
 
 @NgModule({
@@ -15,7 +17,9 @@ import {AngularSvgIconModule} from 'angular-svg-icon';
     AppComponent,
     MapComponent,
     RoomComponent,
-    QuizRoomComponent
+    QuizRoomComponent,
+    OverlayCardComponent,
+    ButtonComponent
   ],
   imports: [
     BrowserModule,
