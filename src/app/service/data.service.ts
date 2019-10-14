@@ -22,10 +22,13 @@ class AsyncLocalStorage {
 export class DataService {
   public activeRoom$: Observable<RoomModel>;
 
-  private activeRoomSubjcet: Subject<RoomModel> = new BehaviorSubject(undefined);
+  private activeRoomSubject: BehaviorSubject<RoomModel> = new BehaviorSubject(undefined);
 
-  constructor(props) {
-    this.activeRoom$ = this.activeRoomSubjcet.asObservable();
+  constructor() {
+    const gameData: GameModel = DataService.createGameData();
+    this.activeRoom$ = this.activeRoomSubject.asObservable();
+
+    this.activeRoomSubject.next(gameData.rooms[0]);
   }
 
 
