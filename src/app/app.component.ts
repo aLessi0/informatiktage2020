@@ -18,6 +18,7 @@ export class AppComponent implements DoCheck {
   public loadingProgress = true;
   public progress: ProgressModel;
   public game: GameModel;
+  public currentRoom: RoomModel;
 
   private readonly differ: KeyValueDiffer<string, string>;
 
@@ -39,6 +40,10 @@ export class AppComponent implements DoCheck {
       this.game = game;
     });
 
+    this.dataService.activeRoom$.subscribe((activeRoom) => {
+      this.currentRoom = activeRoom;
+    });
+
     this.loadProgress();
     /* http backend test */
     this.http.post('/api/write', '').subscribe(() => {
@@ -49,6 +54,10 @@ export class AppComponent implements DoCheck {
   public activateRoom(room: RoomModel): void {
     this.dataService.activateRoom(room);
     this.activeRoomColor = room.color;
+  }
+
+  public leaveActiveRoom(): void {
+    this.dataService.leaveActiveRoom();
   }
 
   public ngDoCheck() {
