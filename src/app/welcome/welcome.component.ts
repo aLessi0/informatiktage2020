@@ -13,6 +13,6 @@ export class WelcomeComponent implements OnInit {
   }
 
   startLogin($event){
-    console.log("Das ist ein Test. Hier folgt die nächste Seite");
+    console.log('Das ist ein Test. Hier folgt die nächste Seite');
   }
 }

@@ -10,6 +10,12 @@
     position: relative;
   }
 
+  .welcome-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 auto;
+  }
+
   @media (max-aspect-ratio: 9/20) {
     height: calc(100vw / 9 * 20);
     width: 100vw;
