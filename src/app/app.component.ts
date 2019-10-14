@@ -5,6 +5,8 @@ import {PlayedLevelModel} from './model/user/played-level.model';
 import {AnswerModel} from './model/user/answer.model';
 import {DebounceUtils} from './utils/debounce.utils';
 import {HttpClient} from '@angular/common/http';
+import {RoomModel} from './model/game/room.model';
+import {GameModel} from './model/game/game.model';
 
 @Component({
   selector: 'app-root',
@@ -15,27 +17,40 @@ export class AppComponent implements DoCheck {
   public progressAvailable = false;
   public loadingProgress = true;
   public progress: ProgressModel;
+  public game: GameModel;
+  public currentRoom: RoomModel;
 
   private readonly differ: KeyValueDiffer<string, string>;
 
   private debounceCheckForSave: (...args: any[]) => void;
-
-  // -- START TEST - REMOVE THIS SHIT
-  private number = 0;
-  private activeRoomColor = '';
-
-  // -- END TEST - REMOVE THIS SHIT
 
   constructor(@Inject(DataService) private readonly dataService: DataService,
               @Inject(NgZone) private readonly ngZone: NgZone,
               @Inject(KeyValueDiffers) readonly differs: KeyValueDiffers,
               @Inject(HttpClient) private readonly http: HttpClient) {
     this.differ = differs.find([]).create();
+
+    this.dataService.game$.subscribe((game: GameModel) => {
+      this.game = game;
+    });
+
+    this.dataService.activeRoom$.subscribe((activeRoom) => {
+      this.currentRoom = activeRoom;
+    });
+
     this.loadProgress();
     /* http backend test */
     this.http.post('/api/write', '').subscribe(() => {
       console.log('works');
     });
+  }
+
+  public activateRoom(room: RoomModel): void {
+    this.dataService.activateRoom(room);
+  }
+
+  public leaveActiveRoom(): void {
+    this.dataService.leaveActiveRoom();
   }
 
   public ngDoCheck() {
@@ -78,33 +93,4 @@ export class AppComponent implements DoCheck {
   private getDiffObject(): {} {
     return {object: JSON.stringify(this.progress)};
   }
-
-  // -- START TEST - REMOVE THIS SHIT
-  public change(): void {
-    switch (this.number) {
-      case 0:
-        this.progress.playedLevels.push(new PlayedLevelModel());
-        break;
-      case 1:
-        this.progress.playedLevels[0].level = 1;
-        break;
-      case 2:
-        this.progress.playedLevels[0].answers = [];
-        break;
-      case 3:
-        this.progress.playedLevels[0].answers.push(new AnswerModel());
-        break;
-      case 4:
-        this.progress.playedLevels[0].answers[0].number = 1;
-        break;
-      case 5:
-        this.progress.playedLevels[0].answers[0].answer = 'hallo';
-        break;
-      default:
-        this.progress.playedLevels.push(new PlayedLevelModel());
-    }
-    this.number++;
-  }
-
-  // -- END TEST - REMOVE THIS SHIT
 }

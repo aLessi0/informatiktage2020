@@ -14,12 +14,18 @@ export class QuizRoomComponent implements OnInit {
   constructor(@Inject(DataService) private readonly dataService: DataService) {
     this.dataService.activeRoom$.subscribe((activeRoom) => {
       this.activeRoom = activeRoom;
-      console.log(this.activeRoom);
+      if (this.activeRoom) {
+        this.activeRoom.justUnlocked = false;
+        console.log(this.activeRoom);
+      }
     });
   }
 
   public checkAnswer(question: QuestionModel): void {
     question.isCorrect = question.clientAnswer === question.correctAnswer;
+    if (question.number === 1 && question.isCorrect) {
+      this.dataService.unlockNextRoom(this.activeRoom);
+    }
     console.log(question);
   }
 

@@ -11,6 +11,8 @@ body {
   margin: 0;
   display: flex;
   flex: 1 0 auto;
+  align-items: center;
+  justify-content: center;
 }
 
 //texts
@@ -45,4 +47,22 @@ h2 {
   line-height: normal;
   letter-spacing: normal;
   color: #000000;
+}
+
+.text-big {
+  font-family: 'Rubik', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #000000;
+}
+
+//inputs
+.input-field {
+  background-color: transparent;
+  border-radius: 0.2em;
+  border: solid 0.2em #000000;
 }
