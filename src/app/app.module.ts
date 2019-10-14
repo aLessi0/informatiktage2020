@@ -11,14 +11,13 @@ import {RoomComponent} from './components/room/room.component';
 import {AngularSvgIconModule} from 'angular-svg-icon';
 import {ButtonComponent} from './components/base/button/button.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
     MapComponent,
     RoomComponent,
     QuizRoomComponent,
-    ButtonComponent
+    ButtonComponent,
     WelcomeComponent
   ],
   imports: [
