@@ -1,5 +1,5 @@
-<div class="room room-{{roomColor}}">
-  <div class="bg-street" (click)="onClose.emit()">
+<div class="room room-{{room.color}}">
+  <div class="bg-street" (click)="closeRoom()">
     <svg-icon src="/assets/sprites/Icon/Room/Street.svg" [svgStyle]="{'height': '100%'}"
               class="stretch-street"></svg-icon>
   </div>
