@@ -11,7 +11,6 @@ export class RoomComponent implements OnInit {
   @Output() private onClose: EventEmitter<void> = new EventEmitter();
 
   public ngOnInit() {
-    console.log('this roomcolor is: ' + this.roomColor);
   }
 
   public closeRoom(): void {
