@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="314px" height="599px" viewBox="0 0 314 599" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 58 (84663) - https://sketch.com -->
+    <title>Icon/Map/Street</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Icon/Map/Street" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M262,75.4861144 C268,75.4953715 274,75.5046285 280,75.5138856" id="Path-6-Copy-4" stroke="#E7E8EA" stroke-width="5"></path>
+        <path d="M258,217.486114 C265,217.495371 272,217.504629 279,217.513886" id="Path-6-Copy-5" stroke="#E7E8EA" stroke-width="5"></path>
+        <path d="M243,334.486114 C255.333333,334.495371 267.666667,334.504629 280,334.513886" id="Path-6-Copy-6" stroke="#E7E8EA" stroke-width="5" transform="translate(261.500000, 334.500000) scale(1, -1) translate(-261.500000, -334.500000) "></path>
+        <path d="M257,453.458343 C265.333333,453.486114 273.666667,453.513886 282,453.541657" id="Path-6-Copy-7" stroke="#E7E8EA" stroke-width="5" transform="translate(269.500000, 453.500000) scale(1, -1) translate(-269.500000, -453.500000) "></path>
+        <path d="M214.5,17.9861144 C226.166667,17.9953715 237.833333,18.0046285 249.5,18.0138856" id="Path-6-Copy-4" stroke="#E7E8EA" stroke-width="5" transform="translate(232.000000, 18.000000) rotate(-90.000000) translate(-232.000000, -18.000000) "></path>
+        <path d="M77,16.4861144 C87.3333333,16.4953715 97.6666667,16.5046285 108,16.5138856" id="Path-6-Copy-4" stroke="#E7E8EA" stroke-width="5" transform="translate(92.500000, 16.500000) rotate(-90.000000) translate(-92.500000, -16.500000) "></path>
+        <path d="M311.1,598.59651 C276.7668,566.089997 258.266867,514.478846 255.6002,443.763057 C253.205851,380.268693 240.687281,370.332059 242.882353,330 C244.354368,302.953322 259.794249,204.61799 261.840488,188.625 C266.205179,154.511466 272.445468,123.539962 261.840488,64.073975 C254.770502,24.4299837 167.490339,16.8720253 0,41.4001" id="Path-5" stroke="#E7E8EA" stroke-width="5"></path>
+        <path d="M313.1,596.59651 C278.7668,564.089997 260.266867,512.478846 257.6002,441.763057 C255.205851,378.268693 242.687281,368.332059 244.882353,328 C246.354368,300.953322 261.794249,202.61799 263.840488,186.625 C268.205179,152.511466 274.445468,121.815987 263.840488,62.35 C256.770502,22.7060087 168.823673,14.4893753 0,37.7001" id="Path-5" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-dasharray="10"></path>
+        <path d="M265.828251,455.600616 C271.091538,455.609873 276.354826,455.61913 281.618114,455.628387" id="Path-6" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-dasharray="10"></path>
+        <path d="M251,336.486114 C262.666667,336.495371 274.333333,336.504629 286,336.513886" id="Path-6-Copy" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-dasharray="10" transform="translate(268.500000, 336.500000) scale(1, -1) translate(-268.500000, -336.500000) "></path>
+        <path d="M266,218.486114 C271.666667,218.495371 277.333333,218.504629 283,218.513886" id="Path-6-Copy-2" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-dasharray="10" transform="translate(274.500000, 218.500000) scale(1, -1) translate(-274.500000, -218.500000) "></path>
+        <path d="M268,77.4861144 C273.666667,77.4953715 279.333333,77.5046285 285,77.5138856" id="Path-6-Copy-2" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-dasharray="10" transform="translate(276.500000, 77.500000) scale(1, -1) translate(-276.500000, -77.500000) "></path>
+        <path d="M221.5,12.9861144 C229.5,12.9953715 237.5,13.0046285 245.5,13.0138856" id="Path-6-Copy-2" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-dasharray="10" transform="translate(233.500000, 13.000000) rotate(-90.000000) translate(-233.500000, -13.000000) "></path>
+        <path d="M82,12.4861144 C89.6666667,12.4953715 97.3333333,12.5046285 105,12.5138856" id="Path-6-Copy-3" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-dasharray="10" transform="translate(93.500000, 12.500000) rotate(-90.000000) translate(-93.500000, -12.500000) "></path>
+    </g>
+</svg>
