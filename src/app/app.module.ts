@@ -3,14 +3,18 @@ import {NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
 import {HttpClientModule} from '@angular/common/http';
+import {RoomComponent} from './components/room/room.component';
+import {AngularSvgIconModule} from 'angular-svg-icon';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    RoomComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    AngularSvgIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

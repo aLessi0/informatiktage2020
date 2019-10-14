@@ -5,11 +5,12 @@
 </div>
 <div *ngIf="!loadingProgress && progressAvailable">
   <!-- ersetzen durch eine game-component -->
-  <h1>JUHU GAME IST AM LAUFEN, BOII!!</h1>
-  <button (click)="change()">CHANGE</button>
+  <h1>JUHU GAME IST AM LAUFEN, BOII!!1111</h1>
+  <button (click)="change()">Open Room</button>
   <input type="checkbox" [checked]="checked" (change)="checked = !checked">
 </div>
 <div *ngIf="loadingProgress">
   <!-- Evtl. wird es nicht gebraucht, da es sehr schnell und nie sichtbar ist. Sonst schön machen! -->
-  LOADING!!!!!!!!!
+  LOADING!!!!!!!!!111
 </div>
+<app-room [roomColor]="'green'" *ngIf="checked"></app-room>
