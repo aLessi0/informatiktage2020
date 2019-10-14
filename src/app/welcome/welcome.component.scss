@@ -42,9 +42,9 @@
     position: relative;
     display: flex;
     flex: 1 0 auto;
-    top: 10%;
     left: 3%;
     max-width: 90%;
+    max-height: 20%;
     flex-direction: column;
   }
 
@@ -52,10 +52,22 @@
     position: relative;
     display: flex;
     flex: 1 0 auto;
-    bottom: 8%;
+    bottom: 0%;
     left: 3%;
     max-width: 90%;
-    max-height: 1%;
+    max-height: 10%;
+    flex-direction: column;
+  }
+
+  .child-button {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex: 1 0 auto;
+    top: 5%;
+    left: -12%;
+    max-width: 100%;
+    max-height: 100%;
     flex-direction: column;
   }
 }

@@ -12,4 +12,7 @@ export class WelcomeComponent implements OnInit {
   ngOnInit() {
   }
 
+  startLogin($event){
+    console.log("Das ist ein Test. Hier folgt die nächste Seite");
+  }
 }

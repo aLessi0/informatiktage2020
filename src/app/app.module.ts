@@ -20,7 +20,7 @@ import {ButtonComponent} from './components/base/button/button.component';
     RoomComponent,
     QuizRoomComponent,
     OverlayCardComponent,
-    ButtonComponent
+    ButtonComponent,
     QuizRoomComponent,
     AppComponent,
     WelcomeComponent
