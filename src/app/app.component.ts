@@ -40,9 +40,9 @@ export class AppComponent implements DoCheck {
 
     this.loadProgress();
     /* http backend test */
-    this.http.post('/api/write', '').subscribe(() => {
-      console.log('works');
-    });
+    // this.http.post('/api/write', '').subscribe(() => {
+    //   console.log('works');
+    // });
   }
 
   public activateRoom(room: RoomModel): void {
