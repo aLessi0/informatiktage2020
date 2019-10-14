@@ -12,7 +12,7 @@ import {WelcomeComponent} from './welcome/welcome.component';
   declarations: [
     AppComponent,
     MapComponent,
-    QuizRoomComponent
+    QuizRoomComponent,
     AppComponent,
     WelcomeComponent
   ],
@@ -24,5 +24,6 @@ import {WelcomeComponent} from './welcome/welcome.component';
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule {
 }

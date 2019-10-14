@@ -1,9 +1,61 @@
-#background {
-  width:100%;
-  height: 100vh;
-  background: url('../../assets/sprites/Onboarding/Background/Background1.svg') no-repeat;
-  background-size: cover;
-  background-position: center center;
-  color: white;
-  text-align: center;
+:host {
+  display: flex;
+
+  .background {
+    max-width: 100%;
+    display: flex;
+    flex: 1 0 auto;
+    align-items: center;
+    justify-content: center;
+    background: url('../../assets/sprites/Onboarding/Background/Background1.svg') no-repeat;
+    background-size: cover;
+    background-position: center center;
+    color: white;
+    flex-direction: column;
+    align-content: center;
+  }
+
+  .child-title {
+    position: relative;
+    display: flex;
+    flex: 1 0 auto;
+    top: 5%;
+    left: 3%;
+    max-width: 100%;
+    max-height: 20%;
+    flex-direction: column;
+  }
+
+  .child-subtext {
+    position: relative;
+    display: flex;
+    flex: 1 0 auto;
+    top: 0%;
+    left: 3%;
+    max-width: 100%;
+    max-height:20%;
+    text-align: center;
+    flex-direction: column;
+  }
+
+  .child-logo {
+    position: relative;
+    display: flex;
+    flex: 1 0 auto;
+    top: 10%;
+    left: 3%;
+    max-width: 90%;
+    flex-direction: column;
+  }
+
+  .child-swipe {
+    position: relative;
+    display: flex;
+    flex: 1 0 auto;
+    bottom: 8%;
+    left: 3%;
+    max-width: 90%;
+    max-height: 1%;
+    flex-direction: column;
+  }
 }

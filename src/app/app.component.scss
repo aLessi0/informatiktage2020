@@ -2,6 +2,9 @@
 :host {
   display: flex;
 
+  .welcome-container{
+    display: flex;
+  }
   .game-is_running {
     display: flex;
     flex: 1 0 auto;
