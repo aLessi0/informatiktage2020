@@ -1,0 +1,44 @@
+:host {
+
+  .room {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: white;
+    display: flex;
+
+    &.room-blue {
+      --room-color: blue;
+    }
+
+    &.room-green {
+      --room-color: green;
+    }
+
+    .bg-street {
+      flex: 0;
+      margin-left: 1rem;
+
+      .stretch-street {
+        height: 100%;
+      }
+    }
+
+    .bg-rectangle {
+      flex: 1;
+      margin: 1rem 0;
+
+      .stretch-bg {
+        height: 100%;
+
+
+
+      }
+    }
+
+
+  }
+
+}
