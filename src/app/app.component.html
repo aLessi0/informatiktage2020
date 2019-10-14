@@ -3,7 +3,8 @@
   WILLKOMMEN, SIE SIND NEU HIER! STARTEN?<br/>
   <button (click)="startGame()">GAME STARTEN</button>
 </div>
-<div *ngIf="!loadingProgress && progressAvailable">
+<div class="game-is_running" *ngIf="!loadingProgress && progressAvailable">
+  <app-map></app-map>
   <!-- ersetzen durch eine game-component -->
   <h1>JUHU GAME IST AM LAUFEN, BOII!!1111</h1>
   <button (click)="change()">Open Room</button>
@@ -11,6 +12,6 @@
 </div>
 <div *ngIf="loadingProgress">
   <!-- Evtl. wird es nicht gebraucht, da es sehr schnell und nie sichtbar ist. Sonst schön machen! -->
-  LOADING!!!!!!!!!111
+  LOADING!!!!!!!!!
 </div>
 <app-room [roomColor]="'green'" *ngIf="checked"></app-room>
