@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="56px" height="53px" viewBox="0 0 56 53" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 58 (84663) - https://sketch.com -->
+    <title>Icon/Room/Map-Nav</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Icon/Room/Map-Nav" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="noun_Map_1085075">
+            <path d="M2.44769348,8.61522913 C4.76173846,3.79492362 42.2379792,3.79492362 48.1641919,8.61522913 C54.0904047,13.4355346 52.397201,47.5035391 48.1641919,49.6319624 C43.9311828,51.7603858 6.54163087,53.6761401 2.44769348,49.6319624 C-1.64624391,45.5877847 0.133648499,13.4355346 2.44769348,8.61522913 Z" id="Rectangle" fill="#E0D0B5"></path>
+            <polygon id="Path" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="38 50.9215686 20 53 20 2.07843137 38 0"></polygon>
+            <g id="Group" transform="translate(24.000000, 5.000000)" stroke="#000000" stroke-linecap="round" stroke-linejoin="round">
+                <ellipse id="Oval" stroke-width="1.9999592" transform="translate(5.137600, 4.915423) rotate(-22.358943) translate(-5.137600, -4.915423) " cx="5.1376" cy="4.91542316" rx="1" ry="1"></ellipse>
+                <path d="M0.642857143,4.78947368 C0.642857143,7.18421053 5.14285714,12.7947368 5.14285714,12.7947368 C5.14285714,12.7947368 9.64285714,7.18421053 9.64285714,4.78947368 C9.64285714,2.39473684 7.64285714,0.478947368 5.14285714,0.478947368 C2.64285714,0.478947368 0.642857143,2.39473684 0.642857143,4.78947368 Z" id="Path" stroke-width="2"></path>
+            </g>
+            <path d="M20,21.0156361 C20,21.0156361 26.9230769,20.3345286 29.9,27.9629321 C32.8769231,35.5913355 38,36 38,36" id="Path" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            <g id="Group" transform="translate(20.000000, 23.000000)" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                <path d="M0.533333333,18.3214286 C0.533333333,18.3214286 0.866666667,18.4571429 1.46666667,18.5928571" id="Path"></path>
+                <path d="M4.13333333,18.7285714 C5.8,18.525 7.73333333,17.7785714 9.2,15.675 C11.9333333,11.8071429 12.8,3.93571429 15.7333333,1.28928571" id="Path" stroke-dasharray="2.9655,3.954"></path>
+                <path d="M16.8666667,0.610714286 C17.2,0.475 17.4666667,0.407142857 17.8666667,0.407142857" id="Path"></path>
+            </g>
+            <polygon id="Path" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="56 53 38 50.9215686 38 0 56 2.07843137"></polygon>
+            <path d="M38,36 C38,36 45.1307692,36.5506948 47.9,43.2967058 C51.0153846,51.0064326 56,48.6659798 56,48.6659798" id="Path" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            <g id="Group" transform="translate(38.000000, 12.000000)" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                <path d="M0.533333333,11.7176471 C0.533333333,11.7176471 0.866666667,11.5764706 1.46666667,11.3647059" id="Path"></path>
+                <path d="M3.73333333,10.3764706 C5.6,9.38823529 7.73333333,7.90588235 8.4,6 C10.0666667,1.34117647 12.2,0.705882353 15.6,0.564705882" id="Path" stroke-dasharray="2.7633,3.6844"></path>
+                <path d="M16.8666667,0.494117647 C17.2,0.494117647 17.5333333,0.494117647 17.8666667,0.494117647" id="Path"></path>
+            </g>
+            <polygon id="Path" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="20 53 2 50.9215686 2 0 20 2.07843137"></polygon>
+            <path d="M20,21.0156361 C20,21.0156361 13.0501931,20.3345286 10.0617761,27.9629321 C7.07335907,35.5913355 2,36 2,36" id="Path" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            <g id="Group" transform="translate(2.000000, 23.000000)" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                <path d="M17.8666667,18.3214286 C17.8666667,18.3214286 17.5333333,18.4571429 16.9333333,18.5928571" id="Path"></path>
+                <path d="M14.3333333,18.7285714 C12.6666667,18.525 10.7333333,17.7785714 9.26666667,15.675 C6.53333333,11.8071429 5.66666667,3.93571429 2.73333333,1.28928571" id="Path" stroke-dasharray="2.9655,3.954"></path>
+                <path d="M1.6,0.610714286 C1.26666667,0.475 1,0.407142857 0.6,0.407142857" id="Path"></path>
+            </g>
+        </g>
+    </g>
+</svg>

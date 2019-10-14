@@ -5,16 +5,23 @@ import {AppComponent} from './app.component';
 import {HttpClientModule} from '@angular/common/http';
 import {QuizRoomComponent} from './components/quiz-room/quiz-room.component';
 import {FormsModule} from '@angular/forms';
+import {MapComponent} from './components/map/map.component';
+import {RoomComponent} from './components/room/room.component';
+import {AngularSvgIconModule} from 'angular-svg-icon';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    QuizRoomComponent,
+    MapComponent,
+    RoomComponent,
+    QuizRoomComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AngularSvgIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
