@@ -1,14 +1,14 @@
 <div class="quiz-room" *ngIf="activeRoom">
   <div class="quiz-room-title">
-    <p>{{activeRoom.name}}</p>
+    <h1>{{activeRoom.name}}</h1>
   </div>
   <div class="quiz-room-intro">
-    <p>{{activeRoom.intro}}</p>
+    <h2>{{activeRoom.intro}}</h2>
   </div>
   <div class="quiz-room-questions">
     <div class="quiz-room-question" *ngFor="let question of activeRoom.questions">
       <p>{{question.questionText}}</p>
-      <span><input type="text"/>prüfen</span>
+      <span><input type="text" [(ngModel)]="question.clientAnswer"/>prüfen</span>
     </div>
   </div>
 </div>
