@@ -24,12 +24,6 @@ export class AppComponent implements DoCheck {
 
   private debounceCheckForSave: (...args: any[]) => void;
 
-  // -- START TEST - REMOVE THIS SHIT
-  private number = 0;
-  private activeRoomColor = '';
-
-  // -- END TEST - REMOVE THIS SHIT
-
   constructor(@Inject(DataService) private readonly dataService: DataService,
               @Inject(NgZone) private readonly ngZone: NgZone,
               @Inject(KeyValueDiffers) readonly differs: KeyValueDiffers,
@@ -53,7 +47,6 @@ export class AppComponent implements DoCheck {
 
   public activateRoom(room: RoomModel): void {
     this.dataService.activateRoom(room);
-    this.activeRoomColor = room.color;
   }
 
   public leaveActiveRoom(): void {
@@ -100,33 +93,4 @@ export class AppComponent implements DoCheck {
   private getDiffObject(): {} {
     return {object: JSON.stringify(this.progress)};
   }
-
-  // -- START TEST - REMOVE THIS SHIT
-  public change(): void {
-    switch (this.number) {
-      case 0:
-        this.progress.playedLevels.push(new PlayedLevelModel());
-        break;
-      case 1:
-        this.progress.playedLevels[0].level = 1;
-        break;
-      case 2:
-        this.progress.playedLevels[0].answers = [];
-        break;
-      case 3:
-        this.progress.playedLevels[0].answers.push(new AnswerModel());
-        break;
-      case 4:
-        this.progress.playedLevels[0].answers[0].number = 1;
-        break;
-      case 5:
-        this.progress.playedLevels[0].answers[0].answer = 'hallo';
-        break;
-      default:
-        this.progress.playedLevels.push(new PlayedLevelModel());
-    }
-    this.number++;
-  }
-
-  // -- END TEST - REMOVE THIS SHIT
 }

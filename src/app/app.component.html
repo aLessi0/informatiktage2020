@@ -4,9 +4,7 @@
   <button (click)="startGame()">GAME STARTEN</button>
 </div>
 <div class="game-is_running" *ngIf="!loadingProgress && progressAvailable">
-  <button [disabled]="!room.isUnlocked" (click)="activateRoom(room)" *ngFor="let room of game.rooms">
-    open {{room.name}}</button>
-  <app-map></app-map>
+  <app-map [game]="game" [progress]="progress" *ngIf="!currentRoom"></app-map>
   <app-room [room]="currentRoom" *ngIf="currentRoom" (onClose)="leaveActiveRoom()">
     <app-quiz-room *ngIf="currentRoom"></app-quiz-room>
     <!-- SUPER DUPER LAST ROOM MIT NGIF="!CURRENTROOM"-->
