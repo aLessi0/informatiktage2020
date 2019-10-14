@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {RoomModel} from '../../model/game/room.model';
 
 @Component({
@@ -6,13 +6,9 @@ import {RoomModel} from '../../model/game/room.model';
   templateUrl: './room.component.html',
   styleUrls: ['./room.component.scss']
 })
-export class RoomComponent implements OnInit {
+export class RoomComponent {
   @Input() public room: RoomModel;
   @Output() private onClose: EventEmitter<void> = new EventEmitter();
-
-  public ngOnInit() {
-    console.log('this roomcolor is: ' + this.roomColor);
-  }
 
   public closeRoom(): void {
     if (!this.room.feedback) {
