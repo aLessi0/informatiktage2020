@@ -24,7 +24,7 @@ export class MapComponent {
     }
   }
 
-  public isRoomUnlocked(roomNumber: number): void {
+  public isRoomUnlocked(roomNumber: number): boolean {
     const room = this.getRoomByNumber(roomNumber);
     return room && room.isUnlocked;
   }
