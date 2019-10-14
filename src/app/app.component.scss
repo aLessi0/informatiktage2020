@@ -7,32 +7,16 @@
     flex: 1 0 auto;
   }
 
-  @media (max-aspect-ratio: 9/21) {
+  @media (max-aspect-ratio: 9/20) {
     background: blue;
-    height: 233.33vw;
+    height: calc(100vw / 9 * 20);
     width: 100vw;
   }
 
   /* Maximum aspect ratio */
-  @media (min-aspect-ratio: 9/21) {
+  @media (min-aspect-ratio: 9/20) {
     background: green;
     height: 100vh;
-    width: 42.86vh;
-  }
-}
-
-::ng-deep {
-  html {
-    height: 100%;
-    width: 100%;
-
-    body {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100%;
-      width: 100%;
-      margin: 0;
-    }
+    width: calc(100vh / 20 * 9);
   }
 }

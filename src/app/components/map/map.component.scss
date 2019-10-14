@@ -4,7 +4,110 @@
   justify-content: center;
   height: 100%;
   width: 100%;
+  position: relative;
 
-  .map {
+  .street {
+    position: absolute;
+    width: 86%;
+    top: 20%;
+    left: -10%;
+  }
+
+  .forest {
+    position: absolute;
+    width: 32%;
+    top: 48%;
+    left: 23%;
+  }
+
+  .bank {
+    position: absolute;
+    width: 52%;
+    top: 58%;
+    left: 3%;
+  }
+
+  .lake {
+    position: absolute;
+    width: 55%;
+    top: 71%;
+    left: -13%;
+  }
+
+  .trees {
+    position: absolute;
+    width: 21%;
+    top: 72%;
+    left: 37%;
+  }
+
+  .mountains {
+    position: absolute;
+    width: 35%;
+    top: 37%;
+    left: 3%;
+  }
+
+  .gondel {
+    position: absolute;
+    width: 110%;
+    top: 21%;
+    left: -5%;
+  }
+
+  .coins {
+    position: absolute;
+    width: 10%;
+    top: 9%;
+    left: 79%;
+  }
+
+  .coins-text {
+    position: absolute;
+    top: 14%;
+    left: 84%;
+    transform: translateX(-50%);
+  }
+
+  .room1 {
+    position: absolute;
+    width: 31%;
+    top: 69.7%;
+    left: 67%;
+  }
+
+  .room2 {
+    position: absolute;
+    width: 31%;
+    top: 54.2%;
+    left: 67%;
+  }
+
+  .room3 {
+    position: absolute;
+    width: 31%;
+    top: 38.6%;
+    left: 66.2%;
+  }
+
+  .room4 {
+    position: absolute;
+    width: 31%;
+    top: 22.7%;
+    left: 66.5%;
+  }
+
+  .room5 {
+    position: absolute;
+    width: 31%;
+    top: 6.1%;
+    left: 38.5%;
+  }
+
+  .room6 {
+    position: absolute;
+    width: 31%;
+    top: 6.2%;
+    left: 1.5%;
   }
 }
