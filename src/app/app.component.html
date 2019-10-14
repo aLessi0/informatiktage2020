@@ -4,12 +4,11 @@
   <button (click)="startGame()">GAME STARTEN</button>
 </div>
 <div class="game-is_running" *ngIf="!loadingProgress && progressAvailable">
-  <button (click)="activeRoomColor = 'blue'">Open Blue Room</button><br/>
-  <button (click)="activeRoomColor = 'red'">Open Red Room</button><br/>
-  <button (click)="activeRoomColor = 'yellow'">Open Yellow Room</button><br/>
+  <button [disabled]="!room.isUnlocked" (click)="activateRoom(room)" *ngFor="let room of game.rooms">
+    open {{room.name}}</button>
   <app-map></app-map>
   <app-room [roomColor]="activeRoomColor" *ngIf="activeRoomColor" (onClose)="activeRoomColor = ''">
-    this is my room!
+    <app-quiz-room></app-quiz-room>
   </app-room>
 </div>
 <div *ngIf="loadingProgress">

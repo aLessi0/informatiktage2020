@@ -5,6 +5,8 @@ import {PlayedLevelModel} from './model/user/played-level.model';
 import {AnswerModel} from './model/user/answer.model';
 import {DebounceUtils} from './utils/debounce.utils';
 import {HttpClient} from '@angular/common/http';
+import {RoomModel} from './model/game/room.model';
+import {GameModel} from './model/game/game.model';
 
 @Component({
   selector: 'app-root',
@@ -15,6 +17,7 @@ export class AppComponent implements DoCheck {
   public progressAvailable = false;
   public loadingProgress = true;
   public progress: ProgressModel;
+  public game: GameModel;
 
   private readonly differ: KeyValueDiffer<string, string>;
 
@@ -31,11 +34,21 @@ export class AppComponent implements DoCheck {
               @Inject(KeyValueDiffers) readonly differs: KeyValueDiffers,
               @Inject(HttpClient) private readonly http: HttpClient) {
     this.differ = differs.find([]).create();
+
+    this.dataService.game$.subscribe((game: GameModel) => {
+      this.game = game;
+    });
+
     this.loadProgress();
     /* http backend test */
     this.http.post('/api/write', '').subscribe(() => {
       console.log('works');
     });
+  }
+
+  public activateRoom(room: RoomModel): void {
+    this.dataService.activateRoom(room);
+    this.activeRoomColor = room.color;
   }
 
   public ngDoCheck() {

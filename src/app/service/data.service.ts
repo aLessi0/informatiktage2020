@@ -87,7 +87,7 @@ export class DataService {
     const room1: RoomModel = new RoomModel();
     room1.level = 1;
     room1.name = 'Requirements & Design';
-    room1.logo = 'url to logo';
+    room1.logo = '/assets/sprites/Icon/Idea.svg';
     room1.color = 'yellow';
     room1.intro = 'In diesem Raum geht es um Requirements und Design!';
     room1.attachments = [];
