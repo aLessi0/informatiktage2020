@@ -7,8 +7,9 @@
   <button [disabled]="!room.isUnlocked" (click)="activateRoom(room)" *ngFor="let room of game.rooms">
     open {{room.name}}</button>
   <app-map></app-map>
-  <app-room [roomColor]="activeRoomColor" *ngIf="activeRoomColor" (onClose)="activeRoomColor = ''">
-    <app-quiz-room></app-quiz-room>
+  <app-room [room]="currentRoom" *ngIf="currentRoom" (onClose)="leaveActiveRoom()">
+    <app-quiz-room *ngIf="currentRoom"></app-quiz-room>
+    <!-- SUPER DUPER LAST ROOM MIT NGIF="!CURRENTROOM"-->
   </app-room>
 </div>
 <div *ngIf="loadingProgress">
