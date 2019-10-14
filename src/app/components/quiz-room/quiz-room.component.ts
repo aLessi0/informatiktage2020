@@ -13,6 +13,7 @@ export class QuizRoomComponent implements OnInit {
   constructor(@Inject(DataService) private readonly dataService: DataService) {
     this.dataService.activeRoom$.subscribe((activeRoom) => {
       this.activeRoom = activeRoom;
+      console.log(this.activeRoom);
     });
   }
 
