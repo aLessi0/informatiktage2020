@@ -6,6 +6,7 @@
     width: 100%;
     top: 0;
     left: 0;
+    align-items: center;
     background-color: white;
     display: flex;
 
@@ -13,32 +14,39 @@
       --room-color: blue;
     }
 
-    &.room-green {
-      --room-color: green;
+    &.room-red {
+      --room-color: red;
+    }
+
+    &.room-yellow {
+      --room-color: yellow;
     }
 
     .bg-street {
-      flex: 0;
-      margin-left: 1rem;
-
-      .stretch-street {
-        height: 100%;
-      }
+      height: 100%;
     }
 
     .bg-rectangle {
+      display: flex;
       flex: 1;
-      margin: 1rem 0;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      left: 10%;
 
-      .stretch-bg {
-        height: 100%;
-
-
-
+      .map-nav {
+        position: absolute;
+        right: 0;
+        top: 0;
       }
+
+      .room-content {
+        position: absolute;
+        height: 85%;
+        width: 85%;
+      }
+
     }
 
-
   }
-
 }

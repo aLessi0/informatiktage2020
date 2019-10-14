@@ -4,7 +4,9 @@
 
   .game-is_running {
     display: flex;
+    flex-direction: column;
     flex: 1 0 auto;
+    position: relative;
   }
 
   @media (max-aspect-ratio: 9/21) {
