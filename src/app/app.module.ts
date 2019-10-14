@@ -7,11 +7,20 @@ import {QuizRoomComponent} from './components/quiz-room/quiz-room.component';
 import {FormsModule} from '@angular/forms';
 import {MapComponent} from './components/map/map.component';
 import {WelcomeComponent} from './welcome/welcome.component';
+import {RoomComponent} from './components/room/room.component';
+import {AngularSvgIconModule} from 'angular-svg-icon';
+import {OverlayCardComponent} from './components/base/overlay-card/overlay-card.component';
+import {ButtonComponent} from './components/base/button/button.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     MapComponent,
+    RoomComponent,
+    QuizRoomComponent,
+    OverlayCardComponent,
+    ButtonComponent
     QuizRoomComponent,
     AppComponent,
     WelcomeComponent
@@ -19,7 +28,8 @@ import {WelcomeComponent} from './welcome/welcome.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AngularSvgIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
