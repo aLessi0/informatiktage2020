@@ -1,0 +1,193 @@
+.person {
+  &.animation0-1 {
+    animation: animation0-1 1s 1 linear;
+  }
+
+  &.animation1-0 {
+    animation: animation0-1 1s 1 reverse linear;
+  }
+
+  &.animation1-2 {
+    animation: animation1-2 1s 1 linear;
+  }
+
+  &.animation1-3 {
+    animation: animation1-3 2s 1 linear;
+  }
+
+  &.animation1-4 {
+    animation: animation1-4 3s 1 linear;
+  }
+
+  &.animation1-5 {
+    animation: animation1-5 4s 1 linear;
+  }
+
+  &.animation1-6 {
+    animation: animation1-6 5s 1 linear;
+  }
+
+  //&.animation2-1 {
+  //  animation: animation1-2 1s 1 reverse linear;
+  //}
+  //
+  //&.animation2-3 {
+  //  animation: animation2-3 1s 1 linear;
+  //}
+  //
+  //&.animation2-4 {
+  //  animation: animation2-4 2s 1 linear;
+  //}
+  //
+  //&.animation2-5 {
+  //  animation: animation2-5 3s 1 linear;
+  //}
+  //
+  //&.animation2-6 {
+  //  animation: animation2-6 4s 1 linear;
+  //}
+  //
+  //&.animation3-1 {
+  //  animation: animation1-3 2s 1 reverse linear;
+  //}
+  //
+  //&.animation3-2 {
+  //  animation: animation2-3 1s 1 reverse linear;
+  //}
+  //
+  //&.animation3-4 {
+  //  animation: animation3-4 1s 1 linear;
+  //}
+  //
+  //&.animation3-5 {
+  //  animation: animation3-5 2s 1 linear;
+  //}
+  //
+  //&.animation3-6 {
+  //  animation: animation3-6 3s 1 linear;
+  //}
+  //
+  //&.animation4-1 {
+  //  animation: animation1-4 3s 1 reverse linear;
+  //}
+  //
+  //&.animation4-2 {
+  //  animation: animation2-4 2s 1 reverse linear;
+  //}
+  //
+  //&.animation4-3 {
+  //  animation: animation3-4 1s 1 reverse linear;
+  //}
+  //
+  //&.animation4-5 {
+  //  animation: animation4-5 1s 1 linear;
+  //}
+  //
+  //&.animation4-6 {
+  //  animation: animation4-6 2s 1 linear;
+  //}
+  //
+  //&.animation5-1 {
+  //  animation: animation1-5 4s 1 reverse linear;
+  //}
+  //
+  //&.animation5-2 {
+  //  animation: animation2-5 3s 1 reverse linear;
+  //}
+  //
+  //&.animation5-3 {
+  //  animation: animation3-5 2s 1 reverse linear;
+  //}
+  //
+  //&.animation5-4 {
+  //  animation: animation4-5 1s 1 reverse linear;
+  //}
+  //
+  //&.animation5-6 {
+  //  animation: animation5-6 1s 1 linear;
+  //}
+  //
+  //&.animation6-1 {
+  //  animation: animation1-6 5s 1 reverse linear;
+  //}
+  //
+  //&.animation6-2 {
+  //  animation: animation2-6 4s 1 reverse linear;
+  //}
+  //
+  //&.animation6-3 {
+  //  animation: animation3-6 3s 1 reverse linear;
+  //}
+  //
+  //&.animation6-4 {
+  //  animation: animation4-6 2s 1 reverse linear;
+  //}
+  //
+  //&.animation6-5 {
+  //  animation: animation5-6 1s 1 reverse linear;
+  //}
+}
+
+@keyframes animation0-1 {
+  0% {top: 93%; left: 75%;}
+  10% {left: 71%;}
+  20% {left: 69%;}
+  30% {left: 67%;}
+  40% {left: 66%;}
+  50% {left: 65%;}
+  60% {left: 64%;}
+  70% {left: 63%;}
+  80% {left: 62%;}
+  90% {left: 61%;}
+  100% {top: 76%; left: 61%;}
+}
+
+@keyframes animation1-2 {
+  0% {top: 76%; left: 61%;}
+  50% {left: 61%;}
+  80% {left: 59%;}
+  100% {top: 61%; left: 58%;}
+}
+
+@keyframes animation1-3 {
+  0% {top: 76%; left: 61%;}
+  25% {left: 61%;}
+  40% {left: 59%;}
+  50% {left: 58%;}
+  100% {top: 46%;left: 61%;}
+}
+
+@keyframes animation1-4 {
+  0% {top: 76%; left: 61%;}
+  16.7% {left: 61%;}
+  26.7% {left: 59%;}
+  33.3% {left: 58%;}
+  66.7% {left: 61%;}
+  75% {left: 64%;}
+  100% {top: 29%; left: 63%;}
+}
+
+@keyframes animation1-5 {
+  0% {top: 76%; left: 61%;}
+  12.5% {left: 61%;}
+  20% {left: 59%;}
+  25% {left: 58%;}
+  50% {left: 61%;}
+  56.25% {left: 64%;}
+  75% {left: 63%;}
+  85% {top: 22%; left: 62%;}
+  100% {top: 21%; left: 54%;}
+}
+
+@keyframes animation1-6 {
+  0% {top: 76%; left: 61%;}
+  10% {left: 61%;}
+  16% {left: 59%;}
+  25% {left: 58%;}
+  33.3% {left: 61%;}
+  50% {left: 64%;}
+  66.7% {left: 63%;}
+  70.83% {top: 22%; left: 62%;}
+  83.3% {top: 21%; left: 54%;}
+  100% {top: 20%; left: 16%;}
+}

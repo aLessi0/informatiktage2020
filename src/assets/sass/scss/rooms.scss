@@ -1,0 +1,25 @@
+@import 'colors';
+
+.room-welt-informatik {
+  --room-color: #{$beige};
+}
+
+.room-req-design {
+  --room-color: #{$blush};
+}
+
+.room-entwicklung-test {
+  --room-color: #{$lichen};
+}
+
+.room-build-deploy {
+  --room-color: #{$pale-teal};
+}
+
+.room-recruiting {
+  --room-color: #{$cloudy-blue};
+}
+
+.room-playground {
+  --room-color: #{$pale-purple};
+}
