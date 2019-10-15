@@ -76,31 +76,35 @@ export class DataService {
 
   public answeredMandatoryQuestion(activeRoom: RoomModel, question: QuestionModel) {
     question.isCorrect = question.clientAnswer && question.clientAnswer.toLocaleLowerCase() === question.correctAnswer.toLocaleLowerCase();
+    question.answered = true;
 
     /* only valid if the key hasn't been collected yet */
-    if (question.isCorrect && !activeRoom.keyCollected) {
-      question.answered = true;
+    if (question.isCorrect && !question.wasRightAtLeastOnce) {
       activeRoom.keyCollected = true;
-      this.roomUpdated();
-      this.activeRoomUpdated();
-      this.unlockNextRoom();
+      question.wasRightAtLeastOnce = true;
     }
+
+    this.roomUpdated();
+    this.activeRoomUpdated();
+    this.unlockNextRoom();
 
   }
 
   public answeredOptionQuestion(activeRoom: RoomModel, question: QuestionModel) {
     question.isCorrect = question.clientAnswer && question.clientAnswer.toLocaleLowerCase() === question.correctAnswer.toLocaleLowerCase();
+    question.answered = true;
 
     /* coins are only rewarded if the question hasn't been answered yet */
-    if (!question.answered && question.isCorrect) {
+    if (question.isCorrect && !question.wasRightAtLeastOnce) {
       const progress = this.progressSource.getValue();
+      question.wasRightAtLeastOnce = true;
       progress.coins++;
-      question.answered = true;
       activeRoom.coinsCollected++;
-      this.progressUpdated();
-      this.roomUpdated();
-      this.activeRoomUpdated();
     }
+
+    this.progressUpdated();
+    this.roomUpdated();
+    this.activeRoomUpdated();
   }
 
   public unlockNextRoom(): void {
