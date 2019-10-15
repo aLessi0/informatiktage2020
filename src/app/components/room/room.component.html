@@ -31,8 +31,6 @@
     <svg-icon class="room-bg" src="/assets/sprites/Background/Room.svg" [svgStyle]="{'width': '100%'}"></svg-icon>
 
     <div class="room-content">
-      <button *ngFor="let question of room.questions" (click)="openQuestion(question)">{{question.number}}</button>
-      <button (click)="openInfoModal()">info modal oeffnen</button>
       <ng-content></ng-content>
     </div>
   </div>
