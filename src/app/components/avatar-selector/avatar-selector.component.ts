@@ -1,5 +1,7 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {ImageMapCoordinate} from "../image-map/image-map.component";
+import {Component, EventEmitter, Inject, Input, OnInit, Output} from '@angular/core';
+import {DataService} from "../../service/data.service";
+import {animate, group, query, state, style, transition, trigger} from "@angular/animations";
+import {reduce} from "rxjs/operators";
 
 @Component({
   selector: 'app-avatar-selector',
@@ -7,58 +9,78 @@ import {ImageMapCoordinate} from "../image-map/image-map.component";
   styleUrls: ['./avatar-selector.component.scss']
 })
 
+  /*
+animations: [
+  trigger('theChoosenOne', [
+    transition('up <=> down', [
+      animate('0.5s')
+    ]),
+    state('up', style({
+      opacity: 0.5,
+      backgroundColor: 'green'
+    })),
+    state('down', style({
+      opacity: 1,
+      backgroundColor: 'blue'
+    }))
+  ])
+  ]
+})
+
+/*
+animations: [
+  trigger('theChoosenOne', [
+    transition('* <=> *', [
+      group([
+        query('up', [
+          style({transform: 'translateX(100%)'}),
+          animate('0.4s easy-in-out', style({transform: 'translateX(0%)'}))
+        ], {optional: true}),
+        query('down', [
+          style({transform: 'translateX(0%)'}),
+          animate('0.4s easy-in-out', style({transform: 'translateX(-100%)'}))
+        ], {optional: true}),
+      ])
+    ]),
+  ]),
+  trigger('squash',  [
+    state('* <=> *', style({
+      'text-transform':  'uppercase',
+    })),
+    transition(':decrement',  [
+      animate('100ms', style({
+        transform:  'scale(0.9, 0.9)',
+      })),
+      animate('300ms'),
+    ]),
+  ])
+]
+*/
 
 export class AvatarSelectorComponent implements OnInit {
 
-  public selectAvatar;
-  public chosenAvatarType: string = "Girl";
+  private chosenAvatarType: string;
+  private avatarImageBasePath = '/assets/sprites/Icon/Avatar/';
 
-  image = "../../../assets/sprites/Icon/Avatar/Family.svg";
-  coordinates: ImageMapCoordinate[] = [
-    {
-      name: 'Girl',
-      x: 0,
-      y: 30,
-      width: 95,
-      height: 220
-    },
-    {
-      name: 'Man',
-      x: 95,
-      y: 30,
-      width: 95,
-      height: 220
-    },
-    {
-      name: 'Woman',
-      x: 190,
-      y: 30,
-      width: 95,
-      height: 220
-    },
-    {
-      name: 'Boy',
-      x: 280,
-      y: 30,
-      width: 95,
-      height: 220
-    }
-  ];
+  constructor(@Inject(DataService) private readonly dataService: DataService) {
+  }
 
   ngOnInit() {
-    this.selectAvatar = false;
-    console.log("init avatar selector component");
+    console.log('init avatar selector component');
   }
 
-  chooseAvatar(avatarNameType: string) {
-    this.chosenAvatarType = avatarNameType;
-    console.log("choosenAvatar:", avatarNameType, " type: ", this.chosenAvatarType);
-    this.selectAvatar = true;
+  public chooseAvatarType(event, avatarType) {
+    console.log(event)
+    console.log("active chosen avatar:", avatarType);
+    this.chosenAvatarType = avatarType;
   }
 
-  getClick(coordinate: ImageMapCoordinate) {
-    console.log(`Clicked on ${coordinate.name}`);
-    this.chooseAvatar(coordinate.name);
+
+  public createAvatar() {
+    console.log("create avatar: ", this.chosenAvatarType);
+    this.dataService.initData(this.chosenAvatarType).then(() => {
+      console.log('avatar created');
+    });
   }
 
 }

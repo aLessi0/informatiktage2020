@@ -12,9 +12,7 @@ import {ButtonComponent} from './components/base/button/button.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {AngularMaterialModule} from './components/modal/angular-material.module';
 import {QuizfrageComponent} from './components/base/quizfrage/quizfrage.component';
-import {AvatarComponent} from './components/avatar/avatar.component';
-import {AvatarSelectorComponent} from './components/avatar-selector/avatar-selector.component';
-import {ImageMapComponent} from './components/image-map/image-map.component';
+import { AvatarSelectorComponent } from './components/avatar-selector/avatar-selector.component';
 import {FeedbackComponent} from './components/modal/feedback/feedback.component';
 import {InfotextComponent} from './components/base/infotext/infotext.component';
 import { WeltDerInformatikComponent } from './components/room/1-welt-der-informatik/welt-der-informatik.component';
@@ -32,9 +30,7 @@ import { PlaygroundComponent } from './components/room/6-playground/playground.c
     QuizfrageComponent,
     ButtonComponent,
     WelcomeComponent,
-    AvatarComponent,
     AvatarSelectorComponent,
-    ImageMapComponent,
     InfotextComponent,
     WeltDerInformatikComponent,
     RequirementDesignComponent,
