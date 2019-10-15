@@ -44,6 +44,7 @@ export class AppComponent implements DoCheck {
     // this.http.post('/api/write', '').subscribe(() => {
     //   console.log('works');
     // });
+
   }
 
   public leaveActiveRoom(): void {
@@ -53,12 +54,6 @@ export class AppComponent implements DoCheck {
   public ngDoCheck() {
     this.ngZone.runOutsideAngular(() => {
       this.checkForSave();
-    });
-  }
-
-  public startGame(): void {
-    this.dataService.initData().then(() => {
-      // this.loadProgress();
     });
   }
 

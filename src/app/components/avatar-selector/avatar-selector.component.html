@@ -1,0 +1,16 @@
+<div class="content">
+
+  <div class="child-title">
+    <h1>Wähle dein Charakter aus.</h1>
+  </div>
+
+  <div class="child-avatar-family" *ngIf="!selectAvatar">
+    <image-map [src]="image" [coordinates]="coordinates" (onClick)="getClick($event)" canEdit="true"></image-map>
+  </div>
+
+  <app-avatar [avatarType]="chosenAvatarType" *ngIf="selectAvatar"></app-avatar>
+
+  <div class="child-footer">
+  </div>
+
+</div>

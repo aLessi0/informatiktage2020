@@ -1,6 +1,8 @@
-<div class="welcome-container" *ngIf="!progressAvailable">
-  <app-welcome></app-welcome>
+
+<div class="avatar-container" *ngIf="!progressAvailable">
+    <app-avatar-selector *ngIf="!selectAvatar"></app-avatar-selector>
 </div>
+
 <div class="game-is_running" *ngIf="progressAvailable">
   <app-map [game]="game" [progress]="progress" *ngIf="!currentRoom"></app-map>
   <app-room [room]="currentRoom" *ngIf="currentRoom" (onClose)="leaveActiveRoom()">
