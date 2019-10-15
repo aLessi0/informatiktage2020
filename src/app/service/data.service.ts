@@ -1,10 +1,10 @@
 import {Injectable} from '@angular/core';
-import {GameModel} from "../model/game/game.model";
-import {RoomModel} from "../model/game/room.model";
-import {AttachmentModel} from "../model/game/attachment.model";
-import {QuestionModel} from "../model/game/question.model";
-import {ProgressModel} from "../model/user/progress.model";
-import {BehaviorSubject, Observable, Subject} from "rxjs";
+import {GameModel} from '../model/game/game.model';
+import {RoomModel} from '../model/game/room.model';
+import {AttachmentModel} from '../model/game/attachment.model';
+import {QuestionModel} from '../model/game/question.model';
+import {ProgressModel} from '../model/user/progress.model';
+import {BehaviorSubject, Observable, Subject} from 'rxjs';
 
 class AsyncLocalStorage {
   public static setItem(key, value): Promise<void> {
