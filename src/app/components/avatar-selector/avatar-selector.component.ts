@@ -1,5 +1,4 @@
 import {Component, EventEmitter, Inject, Input, OnInit, Output} from '@angular/core';
-import {ImageMapCoordinate} from "../image-map/image-map.component";
 import {DataService} from "../../service/data.service";
 
 @Component({
