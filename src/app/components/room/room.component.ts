@@ -4,6 +4,7 @@ import {QuestionModel} from '../../model/game/question.model';
 import {DataService} from '../../service/data.service';
 import {ModalService} from '../../service/modal.service';
 import {QuizfrageComponent} from '../base/quizfrage/quizfrage.component';
+import {FeedbackComponent} from "../modal/feedback/feedback.component";
 
 @Component({
   selector: 'app-room',
@@ -21,9 +22,11 @@ export class RoomComponent {
 
   public closeRoom(): void {
     if (!this.room.feedback) {
-      //  no feedback yet, intercept with feedback screen
+      this.modalService.openDialog(FeedbackComponent, true).subscribe(() => this.onClose.emit());
+    } else {
+      this.onClose.emit();
     }
-    this.onClose.emit();
+
   }
 
   public openQuestion(question: QuestionModel): void {
