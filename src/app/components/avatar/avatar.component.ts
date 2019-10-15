@@ -26,7 +26,6 @@ export class AvatarComponent implements OnInit {
   public createAvatar() {
     this.dataService.initData(this.avatarType).then(() => {
       console.log('avatar created');
-      this.dataService.avatar.next();
     });
   }
 }

@@ -28,9 +28,6 @@ export class DataService {
   private gameSource: BehaviorSubject<GameModel> = new BehaviorSubject(undefined);
   private progressSource: BehaviorSubject<ProgressModel> = new BehaviorSubject(undefined);
 
-  private activeRoomSubject: BehaviorSubject<RoomModel> = new BehaviorSubject(undefined);
-  private gameSource: BehaviorSubject<GameModel> = new BehaviorSubject(DataService.createGameData());
-
   constructor() {
     this.game$ = this.gameSource.asObservable();
     this.activeRoom$ = this.activeRoomSubject.asObservable();
