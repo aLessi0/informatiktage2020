@@ -9,6 +9,7 @@
     <svg-icon src="/assets/sprites/Background/Room.svg" [svgStyle]="{'width': '100%'}" class="stretch-bg"></svg-icon>
 
     <div class="room-content">
+      <button *ngFor="let question of room.questions" (click)="openQuestion(question)">{{question.number}}</button>
       <ng-content></ng-content>
     </div>
   </div>
