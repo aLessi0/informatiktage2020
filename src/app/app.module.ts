@@ -25,7 +25,6 @@ import {InfotextComponent} from './components/base/infotext/infotext.component';
     ButtonComponent,
     WelcomeComponent,
     AvatarSelectorComponent,
-    ImageMapComponent,
     InfotextComponent
   ],
   imports: [

@@ -1,5 +1,7 @@
 import {Component, EventEmitter, Inject, Input, OnInit, Output} from '@angular/core';
 import {DataService} from "../../service/data.service";
+import {animate, group, query, state, style, transition, trigger} from "@angular/animations";
+import {reduce} from "rxjs/operators";
 
 @Component({
   selector: 'app-avatar-selector',
@@ -7,6 +9,53 @@ import {DataService} from "../../service/data.service";
   styleUrls: ['./avatar-selector.component.scss']
 })
 
+  /*
+animations: [
+  trigger('theChoosenOne', [
+    transition('up <=> down', [
+      animate('0.5s')
+    ]),
+    state('up', style({
+      opacity: 0.5,
+      backgroundColor: 'green'
+    })),
+    state('down', style({
+      opacity: 1,
+      backgroundColor: 'blue'
+    }))
+  ])
+  ]
+})
+
+/*
+animations: [
+  trigger('theChoosenOne', [
+    transition('* <=> *', [
+      group([
+        query('up', [
+          style({transform: 'translateX(100%)'}),
+          animate('0.4s easy-in-out', style({transform: 'translateX(0%)'}))
+        ], {optional: true}),
+        query('down', [
+          style({transform: 'translateX(0%)'}),
+          animate('0.4s easy-in-out', style({transform: 'translateX(-100%)'}))
+        ], {optional: true}),
+      ])
+    ]),
+  ]),
+  trigger('squash',  [
+    state('* <=> *', style({
+      'text-transform':  'uppercase',
+    })),
+    transition(':decrement',  [
+      animate('100ms', style({
+        transform:  'scale(0.9, 0.9)',
+      })),
+      animate('300ms'),
+    ]),
+  ])
+]
+*/
 
 export class AvatarSelectorComponent implements OnInit {
 
@@ -25,6 +74,7 @@ export class AvatarSelectorComponent implements OnInit {
     console.log("active chosen avatar:", avatarType);
     this.chosenAvatarType = avatarType;
   }
+
 
   public createAvatar() {
     console.log("create avatar: ", this.chosenAvatarType);
