@@ -45,6 +45,45 @@ export class DataService {
     this.activeRoomSubject.next(undefined);
   }
 
+  /*
+  *  since we mutate the object byRef, the values are updated everywhere. However, we notify
+  * each subscriber to give the possibilty to react to changes.
+  */
+  public activeRoomUpdated(): void {
+    this.activeRoomSubject.next(this.activeRoomSubject.getValue());
+  }
+
+  /* informs subscriber of a gameModel change (room value updated, coins reward etc */
+  public roomUpdated() {
+    this.gameSource.next(this.gameSource.getValue());
+  }
+
+  public answeredMandatoryQuestion(activeRoom: RoomModel, question: QuestionModel) {
+    question.isCorrect = question.clientAnswer && question.clientAnswer.toLocaleLowerCase() === question.correctAnswer.toLocaleLowerCase();
+
+    /* only valid if the key hasn't been collected yet */
+    if (question.isCorrect && !activeRoom.keyCollected) {
+      question.answered = true;
+      activeRoom.keyCollected = true;
+      this.roomUpdated();
+      this.activeRoomUpdated();
+      this.unlockNextRoom();
+    }
+
+  }
+
+  public answeredOptionQuestion(activeRoom: RoomModel, question: QuestionModel) {
+    question.isCorrect = question.clientAnswer && question.clientAnswer.toLocaleLowerCase() === question.correctAnswer.toLocaleLowerCase();
+
+    /* coins are only rewarded if the question hasn't been answered yet */
+    if (!question.answered && question.isCorrect) {
+      question.answered = true;
+      activeRoom.coinsCollected++;
+      this.roomUpdated();
+      this.activeRoomUpdated();
+    }
+  }
+
   public unlockNextRoom(): void {
     const progress = this.progressSource.getValue();
     progress.unlockedLevel++;
@@ -98,8 +137,7 @@ export class DataService {
     room1.intro = 'In diesem Raum geht es um Requirements und Design!';
     room1.attachments = [];
     room1.questions = [];
-    room1.isUnlocked = true;
-    room1.justUnlocked = true;
+    room1.coinsCollected = 0;
 
     const room1Attachment1: AttachmentModel = new AttachmentModel();
     room1Attachment1.file = 'url to path';
@@ -130,6 +168,7 @@ export class DataService {
     room2.intro = 'In diesem Raum geht es um Entwicklung und TEst!';
     room2.attachments = [];
     room2.questions = [];
+    room2.coinsCollected = 0;
 
     const room2Attachment1: AttachmentModel = new AttachmentModel();
     room2Attachment1.file = 'url to path';
@@ -160,6 +199,7 @@ export class DataService {
     room3.intro = 'In diesem Raum geht es um Build, Deployment & Operate!';
     room3.attachments = [];
     room3.questions = [];
+    room3.coinsCollected = 0;
 
     const room3Attachment1: AttachmentModel = new AttachmentModel();
     room3Attachment1.file = 'url to path';
