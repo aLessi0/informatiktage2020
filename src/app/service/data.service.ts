@@ -45,14 +45,10 @@ export class DataService {
     this.activeRoomSubject.next(undefined);
   }
 
-  public unlockNextRoom(currentRoom: RoomModel): void {
-    const game = this.gameSource.getValue();
-    game.rooms.forEach((room) => {
-      if (currentRoom.level + 1 === room.level) {
-        room.isUnlocked = true;
-        room.justUnlocked = true;
-      }
-    });
+  public unlockNextRoom(): void {
+    const progress = this.progressSource.getValue();
+    progress.unlockedLevel++;
+    this.progressSource.next(progress);
   }
 
   public saveProgress(progress: ProgressModel): Promise<void> {
@@ -82,7 +78,7 @@ export class DataService {
     progress.collectedReward = false;
     progress.coins = 0;
     progress.playedLevels = [];
-    progress.unlockedLevel = 0;
+    progress.unlockedLevel = 1;
 
     return progress;
   }

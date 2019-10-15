@@ -18,15 +18,14 @@ export class MapComponent {
   }
 
   public activateRoom(roomNumber: number): void {
-    const roomToActivate = this.getRoomByNumber(roomNumber);
-    if (roomToActivate && roomToActivate.isUnlocked) {
+    if (this.isRoomUnlocked(roomNumber)) {
       this.dataService.activateRoom(this.getRoomByNumber(roomNumber));
     }
   }
 
   public isRoomUnlocked(roomNumber: number): boolean {
     const room = this.getRoomByNumber(roomNumber);
-    return room && room.isUnlocked;
+    return room && room.level <= this.progress.unlockedLevel;
   }
 
 
