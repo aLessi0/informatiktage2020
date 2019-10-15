@@ -5,6 +5,7 @@ import {DataService} from '../../service/data.service';
 import {ModalService} from '../../service/modal.service';
 import {QuestionModel} from '../../model/game/question.model';
 import {QuizfrageComponent} from '../base/quizfrage/quizfrage.component';
+import {InfotextComponent, InfotextData} from '../base/infotext/infotext.component';
 
 @Component({
   selector: 'app-room',
@@ -14,7 +15,7 @@ import {QuizfrageComponent} from '../base/quizfrage/quizfrage.component';
 export class RoomComponent implements OnInit {
   @Input() public room: RoomModel;
   @Output() private onClose: EventEmitter<void> = new EventEmitter();
-  
+
   public optionalQuestions: number[];
   private mandatoryQuestionWasAnsweredOnEntry: boolean;
 
@@ -45,6 +46,16 @@ export class RoomComponent implements OnInit {
     this.modalService.openDialog(QuizfrageComponent, false).subscribe(() => {
       this.dataService.unselectQuesion();
     });
+  }
+
+  public openInfoModal(): void {
+    const text: InfotextData = {
+      text: '"Lorem Ipsum Dolor Sit anem!" schrie Dumbledore durch den Wald.' +
+        ' Die Affen jedoch reagierten kaum und so konnte Mittelerde vom Terminator ' +
+        'verschohnt werden. Im Hintergrund hört man Dumbo sagen: "Möge die Macht mit dir sein"'
+    };
+    this.modalService.openDialog(InfotextComponent, false, text)
+      .subscribe(() => console.log('closed'));
   }
 
 }
