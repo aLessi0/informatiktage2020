@@ -23,7 +23,6 @@ export class DataService {
   public activeRoom$: Observable<RoomModel>;
   public game$: Observable<GameModel>;
   public progress$: Observable<ProgressModel>;
-  public avatar$;
 
   private activeRoomSubject: BehaviorSubject<RoomModel> = new BehaviorSubject(undefined);
   private gameSource: BehaviorSubject<GameModel> = new BehaviorSubject(undefined);
@@ -31,13 +30,11 @@ export class DataService {
 
   private activeRoomSubject: BehaviorSubject<RoomModel> = new BehaviorSubject(undefined);
   private gameSource: BehaviorSubject<GameModel> = new BehaviorSubject(DataService.createGameData());
-  public avatar = new Subject<void>();
 
   constructor() {
     this.game$ = this.gameSource.asObservable();
     this.activeRoom$ = this.activeRoomSubject.asObservable();
     this.progress$ = this.progressSource.asObservable();
-    this.avatar$ = this.avatar.asObservable();
 
     this.loadGame().then(game => this.gameSource.next(game));
     this.loadProgress().then(progress => this.progressSource.next(progress));
@@ -77,16 +74,6 @@ export class DataService {
   private loadGame(): Promise<GameModel> {
     return AsyncLocalStorage.getItem('game').then((value) => value && JSON.parse(value));
 
-  }
-
-  public initAvatar(nickname, avatarType): Promise<void> {
-    const avatar: AvatarModel = DataService.createAvatarData(nickname, avatarType);
-    return AsyncLocalStorage.setItem('avatar', JSON.stringify(avatar))
-
-  }
-
-  public loadAvatar(): Promise<AvatarModel> {
-    return AsyncLocalStorage.getItem('avatar').then((value) => value && JSON.parse(value));
   }
 
   public loadProgress(): Promise<ProgressModel> {
