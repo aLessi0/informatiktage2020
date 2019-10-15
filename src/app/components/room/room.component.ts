@@ -1,10 +1,10 @@
 import {Component, EventEmitter, Inject, Input, OnInit, Output} from '@angular/core';
 import {RoomModel} from '../../model/game/room.model';
-import {QuestionModel} from '../../model/game/question.model';
+import {FeedbackComponent} from '../modal/feedback/feedback.component';
 import {DataService} from '../../service/data.service';
 import {ModalService} from '../../service/modal.service';
+import {QuestionModel} from '../../model/game/question.model';
 import {QuizfrageComponent} from '../base/quizfrage/quizfrage.component';
-import {FeedbackComponent} from "../modal/feedback/feedback.component";
 
 @Component({
   selector: 'app-room',
@@ -14,7 +14,8 @@ import {FeedbackComponent} from "../modal/feedback/feedback.component";
 export class RoomComponent implements OnInit {
   @Input() public room: RoomModel;
   @Output() private onClose: EventEmitter<void> = new EventEmitter();
-
+  
+  public optionalQuestions: number[];
   private mandatoryQuestionWasAnsweredOnEntry: boolean;
 
   constructor(@Inject(DataService) private readonly dataService: DataService,
@@ -22,6 +23,11 @@ export class RoomComponent implements OnInit {
   }
 
   public ngOnInit(): void {
+    this.optionalQuestions = [];
+    for (let i = 1; i < this.room.questions.length; i++) {
+      this.optionalQuestions.push(i);
+    }
+
     this.mandatoryQuestionWasAnsweredOnEntry = this.room.questions[0].answered;
   }
 

@@ -6,7 +6,7 @@
 <div class="game-is_running" *ngIf="progressAvailable">
   <app-map [game]="game" [progress]="progress" *ngIf="!currentRoom"></app-map>
   <app-room [room]="currentRoom" *ngIf="currentRoom" (onClose)="leaveActiveRoom()">
-    test
+    my room content
   </app-room>
 </div>
 
