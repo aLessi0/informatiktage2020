@@ -127,7 +127,7 @@ export class DataService {
     progress.playedLevels = [];
     progress.unlockedLevel = 1;
     progress.avatarType = avatarType;
-    progress.avatarPos = 1;
+    progress.avatarPos = 0;
 
     return progress;
   }
