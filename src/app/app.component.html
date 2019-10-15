@@ -1,7 +1,5 @@
-<div *ngIf="!progressAvailable">
-  <!-- ersetzen durch eine welcome-component -->
-  WILLKOMMEN, SIE SIND NEU HIER! STARTEN?<br/>
-  <button (click)="startGame()">GAME STARTEN</button>
+<div class="welcome-container" *ngIf="!progressAvailable">
+  <app-welcome></app-welcome>
 </div>
 <div class="game-is_running" *ngIf="progressAvailable">
   <app-map [game]="game" [progress]="progress" *ngIf="!currentRoom"></app-map>

@@ -1,12 +1,19 @@
 
 :host {
   display: flex;
+  position: relative;
 
   .game-is_running {
     display: flex;
     flex-direction: column;
     flex: 1 0 auto;
     position: relative;
+  }
+
+  .welcome-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 auto;
   }
 
   @media (max-aspect-ratio: 9/20) {
