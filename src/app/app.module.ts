@@ -12,9 +12,9 @@ import {ButtonComponent} from './components/base/button/button.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {AngularMaterialModule} from './components/modal/angular-material.module';
 import {QuizfrageComponent} from './components/base/quizfrage/quizfrage.component';
-import { AvatarComponent } from './components/avatar/avatar.component';
-import { AvatarSelectorComponent } from './components/avatar-selector/avatar-selector.component';
-import { ImageMapComponent } from './components/image-map/image-map.component';
+import {AvatarComponent} from './components/avatar/avatar.component';
+import {AvatarSelectorComponent} from './components/avatar-selector/avatar-selector.component';
+import {ImageMapComponent} from './components/image-map/image-map.component';
 import {FeedbackComponent} from './components/modal/feedback/feedback.component';
 
 @NgModule({
@@ -40,7 +40,10 @@ import {FeedbackComponent} from './components/modal/feedback/feedback.component'
   providers: [],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  entryComponents: [FeedbackComponent] // define modal components
+  entryComponents: [
+    FeedbackComponent,
+    QuizfrageComponent
+  ] // define modal components
 })
 
 export class AppModule {
