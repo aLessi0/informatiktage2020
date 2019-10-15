@@ -27,14 +27,14 @@
     animation: animation1-6 5s 1 linear;
   }
 
-  //&.animation2-1 {
-  //  animation: animation1-2 1s 1 reverse linear;
-  //}
-  //
-  //&.animation2-3 {
-  //  animation: animation2-3 1s 1 linear;
-  //}
-  //
+  &.animation2-1 {
+    animation: animation1-2 1s 1 reverse linear;
+  }
+
+  &.animation2-3 {
+    animation: animation2-3 1s 1 linear;
+  }
+
   //&.animation2-4 {
   //  animation: animation2-4 2s 1 linear;
   //}
