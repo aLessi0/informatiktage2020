@@ -28,7 +28,9 @@ export class RoomComponent {
 
   public openQuestion(question: QuestionModel): void {
     this.dataService.selectQuestion(question);
-    this.modalService.openDialog(QuizfrageComponent, false);
+    this.modalService.openDialog(QuizfrageComponent, false).subscribe(() => {
+      this.dataService.unselectQuesion();
+    });
   }
 
 }
