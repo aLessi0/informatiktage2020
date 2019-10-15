@@ -1,4 +1,5 @@
-@import "colors";
+@import 'colors';
+@import 'rooms';
 
 //base
 html, body {
@@ -13,6 +14,7 @@ html {
 }
 
 body {
+  overflow: hidden;
   margin: 0;
   display: flex;
   flex: 1 0 auto;

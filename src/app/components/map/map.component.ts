@@ -28,6 +28,11 @@ export class MapComponent {
     return room && room.level <= this.progress.unlockedLevel;
   }
 
+  public getRoomClass(roomNumber: number): string {
+    let room = this.getRoomByNumber(roomNumber);
+    return room && room.roomClass;
+  }
+
 
   private getRoomByNumber(roomNumber: number): RoomModel {
     return this.game.rooms[roomNumber];

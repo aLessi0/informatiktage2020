@@ -7,7 +7,7 @@ export class RoomModel {
   public justUnlocked: boolean;
   public name: string;
   public logo: string;
-  public color: string;
+  public roomClass: string;
   public intro: string;
   public attachments: AttachmentModel[];
   public questions: QuestionModel[];

@@ -94,7 +94,7 @@ export class DataService {
     room1.level = 1;
     room1.name = 'Requirements & Design';
     room1.logo = '/assets/sprites/Icon/Idea.svg';
-    room1.color = 'yellow';
+    room1.roomClass = 'room-welt-informatik';
     room1.intro = 'In diesem Raum geht es um Requirements und Design!';
     room1.attachments = [];
     room1.questions = [];
@@ -126,7 +126,7 @@ export class DataService {
     room2.level = 2;
     room2.name = 'Entwicklung & Test';
     room2.logo = 'url to logo';
-    room2.color = 'blue';
+    room2.roomClass = 'room-req-design';
     room2.intro = 'In diesem Raum geht es um Entwicklung und TEst!';
     room2.attachments = [];
     room2.questions = [];
@@ -156,7 +156,7 @@ export class DataService {
     room3.level = 3;
     room3.name = 'Build, Deployment & Operate';
     room3.logo = 'url to logo';
-    room3.color = 'red';
+    room3.roomClass = 'room-entwicklung-test';
     room3.intro = 'In diesem Raum geht es um Build, Deployment & Operate!';
     room3.attachments = [];
     room3.questions = [];
