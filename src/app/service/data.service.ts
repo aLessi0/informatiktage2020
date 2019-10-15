@@ -76,18 +76,14 @@ export class DataService {
 
   }
 
-  public loadProgress(): Promise<ProgressModel> {
-    return AsyncLocalStorage.getItem('progress').then((value) => value && JSON.parse(value));
-  }
-
   private static createProgressData(avatarType): ProgressModel {
     const progress: ProgressModel = new ProgressModel();
-    progress.avatarPos = 1;
     progress.collectedReward = false;
     progress.coins = 0;
     progress.playedLevels = [];
-    progress.unlockedLevel = 0;
+    progress.unlockedLevel = 1;
     progress.avatarType = avatarType;
+    progress.avatarPos = 1;
 
     return progress;
   }
