@@ -19,9 +19,9 @@
   .content {
     position: absolute;
     max-height: 88%;
-    max-width: 90%;
+    max-width: 80%;
     margin-top: 13%;
-    margin-left: 6%;
+    margin-left: 10%;
   }
 
   .child-title {
@@ -36,6 +36,7 @@
   .child-subtext {
     display: flex;
     flex: 1 0 auto;
+    flex-direction: column;
     justify-content: center;
     margin-top: 10%;
     margin-left: 5%;
@@ -50,17 +51,26 @@
     text-align: center;
   }
 
+  .child-icon {
+    display: flex;
+    flex: 1 0 auto;
+    justify-content: center;
+    margin-top: 10%;
+    margin-left: 5%;
+    text-align: center;
+  }
+
   .child-button {
     position: absolute;
-    flex: 1 0 auto;
-    margin-left: 40%;
-    bottom: 15%;
-    text-align: center;
+    width: 30%;
+    left: 35%;
+    bottom: 13%;
   }
 
   .child-swipe {
     position: absolute;
-    flex: 1 0 auto;
+    width: 20%;
+    left: 40%;
     text-align: center;
     bottom: 8%;
   }

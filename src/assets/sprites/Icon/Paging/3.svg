@@ -4,8 +4,8 @@
     <title>Icon/Paging/3</title>
     <desc>Created with Sketch.</desc>
     <g id="Icon/Paging/3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <circle id="Circle-Active" stroke="#000000" stroke-width="2" fill="#000000" cx="68" cy="7" r="7"></circle>
-        <circle id="Circle-Inactive" stroke="#000000" stroke-width="2" cx="37" cy="7" r="7"></circle>
-        <circle id="Circle-Inactive" stroke="#000000" stroke-width="2" cx="7" cy="7" r="7"></circle>
+        <circle id="Circle-Active" stroke="#000000" stroke-width="2" fill="#000000" cx="68" cy="7" r="6"></circle>
+        <circle id="Circle-Inactive" stroke="#000000" stroke-width="2" cx="37" cy="7" r="6"></circle>
+        <circle id="Circle-Inactive" stroke="#000000" stroke-width="2" cx="7" cy="7" r="6"></circle>
     </g>
 </svg>
