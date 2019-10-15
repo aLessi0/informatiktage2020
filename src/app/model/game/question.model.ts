@@ -6,4 +6,5 @@ export class QuestionModel {
   public isCorrect: boolean;
   public answered: boolean;
   public isMandatory: boolean;
+  public wasRightAtLeastOnce: boolean;
 }
