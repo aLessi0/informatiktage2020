@@ -12,6 +12,7 @@ import {AngularSvgIconModule} from 'angular-svg-icon';
 import {ButtonComponent} from './components/base/button/button.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {AngularMaterialModule} from './components/base/modal/angular-material.module';
+import {FeedbackComponent} from './components/base/modal/feedback/feedback.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,7 @@ import {AngularMaterialModule} from './components/base/modal/angular-material.mo
   providers: [],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  entryComponents: [] // define modal components
+  entryComponents: [FeedbackComponent] // define modal components
 })
 
 export class AppModule {

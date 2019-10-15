@@ -7,6 +7,8 @@ import {DebounceUtils} from './utils/debounce.utils';
 import {HttpClient} from '@angular/common/http';
 import {RoomModel} from './model/game/room.model';
 import {GameModel} from './model/game/game.model';
+import {ModalService} from './service/modal.service';
+import {FeedbackComponent} from './components/base/modal/feedback/feedback.component';
 
 @Component({
   selector: 'app-root',
@@ -26,7 +28,8 @@ export class AppComponent implements DoCheck {
   constructor(@Inject(DataService) private readonly dataService: DataService,
               @Inject(NgZone) private readonly ngZone: NgZone,
               @Inject(KeyValueDiffers) readonly differs: KeyValueDiffers,
-              @Inject(HttpClient) private readonly http: HttpClient) {
+              @Inject(HttpClient) private readonly http: HttpClient,
+              private modalService: ModalService) {
     this.differ = differs.find([]).create();
 
     this.dataService.game$.subscribe(game => {
@@ -46,6 +49,10 @@ export class AppComponent implements DoCheck {
     // this.http.post('/api/write', '').subscribe(() => {
     //   console.log('works');
     // });
+  }
+
+  openDialog() {
+    this.modalService.openDialog(FeedbackComponent, true);
   }
 
   public leaveActiveRoom(): void {
