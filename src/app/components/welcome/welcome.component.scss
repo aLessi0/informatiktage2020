@@ -33,35 +33,26 @@
   }
 
   .child-subtext {
-    display: flex;
-    flex: 1 0 auto;
-    justify-content: center;
-    margin-top:10%;
-    margin-left:5%;
+    margin: 10% auto;
     text-align: center;
+    padding: 5%;
   }
 
   .child-logo {
     display: flex;
-    flex: 1 0 auto;
     justify-content: center;
-    margin-top:10%;
-    margin-left:5%;
     text-align: center;
   }
 
   .child-button {
     display: flex;
-    flex: 1 0 auto;
-    margin-top:20%;
-    margin-left: 40%;
-    text-align: center;
+    margin-top: 20%;
+    justify-content: center;
   }
 
   .child-swipe {
     position: absolute;
-    flex: 1 0 auto;
-    text-align: center;
-    bottom: 8%;
+    bottom: 10%;
+    left: 40%;
   }
 }
