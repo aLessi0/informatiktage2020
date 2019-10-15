@@ -16,6 +16,7 @@ import {AvatarComponent} from './components/avatar/avatar.component';
 import {AvatarSelectorComponent} from './components/avatar-selector/avatar-selector.component';
 import {ImageMapComponent} from './components/image-map/image-map.component';
 import {FeedbackComponent} from './components/modal/feedback/feedback.component';
+import {InfotextComponent} from './components/base/infotext/infotext.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import {FeedbackComponent} from './components/modal/feedback/feedback.component'
     WelcomeComponent,
     AvatarComponent,
     AvatarSelectorComponent,
-    ImageMapComponent
+    ImageMapComponent,
+    InfotextComponent
   ],
   imports: [
     BrowserModule,
@@ -42,6 +44,7 @@ import {FeedbackComponent} from './components/modal/feedback/feedback.component'
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   entryComponents: [
     FeedbackComponent,
+    InfotextComponent,
     QuizfrageComponent
   ] // define modal components
 })
