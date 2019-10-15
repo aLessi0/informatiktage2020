@@ -1,4 +1,4 @@
-import {Component, Inject, Input, OnInit} from '@angular/core';
+import {Component, ElementRef, Inject, Input, OnInit, Renderer2, ViewChild} from '@angular/core';
 import {DataService} from '../../service/data.service';
 import {GameModel} from '../../model/game/game.model';
 import {ProgressModel} from '../../model/user/progress.model';
@@ -14,9 +14,12 @@ export class MapComponent implements OnInit {
   @Input() public game: GameModel;
   @Input() public progress: ProgressModel;
 
+  @ViewChild('person', {read: ElementRef}) personRef: ElementRef<HTMLElement>;
+
   public numberOfCoinsInGame: number;
 
-  constructor(@Inject(DataService) private readonly dataService: DataService) {
+  constructor(@Inject(DataService) private readonly dataService: DataService,
+              @Inject(Renderer2) private readonly renderer: Renderer2) {
 
   }
 
@@ -31,8 +34,20 @@ export class MapComponent implements OnInit {
   public activateRoom(roomNumber: number): void {
     if (this.isRoomUnlocked(roomNumber)) {
       const room = this.getRoomByNumber(roomNumber);
-      this.progress.avatarPos = room.level;
-      this.dataService.activateRoom(room);
+
+      const startLevel: number = this.progress.avatarPos;
+      const endLevel: number = room.level;
+      const animationClass: string = 'animation' + startLevel + '-' + endLevel;
+
+      this.renderer.addClass(this.personRef.nativeElement, animationClass);
+
+      this.personRef.nativeElement.addEventListener('animationend', () => {
+        this.renderer.removeClass(this.personRef.nativeElement, 'pos' + startLevel);
+        this.renderer.addClass(this.personRef.nativeElement, 'pos' + endLevel);
+
+        this.progress.avatarPos = room.level;
+        this.dataService.activateRoom(room);
+      });
     }
   }
 
