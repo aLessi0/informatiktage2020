@@ -13,6 +13,9 @@
       <svg-icon src="../../assets/sprites/Logo/Informatiktage2020.svg" [svgStyle]="{'width': '80%'}"></svg-icon>
     </div>
   </div>
+  <div class="child-button">
+    <app-button btnTitle="Weiter" (btnClicked)="startLogin($event)"></app-button>
+  </div>
   <div class="child-swipe">
     <svg-icon src="../../assets/sprites/Icon/Paging/1.svg" [svgStyle]="{'width': '80%'}"></svg-icon>
   </div>
@@ -34,14 +37,14 @@
       <p>Sammle ZKB Coins um Sofortpreise freizuschalten</p>
     </div>
   </div>
-
+  <div class="child-button">
+    <app-button btnTitle="Weiter" (btnClicked)="startLogin($event)"></app-button>
+  </div>
   <div class="child-swipe">
     <svg-icon src="../../assets/sprites/Icon/Paging/2.svg" [svgStyle]="{'width': '80%'}"></svg-icon>
   </div>
 </ng-container>
 
-<div class="child-button">
-  <app-button btnTitle="Weiter" (btnClicked)="startLogin($event)"></app-button>
-</div>
-
-
+<ng-container *ngIf="state == 2">
+  <app-avatar-selector *ngIf="!selectAvatar"></app-avatar-selector>
+</ng-container>
