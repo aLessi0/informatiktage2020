@@ -20,4 +20,8 @@ export class ModalService {
     dialogRef.afterClosed().subscribe(res => {
     });
   }
+
+  public closeDialog() {
+    this.dialog.closeAll();
+  }
 }
