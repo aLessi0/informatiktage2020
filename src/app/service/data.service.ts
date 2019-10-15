@@ -1,10 +1,10 @@
 import {Injectable} from '@angular/core';
-import {GameModel} from '../model/game/game.model';
-import {RoomModel} from '../model/game/room.model';
-import {AttachmentModel} from '../model/game/attachment.model';
-import {QuestionModel} from '../model/game/question.model';
-import {ProgressModel} from '../model/user/progress.model';
-import {BehaviorSubject, Observable} from 'rxjs';
+import {GameModel} from "../model/game/game.model";
+import {RoomModel} from "../model/game/room.model";
+import {AttachmentModel} from "../model/game/attachment.model";
+import {QuestionModel} from "../model/game/question.model";
+import {ProgressModel} from "../model/user/progress.model";
+import {BehaviorSubject, Observable, Subject} from "rxjs";
 
 class AsyncLocalStorage {
   public static setItem(key, value): Promise<void> {
@@ -45,10 +45,57 @@ export class DataService {
     this.activeRoomSubject.next(undefined);
   }
 
+  /* notify all subscriber if the progress was updated by ref*/
+  public progressUpdated(): void {
+    this.progressSource.next(this.progressSource.getValue());
+  }
+
+  /*
+  *  since we mutate the object byRef, the values are updated everywhere. However, we notify
+  * each subscriber to give the possibilty to react to changes.
+  */
+  public activeRoomUpdated(): void {
+    this.activeRoomSubject.next(this.activeRoomSubject.getValue());
+  }
+
+  /* informs subscriber of a gameModel change (room value updated, coins reward etc */
+  public roomUpdated() {
+    this.gameSource.next(this.gameSource.getValue());
+  }
+
+  public answeredMandatoryQuestion(activeRoom: RoomModel, question: QuestionModel) {
+    question.isCorrect = question.clientAnswer && question.clientAnswer.toLocaleLowerCase() === question.correctAnswer.toLocaleLowerCase();
+
+    /* only valid if the key hasn't been collected yet */
+    if (question.isCorrect && !activeRoom.keyCollected) {
+      question.answered = true;
+      activeRoom.keyCollected = true;
+      this.roomUpdated();
+      this.activeRoomUpdated();
+      this.unlockNextRoom();
+    }
+
+  }
+
+  public answeredOptionQuestion(activeRoom: RoomModel, question: QuestionModel) {
+    question.isCorrect = question.clientAnswer && question.clientAnswer.toLocaleLowerCase() === question.correctAnswer.toLocaleLowerCase();
+
+    /* coins are only rewarded if the question hasn't been answered yet */
+    if (!question.answered && question.isCorrect) {
+      const progress = this.progressSource.getValue();
+      progress.coins++;
+      question.answered = true;
+      activeRoom.coinsCollected++;
+      this.progressUpdated();
+      this.roomUpdated();
+      this.activeRoomUpdated();
+    }
+  }
+
   public unlockNextRoom(): void {
     const progress = this.progressSource.getValue();
     progress.unlockedLevel++;
-    this.progressSource.next(progress);
+    this.progressUpdated();
   }
 
   public saveProgress(progress: ProgressModel): Promise<void> {
@@ -56,10 +103,10 @@ export class DataService {
     return AsyncLocalStorage.setItem('progress', JSON.stringify(progress));
   }
 
-  public initData(): Promise<void> {
+  public initData(avatarType: string): Promise<void> {
     const game: GameModel = DataService.createGameData();
     this.gameSource.next(game);
-    const progress: ProgressModel = DataService.createProgressData();
+    const progress: ProgressModel = DataService.createProgressData(avatarType);
     this.progressSource.next(progress);
     return AsyncLocalStorage.setItem('game', JSON.stringify(game)).then(() => AsyncLocalStorage.setItem('progress', JSON.stringify(progress)));
   }
@@ -70,15 +117,17 @@ export class DataService {
 
   private loadGame(): Promise<GameModel> {
     return AsyncLocalStorage.getItem('game').then((value) => value && JSON.parse(value));
+
   }
 
-  private static createProgressData(): ProgressModel {
+  private static createProgressData(avatarType): ProgressModel {
     const progress: ProgressModel = new ProgressModel();
-    progress.avatarPos = 1;
     progress.collectedReward = false;
     progress.coins = 0;
     progress.playedLevels = [];
     progress.unlockedLevel = 1;
+    progress.avatarType = avatarType;
+    progress.avatarPos = 1;
 
     return progress;
   }
@@ -98,8 +147,7 @@ export class DataService {
     room1.intro = 'In diesem Raum geht es um Requirements und Design!';
     room1.attachments = [];
     room1.questions = [];
-    room1.isUnlocked = true;
-    room1.justUnlocked = true;
+    room1.coinsCollected = 0;
 
     const room1Attachment1: AttachmentModel = new AttachmentModel();
     room1Attachment1.file = 'url to path';
@@ -130,6 +178,7 @@ export class DataService {
     room2.intro = 'In diesem Raum geht es um Entwicklung und TEst!';
     room2.attachments = [];
     room2.questions = [];
+    room2.coinsCollected = 0;
 
     const room2Attachment1: AttachmentModel = new AttachmentModel();
     room2Attachment1.file = 'url to path';
@@ -160,6 +209,7 @@ export class DataService {
     room3.intro = 'In diesem Raum geht es um Build, Deployment & Operate!';
     room3.attachments = [];
     room3.questions = [];
+    room3.coinsCollected = 0;
 
     const room3Attachment1: AttachmentModel = new AttachmentModel();
     room3Attachment1.file = 'url to path';
