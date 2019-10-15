@@ -3,8 +3,8 @@ import {QuestionModel} from './question.model';
 
 export class RoomModel {
   public level: number;
-  public isUnlocked: boolean;
-  public justUnlocked: boolean;
+  public keyCollected: boolean;
+  public coinsCollected: number;
   public name: string;
   public logo: string;
   public color: string;
