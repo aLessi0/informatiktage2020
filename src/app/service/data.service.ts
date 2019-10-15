@@ -208,7 +208,7 @@ export class DataService {
     room2Question2.correctAnswer = '4';
     const room2Question3: QuestionModel = new QuestionModel();
     room2Question3.number = 3;
-    room2Question2.questionText = 'Dies ist eine Optional-Frage. Was gibt 22+22?';
+    room2Question3.questionText = 'Dies ist eine Optional-Frage. Was gibt 22+22?';
     room2Question3.correctAnswer = '44';
 
     room2.questions.push(room2Question1, room2Question2, room2Question3);
