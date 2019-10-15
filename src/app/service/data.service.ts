@@ -45,6 +45,11 @@ export class DataService {
     this.activeRoomSubject.next(undefined);
   }
 
+  /* notify all subscriber if the progress was updated by ref*/
+  public progressUpdated(): void {
+    this.progressSource.next(this.progressSource.getValue());
+  }
+
   /*
   *  since we mutate the object byRef, the values are updated everywhere. However, we notify
   * each subscriber to give the possibilty to react to changes.
@@ -77,8 +82,11 @@ export class DataService {
 
     /* coins are only rewarded if the question hasn't been answered yet */
     if (!question.answered && question.isCorrect) {
+      const progress = this.progressSource.getValue();
+      progress.coins++;
       question.answered = true;
       activeRoom.coinsCollected++;
+      this.progressUpdated();
       this.roomUpdated();
       this.activeRoomUpdated();
     }
@@ -87,7 +95,7 @@ export class DataService {
   public unlockNextRoom(): void {
     const progress = this.progressSource.getValue();
     progress.unlockedLevel++;
-    this.progressSource.next(progress);
+    this.progressUpdated();
   }
 
   public saveProgress(progress: ProgressModel): Promise<void> {
