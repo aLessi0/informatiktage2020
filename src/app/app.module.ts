@@ -3,7 +3,6 @@ import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
 import {HttpClientModule} from '@angular/common/http';
-import {QuizRoomComponent} from './components/quiz-room/quiz-room.component';
 import {FormsModule} from '@angular/forms';
 import {MapComponent} from './components/map/map.component';
 import {WelcomeComponent} from './components/welcome/welcome.component';
@@ -12,13 +11,14 @@ import {AngularSvgIconModule} from 'angular-svg-icon';
 import {ButtonComponent} from './components/base/button/button.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {AngularMaterialModule} from './components/base/modal/angular-material.module';
+import {QuizfrageComponent} from './components/base/quizfrage/quizfrage.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MapComponent,
     RoomComponent,
-    QuizRoomComponent,
+    QuizfrageComponent,
     ButtonComponent,
     WelcomeComponent
   ],
