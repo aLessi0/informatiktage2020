@@ -50,9 +50,7 @@ export class MapComponent implements OnInit {
         openRoom();
       } else {
         const animationClass: string = 'animation' + startLevel + '-' + endLevel;
-
         this.renderer.addClass(this.personRef.nativeElement, animationClass);
-
         this.personRef.nativeElement.addEventListener('animationend', openRoom);
       }
     }
