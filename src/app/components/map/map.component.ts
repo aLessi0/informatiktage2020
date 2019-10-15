@@ -30,7 +30,7 @@ export class MapComponent implements OnInit {
 
   public activateRoom(roomNumber: number): void {
     if (this.isRoomUnlocked(roomNumber)) {
-      let room = this.getRoomByNumber(roomNumber);
+      const room = this.getRoomByNumber(roomNumber);
       this.progress.avatarPos = room.level;
       this.dataService.activateRoom(room);
     }
@@ -42,7 +42,7 @@ export class MapComponent implements OnInit {
   }
 
   public getRoomClass(roomNumber: number): string {
-    let room = this.getRoomByNumber(roomNumber);
+    const room = this.getRoomByNumber(roomNumber);
     return room && room.roomClass;
   }
 
