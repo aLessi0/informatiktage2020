@@ -11,8 +11,8 @@ import {RoomComponent} from './components/room/room.component';
 import {AngularSvgIconModule} from 'angular-svg-icon';
 import {ButtonComponent} from './components/base/button/button.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {AngularMaterialModule} from './components/base/modal/angular-material.module';
-import {FeedbackComponent} from './components/base/modal/feedback/feedback.component';
+import {AngularMaterialModule} from './components/modal/angular-material.module';
+import {FeedbackComponent} from './components/modal/feedback/feedback.component';
 
 @NgModule({
   declarations: [

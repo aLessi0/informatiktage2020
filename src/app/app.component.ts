@@ -8,7 +8,7 @@ import {HttpClient} from '@angular/common/http';
 import {RoomModel} from './model/game/room.model';
 import {GameModel} from './model/game/game.model';
 import {ModalService} from './service/modal.service';
-import {FeedbackComponent} from './components/base/modal/feedback/feedback.component';
+import {FeedbackComponent} from './components/modal/feedback/feedback.component';
 
 @Component({
   selector: 'app-root',
