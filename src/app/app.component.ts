@@ -15,7 +15,6 @@ import {GameModel} from './model/game/game.model';
 })
 export class AppComponent implements DoCheck {
   public progressAvailable = false;
-  public loadingProgress = true;
   public progress: ProgressModel;
   public game: GameModel;
   public currentRoom: RoomModel;
@@ -30,23 +29,23 @@ export class AppComponent implements DoCheck {
               @Inject(HttpClient) private readonly http: HttpClient) {
     this.differ = differs.find([]).create();
 
-    this.dataService.game$.subscribe((game: GameModel) => {
+    this.dataService.game$.subscribe(game => {
       this.game = game;
     });
 
-    this.dataService.activeRoom$.subscribe((activeRoom) => {
+    this.dataService.activeRoom$.subscribe(activeRoom =>  {
       this.currentRoom = activeRoom;
     });
 
-    this.loadProgress();
-    /* http backend test */
-    this.http.post('/api/write', '').subscribe(() => {
-      console.log('works');
+    this.dataService.progress$.subscribe(progress => {
+      this.progressAvailable = !!progress;
+      this.progress = progress;
     });
-  }
 
-  public activateRoom(room: RoomModel): void {
-    this.dataService.activateRoom(room);
+    /* http backend test */
+    // this.http.post('/api/write', '').subscribe(() => {
+    //   console.log('works');
+    // });
   }
 
   public leaveActiveRoom(): void {
@@ -61,24 +60,14 @@ export class AppComponent implements DoCheck {
 
   public startGame(): void {
     this.dataService.initData().then(() => {
-      this.loadProgress();
-    });
-  }
-
-  private loadProgress(): void {
-    this.loadingProgress = true;
-    this.dataService.loadProgress().then((progress: ProgressModel) => {
-      this.loadingProgress = false;
-      this.progressAvailable = !!progress;
-      this.progress = progress;
-      this.differ.diff(this.getDiffObject());
+      // this.loadProgress();
     });
   }
 
   private checkForSave(): void {
     if (!this.debounceCheckForSave) {
       this.debounceCheckForSave = DebounceUtils.debounce(() => {
-        if (this.progressAvailable && !this.loadingProgress) {
+        if (this.progressAvailable) {
           console.log('CHECK');
           const changes = this.differ.diff(this.getDiffObject());
           if (changes) {
