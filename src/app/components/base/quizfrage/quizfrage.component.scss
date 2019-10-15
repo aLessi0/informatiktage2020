@@ -3,18 +3,28 @@
   display: flex;
   flex: 1 0 auto;
 
-  .quizfrage {
-    margin-bottom: .5rem;
-  }
+  .frage {
+    display: flex;
+    flex-direction: column;
 
-  .answer-field {
-    margin-bottom: .5rem;
-  }
+    .answer-status {
+      display: flex;
+      justify-content: center;
+    }
 
-  .check-answer {
-    margin-bottom: .5rem;
-    height: 2rem;
-    height: 0;
+    .quizfrage {
+      margin-bottom: .5rem;
+    }
 
+    .answer-field {
+      margin-bottom: .5rem;
+      display: flex;
+    }
+
+    .check-answer {
+      margin-bottom: .5rem;
+      height: 2rem;
+      height: 0;
+    }
   }
 }

@@ -34,7 +34,7 @@ export class AppComponent implements DoCheck {
       this.game = game;
     });
 
-    this.dataService.activeRoom$.subscribe(activeRoom =>  {
+    this.dataService.activeRoom$.subscribe(activeRoom => {
       this.currentRoom = activeRoom;
     });
 
@@ -48,10 +48,6 @@ export class AppComponent implements DoCheck {
     //   console.log('works');
     // });
 
-  }
-
-  openDialog() {
-    this.modalService.openDialog(FeedbackComponent, true);
   }
 
   public leaveActiveRoom(): void {

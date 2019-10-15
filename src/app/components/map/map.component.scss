@@ -1,3 +1,5 @@
+@import "person-animation";
+
 :host {
   display: flex;
   align-items: center;
@@ -144,6 +146,48 @@
     width: 31%;
     top: 6.2%;
     left: 1.5%;
+  }
+
+  .person {
+    pointer-events: none;
+    position: absolute;
+    width: 8%;
+    transform: translate(-50%, -50%);
+
+    &.pos0 {
+      top: 93%;
+      left: 75%;
+    }
+
+    &.pos1 {
+      top: 76%;
+      left: 61%;
+    }
+
+    &.pos2 {
+      top: 61%;
+      left: 58%;
+    }
+
+    &.pos3 {
+      top: 46%;
+      left: 61%;
+    }
+
+    &.pos4 {
+      top: 29%;
+      left: 63%;
+    }
+
+    &.pos5 {
+      top: 21%;
+      left: 54%;
+    }
+
+    &.pos6 {
+      top: 20%;
+      left: 16%;
+    }
   }
 }
 

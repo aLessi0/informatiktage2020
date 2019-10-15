@@ -1,21 +1,50 @@
-<div class="background">
-  <svg-icon src="../../assets/sprites/Onboarding/Background/Background1.svg" class="element"></svg-icon>
-</div>
-
-<div class="content">
-  <div class="child-title ">
-    <h1>Herzlich Willkommen!</h1>
+<ng-container *ngIf="state == 0">
+  <div class="background">
+    <svg-icon src="../../assets/sprites/Onboarding/Background/Background1.svg" class="element"></svg-icon>
   </div>
-  <div class="child-subtext">
-    <p>Lass dich begeistern von der Informatik der Zürcher Kantonalbank!</p>
-  </div>
-  <div class="child-logo">
-    <svg-icon src="../../assets/sprites/Logo/Informatiktage2020.svg" [svgStyle]="{'width': '80%'}"></svg-icon>
+  <div class="content">
+    <div class="child-title ">
+      <h1>Herzlich Willkommen!</h1>
+    </div>
+    <div class="child-subtext">
+      <p>Lass dich begeistern von der Informatik der Zürcher Kantonalbank!</p>
+    </div>
+    <div class="child-logo">
+      <svg-icon src="../../assets/sprites/Logo/Informatiktage2020.svg" [svgStyle]="{'width': '80%'}"></svg-icon>
+    </div>
   </div>
   <div class="child-button">
-    <app-button btnTitle="Start" (btnClicked)="startLogin($event)"></app-button>
+    <app-button btnTitle="Weiter" (btnClicked)="startLogin($event)"></app-button>
   </div>
-</div>
-<div class="child-swipe">
-  <svg-icon src="../../assets/sprites/Icon/Paging/1.svg" [svgStyle]="{'width': '80%'}"></svg-icon>
-</div>
+  <div class="child-swipe">
+    <svg-icon src="../../assets/sprites/Icon/Paging/1.svg" [svgStyle]="{'width': '80%'}"></svg-icon>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="state == 1">
+  <div class="background">
+    <svg-icon src="../../assets/sprites/Onboarding/Background/Background2.svg" class="element"></svg-icon>
+  </div>
+
+  <div class="content">
+    <div class="child-title ">
+      <h1>Erklärung</h1>
+    </div>
+    <div class="child-subtext">
+      <p>Schalte alle Räume auf der Karte frei um am Wettbewerb teilzunehmen.</p>
+    </div>
+    <div class="child-subtext">
+      <p>Sammle ZKB Coins um Sofortpreise freizuschalten</p>
+    </div>
+  </div>
+  <div class="child-button">
+    <app-button btnTitle="Weiter" (btnClicked)="startLogin($event)"></app-button>
+  </div>
+  <div class="child-swipe">
+    <svg-icon src="../../assets/sprites/Icon/Paging/2.svg" [svgStyle]="{'width': '80%'}"></svg-icon>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="state == 2">
+  <app-avatar-selector *ngIf="!selectAvatar"></app-avatar-selector>
+</ng-container>

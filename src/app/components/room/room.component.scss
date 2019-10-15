@@ -10,18 +10,6 @@
     background-color: white;
     display: flex;
 
-    &.room-blue {
-      --room-color: blue;
-    }
-
-    &.room-red {
-      --room-color: red;
-    }
-
-    &.room-yellow {
-      --room-color: yellow;
-    }
-
     .bg-street {
       height: 100%;
     }
@@ -34,16 +22,36 @@
       position: absolute;
       left: 10%;
 
+      .room-credits {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        text-align: center;
+
+        .credits {
+          display: flex;
+          justify-content: space-around;
+          width: 100%;
+          top: 20%;
+          position: absolute;
+        }
+      }
+
       .map-nav {
         position: absolute;
-        right: 0;
-        top: 0;
+        right: 0%;
+        top: 10%;
+      }
+
+      .room-bg {
+        margin-top: 25%;
       }
 
       .room-content {
         position: absolute;
-        height: 85%;
-        width: 85%;
+        top: 15%;
+        height: 80%;
+        width: 80%;
       }
 
     }
