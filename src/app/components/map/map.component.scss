@@ -63,12 +63,33 @@
     left: 3%;
   }
 
-  .gondel {
+  .gondel-seil {
     pointer-events: none;
     position: absolute;
-    width: 110%;
+    width: 120%;
     top: 21%;
-    left: -5%;
+    left: -10%;
+  }
+
+  .gondel1 {
+    pointer-events: none;
+    position: absolute;
+    transform-origin: top center;
+    width: 15%;
+    opacity: 0;
+
+    animation: gondelAnimation 30s 5s linear infinite;
+  }
+
+  .gondel2 {
+    pointer-events: none;
+    position: absolute;
+    transform-origin: top center;
+    width: 15%;
+    top: 33.5%;
+    left: 60%;
+
+    animation: gondelAnimation 30s reverse linear infinite;
   }
 
   .coins {
@@ -167,5 +188,54 @@
       top: 20%;
       left: 16%;
     }
+  }
+}
+
+$rotation: 7deg;
+@keyframes gondelAnimation {
+  0% {
+    opacity: 0;
+    top: 20.4%;
+    left: -20%;
+    transform: rotate($rotation);
+  }
+  3% {
+    opacity: 1;
+  }
+  10% {
+    transform: rotate(-$rotation);
+  }
+  20% {
+    transform: rotate($rotation);
+  }
+  30% {
+    transform: rotate(-$rotation);
+  }
+  40% {
+    transform: rotate($rotation);
+  }
+  50% {
+    transform: rotate(-$rotation);
+  }
+  60% {
+    transform: rotate($rotation);
+  }
+  70% {
+    transform: rotate(-$rotation);
+  }
+  80% {
+    transform: rotate($rotation);
+  }
+  90% {
+    transform: rotate(-$rotation);
+  }
+  97% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    top: 41.8%;
+    left: 104%;
+    transform: rotate($rotation);
   }
 }

@@ -140,7 +140,7 @@ export class DataService {
     progress.collectedReward = false;
     progress.coins = 0;
     progress.playedLevels = [];
-    progress.unlockedLevel = 1;
+    progress.unlockedLevel = 6;
     progress.avatarType = avatarType;
     progress.avatarPos = 0;
 
@@ -153,7 +153,7 @@ export class DataService {
     game.minCoinsRewardSmall = 6;
     game.rooms = [];
 
-    // ----- RAUM: Requirements and Design -----
+    // ----- RAUM: Welt der Informatik -----
     const room1: RoomModel = new RoomModel();
     room1.level = 1;
     room1.name = 'Requirements & Design';
@@ -185,7 +185,7 @@ export class DataService {
 
     room1.questions.push(room1Question1, room1Question2, room1Question3);
 
-    // ----- RAUM: Entwicklung & Test -----
+    // ----- RAUM: Requirements & Design -----
     const room2: RoomModel = new RoomModel();
     room2.level = 2;
     room2.name = 'Entwicklung & Test';
@@ -217,7 +217,7 @@ export class DataService {
 
     room2.questions.push(room2Question1, room2Question2, room2Question3);
 
-    // ----- RAUM: Build, Deployment & Operate -----
+    // ----- RAUM: Entwicklung & Test-----
     const room3: RoomModel = new RoomModel();
     room3.level = 3;
     room3.name = 'Build, Deployment & Operate';
@@ -249,7 +249,103 @@ export class DataService {
 
     room3.questions.push(room3Question1, room3Question2, room3Question3);
 
-    game.rooms.push(room1, room2, room3);
+    // ----- RAUM: Build, Deployment & Operate -----
+    const room4: RoomModel = new RoomModel();
+    room4.level = 4;
+    room4.name = 'Build, Deployment & Operate';
+    room4.logo = 'url to logo';
+    room4.roomClass = 'room-entwicklung-test';
+    room4.intro = 'In diesem Raum geht es um Build, Deployment & Operate!';
+    room4.attachments = [];
+    room4.questions = [];
+    room4.coinsCollected = 0;
+
+    const room4Attachment1: AttachmentModel = new AttachmentModel();
+    room4Attachment1.file = 'url to path';
+    room4Attachment1.name = 'FILE 13';
+    room4.attachments.push(room4Attachment1);
+
+    const room4Question1: QuestionModel = new QuestionModel();
+    room4Question1.number = 1;
+    room4Question1.isMandatory = true;
+    room4Question1.questionText = 'Dies ist die Mandatory-Frage. Was bekommt man wenn man bei Build "Bu" rausnimmt?';
+    room4Question1.correctAnswer = 'ild';
+    const room4Question2: QuestionModel = new QuestionModel();
+    room4Question2.number = 2;
+    room4Question2.questionText = 'Dies ist eine Optional-Frage. Was gibt 3+3?';
+    room4Question2.correctAnswer = '6';
+    const room4Question3: QuestionModel = new QuestionModel();
+    room4Question3.number = 3;
+    room4Question3.questionText = 'Dies ist eine Optional-Frage. Was gibt 33+33?';
+    room4Question3.correctAnswer = '66';
+
+    room4.questions.push(room4Question1, room4Question2, room4Question3);
+
+    // ----- RAUM: Recruiting -----
+    const room5: RoomModel = new RoomModel();
+    room5.level = 5;
+    room5.name = 'Build, Deployment & Operate';
+    room5.logo = 'url to logo';
+    room5.roomClass = 'room-entwicklung-test';
+    room5.intro = 'In diesem Raum geht es um Build, Deployment & Operate!';
+    room5.attachments = [];
+    room5.questions = [];
+    room5.coinsCollected = 0;
+
+    const room5Attachment1: AttachmentModel = new AttachmentModel();
+    room5Attachment1.file = 'url to path';
+    room5Attachment1.name = 'FILE 13';
+    room5.attachments.push(room5Attachment1);
+
+    const room5Question1: QuestionModel = new QuestionModel();
+    room5Question1.number = 1;
+    room5Question1.isMandatory = true;
+    room5Question1.questionText = 'Dies ist die Mandatory-Frage. Was bekommt man wenn man bei Build "Bu" rausnimmt?';
+    room5Question1.correctAnswer = 'ild';
+    const room5Question2: QuestionModel = new QuestionModel();
+    room5Question2.number = 2;
+    room5Question2.questionText = 'Dies ist eine Optional-Frage. Was gibt 3+3?';
+    room5Question2.correctAnswer = '6';
+    const room5Question3: QuestionModel = new QuestionModel();
+    room5Question3.number = 3;
+    room5Question3.questionText = 'Dies ist eine Optional-Frage. Was gibt 33+33?';
+    room5Question3.correctAnswer = '66';
+
+    room5.questions.push(room5Question1, room5Question2, room5Question3);
+
+    // ----- RAUM: Playground -----
+    const room6: RoomModel = new RoomModel();
+    room6.level = 6;
+    room6.name = 'Build, Deployment & Operate';
+    room6.logo = 'url to logo';
+    room6.roomClass = 'room-entwicklung-test';
+    room6.intro = 'In diesem Raum geht es um Build, Deployment & Operate!';
+    room6.attachments = [];
+    room6.questions = [];
+    room6.coinsCollected = 0;
+
+    const room6Attachment1: AttachmentModel = new AttachmentModel();
+    room6Attachment1.file = 'url to path';
+    room6Attachment1.name = 'FILE 13';
+    room6.attachments.push(room6Attachment1);
+
+    const room6Question1: QuestionModel = new QuestionModel();
+    room6Question1.number = 1;
+    room6Question1.isMandatory = true;
+    room6Question1.questionText = 'Dies ist die Mandatory-Frage. Was bekommt man wenn man bei Build "Bu" rausnimmt?';
+    room6Question1.correctAnswer = 'ild';
+    const room6Question2: QuestionModel = new QuestionModel();
+    room6Question2.number = 2;
+    room6Question2.questionText = 'Dies ist eine Optional-Frage. Was gibt 3+3?';
+    room6Question2.correctAnswer = '6';
+    const room6Question3: QuestionModel = new QuestionModel();
+    room6Question3.number = 3;
+    room6Question3.questionText = 'Dies ist eine Optional-Frage. Was gibt 33+33?';
+    room6Question3.correctAnswer = '66';
+
+    room6.questions.push(room6Question1, room6Question2, room6Question3);
+
+    game.rooms.push(room1, room2, room3, room4, room5, room6);
 
     return game;
   }
