@@ -1,4 +1,4 @@
-import {Component, Inject, Input} from '@angular/core';
+import {Component, Inject, Input, OnInit} from '@angular/core';
 import {DataService} from '../../service/data.service';
 import {GameModel} from '../../model/game/game.model';
 import {ProgressModel} from '../../model/user/progress.model';
@@ -9,12 +9,23 @@ import {RoomModel} from '../../model/game/room.model';
   templateUrl: './map.component.html',
   styleUrls: ['./map.component.scss']
 })
-export class MapComponent {
+export class MapComponent implements OnInit {
 
   @Input() public game: GameModel;
   @Input() public progress: ProgressModel;
 
+  public numberOfCoinsInGame: number;
+
   constructor(@Inject(DataService) private readonly dataService: DataService) {
+
+  }
+
+  public ngOnInit(): void {
+    let coinsInGame = 0;
+    for (const room of this.game.rooms) {
+      coinsInGame += (room.questions.length - 1);
+    }
+    this.numberOfCoinsInGame = coinsInGame;
   }
 
   public activateRoom(roomNumber: number): void {

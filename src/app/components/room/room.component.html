@@ -1,4 +1,4 @@
-<div class="room room-{{room.color}}">
+<div class="room {{room.roomClass}}">
 
   <div class="bg-street" (click)="closeRoom()">
     <svg-icon src="/assets/sprites/Icon/Room/Street.svg" [svgStyle]="{'height': '100%'}"
@@ -8,7 +8,7 @@
   <div class="bg-rectangle">
 
     <div class="room-credits">
-      <svg-icon src="/assets/sprites/Room/Credits/Coin-Border.svg" [svgStyle]="{'width': '100%'}"></svg-icon>
+      <svg-icon src="/assets/sprites/Room/Credits/Coin-Border.svg" [svgStyle]="{'width': '90%'}"></svg-icon>
       <div class="credits">
         <svg-icon class="key-credit" *ngIf="!room.keyCollected"
                   src="/assets/sprites/Room/Credits/Key-inactive.svg"></svg-icon>
