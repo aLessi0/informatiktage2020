@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 336 812" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 58 (84663) - https://sketch.com -->
+    <title>Street</title>
+    <desc>Created with Sketch.</desc>
+    <g id="App" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round">
+        <g id="Room-Welcome">
+            <g id="Street" transform="translate(-35.500000, -0.500000)">
+                <g id="Icon/Room/Street">
+                    <path d="M41.5,2.5 L48.5,810.5" id="Line-2" stroke="#E7E8EA" stroke-width="37"></path>
+                    <path d="M43.5,0.5 L50.5,808.5" id="Line-2" stroke="#000000" stroke-width="6" stroke-dasharray="22"></path>
+                </g>
+                <g transform="translate(63.109267, 360.564477)" id="Path-8" stroke-linejoin="round">
+                    <path d="M0,17.9355227 C168.519512,-8.13818796 263.430622,-4.80485463 284.733331,27.9355227 C316.687394,77.0460887 306.390733,117.935523 252.890733,121.935523 C199.390733,125.935523 179.189065,61.2740572 111.390733,87.3920815 C43.5924001,113.510106 32.6292537,330.602859 87.3907328,374.365753 C123.898386,403.541016 181.677328,400.022038 260.727559,363.808819" stroke="#E7E8EA" stroke-width="10"></path>
+                    <path d="M0.488685139,21.9355227 C171.110906,-3.06447731 265.744922,-0.0644773118 284.390733,30.9355227 C312.359449,77.4355227 303.390733,122.935523 249.890733,126.935523 C196.390733,130.935523 176.189065,66.2740572 108.390733,92.3920815 C40.5924001,118.510106 29.6292537,335.602859 84.3907328,379.365753 C120.898386,408.541016 178.677328,405.022038 257.727559,368.808819" stroke="#000000" stroke-width="6" stroke-dasharray="19"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

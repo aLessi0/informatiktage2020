@@ -4,53 +4,60 @@
     position: absolute;
     height: 100%;
     width: 100%;
-    top: 0;
-    left: 0;
-    align-items: center;
-    background-color: white;
     display: flex;
 
     .bg-street {
+      z-index: 1;
       height: 100%;
+      width: 100%;
     }
 
     .bg-rectangle {
       display: flex;
-      flex: 1;
-      justify-content: center;
-      align-items: center;
       position: absolute;
-      left: 10%;
+      left: 15%;
+      height: 100%;
+      width: 85%;
+
+      .room-bg {
+        width: 100%;
+        position: absolute;
+        left: 0%;
+        top: 15%;
+      }
 
       .room-credits {
         position: absolute;
-        top: 0;
-        width: 100%;
+        top: 6%;
+        width: 70%;
+        right: 5%;
         text-align: center;
 
         .credits {
           display: flex;
           justify-content: space-around;
           width: 100%;
-          top: 20%;
+          top: 18%;
           position: absolute;
+
+          .key-credit, .coin-credit {
+            width: 15%;
+          }
         }
       }
 
       .map-nav {
         position: absolute;
-        right: 0%;
-        top: 10%;
-      }
-
-      .room-bg {
-        margin-top: 25%;
+        width: 14%;
+        top: 7%;
+        left: 5%;
       }
 
       .room-content {
         position: absolute;
-        top: 15%;
-        height: 80%;
+        top: 17%;
+        height: 77%;
+        left: 10%;
         width: 80%;
       }
 

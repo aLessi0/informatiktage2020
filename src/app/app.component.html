@@ -1,3 +1,5 @@
+<div class="app-background {{currentRoom ? currentRoom.roomClass : ''}}"></div>
+
 <div class="welcome-container" *ngIf="!progressAvailable">
   <app-welcome></app-welcome>
 </div>
@@ -13,4 +15,5 @@
     <app-playground *ngIf="currentRoom.level === 6"></app-playground>
   </app-room>
 </div>
+
 

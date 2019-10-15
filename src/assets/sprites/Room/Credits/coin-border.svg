@@ -4,7 +4,7 @@
     <title>Rectangle</title>
     <desc>Created with Sketch.</desc>
     <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Icon/Map/Room-Credits" stroke="#000000" stroke-width="2">
+        <g id="Icon/Map/Room-Credits" fill="#FFFFFF" stroke="#000000" stroke-width="2">
             <g id="Room-Credits">
                 <path d="M10.1690582,4.69474124 C-2.06225067,10.3399607 -2.06225067,38.6379143 10.2044458,44.8960075 C22.4219325,51.1289953 174.028781,50.6884301 190.41409,44.8448879 C205.558733,39.4438078 205.793608,8.47481537 190.513671,4.75845502 C182.767407,2.87442179 142.630453,1.29945063 98.9516872,1.03676377 C51.8327483,0.753387495 15.8690968,2.06395417 10.1690582,4.69474124 Z" id="Rectangle"></path>
             </g>
