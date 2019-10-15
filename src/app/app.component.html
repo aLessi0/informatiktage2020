@@ -1,17 +1,13 @@
-<div *ngIf="!loadingProgress && !progressAvailable">
+<div *ngIf="!progressAvailable">
   <!-- ersetzen durch eine welcome-component -->
   WILLKOMMEN, SIE SIND NEU HIER! STARTEN?<br/>
   <button (click)="startGame()">GAME STARTEN</button>
 </div>
-<div class="game-is_running" *ngIf="!loadingProgress && progressAvailable">
+<div class="game-is_running" *ngIf="progressAvailable">
   <app-map [game]="game" [progress]="progress" *ngIf="!currentRoom"></app-map>
   <app-room [room]="currentRoom" *ngIf="currentRoom" (onClose)="leaveActiveRoom()">
     <app-quiz-room *ngIf="currentRoom"></app-quiz-room>
     <!-- SUPER DUPER LAST ROOM MIT NGIF="!CURRENTROOM"-->
   </app-room>
-</div>
-<div *ngIf="loadingProgress">
-  <!-- Evtl. wird es nicht gebraucht, da es sehr schnell und nie sichtbar ist. Sonst schön machen! -->
-  LOADING!!!!!!!!!
 </div>
 
