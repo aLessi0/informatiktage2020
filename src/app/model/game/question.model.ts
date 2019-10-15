@@ -5,4 +5,5 @@ export class QuestionModel {
   public clientAnswer: string;
   public isCorrect: boolean;
   public answered: boolean;
+  public isMandatory: boolean;
 }

@@ -10,9 +10,10 @@ import {RoomComponent} from './components/room/room.component';
 import {AngularSvgIconModule} from 'angular-svg-icon';
 import {ButtonComponent} from './components/base/button/button.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {AngularMaterialModule} from './components/base/modal/angular-material.module';
+import {AngularMaterialModule} from './components/modal/angular-material.module';
 import {QuizfrageComponent} from './components/base/quizfrage/quizfrage.component';
 import { AvatarSelectorComponent } from './components/avatar-selector/avatar-selector.component';
+import {FeedbackComponent} from './components/modal/feedback/feedback.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,10 @@ import { AvatarSelectorComponent } from './components/avatar-selector/avatar-sel
   providers: [],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  entryComponents: [] // define modal components
+  entryComponents: [
+    FeedbackComponent,
+    QuizfrageComponent
+  ] // define modal components
 })
 
 export class AppModule {

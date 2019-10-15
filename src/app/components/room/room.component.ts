@@ -1,5 +1,10 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {Component, EventEmitter, Inject, Input, Output} from '@angular/core';
 import {RoomModel} from '../../model/game/room.model';
+import {QuestionModel} from '../../model/game/question.model';
+import {DataService} from '../../service/data.service';
+import {ModalService} from '../../service/modal.service';
+import {QuizfrageComponent} from '../base/quizfrage/quizfrage.component';
+import {FeedbackComponent} from "../modal/feedback/feedback.component";
 
 @Component({
   selector: 'app-room',
@@ -10,11 +15,25 @@ export class RoomComponent {
   @Input() public room: RoomModel;
   @Output() private onClose: EventEmitter<void> = new EventEmitter();
 
+  constructor(@Inject(DataService) private readonly dataService: DataService,
+              @Inject(ModalService) private readonly modalService: ModalService) {
+
+  }
+
   public closeRoom(): void {
     if (!this.room.feedback) {
-      //  no feedback yet, intercept with feedback screen
+      this.modalService.openDialog(FeedbackComponent, true).subscribe(() => this.onClose.emit());
+    } else {
+      this.onClose.emit();
     }
-    this.onClose.emit();
+
+  }
+
+  public openQuestion(question: QuestionModel): void {
+    this.dataService.selectQuestion(question);
+    this.modalService.openDialog(QuizfrageComponent, false).subscribe(() => {
+      this.dataService.unselectQuesion();
+    });
   }
 
 }
