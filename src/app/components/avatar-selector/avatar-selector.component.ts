@@ -59,7 +59,7 @@ animations: [
 
 export class AvatarSelectorComponent implements OnInit {
 
-  private chosenAvatarType: string = 'Girl';
+  private chosenAvatarType: string;
   private avatarImageBasePath = '/assets/sprites/Icon/Avatar/';
 
   constructor(@Inject(DataService) private readonly dataService: DataService) {

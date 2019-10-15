@@ -41,7 +41,7 @@
       position: absolute;
       bottom: 0;
 
-      transition: transform 1s ease-in-out;
+      transition: transform 0.3s ease-in-out;
 
       &.selected {
         transform: translateY(-20%);
@@ -77,5 +77,10 @@
   #btn-create-avatar {
     margin-top: 10%;
     justify-self: flex-start;
+    display: none;
+  }
+
+  .active {
+    display: block!important;
   }
 }
