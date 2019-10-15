@@ -11,11 +11,11 @@ export class ModalService {
   constructor(public dialog: MatDialog) {
   }
 
-  public openDialog(component: ComponentType<any>, disableDialogClose: boolean): Observable<any> {
+  public openDialog<T>(component: ComponentType<any>, disableDialogClose: boolean, data?: T): Observable<any> {
     return Observable.create((subscriber) => {
       const dialogRef = this.dialog.open(component, {
         width: '300px',
-        data: {},
+        data,
         disableClose: disableDialogClose
       });
 

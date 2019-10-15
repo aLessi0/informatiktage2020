@@ -14,6 +14,7 @@ import {AngularMaterialModule} from './components/modal/angular-material.module'
 import {QuizfrageComponent} from './components/base/quizfrage/quizfrage.component';
 import { AvatarSelectorComponent } from './components/avatar-selector/avatar-selector.component';
 import {FeedbackComponent} from './components/modal/feedback/feedback.component';
+import {InfotextComponent} from './components/base/infotext/infotext.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,8 @@ import {FeedbackComponent} from './components/modal/feedback/feedback.component'
     ButtonComponent,
     WelcomeComponent,
     AvatarSelectorComponent,
+    ImageMapComponent,
+    InfotextComponent
   ],
   imports: [
     BrowserModule,
@@ -38,6 +41,7 @@ import {FeedbackComponent} from './components/modal/feedback/feedback.component'
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   entryComponents: [
     FeedbackComponent,
+    InfotextComponent,
     QuizfrageComponent
   ] // define modal components
 })
