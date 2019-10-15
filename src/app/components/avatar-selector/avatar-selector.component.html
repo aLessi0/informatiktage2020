@@ -1,16 +1,44 @@
-<div class="content">
+<ng-container>
 
-  <div class="child-title">
-    <h1>Wähle dein Charakter aus.</h1>
+
+  <div class="content">
+
+    <div class="child-title">
+      <h1>Wähle dein Charakter aus.</h1>
+    </div>
+
+    <div class="child-avatar-family">
+      <img src="{{this.avatarImageBasePath}}/Girl.svg"
+           class="girl"
+           [ngClass]="{'selected': chosenAvatarType === 'Girl'}"
+           (click)="chooseAvatarType($event, 'Girl')">
+
+      <img src="{{this.avatarImageBasePath}}/Man.svg"
+           class="man"
+           [ngClass]="{'selected': chosenAvatarType === 'Man'}"
+           (click)="chooseAvatarType($event, 'Man')">
+
+      <img src="{{this.avatarImageBasePath}}/Woman.svg"
+           class="woman"
+           [ngClass]="{'selected': chosenAvatarType === 'Woman'}"
+           (click)="chooseAvatarType($event, 'Woman')">
+
+      <img src="{{this.avatarImageBasePath}}/Boy.svg"
+           class="boy"
+           [ngClass]="{'selected': chosenAvatarType === 'Boy'}"
+           (click)="chooseAvatarType($event, 'Boy')">
+    </div>
+
+    <app-button id="btn-create-avatar" btnTitle="Los geht's"
+                (btnClicked)="this.createAvatar()"
+                [ngClass]="{'active': chosenAvatarType}"
+    ></app-button>
+
   </div>
 
-  <div class="child-avatar-family" *ngIf="!selectAvatar">
-    <image-map [src]="image" [coordinates]="coordinates" (onClick)="getClick($event)" canEdit="true"></image-map>
+  <div class="child-swipe">
+    <svg-icon src="/assets/sprites/Icon/Paging/3.svg" [svgStyle]="{'width': '80%'}"></svg-icon>
   </div>
 
-  <app-avatar [avatarType]="chosenAvatarType" *ngIf="selectAvatar"></app-avatar>
 
-  <div class="child-footer">
-  </div>
-
-</div>
+</ng-container>
