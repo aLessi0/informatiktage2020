@@ -1,10 +1,10 @@
 import {Injectable} from '@angular/core';
-import {GameModel} from '../model/game/game.model';
-import {RoomModel} from '../model/game/room.model';
-import {AttachmentModel} from '../model/game/attachment.model';
-import {QuestionModel} from '../model/game/question.model';
-import {ProgressModel} from '../model/user/progress.model';
-import {BehaviorSubject, Observable} from 'rxjs';
+import {GameModel} from "../model/game/game.model";
+import {RoomModel} from "../model/game/room.model";
+import {AttachmentModel} from "../model/game/attachment.model";
+import {QuestionModel} from "../model/game/question.model";
+import {ProgressModel} from "../model/user/progress.model";
+import {BehaviorSubject, Observable, Subject} from "rxjs";
 
 class AsyncLocalStorage {
   public static setItem(key, value): Promise<void> {
@@ -103,10 +103,10 @@ export class DataService {
     return AsyncLocalStorage.setItem('progress', JSON.stringify(progress));
   }
 
-  public initData(): Promise<void> {
+  public initData(avatarType: string): Promise<void> {
     const game: GameModel = DataService.createGameData();
     this.gameSource.next(game);
-    const progress: ProgressModel = DataService.createProgressData();
+    const progress: ProgressModel = DataService.createProgressData(avatarType);
     this.progressSource.next(progress);
     return AsyncLocalStorage.setItem('game', JSON.stringify(game)).then(() => AsyncLocalStorage.setItem('progress', JSON.stringify(progress)));
   }
@@ -117,15 +117,17 @@ export class DataService {
 
   private loadGame(): Promise<GameModel> {
     return AsyncLocalStorage.getItem('game').then((value) => value && JSON.parse(value));
+
   }
 
-  private static createProgressData(): ProgressModel {
+  private static createProgressData(avatarType): ProgressModel {
     const progress: ProgressModel = new ProgressModel();
-    progress.avatarPos = 1;
     progress.collectedReward = false;
     progress.coins = 0;
     progress.playedLevels = [];
     progress.unlockedLevel = 1;
+    progress.avatarType = avatarType;
+    progress.avatarPos = 1;
 
     return progress;
   }
