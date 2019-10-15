@@ -1,8 +1,6 @@
 import {Component, DoCheck, Inject, KeyValueDiffer, KeyValueDiffers, NgZone} from '@angular/core';
 import {DataService} from './service/data.service';
 import {ProgressModel} from './model/user/progress.model';
-import {PlayedLevelModel} from './model/user/played-level.model';
-import {AnswerModel} from './model/user/answer.model';
 import {DebounceUtils} from './utils/debounce.utils';
 import {HttpClient} from '@angular/common/http';
 import {RoomModel} from './model/game/room.model';
