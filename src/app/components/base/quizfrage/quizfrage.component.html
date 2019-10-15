@@ -1,5 +1,8 @@
 <div class="frage">
-  <div class="answer-status" *ngIf="question.answered">{{(question.isCorrect ? 'Y' : 'N')}}</div>
+  <div class="answer-status" *ngIf="question.answered">
+    <svg-icon *ngIf="!question.isCorrect" [src]="'/assets/sprites/Icon/Cross.svg'"></svg-icon>
+    <svg-icon *ngIf="question.isCorrect" [src]="'/assets/sprites/Icon/Tick.svg'"></svg-icon>
+  </div>
   <div class="quizfrage">{{question.questionText}}</div>
   <input type="text" class="input-field answer-field" [(ngModel)]="question.clientAnswer"/>
   <app-button class="check-answer" [btnTitle]="'prüfen'" (btnClicked)="validateAnswer()"></app-button>

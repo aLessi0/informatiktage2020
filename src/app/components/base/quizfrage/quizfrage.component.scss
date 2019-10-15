@@ -3,6 +3,11 @@
   display: flex;
   flex: 1 0 auto;
 
+  .answer-status {
+    display: flex;
+    justify-content: center;
+  }
+
   .quizfrage {
     margin-bottom: .5rem;
   }
