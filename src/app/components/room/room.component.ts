@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Inject, Input, Output} from '@angular/core';
+import {Component, EventEmitter, Inject, Input, OnInit, Output} from '@angular/core';
 import {RoomModel} from '../../model/game/room.model';
 import {QuestionModel} from '../../model/game/question.model';
 import {DataService} from '../../service/data.service';
@@ -11,17 +11,22 @@ import {FeedbackComponent} from "../modal/feedback/feedback.component";
   templateUrl: './room.component.html',
   styleUrls: ['./room.component.scss']
 })
-export class RoomComponent {
+export class RoomComponent implements OnInit {
   @Input() public room: RoomModel;
   @Output() private onClose: EventEmitter<void> = new EventEmitter();
 
+  private mandatoryQuestionWasAnsweredOnEntry: boolean;
+
   constructor(@Inject(DataService) private readonly dataService: DataService,
               @Inject(ModalService) private readonly modalService: ModalService) {
+  }
 
+  public ngOnInit(): void {
+    this.mandatoryQuestionWasAnsweredOnEntry = this.room.questions[0].answered;
   }
 
   public closeRoom(): void {
-    if (!this.room.feedback) {
+    if (!this.room.feedback && !this.mandatoryQuestionWasAnsweredOnEntry && this.room.questions[0].answered) {
       this.modalService.openDialog(FeedbackComponent, true).subscribe(() => this.onClose.emit());
     } else {
       this.onClose.emit();
