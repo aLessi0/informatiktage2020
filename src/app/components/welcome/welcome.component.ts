@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-welcome',
@@ -6,13 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./welcome.component.scss']
 })
 export class WelcomeComponent implements OnInit {
+  state = 0;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }
 
-  startLogin($event){
-    console.log('Das ist ein Test. Hier folgt die nächste Seite');
+  startLogin($event) {
+    this.state++;
   }
 }

@@ -19,16 +19,16 @@
     position: absolute;
     max-height: 88%;
     max-width: 90%;
-    margin-top:13%;
-    margin-left:6%;
+    margin-top: 13%;
+    margin-left: 6%;
   }
 
   .child-title {
     display: flex;
     flex: 1 0 auto;
     justify-content: center;
-    margin-top:10%;
-    margin-left:5%;
+    margin-top: 10%;
+    margin-left: 5%;
     text-align: center;
   }
 
@@ -36,25 +36,24 @@
     display: flex;
     flex: 1 0 auto;
     justify-content: center;
-    margin-top:10%;
-    margin-left:5%;
-    text-align: center;
+    margin-top: 10%;
+    margin-left: 5%;
   }
 
   .child-logo {
     display: flex;
     flex: 1 0 auto;
     justify-content: center;
-    margin-top:10%;
-    margin-left:5%;
+    margin-top: 10%;
+    margin-left: 5%;
     text-align: center;
   }
 
   .child-button {
-    display: flex;
+    position: absolute;
     flex: 1 0 auto;
-    margin-top:20%;
     margin-left: 40%;
+    bottom: 15%;
     text-align: center;
   }
 
