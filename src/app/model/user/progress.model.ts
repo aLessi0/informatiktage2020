@@ -1,5 +1,5 @@
-import {PlayedLevelModel} from "./played-level.model";
-import {ContestModel} from "./contest.model";
+import {PlayedLevelModel} from './played-level.model';
+import {ContestModel} from './contest.model';
 
 export class ProgressModel {
   public avatarType: string;

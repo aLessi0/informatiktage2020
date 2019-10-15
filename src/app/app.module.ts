@@ -1,5 +1,5 @@
 import {BrowserModule} from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
+import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
 import {HttpClientModule} from '@angular/common/http';
@@ -10,6 +10,8 @@ import {WelcomeComponent} from './components/welcome/welcome.component';
 import {RoomComponent} from './components/room/room.component';
 import {AngularSvgIconModule} from 'angular-svg-icon';
 import {ButtonComponent} from './components/base/button/button.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {AngularMaterialModule} from './components/base/modal/angular-material.module';
 import { AvatarComponent } from './components/avatar/avatar.component';
 import { AvatarSelectorComponent } from './components/avatar-selector/avatar-selector.component';
 import { ImageMapComponent } from './components/image-map/image-map.component';
@@ -30,10 +32,14 @@ import { ImageMapComponent } from './components/image-map/image-map.component';
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    AngularSvgIconModule
+    AngularSvgIconModule,
+    BrowserAnimationsModule,
+    AngularMaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  entryComponents: [] // define modal components
 })
 
 export class AppModule {
