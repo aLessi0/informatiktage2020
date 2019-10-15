@@ -40,13 +40,6 @@ export class AppComponent implements DoCheck {
       this.progress = progress;
     });
 
-    this.dataService.avatar$.subscribe(created => {
-      console.log(created);
-      if (created == true) {
-        this.startGame();
-      }
-    });
-
     /* http backend test */
     // this.http.post('/api/write', '').subscribe(() => {
     //   console.log('works');
@@ -61,24 +54,6 @@ export class AppComponent implements DoCheck {
   public ngDoCheck() {
     this.ngZone.runOutsideAngular(() => {
       this.checkForSave();
-    });
-  }
-
-  public startGame(): void {
-    console.log("start game");
-    this.dataService.initData().then(() => {
-      this.loadProgress();
-    });
-  }
-
-  private loadProgress(): void {
-    this.loadingProgress = true;
-    this.dataService.loadProgress().then((progress: ProgressModel) => {
-      this.loadingProgress = false;
-      this.progressAvailable = !!progress;
-      this.progress = progress;
-      this.differ.diff(this.getDiffObject());
-      console.log(this.progress);
     });
   }
 
