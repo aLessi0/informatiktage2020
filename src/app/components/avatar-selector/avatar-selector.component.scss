@@ -3,13 +3,11 @@
   display: flex;
   flex-direction: column;
 
-  height: 100vh;
-  width: 100%;
+  height: 100%;
 
   background-image: url("../../../assets/sprites/Onboarding/Background/Background3.svg");
   background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
+  background-size: auto;
 
   /* DEBUG
   div {
@@ -17,37 +15,71 @@
   }
   */
 
-
   .content {
     display: flex;
     flex-direction: column;
+    flex: 1 0 auto;
+    justify-content: space-between;
 
     padding-left: 5%;
     padding-right: 5%;
     padding-top: 30%;
     padding-bottom: 20%;
 
-    height: 100%;
     max-width: 100%;
     max-height: 100%;
   }
 
   .child-title {
     text-align: center;
-    flex: 1;
   }
 
   .child-avatar-family {
+    display: flex;
     text-align: center;
+    max-width: 100%;
+    height: 50%;
+    position: relative;
   }
 
-  ::ng-deep img {
+  .child-avatar-family img {
     max-width: 100%;
     max-height: 100%;
-    flex: 2;
+    position: absolute;
+    bottom: 0;
   }
 
-  .child-footer {
-    flex: 1
+  .active-avatar {
+    z-index: 1000;
+    border: red solid 1px;
+  }
+
+  .girl {
+    left: 0%;
+    z-index: 100;
+    height: 80%;
+  }
+
+  .man {
+    left: 23%;
+    z-index: 99;
+    height: 100%;
+  }
+
+  .woman {
+    left: 50%;
+    z-index: 100;
+    height: 95%;
+  }
+
+  .boy {
+    left: 74%;
+    z-index: 101;
+    height: 70%;
+  }
+
+  #btn-create-avatar {
+    margin-top: 10%;
+    justify-self: flex-start;
   }
 }

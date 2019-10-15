@@ -1,5 +1,6 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Inject, Input, OnInit, Output} from '@angular/core';
 import {ImageMapCoordinate} from "../image-map/image-map.component";
+import {DataService} from "../../service/data.service";
 
 @Component({
   selector: 'app-avatar-selector',
@@ -10,55 +11,27 @@ import {ImageMapCoordinate} from "../image-map/image-map.component";
 
 export class AvatarSelectorComponent implements OnInit {
 
-  public selectAvatar;
-  public chosenAvatarType: string = "Girl";
+  private chosenAvatarType: string = "Girl";
+  private avatarImageBasePath = '../../../assets/sprites/Icon/Avatar/';
 
-  image = "../../../assets/sprites/Icon/Avatar/Family.svg";
-  coordinates: ImageMapCoordinate[] = [
-    {
-      name: 'Girl',
-      x: 0,
-      y: 30,
-      width: 95,
-      height: 220
-    },
-    {
-      name: 'Man',
-      x: 95,
-      y: 30,
-      width: 95,
-      height: 220
-    },
-    {
-      name: 'Woman',
-      x: 190,
-      y: 30,
-      width: 95,
-      height: 220
-    },
-    {
-      name: 'Boy',
-      x: 280,
-      y: 30,
-      width: 95,
-      height: 220
-    }
-  ];
+  constructor(@Inject(DataService) private readonly dataService: DataService) {
+  }
 
   ngOnInit() {
-    this.selectAvatar = false;
     console.log("init avatar selector component");
   }
 
-  chooseAvatar(avatarNameType: string) {
-    this.chosenAvatarType = avatarNameType;
-    console.log("choosenAvatar:", avatarNameType, " type: ", this.chosenAvatarType);
-    this.selectAvatar = true;
+  public chooseAvatarType(event, avatarType) {
+    console.log(event)
+    console.log("active chosen avatar:", avatarType);
+    this.chosenAvatarType = avatarType;
   }
 
-  getClick(coordinate: ImageMapCoordinate) {
-    console.log(`Clicked on ${coordinate.name}`);
-    this.chooseAvatar(coordinate.name);
+  public createAvatar() {
+    console.log("create avatar: ", this.chosenAvatarType);
+    this.dataService.initData(this.chosenAvatarType).then(() => {
+      console.log('avatar created');
+    });
   }
 
 }

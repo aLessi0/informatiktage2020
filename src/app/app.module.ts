@@ -12,9 +12,7 @@ import {ButtonComponent} from './components/base/button/button.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {AngularMaterialModule} from './components/base/modal/angular-material.module';
 import {QuizfrageComponent} from './components/base/quizfrage/quizfrage.component';
-import { AvatarComponent } from './components/avatar/avatar.component';
 import { AvatarSelectorComponent } from './components/avatar-selector/avatar-selector.component';
-import { ImageMapComponent } from './components/image-map/image-map.component';
 
 @NgModule({
   declarations: [
@@ -24,9 +22,7 @@ import { ImageMapComponent } from './components/image-map/image-map.component';
     QuizfrageComponent,
     ButtonComponent,
     WelcomeComponent,
-    AvatarComponent,
     AvatarSelectorComponent,
-    ImageMapComponent
   ],
   imports: [
     BrowserModule,

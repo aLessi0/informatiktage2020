@@ -4,13 +4,13 @@
     <h1>Wähle dein Charakter aus.</h1>
   </div>
 
-  <div class="child-avatar-family" *ngIf="!selectAvatar">
-    <image-map [src]="image" [coordinates]="coordinates" (onClick)="getClick($event)" canEdit="true"></image-map>
+  <div class="child-avatar-family">
+    <img class="girl" src="{{this.avatarImageBasePath}}/Girl.svg" (click)="chooseAvatarType($event, 'Girl')">
+    <img class="man" src="{{this.avatarImageBasePath}}/Man.svg" (click)="chooseAvatarType($event, 'Man')">
+    <img class="woman" src="{{this.avatarImageBasePath}}/Woman.svg" (click)="chooseAvatarType($event, 'Woman')">
+    <img class="boy" src="{{this.avatarImageBasePath}}/Boy.svg" (click)="chooseAvatarType($event, 'Boy')">
   </div>
 
-  <app-avatar [avatarType]="chosenAvatarType" *ngIf="selectAvatar"></app-avatar>
-
-  <div class="child-footer">
-  </div>
+  <app-button id="btn-create-avatar" btnTitle="Los geht's" (btnClicked)="this.createAvatar()"></app-button>
 
 </div>
