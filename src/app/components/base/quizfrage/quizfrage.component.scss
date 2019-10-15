@@ -1,0 +1,20 @@
+
+:host {
+  display: flex;
+  flex: 1 0 auto;
+
+  .quizfrage {
+    margin-bottom: .5rem;
+  }
+
+  .answer-field {
+    margin-bottom: .5rem;
+  }
+
+  .check-answer {
+    margin-bottom: .5rem;
+    height: 2rem;
+    height: 0;
+
+  }
+}

@@ -23,15 +23,18 @@ export class DataService {
   public activeRoom$: Observable<RoomModel>;
   public game$: Observable<GameModel>;
   public progress$: Observable<ProgressModel>;
+  public activeQuestion$: Observable<QuestionModel>;
 
   private activeRoomSubject: BehaviorSubject<RoomModel> = new BehaviorSubject(undefined);
   private gameSource: BehaviorSubject<GameModel> = new BehaviorSubject(undefined);
   private progressSource: BehaviorSubject<ProgressModel> = new BehaviorSubject(undefined);
+  private activeQuestionSource: BehaviorSubject<QuestionModel> = new BehaviorSubject(undefined);
 
   constructor() {
     this.game$ = this.gameSource.asObservable();
     this.activeRoom$ = this.activeRoomSubject.asObservable();
     this.progress$ = this.progressSource.asObservable();
+    this.activeQuestion$ = this.activeQuestionSource.asObservable();
 
     this.loadGame().then(game => this.gameSource.next(game));
     this.loadProgress().then(progress => this.progressSource.next(progress));
@@ -43,6 +46,14 @@ export class DataService {
 
   public leaveActiveRoom(): void {
     this.activeRoomSubject.next(undefined);
+  }
+
+  public selectQuestion(question: QuestionModel): void {
+    this.activeQuestionSource.next(question);
+  }
+
+  public unselectQuesion(): void {
+    this.activeQuestionSource.next(undefined);
   }
 
   /* notify all subscriber if the progress was updated by ref*/
@@ -156,6 +167,7 @@ export class DataService {
 
     const room1Question1: QuestionModel = new QuestionModel();
     room1Question1.number = 1;
+    room1Question1.isMandatory = true;
     room1Question1.questionText = 'Dies ist die Mandatory-Frage. Was bekommt man wenn man bei Requirements "Require" rausnimmt?';
     room1Question1.correctAnswer = 'ments';
     const room1Question2: QuestionModel = new QuestionModel();
@@ -187,6 +199,7 @@ export class DataService {
 
     const room2Question1: QuestionModel = new QuestionModel();
     room2Question1.number = 1;
+    room2Question1.isMandatory = true;
     room2Question1.questionText = 'Dies ist die Mandatory-Frage. Was bekommt man wenn man bei Entwicklung "Ent" rausnimmt?';
     room2Question1.correctAnswer = 'wicklung';
     const room2Question2: QuestionModel = new QuestionModel();
@@ -218,6 +231,7 @@ export class DataService {
 
     const room3Question1: QuestionModel = new QuestionModel();
     room3Question1.number = 1;
+    room3Question1.isMandatory = true;
     room3Question1.questionText = 'Dies ist die Mandatory-Frage. Was bekommt man wenn man bei Build "Bu" rausnimmt?';
     room3Question1.correctAnswer = 'ild';
     const room3Question2: QuestionModel = new QuestionModel();
@@ -226,7 +240,7 @@ export class DataService {
     room3Question2.correctAnswer = '6';
     const room3Question3: QuestionModel = new QuestionModel();
     room3Question3.number = 3;
-    room3Question2.questionText = 'Dies ist eine Optional-Frage. Was gibt 33+33?';
+    room3Question3.questionText = 'Dies ist eine Optional-Frage. Was gibt 33+33?';
     room3Question3.correctAnswer = '66';
 
     room3.questions.push(room3Question1, room3Question2, room3Question3);
