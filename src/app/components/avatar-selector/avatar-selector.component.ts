@@ -59,14 +59,14 @@ animations: [
 
 export class AvatarSelectorComponent implements OnInit {
 
-  private chosenAvatarType: string = "Girl";
-  private avatarImageBasePath = '../../../assets/sprites/Icon/Avatar/';
+  private chosenAvatarType: string = 'Girl';
+  private avatarImageBasePath = '/assets/sprites/Icon/Avatar/';
 
   constructor(@Inject(DataService) private readonly dataService: DataService) {
   }
 
   ngOnInit() {
-    console.log("init avatar selector component");
+    console.log('init avatar selector component');
   }
 
   public chooseAvatarType(event, avatarType) {
