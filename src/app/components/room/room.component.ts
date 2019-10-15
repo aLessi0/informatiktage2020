@@ -14,8 +14,9 @@ import {QuizfrageComponent} from '../base/quizfrage/quizfrage.component';
 export class RoomComponent implements OnInit {
   @Input() public room: RoomModel;
   @Output() private onClose: EventEmitter<void> = new EventEmitter();
-
+  
   public optionalQuestions: number[];
+  private mandatoryQuestionWasAnsweredOnEntry: boolean;
 
   constructor(@Inject(DataService) private readonly dataService: DataService,
               @Inject(ModalService) private readonly modalService: ModalService) {
@@ -26,10 +27,12 @@ export class RoomComponent implements OnInit {
     for (let i = 1; i < this.room.questions.length; i++) {
       this.optionalQuestions.push(i);
     }
+
+    this.mandatoryQuestionWasAnsweredOnEntry = this.room.questions[0].answered;
   }
 
   public closeRoom(): void {
-    if (!this.room.feedback) {
+    if (!this.room.feedback && !this.mandatoryQuestionWasAnsweredOnEntry && this.room.questions[0].answered) {
       this.modalService.openDialog(FeedbackComponent, true).subscribe(() => this.onClose.emit());
     } else {
       this.onClose.emit();
