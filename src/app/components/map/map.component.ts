@@ -37,17 +37,24 @@ export class MapComponent implements OnInit {
 
       const startLevel: number = this.progress.avatarPos;
       const endLevel: number = room.level;
-      const animationClass: string = 'animation' + startLevel + '-' + endLevel;
 
-      this.renderer.addClass(this.personRef.nativeElement, animationClass);
-
-      this.personRef.nativeElement.addEventListener('animationend', () => {
+      const openRoom = () => {
         this.renderer.removeClass(this.personRef.nativeElement, 'pos' + startLevel);
         this.renderer.addClass(this.personRef.nativeElement, 'pos' + endLevel);
 
         this.progress.avatarPos = room.level;
         this.dataService.activateRoom(room);
-      });
+      };
+
+      if (startLevel === endLevel) {
+        openRoom();
+      } else {
+        const animationClass: string = 'animation' + startLevel + '-' + endLevel;
+
+        this.renderer.addClass(this.personRef.nativeElement, animationClass);
+
+        this.personRef.nativeElement.addEventListener('animationend', openRoom);
+      }
     }
   }
 
