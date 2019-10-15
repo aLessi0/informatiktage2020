@@ -1,12 +1,12 @@
 import {Component, DoCheck, Inject, KeyValueDiffer, KeyValueDiffers, NgZone} from '@angular/core';
 import {DataService} from './service/data.service';
 import {ProgressModel} from './model/user/progress.model';
-import {PlayedLevelModel} from './model/user/played-level.model';
-import {AnswerModel} from './model/user/answer.model';
 import {DebounceUtils} from './utils/debounce.utils';
 import {HttpClient} from '@angular/common/http';
 import {RoomModel} from './model/game/room.model';
 import {GameModel} from './model/game/game.model';
+import {ModalService} from './service/modal.service';
+import {FeedbackComponent} from './components/modal/feedback/feedback.component';
 
 @Component({
   selector: 'app-root',
@@ -26,14 +26,15 @@ export class AppComponent implements DoCheck {
   constructor(@Inject(DataService) private readonly dataService: DataService,
               @Inject(NgZone) private readonly ngZone: NgZone,
               @Inject(KeyValueDiffers) readonly differs: KeyValueDiffers,
-              @Inject(HttpClient) private readonly http: HttpClient) {
+              @Inject(HttpClient) private readonly http: HttpClient,
+              private modalService: ModalService) {
     this.differ = differs.find([]).create();
 
     this.dataService.game$.subscribe(game => {
       this.game = game;
     });
 
-    this.dataService.activeRoom$.subscribe(activeRoom =>  {
+    this.dataService.activeRoom$.subscribe(activeRoom => {
       this.currentRoom = activeRoom;
     });
 
@@ -46,6 +47,7 @@ export class AppComponent implements DoCheck {
     // this.http.post('/api/write', '').subscribe(() => {
     //   console.log('works');
     // });
+
   }
 
   public leaveActiveRoom(): void {
@@ -55,12 +57,6 @@ export class AppComponent implements DoCheck {
   public ngDoCheck() {
     this.ngZone.runOutsideAngular(() => {
       this.checkForSave();
-    });
-  }
-
-  public startGame(): void {
-    this.dataService.initData().then(() => {
-      // this.loadProgress();
     });
   }
 

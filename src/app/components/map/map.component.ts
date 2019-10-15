@@ -19,13 +19,20 @@ export class MapComponent {
 
   public activateRoom(roomNumber: number): void {
     if (this.isRoomUnlocked(roomNumber)) {
-      this.dataService.activateRoom(this.getRoomByNumber(roomNumber));
+      let room = this.getRoomByNumber(roomNumber);
+      this.progress.avatarPos = room.level;
+      this.dataService.activateRoom(room);
     }
   }
 
   public isRoomUnlocked(roomNumber: number): boolean {
     const room = this.getRoomByNumber(roomNumber);
     return room && room.level <= this.progress.unlockedLevel;
+  }
+
+  public getRoomClass(roomNumber: number): string {
+    let room = this.getRoomByNumber(roomNumber);
+    return room && room.roomClass;
   }
 
 
