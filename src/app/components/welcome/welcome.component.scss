@@ -35,12 +35,22 @@
   .child-subtext {
     display: flex;
     flex: 1 0 auto;
+    flex-direction: column;
     justify-content: center;
     margin-top: 10%;
     margin-left: 5%;
   }
 
   .child-logo {
+    display: flex;
+    flex: 1 0 auto;
+    justify-content: center;
+    margin-top: 10%;
+    margin-left: 5%;
+    text-align: center;
+  }
+
+  .child-icon {
     display: flex;
     flex: 1 0 auto;
     justify-content: center;
