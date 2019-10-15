@@ -2,10 +2,8 @@
   <app-welcome></app-welcome>
 </div>
 
-<div *ngIf="!loadingProgress && !progressAvailable">
-  <div class="avatar-container">
+<div class="avatar-container" *ngIf="!progressAvailable">
     <app-avatar-selector *ngIf="!selectAvatar"></app-avatar-selector>
-  </div>
 </div>
 
 <div class="game-is_running" *ngIf="progressAvailable">
