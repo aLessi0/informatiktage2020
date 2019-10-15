@@ -6,6 +6,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {QuizRoomComponent} from './components/quiz-room/quiz-room.component';
 import {FormsModule} from '@angular/forms';
 import {MapComponent} from './components/map/map.component';
+import {WelcomeComponent} from './components/welcome/welcome.component';
 import {RoomComponent} from './components/room/room.component';
 import {AngularSvgIconModule} from 'angular-svg-icon';
 import {ButtonComponent} from './components/base/button/button.component';
@@ -18,7 +19,8 @@ import {AngularMaterialModule} from './components/base/modal/angular-material.mo
     MapComponent,
     RoomComponent,
     QuizRoomComponent,
-    ButtonComponent
+    ButtonComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,
@@ -33,5 +35,6 @@ import {AngularMaterialModule} from './components/base/modal/angular-material.mo
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   entryComponents: [] // define modal components
 })
+
 export class AppModule {
 }

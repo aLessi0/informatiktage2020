@@ -9,8 +9,8 @@
   <div class="quiz-room-questions">
     <div class="quiz-room-question" *ngFor="let question of activeRoom.questions">
       <h2>{{ (question.isCorrect ? 'Y ' : 'N ')}}{{question.questionText}}</h2>
-      <span class="quiz-room-answer"><input type="text" [(ngModel)]="question.clientAnswer"/></span>
-      <button class="btn" (click)="checkAnswer(question)">prüfen</button>
+      <span class="quiz-room-answer"><input class="input-field" type="text" [(ngModel)]="question.clientAnswer"/></span>
+      <app-button (click)="checkAnswer(question)" btnTitle="prüfen"></app-button>
     </div>
   </div>
 </div>

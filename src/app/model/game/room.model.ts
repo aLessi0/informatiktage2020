@@ -2,7 +2,7 @@ import {AttachmentModel} from './attachment.model';
 import {QuestionModel} from './question.model';
 
 export class RoomModel {
-  private _level: number;
+  public level: number;
   public isUnlocked: boolean;
   public justUnlocked: boolean;
   public name: string;
@@ -13,11 +13,4 @@ export class RoomModel {
   public questions: QuestionModel[];
   public feedback: number; // 1-4 -> feedback is set, 0 -> not set
 
-  public set level(level: number) {
-    this._level = level;
-  }
-
-  public get level() {
-    return this._level;
-  }
 }

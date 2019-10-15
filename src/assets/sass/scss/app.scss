@@ -1,6 +1,11 @@
 @import "colors";
 
 //base
+html, body {
+  font-family: 'Rubik', sans-serif;
+  font-size: 4.266666667vw;
+}
+
 html {
   height: 100vh;
   width: 100vw;
@@ -11,12 +16,13 @@ body {
   margin: 0;
   display: flex;
   flex: 1 0 auto;
+  align-items: center;
+  justify-content: center;
 }
 
 //texts
 h1 {
-  font-family: 'Rubik', sans-serif;
-  font-size: 23px;
+  font-size: 4.923vw;
   font-weight: bold;
   font-style: normal;
   font-stretch: normal;
@@ -25,20 +31,7 @@ h1 {
   color: #000000;
 }
 
-p {
-  font-family: 'Rubik', sans-serif;
-  font-size: 18px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  color: #000000;
-}
-
 h2 {
-  font-family: 'Rubik', sans-serif;
-  font-size: 16px;
   font-weight: bold;
   font-style: normal;
   font-stretch: normal;
@@ -54,6 +47,15 @@ h2 {
   border: solid 0.2em #000000;
 }
 
+@media (min-aspect-ratio: 9/20) {
+  html, body {
+    font-size: 1.970vh;
+  }
+
+  h1 {
+    font-size: 2.8325vh;
+  }
+}
 
 //angular material design for modal dialog
 @import '~@angular/material/theming';
@@ -80,3 +82,4 @@ $candy-app-theme: mat-light-theme($candy-app-primary, $candy-app-accent, $candy-
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
 @include angular-material-theme($candy-app-theme);
+

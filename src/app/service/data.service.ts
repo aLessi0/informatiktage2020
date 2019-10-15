@@ -22,15 +22,19 @@ class AsyncLocalStorage {
 export class DataService {
   public activeRoom$: Observable<RoomModel>;
   public game$: Observable<GameModel>;
+  public progress$: Observable<ProgressModel>;
 
   private activeRoomSubject: BehaviorSubject<RoomModel> = new BehaviorSubject(undefined);
-  private gameSource: BehaviorSubject<GameModel> = new BehaviorSubject(DataService.createGameData());
+  private gameSource: BehaviorSubject<GameModel> = new BehaviorSubject(undefined);
+  private progressSource: BehaviorSubject<ProgressModel> = new BehaviorSubject(undefined);
 
   constructor() {
     this.game$ = this.gameSource.asObservable();
     this.activeRoom$ = this.activeRoomSubject.asObservable();
+    this.progress$ = this.progressSource.asObservable();
 
-    this.activeRoomSubject.next(this.gameSource.getValue().rooms[0]);
+    this.loadGame().then(game => this.gameSource.next(game));
+    this.loadProgress().then(progress => this.progressSource.next(progress));
   }
 
   public activateRoom(room: RoomModel): void {
@@ -41,14 +45,10 @@ export class DataService {
     this.activeRoomSubject.next(undefined);
   }
 
-  public unlockNextRoom(currentRoom: RoomModel): void {
-    const game = this.gameSource.getValue();
-    game.rooms.forEach((room) => {
-      if (currentRoom.level + 1 === room.level) {
-        room.isUnlocked = true;
-        room.justUnlocked = true;
-      }
-    });
+  public unlockNextRoom(): void {
+    const progress = this.progressSource.getValue();
+    progress.unlockedLevel++;
+    this.progressSource.next(progress);
   }
 
   public saveProgress(progress: ProgressModel): Promise<void> {
@@ -58,12 +58,18 @@ export class DataService {
 
   public initData(): Promise<void> {
     const game: GameModel = DataService.createGameData();
+    this.gameSource.next(game);
     const progress: ProgressModel = DataService.createProgressData();
+    this.progressSource.next(progress);
     return AsyncLocalStorage.setItem('game', JSON.stringify(game)).then(() => AsyncLocalStorage.setItem('progress', JSON.stringify(progress)));
   }
 
-  public loadProgress(): Promise<ProgressModel> {
+  private loadProgress(): Promise<ProgressModel> {
     return AsyncLocalStorage.getItem('progress').then((value) => value && JSON.parse(value));
+  }
+
+  private loadGame(): Promise<GameModel> {
+    return AsyncLocalStorage.getItem('game').then((value) => value && JSON.parse(value));
   }
 
   private static createProgressData(): ProgressModel {
@@ -72,7 +78,7 @@ export class DataService {
     progress.collectedReward = false;
     progress.coins = 0;
     progress.playedLevels = [];
-    progress.unlockedLevel = 0;
+    progress.unlockedLevel = 1;
 
     return progress;
   }
