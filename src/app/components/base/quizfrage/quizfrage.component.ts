@@ -14,12 +14,12 @@ import {PlayedLevelModel} from '../../../model/user/played-level.model';
   styleUrls: ['./quizfrage.component.scss']
 })
 export class QuizfrageComponent {
-  private question: QuestionModel;
-  private room: RoomModel;
-  private progress: ProgressModel;
-  private answer: AnswerModel;
-  private level: PlayedLevelModel;
-  private answerGiven: string;
+  public question: QuestionModel;
+  public room: RoomModel;
+  public progress: ProgressModel;
+  public answer: AnswerModel;
+  public level: PlayedLevelModel;
+  public answerGiven: string;
 
   constructor(@Inject(DataService) private readonly dataService: DataService,
               @Inject(ProgressService) private readonly progressService: ProgressService,
