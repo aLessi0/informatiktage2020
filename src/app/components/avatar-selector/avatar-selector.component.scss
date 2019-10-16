@@ -45,9 +45,7 @@
   }
 
   .child-avatar-family {
-    img {
-      max-width: 100%;
-      max-height: 100%;
+    svg-icon {
       position: absolute;
       bottom: 0;
 
@@ -74,25 +72,25 @@
   .girl {
     left: 0;
     z-index: 100;
-    height: 80%;
+    width: 25%;
   }
 
   .man {
     left: 21%;
     z-index: 99;
-    height: 100%;
+    width: 35%;
   }
 
   .woman {
     left: 50%;
     z-index: 100;
-    height: 95%;
+    width: 28%;
   }
 
   .boy {
     left: 74%;
     z-index: 101;
-    height: 70%;
+    width: 27%;
   }
 
 }
