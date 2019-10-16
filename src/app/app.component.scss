@@ -24,6 +24,39 @@
     flex: 1 0 auto;
   }
 
+  .room-enter-leave-panel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: transparent;
+    pointer-events: none;
+
+    &.animation {
+      pointer-events: initial;
+      animation: black-animation 1s 1 ease-in-out, transparent-animation 1s 1s 1 ease-in-out;
+
+      @keyframes black-animation {
+        0% {
+          background-color: transparent;
+        }
+        100% {
+          background-color: black;
+        }
+      }
+
+      @keyframes transparent-animation {
+        0% {
+          background-color: black;
+        }
+        100% {
+          background-color: transparent;
+        }
+      }
+    }
+  }
+
   @media (max-aspect-ratio: 9/20) {
     height: calc(100vw / 9 * 20);
     width: 100vw;

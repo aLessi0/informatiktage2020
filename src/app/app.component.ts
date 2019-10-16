@@ -1,4 +1,13 @@
-import {Component, DoCheck, Inject, KeyValueDiffer, KeyValueDiffers, NgZone} from '@angular/core';
+import {
+  Component,
+  DoCheck,
+  ElementRef,
+  Inject,
+  KeyValueDiffer,
+  KeyValueDiffers,
+  NgZone, Renderer2,
+  ViewChild
+} from '@angular/core';
 import {DataService} from './service/data.service';
 import {ProgressModel} from './model/user/progress.model';
 import {DebounceUtils} from './utils/debounce.utils';
@@ -6,6 +15,7 @@ import {HttpClient} from '@angular/common/http';
 import {RoomModel} from './model/game/room.model';
 import {GameModel} from './model/game/game.model';
 import {ProgressService} from './service/progress.service';
+import {animation} from "@angular/animations";
 
 @Component({
   selector: 'app-root',
@@ -18,6 +28,8 @@ export class AppComponent implements DoCheck {
   public game: GameModel;
   public currentRoom: RoomModel;
 
+  @ViewChild('animationPanel', {read: ElementRef}) public animationPanelRef: ElementRef;
+
   private readonly differ: KeyValueDiffer<string, string>;
 
   private debounceCheckForSave: (...args: any[]) => void;
@@ -26,7 +38,8 @@ export class AppComponent implements DoCheck {
               @Inject(NgZone) private readonly ngZone: NgZone,
               @Inject(KeyValueDiffers) readonly differs: KeyValueDiffers,
               @Inject(HttpClient) private readonly http: HttpClient,
-              @Inject(ProgressService) private readonly progressService: ProgressService) {
+              @Inject(ProgressService) private readonly progressService: ProgressService,
+              @Inject(Renderer2) private readonly renderer: Renderer2) {
     this.differ = differs.find([]).create();
 
     this.dataService.game$.subscribe(game => {
@@ -34,7 +47,18 @@ export class AppComponent implements DoCheck {
     });
 
     this.dataService.activeRoom$.subscribe(activeRoom => {
-      this.currentRoom = activeRoom;
+      if (this.currentRoom !== activeRoom) {
+        this.renderer.addClass(this.animationPanelRef.nativeElement, 'animation');
+        let animationCounter = 0;
+        this.animationPanelRef.nativeElement.addEventListener('animationend', () => {
+          animationCounter++;
+          if (animationCounter === 1) {
+            this.currentRoom = activeRoom;
+          } else if (animationCounter === 2) {
+            this.renderer.removeClass(this.animationPanelRef.nativeElement, 'animation');
+          }
+        });
+      }
     });
 
     this.progressService.progress$.subscribe(progress => {
