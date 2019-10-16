@@ -1,4 +1,4 @@
-import {Component, ElementRef, Inject, Input, OnInit, Renderer2, ViewChild} from '@angular/core';
+import {Component, ElementRef, Inject, Input, Renderer2, ViewChild} from '@angular/core';
 import {DataService} from '../../service/data.service';
 import {GameModel} from '../../model/game/game.model';
 import {ProgressModel} from '../../model/user/progress.model';
@@ -9,28 +9,18 @@ import {RoomModel} from '../../model/game/room.model';
   templateUrl: './map.component.html',
   styleUrls: ['./map.component.scss']
 })
-export class MapComponent implements OnInit {
+export class MapComponent {
 
   @Input() public game: GameModel;
   @Input() public progress: ProgressModel;
 
   @ViewChild('person', {read: ElementRef}) personRef: ElementRef<HTMLElement>;
 
-  public numberOfCoinsInGame: number;
-
   private isWalking = false;
 
   constructor(@Inject(DataService) private readonly dataService: DataService,
               @Inject(Renderer2) private readonly renderer: Renderer2) {
 
-  }
-
-  public ngOnInit(): void {
-    let coinsInGame = 0;
-    for (const room of this.game.rooms) {
-      coinsInGame += room.optionalQuestions.length;
-    }
-    this.numberOfCoinsInGame = coinsInGame;
   }
 
   public activateRoom(roomNumber: number): void {
