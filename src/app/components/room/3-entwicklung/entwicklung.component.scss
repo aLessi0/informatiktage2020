@@ -1,34 +1,70 @@
 :host {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  position: relative;
 
   .satelite {
-
+    pointer-events: none;
+    position: absolute;
+    width: 32%;
+    top: 1%;
+    left: 70%;
   }
 
-  .small-planet {
-
+  .planets {
+    pointer-events: none;
+    position: absolute;
+    width: 30%;
+    top: 13%;
+    left: 23%;
   }
 
-  .medium-planet {
-
-  }
-
-  .big-planet {
-
+  .planet {
+    pointer-events: none;
+    position: absolute;
+    width: 36%;
+    top: 38%;
+    left: 13%;
   }
 
   .stars1 {
-
+    pointer-events: none;
+    position: absolute;
+    width: 42%;
+    top: 60%;
+    left: 8%;
   }
 
   .stars2 {
-
+    pointer-events: none;
+    position: absolute;
+    width: 30%;
+    top: 26%;
+    left: 70%;
   }
 
   .star-constellation {
-
+    pointer-events: none;
+    position: absolute;
+    width: 32%;
+    top: 64%;
+    left: 63%;
   }
 
   .telescope {
+    pointer-events: none;
+    position: absolute;
+    width: 31%;
+    top: 76%;
+    left: 26%;
+  }
 
+  .girl {
+    pointer-events: none;
+    position: absolute;
+    width: 30%;
   }
 }
