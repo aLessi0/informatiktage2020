@@ -16,6 +16,7 @@ export class AbstractRoom {
   }
 
   public openQuestion(question: QuestionModel): void {
+    console.log('openQuestion:', question);
     const quizData: QuizfrageData = {
       question
     };
