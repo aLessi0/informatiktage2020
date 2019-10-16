@@ -1,8 +1,8 @@
-<svg-icon src="\assets\sprites\Room\3-develop-and-testing\Satellit.svg" class="satelite"></svg-icon>
+<svg-icon src="\assets\sprites\Room\3-develop-and-testing\Satellit.svg" (click)="openQuestion(room.questions[1])" class="satelite"></svg-icon>
 <svg-icon src="\assets\sprites\Room\3-develop-and-testing\Planets.svg" class="planets"></svg-icon>
 <svg-icon src="\assets\sprites\Room\3-develop-and-testing\Planet.svg" class="planet"></svg-icon>
 <svg-icon src="\assets\sprites\Room\3-develop-and-testing\Stars.svg" class="stars1"></svg-icon>
 <svg-icon src="\assets\sprites\Room\3-develop-and-testing\Stars2.svg" class="stars2"></svg-icon>
-<svg-icon src="\assets\sprites\Room\3-develop-and-testing\Sternbild.svg" class="star-constellation"></svg-icon>
-<svg-icon src="\assets\sprites\Room\3-develop-and-testing\Teleskop.svg" class="telescope"></svg-icon>
+<svg-icon src="\assets\sprites\Room\3-develop-and-testing\Sternbild.svg" (click)="openQuestion(room.questions[2])" class="star-constellation"></svg-icon>
+<svg-icon src="\assets\sprites\Room\3-develop-and-testing\Teleskop.svg" (click)="openQuestion(room.questions[0])" class="telescope"></svg-icon>
 <button *ngFor="let question of room.questions" (click)="openQuestion(question)">{{question.number}}</button>
