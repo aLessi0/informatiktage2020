@@ -23,6 +23,7 @@ import { RecruitingComponent } from './components/room/5-recruiting/recruiting.c
 import { PlaygroundComponent } from './components/room/6-playground/playground.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import {RewardCoinsComponent} from './components/base/reward-coins/reward-coins.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { environment } from '../environments/environment';
     EntwicklungComponent,
     BuildDeployComponent,
     RecruitingComponent,
-    PlaygroundComponent
+    PlaygroundComponent,
+    RewardCoinsComponent
   ],
   imports: [
     BrowserModule,
@@ -56,7 +58,8 @@ import { environment } from '../environments/environment';
   entryComponents: [
     FeedbackComponent,
     InfotextComponent,
-    QuizfrageComponent
+    QuizfrageComponent,
+    RewardCoinsComponent
   ] // define modal components
 })
 
