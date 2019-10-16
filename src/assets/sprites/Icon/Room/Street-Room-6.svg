@@ -1,19 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg viewBox="0 0 336 812" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg viewBox="0 0 337 812" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 58 (84663) - https://sketch.com -->
-    <title>Street</title>
+    <title>Street-Playground</title>
     <desc>Created with Sketch.</desc>
-    <g id="App" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round">
-        <g id="Room-Welcome">
-            <g id="Street" transform="translate(-35.500000, -0.500000)">
-                <g id="Icon/Room/Street">
+    <g id="App" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Room-Playground">
+            <g id="Street-Playground" transform="translate(-35.500000, -0.500000)">
+                <g id="Icon/Room/Street" stroke-linecap="round">
                     <path d="M41.5,2.5 L48.5,810.5" id="Line-2" stroke="#E7E8EA" stroke-width="37"></path>
                     <path d="M43.5,0.5 L50.5,808.5" id="Line-2" stroke="#000000" stroke-width="6" stroke-dasharray="22"></path>
                 </g>
-                <g transform="translate(63.109267, 360.564477)" id="Path-8" stroke-linejoin="round">
-                    <path d="M0,17.9355227 C168.519512,-8.13818796 263.430622,-4.80485463 284.733331,27.9355227 C316.687394,77.0460887 306.390733,117.935523 252.890733,121.935523 C199.390733,125.935523 179.189065,61.2740572 111.390733,87.3920815 C43.5924001,113.510106 32.6292537,330.602859 87.3907328,374.365753 C123.898386,403.541016 181.677328,400.022038 260.727559,363.808819" stroke="#E7E8EA" stroke-width="10"></path>
-                    <path d="M0.488685139,21.9355227 C171.110906,-3.06447731 265.744922,-0.0644773118 284.390733,30.9355227 C312.359449,77.4355227 303.390733,122.935523 249.890733,126.935523 C196.390733,130.935523 176.189065,66.2740572 108.390733,92.3920815 C40.5924001,118.510106 29.6292537,335.602859 84.3907328,379.365753 C120.898386,408.541016 178.677328,405.022038 257.727559,368.808819" stroke="#000000" stroke-width="6" stroke-dasharray="19"></path>
+                <g id="Group" transform="translate(47.532664, 286.000000)" stroke-linecap="round" stroke-linejoin="round">
+                    <g id="Street-Playground" transform="translate(0.000000, 0.179930)">
+                        <path d="M4.26325641e-14,53.0442145 C62.9673365,70.1982136 168.967336,-47.6729796 193.967336,24.3200704 C218.967336,96.3131204 279.528106,193.670948 189.528106,197.244047 C99.528106,200.817146 52,316.92007 74.3813247,370.22007 C96.7626494,423.52007 164.267336,474.019334 248.967336,425.509609" id="Path-6" stroke="#E7E8EA" stroke-width="10"></path>
+                        <path d="M12.4486842,55.2879282 C55.3597072,61.1776764 167.967336,-41.6729796 192.967336,30.3200704 C217.967336,102.31312 278.528106,199.670948 188.528106,203.244047 C98.528106,206.817146 51,322.92007 73.3813247,376.22007 C95.7626494,429.52007 157.967336,474.513195 251.963876,429.346308" id="Path-6" stroke="#000000" stroke-width="6" stroke-dasharray="19"></path>
+                    </g>
                 </g>
+                <rect id="Rectangle" fill="#FFFFFF" x="371.5" y="194.5" width="1" height="1"></rect>
             </g>
         </g>
     </g>
