@@ -1,25 +1,26 @@
 <div class="room {{room.roomClass}}">
 
-  <div class="bg-street" (click)="closeRoom()">
+  <div class="bg-street">
     <svg-icon src="/assets/sprites/Icon/Room/Street-Room-{{room.level}}.svg" [svgStyle]="{'height': '100%', 'width': '100%'}"></svg-icon>
   </div>
+  <div class="main-street-layer" (click)="onStreetMapTap()"></div>
 
   <div class="bg-rectangle">
 
-    <svg-icon class="map-nav" src="/assets/sprites/Icon/Room/Map-Nav.svg" (click)="closeRoom()"></svg-icon>
+    <svg-icon class="map-nav" src="/assets/sprites/Icon/Room/Map-Nav.svg" (click)="onStreetMapTap()"></svg-icon>
 
-    <div class="room-credits">
+    <div class="room-credits" *ngIf="level">
       <svg-icon src="/assets/sprites/Room/Credits/coin-border.svg"></svg-icon>
       <div class="credits">
-        <svg-icon class="key-credit" *ngIf="!room.keyCollected"
+        <svg-icon class="key-credit" *ngIf="!level.key"
                   src="/assets/sprites/Room/Credits/Key-inactive.svg"></svg-icon>
-        <svg-icon class="key-credit" *ngIf="room.keyCollected"
+        <svg-icon class="key-credit" *ngIf="level.key"
                   src="/assets/sprites/Room/Credits/Key-active.svg"></svg-icon>
 
         <div class="coin-credit" *ngFor="let optQuest of optionalQuestions">
-          <svg-icon *ngIf="room.coinsCollected >= optQuest"
+          <svg-icon *ngIf="level.coins >= optQuest"
                     src="/assets/sprites/Room/Credits/Coin-active.svg"></svg-icon>
-          <svg-icon *ngIf="room.coinsCollected < optQuest"
+          <svg-icon *ngIf="level.coins < optQuest"
                     src="/assets/sprites/Room/Credits/Coin-inactive.svg"></svg-icon>
         </div>
       </div>
