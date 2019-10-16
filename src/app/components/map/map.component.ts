@@ -5,6 +5,8 @@ import {ProgressModel} from '../../model/user/progress.model';
 import {RoomModel} from '../../model/game/room.model';
 import {ModalService} from '../../service/modal.service';
 import {RewardCoinsComponent} from '../base/reward-coins/reward-coins.component';
+import {QuizfrageComponent, QuizfrageData} from "../base/quizfrage/quizfrage.component";
+import {QuestionModel} from "../../model/game/question.model";
 
 @Component({
   selector: 'app-map',
@@ -72,7 +74,7 @@ export class MapComponent implements OnInit {
   }
 
   public collectedReward(): void {
-    this.modalService.openDialog(RewardCoinsComponent, false).subscribe(() => {
+    this.modalService.openDialog(RewardCoinsComponent, false, true).subscribe(() => {
     });
   }
 

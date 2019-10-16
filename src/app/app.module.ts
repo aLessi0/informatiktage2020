@@ -55,7 +55,8 @@ import { RewardCoinsComponent } from './components/base/reward-coins/reward-coin
   entryComponents: [
     FeedbackComponent,
     InfotextComponent,
-    QuizfrageComponent
+    QuizfrageComponent,
+    RewardCoinsComponent
   ] // define modal components
 })
 
