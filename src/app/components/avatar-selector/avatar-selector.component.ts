@@ -7,8 +7,8 @@ import {DataService} from '../../service/data.service';
   styleUrls: ['./avatar-selector.component.scss']
 })
 export class AvatarSelectorComponent {
-  private chosenAvatarType: string;
-  private avatarImageBasePath = '/assets/sprites/Icon/Avatar/';
+  public chosenAvatarType: string;
+  public avatarImageBasePath = '/assets/sprites/Icon/Avatar/';
 
   constructor(@Inject(DataService) private readonly dataService: DataService) {}
 

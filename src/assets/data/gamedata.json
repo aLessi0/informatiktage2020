@@ -14,11 +14,6 @@
           "number": 1,
           "questionText": "Dies ist eine Optional-Frage. Was gibt 1+1?",
           "correctAnswer": "2"
-        },
-        {
-          "number": 2,
-          "questionText": "Was bedeutet IT?",
-          "correctAnswer": "Information Technology"
         }
       ]
     },
