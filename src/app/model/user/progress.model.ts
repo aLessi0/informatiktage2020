@@ -7,6 +7,6 @@ export class ProgressModel {
   public unlockedLevel: number;
   public coins: number;
   public collectedReward: boolean;
-  public playedLevels: PlayedLevelModel[];
+  public playedLevels: Map<number, PlayedLevelModel>;
   public contest: ContestModel;
 }

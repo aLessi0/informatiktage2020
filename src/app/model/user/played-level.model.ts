@@ -1,6 +1,8 @@
-import {AnswerModel} from "./answer.model";
+import {AnswerModel} from './answer.model';
 
 export class PlayedLevelModel {
   public level: number;
-  public answers: AnswerModel[];
+  public answers: Map<number, AnswerModel>;
+  public coins: number;
+  public key: boolean;
 }

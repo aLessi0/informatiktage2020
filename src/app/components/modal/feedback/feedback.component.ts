@@ -24,7 +24,6 @@ export class FeedbackComponent implements OnInit {
     // dataservice update feedback for room
     if (this.room) {
       this.room.feedback = feedback;
-      this.dataService.roomUpdated();
       this.modalService.closeDialog();
     }
   }
