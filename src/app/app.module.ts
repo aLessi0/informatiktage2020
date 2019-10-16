@@ -21,6 +21,8 @@ import { EntwicklungComponent } from './components/room/3-entwicklung/entwicklun
 import { BuildDeployComponent } from './components/room/4-build-deploy/build-deploy.component';
 import { RecruitingComponent } from './components/room/5-recruiting/recruiting.component';
 import { PlaygroundComponent } from './components/room/6-playground/playground.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -45,7 +47,8 @@ import { PlaygroundComponent } from './components/room/6-playground/playground.c
     HttpClientModule,
     AngularSvgIconModule,
     BrowserAnimationsModule,
-    AngularMaterialModule
+    AngularMaterialModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent],
