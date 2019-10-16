@@ -1,0 +1,57 @@
+:host {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  position: relative;
+
+  .cactus {
+    pointer-events: none;
+    position: absolute;
+    width: 40%;
+    bottom: 3%;
+    left: 10%;
+  }
+
+  .cactus2 {
+    pointer-events: none;
+    position: absolute;
+    width: 40%;
+    top: 10%;
+    left: 20%;
+  }
+
+  .cactus3 {
+    pointer-events: none;
+    position: absolute;
+    width: 40%;
+    top: 38%;
+    left: 55%
+  }
+
+  .kirche {
+    pointer-events: none;
+    position: absolute;
+    width: 40%;
+    top: 11.5%;
+    left: 56%;
+  }
+
+  .saloon {
+    pointer-events: none;
+    position: absolute;
+    width: 40%;
+    top: 65%;
+    left: 0%;
+  }
+
+  .sun {
+    pointer-events: none;
+    position: absolute;
+    width: 20%;
+    top: 2%;
+    left: 50%;
+  }
+}
+

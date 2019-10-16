@@ -18,6 +18,8 @@ export class MapComponent implements OnInit {
 
   public numberOfCoinsInGame: number;
 
+  private isWalking: boolean = false;
+
   constructor(@Inject(DataService) private readonly dataService: DataService,
               @Inject(Renderer2) private readonly renderer: Renderer2) {
 
@@ -39,9 +41,6 @@ export class MapComponent implements OnInit {
       const endLevel: number = room.level;
 
       const openRoom = () => {
-        this.renderer.removeClass(this.personRef.nativeElement, 'pos' + startLevel);
-        this.renderer.addClass(this.personRef.nativeElement, 'pos' + endLevel);
-
         this.progress.avatarPos = room.level;
         this.dataService.activateRoom(room);
       };
@@ -51,7 +50,20 @@ export class MapComponent implements OnInit {
       } else {
         const animationClass: string = 'animation' + startLevel + '-' + endLevel;
         this.renderer.addClass(this.personRef.nativeElement, animationClass);
-        this.personRef.nativeElement.addEventListener('animationend', openRoom);
+        this.personRef.nativeElement.addEventListener('animationend', () => {
+          this.isWalking = false;
+          setTimeout(() => {
+            if (!this.isWalking) {
+              openRoom();
+            }
+          }, 50);
+        });
+        this.personRef.nativeElement.addEventListener('animationstart', () => {
+          this.isWalking = true;
+
+          this.renderer.removeClass(this.personRef.nativeElement, 'pos' + startLevel);
+          this.renderer.addClass(this.personRef.nativeElement, 'pos' + endLevel);
+        });
       }
     }
   }
