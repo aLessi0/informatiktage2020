@@ -10,16 +10,18 @@
   .airplane1 {
     position: absolute;
     pointer-events: none;
-    left: 64%;
-    bottom: 50%;
     width: 22%;
+
+    border-radius: 50%;
+    animation: airplane1Animation 10s linear infinite;
   }
 
   .airplane2 {
     position: absolute;
-    left: 16%;
-    top: 68%;
     width: 20%;
+
+    border-radius: 50%;
+    animation: airplane2Animation 10s linear infinite;
   }
 
   .airport {
@@ -90,4 +92,89 @@
     width: 11%;
     right: 87%;
   }
+
+  .wrapperAirplane1 {
+    width: 80%;
+    pointer-events: none;
+    position: absolute;
+    left: 20%;
+    bottom: 50%;
+    z-index: 10;
+
+    animation: wrapperAirplane1Animation 10s linear infinite;
+  }
+
+  @keyframes wrapperAirplane1Animation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes airplane1Animation {
+    0% {
+      transform: rotate(0deg);
+      opacity: 1;
+    }
+    3% {
+      opacity: 1;
+    }
+    10% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    97% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .wrapperAirplane2 {
+    width: 80%;
+    pointer-events: none;
+    position: absolute;
+    top: 85%;
+    left: 5%;
+    z-index: 10;
+
+    animation: wrapperAirplane2Animation 10s linear infinite;
+  }
+
+  @keyframes wrapperAirplane2Animation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(-360deg);
+    }
+  }
+
+  @keyframes airplane2Animation {
+    0% {
+      transform: rotate(0deg);
+      opacity: 1;
+    }
+    3% {
+      opacity: 1;
+    }
+    10% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    97% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
 }
