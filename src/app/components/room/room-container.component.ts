@@ -37,10 +37,6 @@ export class RoomContainerComponent implements OnInit {
         this.level = this.progress.playedLevels.get(this.room.level);
       }
     }
-
-    // TODO
-    console.log('--------> optional questions:', this.room.optionalQuestions);
-
     this.mandatoryQuestionWasAnsweredOnEntry = this.progressService.mandatoryQuestionForRoomIsAnswered(this.room);
   }
 

@@ -78,7 +78,6 @@ export class ProgressService {
   }
 
   public saveProgress(progress: ProgressModel): Promise<void> {
-    console.log('SAVE');
     const shallowCopy: any = _.cloneDeep(progress);
 
     if (shallowCopy && shallowCopy.playedLevels) {
