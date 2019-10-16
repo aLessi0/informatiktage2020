@@ -1,0 +1,133 @@
+{
+  "minCoinsRewardBig": 10,
+  "minCoinsRewardSmall": 6,
+  "rooms": [
+    {
+      "level": 1,
+      "roomClass": "room-welt-informatik",
+      "mandatoryQuestion": {
+        "questionText": "Dies ist die Mandatory-Frage. Was bekommt man wenn man bei Entwicklung \"Ent\" rausnimmt?",
+        "correctAnswer": "wicklung"
+      },
+      "optionalQuestions": [
+        {
+          "number": 1,
+          "questionText": "Dies ist eine Optional-Frage. Was gibt 1+1?",
+          "correctAnswer": "2"
+        },
+        {
+          "number": 2,
+          "questionText": "Was bedeutet IT?",
+          "correctAnswer": "Information Technology"
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "roomClass": "room-req-design",
+      "mandatoryQuestion": {
+        "questionText": "Dies ist die Mandatory-Frage. Was bekommt man wenn man bei Build \"Bu\" rausnimmt?",
+        "correctAnswer": "ild"
+      },
+      "optionalQuestions": [
+        {
+          "number": 1,
+          "questionText": "Dies ist eine Optional-Frage. Was gibt 2+2?",
+          "correctAnswer": "4"
+        },
+        {
+          "number": 2,
+          "questionText": "Dies ist eine Optional-Frage. Was gibt 22+22?",
+          "correctAnswer": "44"
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "roomClass": "room-entwicklung-test",
+      "mandatoryQuestion": {
+        "questionText": "Dies ist die Mandatory-Frage. Was bekommt man wenn man bei Requirements \"Require\" rausnimmt?",
+        "correctAnswer": "ments"
+      },
+      "optionalQuestions": [
+        {
+          "number": 1,
+          "questionText": "Dies ist eine Optional-Frage. Was gibt 3+3?",
+          "correctAnswer": "6"
+        },
+        {
+          "number": 2,
+          "questionText": "Dies ist eine Optional-Frage. Was gibt 33+33?",
+          "correctAnswer": "66"
+        }
+      ]
+    },
+    {
+      "level": 4,
+      "roomClass": "room-build-deploy",
+      "mandatoryQuestion": {
+        "questionText": "blabla",
+        "correctAnswer": "bla"
+      },
+      "optionalQuestions": [
+        {
+          "number": 1,
+          "questionText": "blabla",
+          "correctAnswer": "bla"
+        },
+        {
+          "number": 2,
+          "questionText": "blabla",
+          "correctAnswer": "bla"
+        }
+      ]
+    },
+    {
+      "level": 5,
+      "roomClass": "room-recruiting",
+      "mandatoryQuestion": {
+        "questionText": "blabla",
+        "correctAnswer": "bla"
+      },
+      "optionalQuestions": [
+        {
+          "number": 1,
+          "questionText": "blabla",
+          "correctAnswer": "bla"
+        },
+        {
+          "number": 2,
+          "questionText": "blabla",
+          "correctAnswer": "bla"
+        }
+      ]
+    },
+    {
+      "level": 6,
+      "roomClass": "room-playground",
+      "mandatoryQuestion": {
+        "questionText": "blabla",
+        "correctAnswer": "bla"
+      },
+      "optionalQuestions": [
+        {
+          "number": 1,
+          "questionText": "blabla",
+          "correctAnswer": "bla"
+        },
+        {
+          "number": 2,
+          "questionText": "blabla",
+          "correctAnswer": "bla"
+        }
+      ]
+    }
+  ],
+  "feedback": [
+    { "number": 1, "frage": "Wie hat dir dein Besuch bei uns gefallen?", "isMandatory": true },
+    { "number": 2, "frage": "Wie gut weisst du nun, was der Beruf eines Informatikers beinhaltet?", "isMandatory": true },
+    { "number": 3, "frage": "Wie wahrscheinlich ist es, dass du dich bei der Zürcher Kantonalbank auf eine offene Stelle in der Informatik bewerben würdest?", "isMandatory": true },
+    { "number": 1, "frage": "Was hat dir besonders gefallen? (kein Pflichtfeld)", "isMandatory": false },
+    { "number": 1, "frage": "Was hättest du dir anders/zusätzlich gewünscht? (kein Pflichtfeld)", "isMandatory": false }
+  ]
+}

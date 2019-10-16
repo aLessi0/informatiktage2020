@@ -18,7 +18,7 @@ export class MapComponent implements OnInit {
 
   public numberOfCoinsInGame: number;
 
-  private isWalking: boolean = false;
+  private isWalking = false;
 
   constructor(@Inject(DataService) private readonly dataService: DataService,
               @Inject(Renderer2) private readonly renderer: Renderer2) {
@@ -28,7 +28,7 @@ export class MapComponent implements OnInit {
   public ngOnInit(): void {
     let coinsInGame = 0;
     for (const room of this.game.rooms) {
-      coinsInGame += (room.questions.length - 1);
+      coinsInGame += room.optionalQuestions.length;
     }
     this.numberOfCoinsInGame = coinsInGame;
   }
