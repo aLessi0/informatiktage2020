@@ -1,0 +1,45 @@
+:host {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  position: relative;
+
+  .bank {
+    position: absolute;
+    width: 60%;
+    top: 5%;
+    left: 10%;
+  }
+
+  .lake {
+    pointer-events: none;
+    position: absolute;
+    width: 40%;
+    top: 78%;
+    left: 38%;
+  }
+
+  .ringe {
+    position: absolute;
+    width: 30%;
+    top: 25%;
+    left: 70%;
+  }
+
+  .schaukel {
+    position: absolute;
+    width: 45%;
+    top: 37%;
+    left: 2%;
+  }
+
+  .trees {
+    position: absolute;
+    width: 60%;
+    top: 60%;
+    left: 30%;
+  }
+}
+
