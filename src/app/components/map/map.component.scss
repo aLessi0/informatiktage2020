@@ -45,6 +45,8 @@
     width: 14%;
     top: 82%;
     left: 8%;
+
+    animation: kajakAnimation 20s linear infinite;
   }
 
   .trees {
@@ -188,6 +190,47 @@
       top: 20%;
       left: 16%;
     }
+  }
+}
+
+@keyframes kajakAnimation {
+  0% {
+    top: 85%;
+    left: 8%;
+    transform: rotate(0deg);
+  }
+  5% {
+    transform: rotate(15deg);
+  }
+  10% {
+    top: 79%;
+    left: 16%;
+    transform: rotate(-20deg)
+  }
+  20% {
+    top: 75%;
+    left: 16%;
+    transform: rotate(-90deg);
+  }
+  40% {
+    top: 74%;
+    left: 0;
+    transform: rotate(-130deg);
+  }
+  60% {
+    top: 79%;
+    left: -6%;
+    transform: rotate(-220deg);
+  }
+  80% {
+    top: 83%;
+    left: -4%;
+    transform: rotate(-270deg);
+  }
+  100% {
+    top: 85%;
+    left: 8%;
+    transform: rotate(-360deg);
   }
 }
 
