@@ -15,7 +15,7 @@ import {HttpClient} from '@angular/common/http';
 import {RoomModel} from './model/game/room.model';
 import {GameModel} from './model/game/game.model';
 import {ProgressService} from './service/progress.service';
-import {animation} from "@angular/animations";
+import {animation} from '@angular/animations';
 
 @Component({
   selector: 'app-root',
@@ -81,7 +81,6 @@ export class AppComponent implements DoCheck {
     if (!this.debounceCheckForSave) {
       this.debounceCheckForSave = DebounceUtils.debounce(() => {
         if (this.progressAvailable) {
-          console.log('CHECK');
           const changes = this.differ.diff(this.getDiffObject());
           if (changes) {
             this.progressService.saveProgress(this.progress);

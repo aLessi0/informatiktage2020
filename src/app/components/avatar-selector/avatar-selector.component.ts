@@ -1,38 +1,22 @@
-import {Component, EventEmitter, Inject, Input, OnInit, Output} from '@angular/core';
-import {DataService} from "../../service/data.service";
-import {animate, group, query, state, style, transition, trigger} from "@angular/animations";
-import {reduce} from "rxjs/operators";
+import {Component, Inject} from '@angular/core';
+import {DataService} from '../../service/data.service';
 
 @Component({
   selector: 'app-avatar-selector',
   templateUrl: './avatar-selector.component.html',
   styleUrls: ['./avatar-selector.component.scss']
 })
-
-export class AvatarSelectorComponent implements OnInit {
-
+export class AvatarSelectorComponent {
   private chosenAvatarType: string;
   private avatarImageBasePath = '/assets/sprites/Icon/Avatar/';
 
-  constructor(@Inject(DataService) private readonly dataService: DataService) {
-  }
-
-  ngOnInit() {
-    console.log('init avatar selector component');
-  }
+  constructor(@Inject(DataService) private readonly dataService: DataService) {}
 
   public chooseAvatarType(event, avatarType) {
-    console.log(event)
-    console.log("active chosen avatar:", avatarType);
     this.chosenAvatarType = avatarType;
   }
 
-
   public createAvatar() {
-    console.log("create avatar: ", this.chosenAvatarType);
-    this.dataService.initData(this.chosenAvatarType).then(() => {
-      console.log('avatar created');
-    });
+    this.dataService.initData(this.chosenAvatarType);
   }
-
 }
