@@ -2,17 +2,19 @@
 :host {
   display: flex;
   flex: 1 0 auto;
+  justify-content: center;
 
   .frage {
     display: flex;
     flex-direction: column;
 
-    .answer-status {
-      display: flex;
-      justify-content: center;
+    .coin {
+      width: 15%;
+      align-content: center;
     }
 
     .titel {
+      text-align: center;
       margin-bottom: .5rem;
     }
 
@@ -22,9 +24,7 @@
     }
 
     .check-answer {
-      margin-bottom: .5rem;
-      height: 2rem;
-      height: 0;
+      margin: auto;
     }
   }
 }
