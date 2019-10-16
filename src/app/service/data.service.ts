@@ -1,10 +1,10 @@
-import {Injectable} from '@angular/core';
+import {Inject, Injectable} from '@angular/core';
 import {GameModel} from '../model/game/game.model';
 import {RoomModel} from '../model/game/room.model';
 import {AttachmentModel} from '../model/game/attachment.model';
 import {QuestionModel} from '../model/game/question.model';
-import {ProgressModel} from '../model/user/progress.model';
-import {BehaviorSubject, Observable, Subject} from 'rxjs';
+import {BehaviorSubject, Observable} from 'rxjs';
+import {ProgressService} from './progress.service';
 
 class AsyncLocalStorage {
   public static setItem(key, value): Promise<void> {
@@ -22,22 +22,15 @@ class AsyncLocalStorage {
 export class DataService {
   public activeRoom$: Observable<RoomModel>;
   public game$: Observable<GameModel>;
-  public progress$: Observable<ProgressModel>;
-  public activeQuestion$: Observable<QuestionModel>;
 
   private activeRoomSubject: BehaviorSubject<RoomModel> = new BehaviorSubject(undefined);
   private gameSource: BehaviorSubject<GameModel> = new BehaviorSubject(undefined);
-  private progressSource: BehaviorSubject<ProgressModel> = new BehaviorSubject(undefined);
-  private activeQuestionSource: BehaviorSubject<QuestionModel> = new BehaviorSubject(undefined);
 
-  constructor() {
+  constructor(@Inject(ProgressService) private readonly progressService: ProgressService) {
     this.game$ = this.gameSource.asObservable();
     this.activeRoom$ = this.activeRoomSubject.asObservable();
-    this.progress$ = this.progressSource.asObservable();
-    this.activeQuestion$ = this.activeQuestionSource.asObservable();
 
     this.loadGame().then(game => this.gameSource.next(game));
-    this.loadProgress().then(progress => this.progressSource.next(progress));
   }
 
   public activateRoom(room: RoomModel): void {
@@ -48,103 +41,18 @@ export class DataService {
     this.activeRoomSubject.next(undefined);
   }
 
-  public selectQuestion(question: QuestionModel): void {
-    this.activeQuestionSource.next(question);
-  }
-
-  public unselectQuesion(): void {
-    this.activeQuestionSource.next(undefined);
-  }
-
-  /* notify all subscriber if the progress was updated by ref*/
-  public progressUpdated(): void {
-    this.progressSource.next(this.progressSource.getValue());
-  }
-
-  /*
-  *  since we mutate the object byRef, the values are updated everywhere. However, we notify
-  * each subscriber to give the possibilty to react to changes.
-  */
-  public activeRoomUpdated(): void {
-    this.activeRoomSubject.next(this.activeRoomSubject.getValue());
-  }
-
-  /* informs subscriber of a gameModel change (room value updated, coins reward etc */
-  public roomUpdated() {
-    this.gameSource.next(this.gameSource.getValue());
-  }
-
-  public answeredMandatoryQuestion(activeRoom: RoomModel, question: QuestionModel) {
-    question.isCorrect = question.clientAnswer && question.clientAnswer.toLocaleLowerCase() === question.correctAnswer.toLocaleLowerCase();
-    question.answered = true;
-
-    /* only valid if the key hasn't been collected yet */
-    if (question.isCorrect && !question.wasRightAtLeastOnce) {
-      activeRoom.keyCollected = true;
-      question.wasRightAtLeastOnce = true;
-    }
-
-    this.roomUpdated();
-    this.activeRoomUpdated();
-    this.unlockNextRoom();
-
-  }
-
-  public answeredOptionQuestion(activeRoom: RoomModel, question: QuestionModel) {
-    question.isCorrect = question.clientAnswer && question.clientAnswer.toLocaleLowerCase() === question.correctAnswer.toLocaleLowerCase();
-    question.answered = true;
-
-    /* coins are only rewarded if the question hasn't been answered yet */
-    if (question.isCorrect && !question.wasRightAtLeastOnce) {
-      const progress = this.progressSource.getValue();
-      question.wasRightAtLeastOnce = true;
-      progress.coins++;
-      activeRoom.coinsCollected++;
-    }
-
-    this.progressUpdated();
-    this.roomUpdated();
-    this.activeRoomUpdated();
-  }
-
-  public unlockNextRoom(): void {
-    const progress = this.progressSource.getValue();
-    progress.unlockedLevel++;
-    this.progressUpdated();
-  }
-
-  public saveProgress(progress: ProgressModel): Promise<void> {
-    console.log('SAVE');
-    return AsyncLocalStorage.setItem('progress', JSON.stringify(progress));
-  }
-
   public initData(avatarType: string): Promise<void> {
     const game: GameModel = DataService.createGameData();
     this.gameSource.next(game);
-    const progress: ProgressModel = DataService.createProgressData(avatarType);
-    this.progressSource.next(progress);
-    return AsyncLocalStorage.setItem('game', JSON.stringify(game)).then(() => AsyncLocalStorage.setItem('progress', JSON.stringify(progress)));
-  }
+    this.progressService.init(avatarType);
 
-  private loadProgress(): Promise<ProgressModel> {
-    return AsyncLocalStorage.getItem('progress').then((value) => value && JSON.parse(value));
+    return AsyncLocalStorage.setItem('game', JSON.stringify(game));
+
   }
 
   private loadGame(): Promise<GameModel> {
     return AsyncLocalStorage.getItem('game').then((value) => value && JSON.parse(value));
 
-  }
-
-  private static createProgressData(avatarType): ProgressModel {
-    const progress: ProgressModel = new ProgressModel();
-    progress.collectedReward = false;
-    progress.coins = 0;
-    progress.playedLevels = [];
-    progress.unlockedLevel = 6;
-    progress.avatarType = avatarType;
-    progress.avatarPos = 0;
-
-    return progress;
   }
 
   private static createGameData(): GameModel {
