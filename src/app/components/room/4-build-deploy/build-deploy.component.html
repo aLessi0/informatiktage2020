@@ -1,3 +1,4 @@
 <p>
   build-deploy works!
 </p>
+<button *ngFor="let question of room.questions" (click)="openQuestion(question)">{{question.number}}</button>

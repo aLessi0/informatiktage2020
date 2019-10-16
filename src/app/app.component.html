@@ -6,14 +6,14 @@
 
 <div class="game-is_running" *ngIf="progressAvailable">
   <app-map [game]="game" [progress]="progress" *ngIf="!currentRoom"></app-map>
-  <app-room [room]="currentRoom" *ngIf="currentRoom" (onClose)="leaveActiveRoom()">
-    <app-welt-der-informatik *ngIf="currentRoom.level === 1"></app-welt-der-informatik>
-    <app-requirement-design *ngIf="currentRoom.level === 2"></app-requirement-design>
-    <app-entwicklung *ngIf="currentRoom.level === 3"></app-entwicklung>
-    <app-build-deploy *ngIf="currentRoom.level === 4"></app-build-deploy>
-    <app-recruiting *ngIf="currentRoom.level === 5"></app-recruiting>
-    <app-playground *ngIf="currentRoom.level === 6"></app-playground>
-  </app-room>
+  <app-room-container [room]="currentRoom" *ngIf="currentRoom" (closeRoom)="leaveActiveRoom()">
+    <app-welt-der-informatik [room]="currentRoom" *ngIf="currentRoom.level === 1"></app-welt-der-informatik>
+    <app-requirement-design [room]="currentRoom" *ngIf="currentRoom.level === 2"></app-requirement-design>
+    <app-entwicklung [room]="currentRoom" *ngIf="currentRoom.level === 3"></app-entwicklung>
+    <app-build-deploy [room]="currentRoom" *ngIf="currentRoom.level === 4"></app-build-deploy>
+    <app-recruiting [room]="currentRoom" *ngIf="currentRoom.level === 5"></app-recruiting>
+    <app-playground [room]="currentRoom" *ngIf="currentRoom.level === 6"></app-playground>
+  </app-room-container>
 </div>
 
 
