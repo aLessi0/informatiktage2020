@@ -58,6 +58,11 @@ export class MapComponent {
     }
   }
 
+  public collectedReward(): void {
+    this.modalService.openDialog(RewardCoinsComponent, false, this.game).subscribe(() => {
+    });
+  }
+
   public isRoomUnlocked(roomNumber: number): boolean {
     const room = this.getRoomByNumber(roomNumber);
     return room && room.level <= this.progress.unlockedLevel;
