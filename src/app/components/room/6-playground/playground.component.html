@@ -1,4 +1,7 @@
-<p>
-  playground works!
-</p>
-<button *ngFor="let question of room.questions" (click)="openQuestion(question)">{{question.number}}</button>
+<!--UMGEBUNG-->
+<svg-icon src="\assets\sprites\Room\6-playground\Bank-und-Baume.svg" class="bank"></svg-icon>
+<svg-icon src="\assets\sprites\Room\6-playground\Lake.svg" class="lake"></svg-icon>
+<svg-icon src="\assets\sprites\Room\6-playground\Ringe.svg" class="ringe" (click)="openQuestion(room.questions[0])"></svg-icon>
+<svg-icon src="\assets\sprites\Room\6-playground\Schaukel.svg" class="schaukel" (click)="openQuestion(room.questions[1])"></svg-icon>
+<svg-icon src="\assets\sprites\Room\6-playground\Trees.svg" class="trees"></svg-icon>
+
