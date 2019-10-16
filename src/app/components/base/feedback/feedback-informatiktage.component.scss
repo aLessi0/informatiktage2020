@@ -1,0 +1,52 @@
+:host {
+  display: flex;
+
+  .feedback-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .left {
+      margin-right: 1rem;
+    }
+
+    .content {
+
+      input {
+        margin-top: 1rem;
+      }
+
+      .feedback {
+
+        display: flex;
+        margin-top: 1rem;
+
+        .feedback-smiley-small {
+          width: 3rem;
+          display: block;
+        }
+      }
+    }
+  }
+
+  .feedback-senden {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    flex-direction: column;
+
+    padding-bottom {
+      padding-bottom: 1rem;
+    }
+  }
+
+  .wettbewerb {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+
+    input {
+      margin-bottom: 1rem;
+    }
+  }
+}
