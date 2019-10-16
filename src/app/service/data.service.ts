@@ -254,7 +254,7 @@ export class DataService {
     room4.level = 4;
     room4.name = 'Build, Deployment & Operate';
     room4.logo = 'url to logo';
-    room4.roomClass = 'room-entwicklung-test';
+    room4.roomClass = 'room-build-deploy';
     room4.intro = 'In diesem Raum geht es um Build, Deployment & Operate!';
     room4.attachments = [];
     room4.questions = [];
@@ -286,7 +286,7 @@ export class DataService {
     room5.level = 5;
     room5.name = 'Build, Deployment & Operate';
     room5.logo = 'url to logo';
-    room5.roomClass = 'room-entwicklung-test';
+    room5.roomClass = 'room-recruiting';
     room5.intro = 'In diesem Raum geht es um Build, Deployment & Operate!';
     room5.attachments = [];
     room5.questions = [];
@@ -318,7 +318,7 @@ export class DataService {
     room6.level = 6;
     room6.name = 'Build, Deployment & Operate';
     room6.logo = 'url to logo';
-    room6.roomClass = 'room-entwicklung-test';
+    room6.roomClass = 'room-playground';
     room6.intro = 'In diesem Raum geht es um Build, Deployment & Operate!';
     room6.attachments = [];
     room6.questions = [];
