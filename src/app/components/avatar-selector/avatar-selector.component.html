@@ -29,10 +29,9 @@
            (click)="chooseAvatarType($event, 'Boy')">
     </div>
 
-    <app-button id="btn-create-avatar" btnTitle="Los geht's"
-                (btnClicked)="this.createAvatar()"
-                [ngClass]="{'active': chosenAvatarType}"
-    ></app-button>
+    <app-button id="btn-create-avatar" btnTitle="Los geht's" *ngIf="chosenAvatarType"
+                (btnClicked)="this.createAvatar()">
+    </app-button>
 
   </div>
 

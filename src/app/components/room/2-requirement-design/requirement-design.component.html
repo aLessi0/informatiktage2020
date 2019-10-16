@@ -6,3 +6,5 @@
 <svg-icon src="\assets\sprites\Room\2-req-and-design\Tree3.svg" class="tree3"></svg-icon>
 <svg-icon src="\assets\sprites\Room\2-req-and-design\Tree4.svg" class="tree4"></svg-icon>
 <svg-icon src="\assets\sprites\Room\2-req-and-design\TreeGroup.svg" class="treeGroup"></svg-icon>
+
+<button *ngFor="let question of room.questions" (click)="openQuestion(question)">{{question.number}}</button>
