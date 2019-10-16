@@ -45,7 +45,9 @@ export class DataService {
     this.http.get('assets/data/gamedata.json')
       .subscribe(data => {
         const game: GameModel = data as GameModel;
+        game.numberOfCoinsInGame = 0;
         for (const room of game.rooms) {
+          game.numberOfCoinsInGame += room.optionalQuestions.length;
           room.mandatoryQuestion.isMandatory = true;
         }
         this.gameSource.next(game);

@@ -7,6 +7,7 @@ import {ProgressModel} from '../../../model/user/progress.model';
 import {ProgressService} from '../../../service/progress.service';
 import {AnswerModel} from '../../../model/user/answer.model';
 import {PlayedLevelModel} from '../../../model/user/played-level.model';
+import {ModalService} from '../../../service/modal.service';
 
 @Component({
   selector: 'app-quizfrage',
@@ -23,7 +24,8 @@ export class QuizfrageComponent {
 
   constructor(@Inject(DataService) private readonly dataService: DataService,
               @Inject(ProgressService) private readonly progressService: ProgressService,
-              @Inject(MAT_DIALOG_DATA) public data: QuizfrageData) {
+              @Inject(MAT_DIALOG_DATA) public data: QuizfrageData,
+              @Inject(ModalService) private readonly modalService: ModalService) {
     this.dataService.activeRoom$.subscribe(room => this.room = room);
     this.progressService.progress$.subscribe(progress => {
       this.question = this.data.question;
@@ -69,7 +71,10 @@ export class QuizfrageComponent {
     }
 
     this.progressService.updateProgress(this.progress);
-    /* todo robin - validate answer and update progress*/
+  }
+
+  public closeQuestion(): void {
+    this.modalService.closeDialog();
   }
 }
 
