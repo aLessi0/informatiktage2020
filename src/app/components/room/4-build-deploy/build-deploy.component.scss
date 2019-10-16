@@ -43,15 +43,57 @@
     position: absolute;
     width: 40%;
     top: 65%;
-    left: 0%;
+    left: 0;
   }
 
   .sun {
     pointer-events: none;
     position: absolute;
     width: 20%;
-    top: 2%;
-    left: 50%;
+
+    border-radius: 50%;
+    animation: sunAnimation 60s linear infinite;
+  }
+
+  .wrapper {
+    width: 110%;
+    pointer-events: none;
+    position: absolute;
+    top: 25%;
+
+    animation: wrapperAnimation 60s linear infinite;
+  }
+
+  @keyframes wrapperAnimation {
+    0% {
+      transform: rotate(20deg);
+    }
+    100% {
+      transform: rotate(200deg);
+    }
+  }
+
+  @keyframes sunAnimation {
+    0% {
+      transform: rotate(0deg);
+      opacity: 0;
+    }
+    3% {
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    97% {
+      opacity: 0;
+    }
+    100% {
+      transform: rotate(180deg);
+      opacity: 0;
+    }
   }
 }
 
