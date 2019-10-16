@@ -1,0 +1,8 @@
+<div class="frage">
+  <div class="answer-status">
+    <svg-icon [src]="'/assets/sprites/Icon/Map/Coin.svg'"></svg-icon>
+  </div>
+  <div class="titel">Coins einlösen</div>
+  <input type="text" class="input-field password" [(ngModel)]="password"/>
+  <app-button class="check-answer" [btnTitle]="'prüfen'" (btnClicked)="validateAnswer()"></app-button>
+</div>

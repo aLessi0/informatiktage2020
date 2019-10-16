@@ -21,6 +21,7 @@ import { EntwicklungComponent } from './components/room/3-entwicklung/entwicklun
 import { BuildDeployComponent } from './components/room/4-build-deploy/build-deploy.component';
 import { RecruitingComponent } from './components/room/5-recruiting/recruiting.component';
 import { PlaygroundComponent } from './components/room/6-playground/playground.component';
+import { RewardCoinsComponent } from './components/base/reward-coins/reward-coins.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { PlaygroundComponent } from './components/room/6-playground/playground.c
     EntwicklungComponent,
     BuildDeployComponent,
     RecruitingComponent,
-    PlaygroundComponent
+    PlaygroundComponent,
+    RewardCoinsComponent
   ],
   imports: [
     BrowserModule,

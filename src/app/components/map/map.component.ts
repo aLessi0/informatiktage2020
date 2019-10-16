@@ -3,6 +3,8 @@ import {DataService} from '../../service/data.service';
 import {GameModel} from '../../model/game/game.model';
 import {ProgressModel} from '../../model/user/progress.model';
 import {RoomModel} from '../../model/game/room.model';
+import {ModalService} from '../../service/modal.service';
+import {RewardCoinsComponent} from '../base/reward-coins/reward-coins.component';
 
 @Component({
   selector: 'app-map',
@@ -21,7 +23,8 @@ export class MapComponent implements OnInit {
   private isWalking: boolean = false;
 
   constructor(@Inject(DataService) private readonly dataService: DataService,
-              @Inject(Renderer2) private readonly renderer: Renderer2) {
+              @Inject(Renderer2) private readonly renderer: Renderer2,
+              @Inject(ModalService) protected readonly modalService: ModalService) {
 
   }
 
@@ -66,6 +69,11 @@ export class MapComponent implements OnInit {
         });
       }
     }
+  }
+
+  public collectedReward(): void {
+    this.modalService.openDialog(RewardCoinsComponent, false).subscribe(() => {
+    });
   }
 
   public isRoomUnlocked(roomNumber: number): boolean {

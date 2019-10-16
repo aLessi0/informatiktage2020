@@ -1,0 +1,30 @@
+
+:host {
+  display: flex;
+  flex: 1 0 auto;
+
+  .frage {
+    display: flex;
+    flex-direction: column;
+
+    .answer-status {
+      display: flex;
+      justify-content: center;
+    }
+
+    .titel {
+      margin-bottom: .5rem;
+    }
+
+    .password {
+      margin-bottom: .5rem;
+      display: flex;
+    }
+
+    .check-answer {
+      margin-bottom: .5rem;
+      height: 2rem;
+      height: 0;
+    }
+  }
+}
