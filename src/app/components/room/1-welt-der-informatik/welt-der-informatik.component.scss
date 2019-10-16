@@ -1,17 +1,79 @@
+
 :host {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  position: relative;
 
-  .bank {
+  .airplane1 {
     position: absolute;
-    width: 86%;
-    top: 5%;
-    left: 5%;
+    pointer-events: none;
+    left: 64%;
+    bottom: 50%;
+    width: 22%;
   }
 
-  .kajak {
+  .airplane2 {
     position: absolute;
-    width: 55%;
+    left: 16%;
+    top: 68%;
+    width: 20%;
+  }
+
+  .airport {
+    position: absolute;
+    right: 30%;
+    width: 48%;
+    bottom: 7%;
+  }
+
+  .cloud1 {
+    position: absolute;
+    width: 13%;
+    left: 46%;
+    top: 8%;
+  }
+
+  .cloud2 {
+    position: absolute;
+    pointer-events: none;
+    left: 17%;
+    top: 6%;
+    width: 14%;
+
+  }
+
+  .cloud3 {
+    position: absolute;
+    pointer-events: none;
+    top: 61%;
+    left: 51%;
+    width: 13%;
+  }
+
+  .cloud4 {
+    position: absolute;
+    pointer-events: none;
+    left: 84%;
+    top: 60%;
+    width: 13%;
+  }
+
+  .cloud5 {
+    position: absolute;
+    pointer-events: none;
+    width: 13%;
     top: 65%;
-    left: 20%;
+    left: 72%;
   }
 
+  .houses {
+    position: absolute;
+    pointer-events: none;
+    top: 12%;
+    width: 86%;
+    right: -2%;
+  }
 }
