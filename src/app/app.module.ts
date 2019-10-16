@@ -21,7 +21,8 @@ import { EntwicklungComponent } from './components/room/3-entwicklung/entwicklun
 import { BuildDeployComponent } from './components/room/4-build-deploy/build-deploy.component';
 import { RecruitingComponent } from './components/room/5-recruiting/recruiting.component';
 import { PlaygroundComponent } from './components/room/6-playground/playground.component';
-import { RewardCoinsComponent } from './components/base/reward-coins/reward-coins.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -38,8 +39,7 @@ import { RewardCoinsComponent } from './components/base/reward-coins/reward-coin
     EntwicklungComponent,
     BuildDeployComponent,
     RecruitingComponent,
-    PlaygroundComponent,
-    RewardCoinsComponent
+    PlaygroundComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +47,8 @@ import { RewardCoinsComponent } from './components/base/reward-coins/reward-coin
     HttpClientModule,
     AngularSvgIconModule,
     BrowserAnimationsModule,
-    AngularMaterialModule
+    AngularMaterialModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent],
@@ -55,8 +56,7 @@ import { RewardCoinsComponent } from './components/base/reward-coins/reward-coin
   entryComponents: [
     FeedbackComponent,
     InfotextComponent,
-    QuizfrageComponent,
-    RewardCoinsComponent
+    QuizfrageComponent
   ] // define modal components
 })
 

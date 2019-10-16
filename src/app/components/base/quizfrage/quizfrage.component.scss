@@ -10,21 +10,29 @@
     .answer-status {
       display: flex;
       justify-content: center;
+      margin-bottom: 0.5rem;
+
+      svg-icon {
+        width: 2rem;
+      }
     }
 
     .quizfrage {
-      margin-bottom: .5rem;
+      margin-bottom: 1rem;
     }
 
     .answer-field {
-      margin-bottom: .5rem;
+      margin-bottom: 0.75rem;
       display: flex;
+      height: 1.5rem;
+      padding: 0.5rem;
     }
 
     .check-answer {
-      margin-bottom: .5rem;
-      height: 2rem;
-      height: 0;
+
+      ::ng-deep button {
+        height: 3rem;
+      }
     }
   }
 }

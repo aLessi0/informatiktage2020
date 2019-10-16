@@ -1,9 +1,11 @@
 <div class="frage">
   <div class="answer-status" *ngIf="answer">
     <svg-icon *ngIf="!answer.correct" [src]="'/assets/sprites/Icon/Cross.svg'"></svg-icon>
-    <svg-icon *ngIf="answer.correct" [src]="'/assets/sprites/Icon/Tick.svg'"></svg-icon>
+    <svg-icon *ngIf="answer.correct && question.isMandatory" [src]="'/assets/sprites/Room/Credits/Key-active.svg'"></svg-icon>
+    <svg-icon *ngIf="answer.correct && !question.isMandatory" [src]="'/assets/sprites/Room/Credits/Coin-active.svg'"></svg-icon>
   </div>
   <div class="quizfrage">{{question.questionText}}</div>
   <input type="text" class="input-field answer-field" [(ngModel)]="answerGiven"/>
-  <app-button class="check-answer" [btnTitle]="'prüfen'" (btnClicked)="validateAnswer()"></app-button>
+  <app-button *ngIf="!(answer && answer.correct)" class="check-answer" [btnTitle]="'Prüfen'" (btnClicked)="validateAnswer()"></app-button>
+  <app-button *ngIf="answer && answer.correct" class="check-answer" [btnTitle]="'Schliessen'" (btnClicked)="closeQuestion()"></app-button>
 </div>

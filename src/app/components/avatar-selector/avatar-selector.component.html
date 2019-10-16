@@ -8,25 +8,29 @@
     </div>
 
     <div class="child-avatar-family">
-      <img src="{{this.avatarImageBasePath}}/Julia.svg"
-           class="girl"
-           [ngClass]="{'selected': chosenAvatarType === 'Julia'}"
-           (click)="chooseAvatarType($event, 'Julia')">
+      <svg-icon src="{{this.avatarImageBasePath}}/Julia.svg"
+                class="girl"
+                [ngClass]="{'selected': chosenAvatarType === 'Julia'}"
+                (click)="chooseAvatarType($event, 'Julia')">
+      </svg-icon>
 
-      <img src="{{this.avatarImageBasePath}}/Rolf.svg"
-           class="man"
-           [ngClass]="{'selected': chosenAvatarType === 'Rolf'}"
-           (click)="chooseAvatarType($event, 'Rolf')">
+      <svg-icon src="{{this.avatarImageBasePath}}/Rolf.svg"
+                class="man"
+                [ngClass]="{'selected': chosenAvatarType === 'Rolf'}"
+                (click)="chooseAvatarType($event, 'Rolf')">
+      </svg-icon>
 
-      <img src="{{this.avatarImageBasePath}}/Sophie.svg"
-           class="woman"
-           [ngClass]="{'selected': chosenAvatarType === 'Sophie'}"
-           (click)="chooseAvatarType($event, 'Sophie')">
+      <svg-icon src="{{this.avatarImageBasePath}}/Sophie.svg"
+                class="woman"
+                [ngClass]="{'selected': chosenAvatarType === 'Sophie'}"
+                (click)="chooseAvatarType($event, 'Sophie')">
+      </svg-icon>
 
-      <img src="{{this.avatarImageBasePath}}/John.svg"
-           class="boy"
-           [ngClass]="{'selected': chosenAvatarType === 'John'}"
-           (click)="chooseAvatarType($event, 'John')">
+      <svg-icon src="{{this.avatarImageBasePath}}/John.svg"
+                class="boy"
+                [ngClass]="{'selected': chosenAvatarType === 'John'}"
+                (click)="chooseAvatarType($event, 'John')">
+      </svg-icon>
     </div>
 
     <app-button id="btn-create-avatar" btnTitle="Los geht's" *ngIf="chosenAvatarType"
