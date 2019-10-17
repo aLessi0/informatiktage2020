@@ -1,10 +1,16 @@
 <!--UMGEBUNG-->
-<div class="wrapper">
+<div class="sun-wrapper">
   <svg-icon src="\assets\sprites\Room\4-deploy-and-testing\Sun.svg" class="sun"></svg-icon>
 </div>
-<svg-icon src="\assets\sprites\Room\4-deploy-and-testing\Cactus.svg" class="cactus" (click)="openQuestion(room.mandatoryQuestion)"></svg-icon>
+<div class="moon-wrapper">
+  <svg-icon src="\assets\sprites\Room\4-deploy-and-testing\Moon.svg" class="moon" (click)="openQuestion(room.optionalQuestions[0])"></svg-icon>
+</div>
+<svg-icon src="\assets\sprites\Room\4-deploy-and-testing\Cactus.svg" class="cactus"></svg-icon>
 <svg-icon src="\assets\sprites\Room\4-deploy-and-testing\Cactus2.svg" class="cactus2"></svg-icon>
 <svg-icon src="\assets\sprites\Room\4-deploy-and-testing\Cactus3.svg" class="cactus3"></svg-icon>
-<svg-icon src="\assets\sprites\Room\4-deploy-and-testing\Kirche.svg" class="kirche" (click)="openQuestion(room.optionalQuestions[0])"></svg-icon>
-<svg-icon src="\assets\sprites\Room\4-deploy-and-testing\Saloon.svg" class="saloon" (click)="openQuestion(room.optionalQuestions[1])"></svg-icon>
+<svg-icon src="\assets\sprites\Room\4-deploy-and-testing\Kirche.svg" class="kirche"></svg-icon>
+<svg-icon src="\assets\sprites\Room\4-deploy-and-testing\Saloon.svg" (click)="blancaVisible()" class="saloon"></svg-icon>
+<svg-icon src="\assets\sprites\Room\4-deploy-and-testing\Blanca.svg" *ngIf="!blancaHidden" class="blanca" (click)="openQuestion(room.optionalQuestions[1])"></svg-icon>
+<svg-icon src="\assets\sprites\Room\4-deploy-and-testing\Lucky.svg" class="lucky" (click)="openQuestion(room.mandatoryQuestion)"></svg-icon>
 
+<div class="night"></div>

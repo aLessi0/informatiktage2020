@@ -10,9 +10,15 @@ import {ModalService} from '../../../service/modal.service';
 })
 export class BuildDeployComponent extends AbstractRoom {
 
+  blancaHidden = true;
+
   constructor(@Inject(DataService) protected readonly dataService: DataService,
               @Inject(ModalService) protected readonly modalService: ModalService) {
     super(dataService, modalService);
+  }
+
+  blancaVisible() {
+    this.blancaHidden = false;
   }
 
 }

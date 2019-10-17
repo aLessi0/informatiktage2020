@@ -2,6 +2,7 @@ import {Component, Inject, Input, OnInit} from '@angular/core';
 import {ProgressModel} from "../../../model/user/progress.model";
 import {DataService} from "../../../service/data.service";
 import {ProgressService} from "../../../service/progress.service";
+import {ModalService} from "../../../service/modal.service";
 import {GameModel} from "../../../model/game/game.model";
 import {MAT_DIALOG_DATA} from "@angular/material/dialog";
 
@@ -55,6 +56,7 @@ export class RewardCoinsComponent implements OnInit {
         this.progress.collectedReward = true;
       });
     }
+
     this.progressService.updateProgress(this.progress);
   }
 }

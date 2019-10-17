@@ -2,7 +2,7 @@
 
 :host {
   display: flex;
-  flex-direction: column;
+  flex: 1;
   width: 98%;
 
   background-image: url("../../../assets/sprites/Onboarding/Background/Background3.svg");
@@ -34,30 +34,6 @@
     bottom: 8%;
   }
 
-  .child-avatar-family {
-    display: flex;
-    text-align: center;
-    max-width: 100%;
-    height: 40%;
-    width: 90%;
-    position: relative;
-    align-self: center;
-  }
-
-  .child-avatar-family {
-    svg-icon {
-      position: absolute;
-      bottom: 0;
-
-      transition: transform 0.3s ease-in-out;
-
-      &.selected {
-        transform: translateY(-20%);
-        filter: drop-shadow(0px 0px 20px rgba($dusty-red, 1));
-      }
-    }
-  }
-
   #btn-create-avatar {
     position: absolute;
     width: 30%;
@@ -69,28 +45,59 @@
   * AVATAR FAMILY
   */
 
-  .girl {
-    left: 0;
-    z-index: 100;
-    width: 25%;
-  }
+  .avatar {
+    position: absolute;
+    bottom: 35%;
 
-  .man {
-    left: 21%;
-    z-index: 99;
-    width: 35%;
-  }
+    transition: transform 0.3s ease-in-out;
 
-  .woman {
-    left: 50%;
-    z-index: 100;
-    width: 28%;
-  }
+    &:after {
+      content: '';
+      position: absolute;
+      opacity: 0;
+      bottom: 0;
+      background-color: rgba(0,0,0,0.4);
+      height: 5%;
+      width: 0;
+      left: 50%;
+      border-radius: 50%;
+      transition: all .3s ease-in-out;
+    }
 
-  .boy {
-    left: 74%;
-    z-index: 101;
-    width: 27%;
+    &.selected {
+      transform: translateY(-20%);
+
+      &:after {
+        opacity: 1;
+        bottom: -20%;
+        left: 15%;
+        width: 70%;
+      }
+    }
+
+    &.girl {
+      left: 10%;
+      z-index: 100;
+      width: 20%;
+    }
+
+    &.man {
+      left: 25%;
+      z-index: 99;
+      width: 30%;
+    }
+
+    &.woman {
+      left: 49%;
+      z-index: 100;
+      width: 23%;
+    }
+
+    &.boy {
+      left: 67%;
+      z-index: 101;
+      width: 24%;
+    }
   }
 
 }

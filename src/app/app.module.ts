@@ -12,9 +12,10 @@ import {ButtonComponent} from './components/base/button/button.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {AngularMaterialModule} from './components/modal/angular-material.module';
 import {QuizfrageComponent} from './components/base/quizfrage/quizfrage.component';
-import { AvatarSelectorComponent } from './components/avatar-selector/avatar-selector.component';
-import {FeedbackComponent} from './components/modal/feedback/feedback.component';
+import {AvatarSelectorComponent} from './components/avatar-selector/avatar-selector.component';
 import {InfotextComponent} from './components/base/infotext/infotext.component';
+import {FeedbackInformatiktageComponent} from './components/base/feedback/feedback-informatiktage.component';
+import {FeedbackComponent} from './components/modal/feedback/feedback.component';
 import { WeltDerInformatikComponent } from './components/room/1-welt-der-informatik/welt-der-informatik.component';
 import { RequirementDesignComponent } from './components/room/2-requirement-design/requirement-design.component';
 import { EntwicklungComponent } from './components/room/3-entwicklung/entwicklung.component';
@@ -41,7 +42,8 @@ import {RewardCoinsComponent} from './components/base/reward-coins/reward-coins.
     BuildDeployComponent,
     RecruitingComponent,
     PlaygroundComponent,
-    RewardCoinsComponent
+    RewardCoinsComponent,
+    FeedbackInformatiktageComponent
   ],
   imports: [
     BrowserModule,
@@ -59,6 +61,7 @@ import {RewardCoinsComponent} from './components/base/reward-coins/reward-coins.
     FeedbackComponent,
     InfotextComponent,
     QuizfrageComponent,
+    FeedbackInformatiktageComponent,
     RewardCoinsComponent
   ] // define modal components
 })

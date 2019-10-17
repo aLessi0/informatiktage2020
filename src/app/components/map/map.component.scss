@@ -108,46 +108,88 @@
     transform: translateX(-50%);
   }
 
-  .room1 {
-    position: absolute;
-    width: 31%;
-    top: 69.7%;
-    left: 67%;
-  }
+  .room {
+    &.unlockAnimation {
+      opacity: 0;
+      animation: showing 0.5s ease-in-out, puff-out-center 1s 0.5s cubic-bezier(0.165, 0.840, 0.440, 1.000), puff-in-center 1s 2s cubic-bezier(0.470, 0.000, 0.745, 0.715);
 
-  .room2 {
-    position: absolute;
-    width: 31%;
-    top: 54.2%;
-    left: 67%;
-  }
+      @keyframes showing {
+        from {
+          opacity: 1;
+        }
+        to {
+          opacity: 1;
+        }
+      }
 
-  .room3 {
-    position: absolute;
-    width: 31%;
-    top: 38.6%;
-    left: 66.2%;
-  }
+      @keyframes puff-out-center {
+        0% {
+          transform: scale(1);
+          filter: blur(0);
+          opacity: 1;
+        }
+        100% {
+          transform: scale(1.5);
+          filter: blur(0.2rem);
+          opacity: 0;
+        }
+      }
 
-  .room4 {
-    position: absolute;
-    width: 31%;
-    top: 22.7%;
-    left: 66.5%;
-  }
+      @keyframes puff-in-center {
+        0% {
+          transform: scale(1.5);
+          filter: blur(0.2rem);
+          opacity: 0;
+        }
+        100% {
+          transform: scale(1);
+          filter: blur(0);
+          opacity: 1;
+        }
+      }
+    }
 
-  .room5 {
-    position: absolute;
-    width: 31%;
-    top: 6.1%;
-    left: 38.5%;
-  }
+    &.room1 {
+      position: absolute;
+      width: 31%;
+      top: 69.7%;
+      left: 67%;
+    }
 
-  .room6 {
-    position: absolute;
-    width: 31%;
-    top: 6.2%;
-    left: 1.5%;
+    &.room2 {
+      position: absolute;
+      width: 31%;
+      top: 54.2%;
+      left: 67%;
+    }
+
+    &.room3 {
+      position: absolute;
+      width: 31%;
+      top: 38.6%;
+      left: 66.2%;
+    }
+
+    &.room4 {
+      position: absolute;
+      width: 31%;
+      top: 22.7%;
+      left: 66.5%;
+    }
+
+    &.room5 {
+      position: absolute;
+      width: 31%;
+      top: 6.1%;
+      left: 38.5%;
+    }
+
+    &.room6 {
+      position: absolute;
+      width: 31%;
+      top: 6.2%;
+      left: 1.5%;
+    }
   }
 
   .person {
