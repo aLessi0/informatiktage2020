@@ -5,7 +5,7 @@ import {ModalService} from '../../service/modal.service';
 import {ProgressModel} from '../../model/user/progress.model';
 import {PlayedLevelModel} from '../../model/user/played-level.model';
 import {ProgressService} from '../../service/progress.service';
-import {DomSanitizer, SafeResourceUrl} from "@angular/platform-browser";
+import {DomSanitizer, SafeResourceUrl} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-room-container',
@@ -46,7 +46,7 @@ export class RoomContainerComponent implements OnInit {
   }
 
   public onStreetMapTap(): void {
-    if (!this.room.feedback && !this.mandatoryQuestionWasAnsweredOnEntry &&
+    if (!this.level.roomFeedback && !this.mandatoryQuestionWasAnsweredOnEntry &&
       this.progressService.mandatoryQuestionForRoomIsAnswered(this.room)) {
 
       this.modalService.openDialog(FeedbackComponent, true).subscribe(() => this.closeRoom.emit());

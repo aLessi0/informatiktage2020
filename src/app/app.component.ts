@@ -5,7 +5,8 @@ import {
   Inject,
   KeyValueDiffer,
   KeyValueDiffers,
-  NgZone, OnInit, Renderer2,
+  NgZone,
+  Renderer2,
   ViewChild
 } from '@angular/core';
 import {DataService} from './service/data.service';
@@ -16,7 +17,6 @@ import {RoomModel} from './model/game/room.model';
 import {GameModel} from './model/game/game.model';
 import {ProgressService} from './service/progress.service';
 import {animation} from '@angular/animations';
-import {Meta} from "@angular/platform-browser";
 
 @Component({
   selector: 'app-root',

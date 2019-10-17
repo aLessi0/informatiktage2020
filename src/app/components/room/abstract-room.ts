@@ -80,7 +80,6 @@ export class AbstractRoom {
           } else {
             this.level.coins.push(key);
             this.progress.numberOfCollectedCoins++;
-            this.progressService.updateProgress(this.progress);
             this.openReward(false, callback);
           }
 
