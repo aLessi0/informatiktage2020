@@ -37,11 +37,11 @@
   }
 
   .tree2 {
-    pointer-events: none;
     position: absolute;
     width: 15%;
     top: 8%;
     left: 70%;
+    z-index: 9;
   }
 
   .tree3 {
@@ -66,5 +66,37 @@
     width: 30%;
     top: 82%;
     left: 53%;
+  }
+
+  .urs {
+    position: absolute;
+    width: 14%;
+    top: 42%;
+    left: 52%;
+  }
+
+  .petra {
+    position: absolute;
+    width: 15%;
+    top: 75%;
+    left: 5%;
+  }
+
+  .ueli {
+    position: absolute;
+    width: 10%;
+    top: 8%;
+    left: 77%;
+    z-index: 8;
+    transform: rotate(20deg);
+  }
+
+  .avatar {
+    pointer-events: none;
+    position: absolute;
+    width: 10%;
+    top: 28%;
+    left: -5%;
+    z-index: 10;
   }
 }

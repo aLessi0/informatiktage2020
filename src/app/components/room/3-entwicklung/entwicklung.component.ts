@@ -2,6 +2,7 @@ import {Component, Inject} from '@angular/core';
 import {AbstractRoom} from '../abstract-room';
 import {DataService} from '../../../service/data.service';
 import {ModalService} from '../../../service/modal.service';
+import {ProgressService} from '../../../service/progress.service';
 
 @Component({
   selector: 'app-entwicklung',
@@ -10,28 +11,23 @@ import {ModalService} from '../../../service/modal.service';
 })
 export class EntwicklungComponent extends AbstractRoom {
 
-  public planetRewardCollected: boolean = false;
-  public planetState: number = 0;
-
-  public starRewardCollected: boolean = false;
+  public planetState = 0;
   public starsHidden = [];
 
   constructor(@Inject(DataService) protected readonly dataService: DataService,
+              @Inject(ProgressService) protected readonly progressService: ProgressService,
               @Inject(ModalService) protected readonly modalService: ModalService) {
-    super(dataService, modalService);
+    super(dataService, progressService, modalService);
   }
 
   planetClick() {
     console.log(this.planetState);
-    if ( this.planetRewardCollected ) {
-      return;
-    }
+
 
     this.planetState++;
 
     if (this.planetState >= 3) {
-      this.openQuestion(this.room.optionalQuestions[0]);
-      this.planetRewardCollected = true;
+      this.openQuestion("room3coin1", "/assets/sprites/Room/3-develop-and-testing/Planet.svg");
     }
   }
 
@@ -41,12 +37,11 @@ export class EntwicklungComponent extends AbstractRoom {
       this.starsHidden.push(id);
     }
 
-    //check reward
-    if ( this.starsHidden.length == 4 &&  !this.starRewardCollected ) {
-      // @TODO: coin reward
-      console.log('COIN!');
+    // check reward
+    if ( this.starsHidden.length === 4 ) {
+      this.openInfo("room3coin2", "/assets/sprites/Room/3-develop-and-testing/Stars1-gross1.svg");
     }
-    console.log(this.starsHidden)
+    console.log(this.starsHidden);
   }
 
   isStarHidden(id) {

@@ -1,8 +1,14 @@
-<svg-icon src="\assets\sprites\Room\2-req-and-design\Fire.svg" class="fire" (click)="openQuestion(room.mandatoryQuestion)"></svg-icon>
-<svg-icon src="\assets\sprites\Room\2-req-and-design\Tent.svg" class="tent" (click)="openQuestion(room.optionalQuestions[0])"></svg-icon>
-<svg-icon src="\assets\sprites\Room\2-req-and-design\Tree.svg" class="tree" (click)="openQuestion(room.optionalQuestions[1])"></svg-icon>
+<svg-icon src="\assets\sprites\Room\2-req-and-design\Fire.svg" class="fire"></svg-icon>
+<svg-icon src="\assets\sprites\Room\2-req-and-design\Tent.svg" class="tent"></svg-icon>
+<svg-icon src="\assets\sprites\Room\2-req-and-design\Tree.svg" class="tree"></svg-icon>
 <svg-icon src="\assets\sprites\Room\2-req-and-design\Tree1.svg" class="tree1"></svg-icon>
-<svg-icon src="\assets\sprites\Room\2-req-and-design\Tree2.svg" class="tree2"></svg-icon>
+<svg-icon src="\assets\sprites\Room\2-req-and-design\Tree2.svg" class="tree2" (click)="ueliVisible()"></svg-icon>
 <svg-icon src="\assets\sprites\Room\2-req-and-design\Tree3.svg" class="tree3"></svg-icon>
 <svg-icon src="\assets\sprites\Room\2-req-and-design\Tree4.svg" class="tree4"></svg-icon>
 <svg-icon src="\assets\sprites\Room\2-req-and-design\TreeGroup.svg" class="treeGroup"></svg-icon>
+<svg-icon src="\assets\sprites\Room\2-req-and-design\Urs.svg" class="urs" (click)="openQuestion('room2coin1', '/assets/sprites/Room/2-req-and-design/Urs.svg')"></svg-icon>
+<svg-icon src="\assets\sprites\Room\2-req-and-design\Petra.svg" class="petra" (click)="openQuestion('room2key', '/assets/sprites/Room/2-req-and-design/Petra.svg')"></svg-icon>
+<svg-icon src="\assets\sprites\Room\2-req-and-design\Ueli.svg" class="ueli" *ngIf="!ueliHidden" (click)="openInfo('room2coin2', '/assets/sprites/Room/1-welt-der-informatik/Ueli.svg')"></svg-icon>
+
+<!--PERSON-->
+<svg-icon #person src="/assets/sprites/Icon/Avatar/{{progress.avatarType}}.svg" class="avatar"></svg-icon>

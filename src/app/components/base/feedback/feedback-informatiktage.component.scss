@@ -45,8 +45,16 @@
     flex-direction: column;
     flex: 1;
 
+    h1 {
+      align-self: center;
+    }
+
     input {
       margin-bottom: 1rem;
+    }
+
+    .birthday {
+      width: 93%;
     }
   }
 }

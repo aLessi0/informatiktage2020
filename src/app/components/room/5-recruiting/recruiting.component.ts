@@ -3,6 +3,7 @@ import {AbstractRoom} from '../abstract-room';
 import {DataService} from '../../../service/data.service';
 import {ModalService} from '../../../service/modal.service';
 import {FeedbackInformatiktageComponent} from '../../base/feedback/feedback-informatiktage.component';
+import {ProgressService} from '../../../service/progress.service';
 
 @Component({
   selector: 'app-recruiting',
@@ -24,9 +25,10 @@ export class RecruitingComponent extends AbstractRoom {
   waitTimer = 0;
 
   constructor(@Inject(DataService) protected readonly dataService: DataService,
+              @Inject(ProgressService) protected readonly progressService: ProgressService,
               @Inject(ModalService) protected readonly modalService: ModalService,
               @Inject(Renderer2) private readonly renderer: Renderer2) {
-    super(dataService, modalService);
+    super(dataService, progressService, modalService);
   }
 
   public openITDFeedback(): void {

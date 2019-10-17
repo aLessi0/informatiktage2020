@@ -7,7 +7,16 @@
     display: flex;
     flex-direction: column;
 
-    .answer-status {
+    .question-icon {
+      display: flex;
+      justify-content: center;
+
+      svg-icon {
+        width: 2rem;
+      }
+    }
+
+    .answer-wrong {
       display: flex;
       justify-content: center;
       margin-bottom: 0.5rem;
