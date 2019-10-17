@@ -91,7 +91,7 @@ export class AbstractRoom {
 
     } else {
       // Frage wurde bereits einmal beantwortet
-      this.modalService.openDialog(InfotextComponent, false, { icon, text: 'Du hast diese Frage bereits beantwortet!' }).subscribe(() => {
+      this.modalService.openDialog(InfotextComponent, false, { icon, text: 'Du hast meine Frage bereits beantwortet!' }).subscribe(() => {
         if (callback) {
           callback();
         }
