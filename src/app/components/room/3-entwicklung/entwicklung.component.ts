@@ -25,14 +25,12 @@ export class EntwicklungComponent extends AbstractRoom {
 
   planetClick() {
     console.log(this.planetState);
-    if ( this.planetRewardCollected ) {
-      return;
-    }
+
 
     this.planetState++;
 
     if (this.planetState >= 3) {
-      // this.openQuestion(this.room.optionalQuestions[0]);
+      this.openQuestion("room3coin1", "/assets/sprites/Room/3-develop-and-testing/Planet.svg");
       this.planetRewardCollected = true;
     }
   }
@@ -45,8 +43,7 @@ export class EntwicklungComponent extends AbstractRoom {
 
     // check reward
     if ( this.starsHidden.length === 4 &&  !this.starRewardCollected ) {
-      // @TODO: coin reward
-      console.log('COIN!');
+      this.openInfo("room3coin2", "/assets/sprites/Room/3-develop-and-testing/Stars1-gross1.svg");
     }
     console.log(this.starsHidden);
   }
