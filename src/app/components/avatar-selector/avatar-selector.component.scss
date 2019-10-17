@@ -51,9 +51,28 @@
 
     transition: transform 0.3s ease-in-out;
 
+    &:after {
+      content: '';
+      position: absolute;
+      opacity: 0;
+      bottom: 0;
+      background-color: rgba(0,0,0,0.4);
+      height: 5%;
+      width: 0;
+      left: 50%;
+      border-radius: 50%;
+      transition: all .3s ease-in-out;
+    }
+
     &.selected {
       transform: translateY(-20%);
-      filter: drop-shadow(0px 0px 20px rgba($dusty-red, 1));
+
+      &:after {
+        opacity: 1;
+        bottom: -20%;
+        left: 15%;
+        width: 70%;
+      }
     }
 
     &.girl {

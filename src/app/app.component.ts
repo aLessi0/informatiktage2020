@@ -5,7 +5,7 @@ import {
   Inject,
   KeyValueDiffer,
   KeyValueDiffers,
-  NgZone, Renderer2,
+  NgZone, OnInit, Renderer2,
   ViewChild
 } from '@angular/core';
 import {DataService} from './service/data.service';
@@ -16,13 +16,14 @@ import {RoomModel} from './model/game/room.model';
 import {GameModel} from './model/game/game.model';
 import {ProgressService} from './service/progress.service';
 import {animation} from '@angular/animations';
+import {Meta} from "@angular/platform-browser";
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements DoCheck {
+export class AppComponent implements OnInit, DoCheck {
   public progressAvailable = false;
   public progress: ProgressModel;
   public game: GameModel;
@@ -39,7 +40,8 @@ export class AppComponent implements DoCheck {
               @Inject(KeyValueDiffers) readonly differs: KeyValueDiffers,
               @Inject(HttpClient) private readonly http: HttpClient,
               @Inject(ProgressService) private readonly progressService: ProgressService,
-              @Inject(Renderer2) private readonly renderer: Renderer2) {
+              @Inject(Renderer2) private readonly renderer: Renderer2,
+              @Inject(Meta) private readonly metaService: Meta) {
     this.differ = differs.find([]).create();
 
     this.dataService.game$.subscribe(game => {
@@ -65,6 +67,15 @@ export class AppComponent implements DoCheck {
       this.progressAvailable = !!progress;
       this.progress = progress;
     });
+  }
+
+  public ngOnInit(): void {
+    // this.metaService.updateTag({
+    //     name: 'viewport',
+    //     content: `height=${window.innerHeight}, width=${window.innerWidth}, initial-scale=1.0, maximum-scale=1.0, user-scalable=no`
+    //   },
+    //   `name='viewport'`
+    // );
   }
 
   public leaveActiveRoom(): void {
