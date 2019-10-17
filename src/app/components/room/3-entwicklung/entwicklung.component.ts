@@ -11,10 +11,10 @@ import {ProgressService} from '../../../service/progress.service';
 })
 export class EntwicklungComponent extends AbstractRoom {
 
-  public planetRewardCollected: boolean = false;
-  public planetState: number = 0;
+  public planetRewardCollected = false;
+  public planetState = 0;
 
-  public starRewardCollected: boolean = false;
+  public starRewardCollected = false;
   public starsHidden = [];
 
   constructor(@Inject(DataService) protected readonly dataService: DataService,
@@ -32,7 +32,7 @@ export class EntwicklungComponent extends AbstractRoom {
     this.planetState++;
 
     if (this.planetState >= 3) {
-      this.openQuestion(this.room.optionalQuestions[0]);
+      // this.openQuestion(this.room.optionalQuestions[0]);
       this.planetRewardCollected = true;
     }
   }
@@ -43,12 +43,12 @@ export class EntwicklungComponent extends AbstractRoom {
       this.starsHidden.push(id);
     }
 
-    //check reward
-    if ( this.starsHidden.length == 4 &&  !this.starRewardCollected ) {
+    // check reward
+    if ( this.starsHidden.length === 4 &&  !this.starRewardCollected ) {
       // @TODO: coin reward
       console.log('COIN!');
     }
-    console.log(this.starsHidden)
+    console.log(this.starsHidden);
   }
 
   isStarHidden(id) {

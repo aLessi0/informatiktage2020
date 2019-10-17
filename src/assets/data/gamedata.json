@@ -11,18 +11,12 @@
           "questionText": "Dies ist die Mandatory-Frage. Was bekommt man wenn man bei Entwicklung \"Ent\" rausnimmt?",
           "correctAnswer": "wicklung",
           "isMandatory": true
-        },
-        {
-          "key": "room1coin1",
-          "questionText": "Dies ist eine Optional-Frage. Was gibt 1+1?",
-          "correctAnswer": "2",
-          "isMandatory": false
         }
       ],
       "infos": [
         {
           "key": "room1info1",
-          "text": "Such am besten mal weiter!",
+          "text": "Geh zu Marie!",
           "givesCoin": false
         },
         {
