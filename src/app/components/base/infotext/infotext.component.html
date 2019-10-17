@@ -1,3 +1,5 @@
-<p>
-  {{data.text}}
-</p>
+  <div class="info-icon">
+    <svg-icon *ngIf="data.icon" [src]="data.icon"></svg-icon>
+  </div>
+  <div class="info-text">{{data.text}}</div>
+  <app-button [btnTitle]="'OK'" (btnClicked)="closeInfo()"></app-button>

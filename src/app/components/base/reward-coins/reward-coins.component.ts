@@ -25,26 +25,26 @@ export class RewardCoinsComponent implements OnInit {
   }
 
   public ngOnInit(): void {
-    if (this.progress.coins >= this.game.minCoinsRewardSmall && this.progress.coins < this.game.minCoinsRewardBig) {
+    if (this.progress.numberOfCollectedCoins >= this.game.minCoinsRewardSmall && this.progress.numberOfCollectedCoins < this.game.minCoinsRewardBig) {
       this.mainText = '<h1> Gratuliere!</h1>';
-      this.mainText = this.mainText + ' Du hast <b>' + this.progress.coins + '</b> von insgesamt <b>' + this.game.numberOfCoinsInGame;
+      this.mainText = this.mainText + ' Du hast <b>' + this.progress.numberOfCollectedCoins + '</b> von insgesamt <b>' + this.game.numberOfCoinsInGame;
       this.mainText = this.mainText + '</b> Münzen gesammelt. Du hast dir einen kleinen Preis verdient. Löse deine Münzen beim Sofortpreisestand ein.';
       this.mainText = this.mainText + '<br/><br/> Aber Achtung. Du kannst die Münzen nur einmal einlösen, also überlege dir gut, ob du noch weiter sammeln möchtest.'
 
-    } else if (this.progress.coins >= this.game.minCoinsRewardBig) {
+    } else if (this.progress.numberOfCollectedCoins >= this.game.minCoinsRewardBig) {
       this.mainText = '<h1> Gratuliere!</h1>';
-      if (this.progress.coins !== this.game.numberOfCoinsInGame) {
-        this.mainText = this.mainText + ' Du hast <b>' + this.progress.coins + '</b> von insgesamt <b>' + this.game.numberOfCoinsInGame + '</b> Münzen gesammelt.';
+      if (this.progress.numberOfCollectedCoins !== this.game.numberOfCoinsInGame) {
+        this.mainText = this.mainText + ' Du hast <b>' + this.progress.numberOfCollectedCoins + '</b> von insgesamt <b>' + this.game.numberOfCoinsInGame + '</b> Münzen gesammelt.';
       } else {
         this.mainText = this.mainText + ' Du hast <b> alle </b> Münzen gesammelt.';
       }
       this.mainText = this.mainText + ' Du hast dir den grossen Preis verdient. Löse deine Münzen beim Sofortpreisestand ein.';
-      if (this.progress.coins !== this.game.numberOfCoinsInGame) {
+      if (this.progress.numberOfCollectedCoins !== this.game.numberOfCoinsInGame) {
         this.mainText = this.mainText + '<br/><br/> Aber Achtung. Du kannst die Münzen nur einmal einlösen, also überlege dir gut, ob du noch weiter sammeln möchtest.'
       }
     } else {
       this.mainText = '<h1> Hoppla!</h1>';
-      this.mainText = this.mainText + 'Du hast <b>' + this.progress.coins + '</b> von insgesamt <b>' + this.game.numberOfCoinsInGame
+      this.mainText = this.mainText + 'Du hast <b>' + this.progress.numberOfCollectedCoins + '</b> von insgesamt <b>' + this.game.numberOfCoinsInGame
         + '</b> Münzen gesammelt. Du brauchst mindestens <b>'
         + this.game.minCoinsRewardSmall + '</b> Münzen für den kleinen Preis.<br/><br/> Sammle weiter um einen Preis zu bekommen.';
     }
@@ -53,7 +53,7 @@ export class RewardCoinsComponent implements OnInit {
   public validateAnswer(): void {
     if (this.password === '123456789') {
       this.progressService.progress$.subscribe(progress => {
-        this.progress.collectedReward = true;
+        this.progress.coinsBereitsEingeloest = true;
       });
     }
 

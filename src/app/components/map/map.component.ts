@@ -36,14 +36,14 @@ export class MapComponent implements AfterViewInit {
 
   public ngAfterViewInit(): void {
     for (const levelNumber of Array.from(this.progress.playedLevels.keys())) {
-      let playedLevel = this.progress.playedLevels.get(levelNumber);
+      const playedLevel = this.progress.playedLevels.get(levelNumber);
       if (!playedLevel.hasAlreadyBeenSeen) {
         this.roomActivatingAnimationRunning = true;
         const roomRef = this.getRoomRef(playedLevel.level);
         setTimeout(() => {
           this.renderer.addClass(roomRef.nativeElement, 'unlockAnimation');
 
-          let animationCount: number = 0;
+          let animationCount = 0;
           roomRef.nativeElement.addEventListener('animationend', () => {
             animationCount++;
             if (animationCount === 2) {
@@ -94,11 +94,10 @@ export class MapComponent implements AfterViewInit {
     }
   }
 
-  public collectedReward(): void {
+  public coinsEinloesen(): void {
     this.modalService.openDialog(RewardCoinsComponent, false, {
       game: this.game,
       progress: this.progress
-    }).subscribe(() => {
     });
   }
 

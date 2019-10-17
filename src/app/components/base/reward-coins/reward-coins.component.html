@@ -1,15 +1,15 @@
 <div class="frage">
-  <ng-container *ngIf="!progress.collectedReward">
+  <ng-container *ngIf="!progress.coinsBereitsEingeloest">
     <div class="icon">
       <svg-icon [src]="'/assets/sprites/Icon/Map/Coin.svg'" class="coin"></svg-icon>
     </div>
     <div class="titel" [innerHTML]="mainText"></div>
-    <ng-container *ngIf="progress.coins >= game.minCoinsRewardSmall">
+    <ng-container *ngIf="progress.numberOfCollectedCoins >= game.minCoinsRewardSmall">
       <input type="text" class="input-field password" [(ngModel)]="password"/>
       <app-button class="check-answer" [btnTitle]="'Einlösen'" (btnClicked)="validateAnswer()"></app-button>
     </ng-container>
   </ng-container>
-  <ng-container *ngIf="progress.collectedReward">
+  <ng-container *ngIf="progress.coinsBereitsEingeloest">
     <div class="icon">
       <svg-icon [src]="'/assets/sprites/Icon/Map/Coin.svg'" class="coin"></svg-icon>
     </div>
