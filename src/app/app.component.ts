@@ -72,7 +72,7 @@ export class AppComponent implements OnInit, DoCheck {
   public ngOnInit(): void {
     this.metaService.updateTag({
         name: 'viewport',
-        content: `height=${window.innerHeight}px, width=${window.innerWidth}px, initial-scale=1.0, maximum-scale=1.0, user-scalable=no`
+        content: `height=${window.innerHeight}, width=${window.innerWidth}, initial-scale=1.0, maximum-scale=1.0, user-scalable=no`
       },
       `name='viewport'`
     );
