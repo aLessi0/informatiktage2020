@@ -43,12 +43,22 @@ export class FeedbackInformatiktageComponent {
       raeume: roomsFeedback
     };
     console.log(body);
-    this.httpClient.post('/api/feedback', body).subscribe(() => {
-      this.progress.canTakePartInContest = true;
-      this.progress.feedbackCompleted = true;
-      this.progressService.updateProgress(this.progress);
-      this.close();
-    });
+    this.httpClient.post('/api/feedback', body).subscribe(
+      data => {
+        console.log('POST: sending feedback successful');
+        this.progress.canTakePartInContest = true;
+        this.progress.feedbackCompleted = true;
+        this.progressService.updateProgress(this.progress);
+        this.close();
+      },
+      error => {
+        // @TODO: display some error if submit failed?
+        console.log('POST sending feedback failed.');
+        this.progress.feedbackCompleted = true;
+        this.progressService.updateProgress(this.progress);
+        this.close();
+      }
+    );
   }
 
   public close() {

@@ -104,7 +104,14 @@
     {
       "level": 5,
       "roomClass": "room-recruiting",
-      "questions": [],
+      "questions": [
+        {
+          "key": "room5coin1",
+          "questionText": "Bla?",
+          "correctAnswer": "bla",
+          "isMandatory": false
+        }
+      ],
       "infos": [
         {
           "key": "room5finishText",
