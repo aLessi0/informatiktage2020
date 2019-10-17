@@ -3,6 +3,7 @@ import {AbstractRoom} from '../abstract-room';
 import {DataService} from '../../../service/data.service';
 import {ModalService} from '../../../service/modal.service';
 import {ProgressService} from '../../../service/progress.service';
+import {FeedbackInformatiktageComponent} from '../../base/feedback/feedback-informatiktage.component';
 
 @Component({
   selector: 'app-recruiting',
@@ -28,10 +29,6 @@ export class RecruitingComponent extends AbstractRoom {
               @Inject(ModalService) protected readonly modalService: ModalService,
               @Inject(Renderer2) private readonly renderer: Renderer2) {
     super(dataService, progressService, modalService);
-  }
-
-  public francoClick(): void {
-    this.openQuestion('room5key', '/assets/sprites/Room/5-recruiting/Franco.svg');
   }
 
   public crazyfishClick() {
@@ -104,4 +101,33 @@ export class RecruitingComponent extends AbstractRoom {
     }
   }
 
+  /*
+   * Request Feedback and unlock Playground if feedback is completed.
+   */
+
+  public francoClick(): void {
+    if(!this.level.key) {
+        this.openInfo('room5finishText', '/assets/sprites/Room/5-recruiting/Franco.svg', () => {
+          this.openITDFeedback();
+        });
+    }  else {
+      this.openInfo('room5feedbackDanke', '/assets/sprites/Room/5-recruiting/Franco.svg');
+    }
+  }
+
+  public openITDFeedback(): void {
+    if(!this.progress.feedbackCompleted) {
+      this.modalService.openDialog(FeedbackInformatiktageComponent, false).subscribe(() => {
+        if (this.progress.feedbackCompleted) {
+          this.unlockPlayground();
+        }
+      });
+    }
+  }
+
+  public unlockPlayground(): void {
+    this.level.key = true;
+    this.progressService.unlockLevel(this.level.level + 1);
+    this.openReward(true);
+  }
 }

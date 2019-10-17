@@ -38,8 +38,9 @@ export class FeedbackInformatiktageComponent {
     console.log(body);
     this.httpClient.post('/api/feedback', body).subscribe(() => {
       this.progress.canTakePartInContest = true;
-      this.progress.contest = new ContestModel();
+      this.progress.feedbackCompleted = true;
       this.progressService.updateProgress(this.progress);
+      this.close()
     });
   }
 

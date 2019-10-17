@@ -104,26 +104,23 @@
     {
       "level": 5,
       "roomClass": "room-recruiting",
-      "questions": [
-        {
-          "key": "room5key",
-          "questionText": "1+1?",
-          "correctAnswer": "2",
-          "isMandatory": true
-        },
-        {
-          "key": "room5coin1",
-          "questionText": "blabla",
-          "correctAnswer": "bla",
-          "isMandatory": false
-        }
-      ],
+      "questions": [],
       "infos": [
         {
-        "key": "room5coin2",
-        "text": "Crazyfish, hier eine Münze!",
-        "givesCoin": true
-      }
+          "key": "room5finishText",
+          "text": "Gratulation! Du hast es bis zum Ende geschafft. Fülle doch das Feedback aus und schalte den Playground frei!",
+          "givesCoin": false
+        },
+        {
+          "key": "room5feedbackDanke",
+          "text": "Vielen Dank für dein Feedback und viel Spass beim entdecken des Playgrounds!",
+          "givesCoin": false
+        },
+        {
+          "key": "room5coin2",
+          "text": "Crazyfish, hier eine Münze!",
+          "givesCoin": true
+        }
       ]
     },
     {

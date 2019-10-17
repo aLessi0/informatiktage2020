@@ -2,37 +2,38 @@
 <svg-icon src="\assets\sprites\Icon\Map\Street.svg" class="street"></svg-icon>
 <svg-icon #room1
           src="\assets\sprites\Room\1-Welt-der-Informatik.svg"
-          class="room room1 {{getRoomClass(0)}}"
+          class="room room1 {{getRoomClass(0)}} {{getBadgeClass(0)}}"
           (click)="activateRoom(0)">
 </svg-icon>
 <svg-icon #room2
           src="\assets\sprites\Room\2-Req-and-Design{{isRoomUnlocked(1) ? '-unlocked' : ''}}.svg"
-          class="room room2 {{getRoomClass(1)}}"
+          class="room room2 {{getRoomClass(1)}} {{getBadgeClass(1)}}"
           (click)="activateRoom(1)">
 </svg-icon>
 <svg-icon #room3
           src="\assets\sprites\Room\3-Develop-and-Testing{{isRoomUnlocked(2) ? '-unlocked' : ''}}.svg"
-          class="room room3 {{getRoomClass(2)}}"
+          class="room room3 {{getRoomClass(2)}} {{getBadgeClass(2)}}"
           (click)="activateRoom(2)">
 </svg-icon>
 <svg-icon #room4
           src="\assets\sprites\Room\4-Build-Deploy-and-Operate{{isRoomUnlocked(3) ? '-unlocked' : ''}}.svg"
-          class="room room4 {{getRoomClass(3)}}"
+          class="room room4 {{getRoomClass(3)}} {{getBadgeClass(3)}}"
           (click)="activateRoom(3)">
 </svg-icon>
 <svg-icon #room5
           src="\assets\sprites\Room\5-Rekrutierung{{isRoomUnlocked(4) ? '-unlocked' : ''}}.svg"
-          class="room room5 {{getRoomClass(4)}}"
+          class="room room5 {{getRoomClass(4)}} {{getBadgeClass(4)}}"
           (click)="activateRoom(4)">
 </svg-icon>
 <svg-icon #room6
           src="\assets\sprites\Room\6-Playground{{isRoomUnlocked(5) ? '-unlocked' : ''}}.svg"
-          class="room room6 {{getRoomClass(5)}}"
+          class="room room6 {{getRoomClass(5)}} {{getBadgeClass(5)}}"
           (click)="activateRoom(5)">
 </svg-icon>
 
 <!--PERSON-->
-<svg-icon #person src="\assets\sprites\Icon\Avatar\{{progress.avatarType}}.svg" class="person pos{{progress.avatarPos}}"></svg-icon>
+<svg-icon #person src="\assets\sprites\Icon\Avatar\{{progress.avatarType}}.svg"
+          class="person pos{{progress.avatarPos}}"></svg-icon>
 
 <!--UMGEBUNG-->
 <svg-icon src="\assets\sprites\Icon\Map\Simple-Forest.svg" class="forest"></svg-icon>
