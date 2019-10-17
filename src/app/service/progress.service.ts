@@ -44,6 +44,7 @@ export class ProgressService {
     playedLevel.level = level;
     playedLevel.answers = new Map();
     playedLevel.coins = 0;
+    playedLevel.hasAlreadyBeenSeen = false;
     progress.unlockedLevel = level;
     progress.playedLevels.set(level, playedLevel);
     this.updateProgress(progress);
@@ -110,6 +111,7 @@ export class ProgressService {
     level1.level = 1;
     level1.coins = 0;
     level1.answers = new Map();
+    level1.hasAlreadyBeenSeen = true;
     progress.playedLevels.set(level1.level, level1);
 
     return progress;
