@@ -5,10 +5,6 @@
   flex: 1;
   width: 98%;
 
-  background-image: url("../../../assets/sprites/Onboarding/Background/Background3.svg");
-  background-repeat: no-repeat;
-  background-position: center center;
-
   .content {
     display: flex;
     flex-direction: column;
@@ -28,17 +24,17 @@
 
   .child-swipe {
     position: absolute;
-    width: 20%;
-    left: 40%;
+    width: 30%;
+    left: 35%;
     text-align: center;
-    bottom: 8%;
+    bottom: 17%;
   }
 
   #btn-create-avatar {
     position: absolute;
-    width: 30%;
-    left: 35%;
-    bottom: 13%;
+    width: 75%;
+    left: 12%;
+    bottom: 8%;
   }
 
   /*
