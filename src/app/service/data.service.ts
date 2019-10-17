@@ -48,7 +48,6 @@ export class DataService {
         game.numberOfCoinsInGame = 0;
 
         for (const room of game.rooms) {
-          console.log(room);
           room.numberOfCoinsInRoom = 0;
           // count coins from questions
           room.numberOfCoinsInRoom += (room.questions.length - 1);

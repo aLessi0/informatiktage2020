@@ -29,8 +29,6 @@ export class AbstractRoom {
   public openInfo(key: string, icon: string, callback?): void {
     const info = this.getInfoByKey(key);
 
-    console.log('--------> open info: ', info);
-
     if (info.givesCoin) { // info anzeigen mit coin
 
       if (this.level.coins.indexOf(key) < 0) { // prüfen ob coin nicht bereits erhalten
@@ -74,10 +72,6 @@ export class AbstractRoom {
 
     if (!bereitsBeantwortet) {
       this.modalService.openDialog(QuizfrageComponent, false, data).subscribe(() => {
-
-        // TODO
-        console.log('-----------> in beantwortet with data: ', data);
-
         if (data.correctlyAnswered) {
           if (question.isMandatory) {
             this.level.key = true;
