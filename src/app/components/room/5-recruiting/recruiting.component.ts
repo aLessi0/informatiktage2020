@@ -2,7 +2,6 @@ import {Component, ElementRef, Inject, Renderer2, ViewChild} from '@angular/core
 import {AbstractRoom} from '../abstract-room';
 import {DataService} from '../../../service/data.service';
 import {ModalService} from '../../../service/modal.service';
-import {FeedbackInformatiktageComponent} from '../../base/feedback/feedback-informatiktage.component';
 import {ProgressService} from '../../../service/progress.service';
 
 @Component({
@@ -31,13 +30,12 @@ export class RecruitingComponent extends AbstractRoom {
     super(dataService, progressService, modalService);
   }
 
-  public openITDFeedback(): void {
-    this.modalService.openDialog(FeedbackInformatiktageComponent, false).subscribe(() => 1);
+  public francoClick(): void {
+    this.openQuestion('room5key', '/assets/sprites/Room/5-recruiting/Franco.svg');
   }
 
   public crazyfishClick() {
-    // todo get coin
-    console.log('coin');
+    this.openInfo('room5coin2', '/assets/sprites/Room/5-recruiting/Crazy-Fish.svg');
   }
 
   public starClick() {
@@ -49,8 +47,7 @@ export class RecruitingComponent extends AbstractRoom {
 
   public zoraClick() {
     if (this.starClickCounter >= this.clickToGetZora) {
-      // todo get coin if not already collected
-      console.log('coin');
+      this.openQuestion('room5coin1', '/assets/sprites/Room/5-recruiting/Zora.svg');
     }
   }
 
