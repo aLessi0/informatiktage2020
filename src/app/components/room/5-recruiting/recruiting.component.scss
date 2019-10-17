@@ -36,9 +36,10 @@
     left: 8%;
 
     $light-color: yellow;
+
     &.mode1 {
       ::ng-deep {
-        svg{
+        svg {
           circle {
             &#Light1 {
               fill: $light-color;
@@ -50,7 +51,7 @@
 
     &.mode2 {
       ::ng-deep {
-        svg{
+        svg {
           circle {
             &#Light1, &#Light2 {
               fill: $light-color;
@@ -62,7 +63,7 @@
 
     &.mode3 {
       ::ng-deep {
-        svg{
+        svg {
           circle {
             &#Light1, &#Light2, &#Light3 {
               fill: $light-color;
@@ -136,14 +137,15 @@
   .crazyfish1 {
     animation: crazyfish1Animation 2s linear;
   }
+
   @keyframes crazyfish1Animation {
     0% {
       visibility: visible;
-      top: 100%;
+      top: 0;
       left: 86%;
     }
     100% {
-      top: 0;
+      top: 100%;
       left: 53%;
     }
   }
@@ -151,6 +153,7 @@
   .crazyfish2 {
     animation: crazyfish2Animation 2s linear;
   }
+
   @keyframes crazyfish2Animation {
     0% {
       visibility: visible;
@@ -166,6 +169,7 @@
   .crazyfish3 {
     animation: crazyfish3Animation 2s linear;
   }
+
   @keyframes crazyfish3Animation {
     0% {
       visibility: visible;
@@ -181,6 +185,7 @@
   .crazyfish4 {
     animation: crazyfish4Animation 2s linear;
   }
+
   @keyframes crazyfish4Animation {
     0% {
       visibility: visible;
