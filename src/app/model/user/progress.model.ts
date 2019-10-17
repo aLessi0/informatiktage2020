@@ -13,4 +13,5 @@ export class ProgressModel {
   public contest: ContestModel;
   public canTakePartInContest: boolean;
   public takesPartInContest: boolean;
+  public feedbackCompleted: boolean;
 }
