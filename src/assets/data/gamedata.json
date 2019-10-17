@@ -57,12 +57,18 @@
         },
         {
           "key": "room3coin1",
-          "questionText": "Dies ist eine Optional-Frage. Was gibt 3+3?",
-          "correctAnswer": "6",
+          "questionText": "Wie macht die Schnecke?",
+          "correctAnswer": "zirp",
           "isMandatory": false
         }
       ],
-      "infos": []
+      "infos": [
+        {
+          "key": "room3coin2",
+          "text": "Puff, hier eine Münze!",
+          "givesCoin": true
+        }
+      ]
     },
     {
       "level": 4,
