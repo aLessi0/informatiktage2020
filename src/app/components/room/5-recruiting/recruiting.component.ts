@@ -99,34 +99,24 @@ export class RecruitingComponent extends AbstractRoom {
     for (let i = 0; i < 4; i++) {
       this.renderer.removeClass(this.crazyfish.nativeElement, 'crazyfish' + i);
     }
+  }
 
+  /*
+   * Request Feedback and unlock Playground if feedback is completed.
+   */
 
-  public
-    francoClick()
-  :
-    void {
-      if( !
-    this.level.key
-  )
-    {
-      this.openInfo('room5finishText', '/assets/sprites/Room/5-recruiting/Franco.svg', () => {
-        this.openITDFeedback();
-      });
-    }
-  else
-    {
-      this.openInfo('room5feedbackDanke', '/assets/sprites/Room/1-welt-der-informatik/Reto.svg');
+  public francoClick(): void {
+    if(!this.level.key) {
+        this.openInfo('room5finishText', '/assets/sprites/Room/5-recruiting/Franco.svg', () => {
+          this.openITDFeedback();
+        });
+    }  else {
+      this.openInfo('room5feedbackDanke', '/assets/sprites/Room/5-recruiting/Franco.svg');
     }
   }
 
-  public
-    openITDFeedback()
-  :
-    void {
-      if(!
-    this.progress.feedbackCompleted
-  )
-    {
+  public openITDFeedback(): void {
+    if(!this.progress.feedbackCompleted) {
       this.modalService.openDialog(FeedbackInformatiktageComponent, false).subscribe(() => {
         if (this.progress.feedbackCompleted) {
           this.unlockPlayground();
@@ -135,12 +125,9 @@ export class RecruitingComponent extends AbstractRoom {
     }
   }
 
-  public
-    unlockPlayground()
-  :
-    void {
-      this.level.key = true;
+  public unlockPlayground(): void {
+    this.level.key = true;
     this.progressService.unlockLevel(this.level.level + 1);
     this.openReward(true);
   }
-  }
+}
