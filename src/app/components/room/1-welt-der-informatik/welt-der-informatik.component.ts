@@ -21,7 +21,7 @@ export class WeltDerInformatikComponent extends AbstractRoom {
     if (this.level.key) {
       this.openInfo('room1coin2', '/assets/sprites/Room/1-welt-der-informatik/Reto.svg');
     } else {
-      this.openInfo('room1info1', '/assets/sprites/Room/1-welt-der-informatik/Reto.svg')
+      this.openInfo('room1info1', '/assets/sprites/Room/1-welt-der-informatik/Reto.svg');
     }
   }
 }
