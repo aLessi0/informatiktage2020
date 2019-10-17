@@ -50,7 +50,11 @@ export class DataService {
         for (const room of game.rooms) {
           room.numberOfCoinsInRoom = 0;
           // count coins from questions
-          room.numberOfCoinsInRoom += (room.questions.length - 1);
+          for (const question of room.questions) {
+            if (!question.isMandatory) {
+              room.numberOfCoinsInRoom++;
+            }
+          }
           // count coins from infos
           for (const info of room.infos) {
             if (info.givesCoin) {
