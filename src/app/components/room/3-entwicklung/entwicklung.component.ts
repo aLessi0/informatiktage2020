@@ -1,4 +1,4 @@
-import {Component, Inject, Input} from '@angular/core';
+import {Component, Inject} from '@angular/core';
 import {AbstractRoom} from '../abstract-room';
 import {DataService} from '../../../service/data.service';
 import {ModalService} from '../../../service/modal.service';
@@ -14,8 +14,6 @@ export class EntwicklungComponent extends AbstractRoom {
               @Inject(ModalService) protected readonly modalService: ModalService) {
     super(dataService, modalService);
   }
-
-  @Input('star-id') starID;
 
   private planetRewardCollected: boolean = false;
   private planetState: number = 0;
