@@ -110,7 +110,7 @@
           "questionText": "Bla?",
           "correctAnswer": "bla",
           "isMandatory": false
-        },
+        }
       ],
       "infos": [
         {
