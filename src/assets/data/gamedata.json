@@ -82,8 +82,8 @@
       "questions": [
         {
           "key": "room4key",
-          "questionText": "blabla",
-          "correctAnswer": "bla",
+          "questionText": "Dies ist die Mandatory-Frage. Was bekommt man wenn man bei Testing \"Test\" rausnimmt?",
+          "correctAnswer": "ing",
           "isMandatory": true
         },
         {
@@ -93,7 +93,13 @@
           "isMandatory": false
         }
       ],
-      "infos": []
+      "infos": [
+        {
+          "key": "room4coin2",
+          "text": "LaLeLu wenn der Mond scheint..., hier eine Münze!",
+          "givesCoin": true
+        }
+      ]
     },
     {
       "level": 5,
