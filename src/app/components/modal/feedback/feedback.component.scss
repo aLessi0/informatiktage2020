@@ -1,9 +1,9 @@
 .feedback {
-  display: inline-block;
-  padding: 5%;
-  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .feedback-smiley {
-  margin: 6%;
+  width: 20%;
 }
