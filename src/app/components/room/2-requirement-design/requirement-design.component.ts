@@ -11,10 +11,20 @@ import {ProgressService} from '../../../service/progress.service';
 })
 export class RequirementDesignComponent extends AbstractRoom {
 
+  ueliHidden = true;
+  counter: number = 0;
+
   constructor(@Inject(DataService) protected readonly dataService: DataService,
               @Inject(ProgressService) protected readonly progressService: ProgressService,
               @Inject(ModalService) protected readonly modalService: ModalService) {
     super(dataService, progressService, modalService);
+  }
+
+  public ueliVisible() {
+    this.counter = this.counter + 1;
+    if (this.counter >= 2) {
+      this.ueliHidden = false;
+    }
   }
 
 }
