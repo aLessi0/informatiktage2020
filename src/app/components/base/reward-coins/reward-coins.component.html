@@ -3,17 +3,17 @@
     <div class="icon">
       <svg-icon [src]="'/assets/sprites/Icon/Map/Coin.svg'" class="coin"></svg-icon>
     </div>
-    <h1 class="titel">Gratuliere!</h1>
-    <div class="titel">Du hast <b>{{ progress.numberOfCollectedCoins }}</b> von insgesamt <b>{{ nrOfCoinsInGame }}</b> Coins.</div>
-    <div class="titel">Du kannst deine Coins beim ZKB-Coin Kiosk einlösen.</div>
-    <input type="text" class="input-field password" [(ngModel)]="password"/>
-    <app-button class="check-answer" [btnTitle]="'Einlösen'" (btnClicked)="validateAnswer()"></app-button>
+    <div class="titel" [innerHTML]="mainText"></div>
+    <ng-container *ngIf="progress.numberOfCollectedCoins >= game.minCoinsRewardSmall">
+      <input type="text" class="input-field password" [(ngModel)]="password"/>
+      <app-button class="check-answer" [btnTitle]="'Einlösen'" (btnClicked)="validateAnswer()"></app-button>
+    </ng-container>
   </ng-container>
   <ng-container *ngIf="progress.coinsBereitsEingeloest">
     <div class="icon">
       <svg-icon [src]="'/assets/sprites/Icon/Map/Coin.svg'" class="coin"></svg-icon>
     </div>
-    <h1 class="titel">Coins bereits eingelöst</h1>
+    <h1 class="titel">Coins eingelöst</h1>
     <div class="pyro">
       <div class="before"></div>
       <div class="after"></div>

@@ -11,10 +11,16 @@ import {ProgressService} from '../../../service/progress.service';
 })
 export class BuildDeployComponent extends AbstractRoom {
 
+  blancaHidden = true;
+
   constructor(@Inject(DataService) protected readonly dataService: DataService,
               @Inject(ProgressService) protected readonly progressService: ProgressService,
               @Inject(ModalService) protected readonly modalService: ModalService) {
     super(dataService, progressService, modalService);
+  }
+
+  blancaVisible() {
+    this.blancaHidden = false;
   }
 
 }

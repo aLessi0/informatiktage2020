@@ -1,4 +1,4 @@
-import {Component, ElementRef, Inject, Input, Renderer2, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, Inject, Input, NgZone, Renderer2, ViewChild} from '@angular/core';
 import {DataService} from '../../service/data.service';
 import {GameModel} from '../../model/game/game.model';
 import {ProgressModel} from '../../model/user/progress.model';
@@ -11,19 +11,52 @@ import {RewardCoinsComponent} from '../base/reward-coins/reward-coins.component'
   templateUrl: './map.component.html',
   styleUrls: ['./map.component.scss']
 })
-export class MapComponent {
+export class MapComponent implements AfterViewInit {
 
   @Input() public game: GameModel;
   @Input() public progress: ProgressModel;
 
   @ViewChild('person', {read: ElementRef}) personRef: ElementRef<HTMLElement>;
+  @ViewChild('room1', {read: ElementRef}) room1Ref: ElementRef<HTMLElement>;
+  @ViewChild('room2', {read: ElementRef}) room2Ref: ElementRef<HTMLElement>;
+  @ViewChild('room3', {read: ElementRef}) room3Ref: ElementRef<HTMLElement>;
+  @ViewChild('room4', {read: ElementRef}) room4Ref: ElementRef<HTMLElement>;
+  @ViewChild('room5', {read: ElementRef}) room5Ref: ElementRef<HTMLElement>;
+  @ViewChild('room6', {read: ElementRef}) room6Ref: ElementRef<HTMLElement>;
 
   private isWalking = false;
+  private roomActivatingAnimationRunning: boolean;
 
   constructor(@Inject(DataService) private readonly dataService: DataService,
               @Inject(Renderer2) private readonly renderer: Renderer2,
-              @Inject(ModalService) protected readonly modalService: ModalService) {
+              @Inject(ModalService) protected readonly modalService: ModalService,
+              @Inject(NgZone) protected readonly zone: NgZone) {
 
+  }
+
+  public ngAfterViewInit(): void {
+    for (const levelNumber of Array.from(this.progress.playedLevels.keys())) {
+      const playedLevel = this.progress.playedLevels.get(levelNumber);
+      if (!playedLevel.hasAlreadyBeenSeen) {
+        this.roomActivatingAnimationRunning = true;
+        const roomRef = this.getRoomRef(playedLevel.level);
+        setTimeout(() => {
+          this.renderer.addClass(roomRef.nativeElement, 'unlockAnimation');
+
+          let animationCount = 0;
+          roomRef.nativeElement.addEventListener('animationend', () => {
+            animationCount++;
+            if (animationCount === 2) {
+              this.zone.run(() => {
+                playedLevel.hasAlreadyBeenSeen = true;
+              });
+            } else if (animationCount === 3) {
+              this.renderer.removeClass(roomRef.nativeElement, 'unlockAnimation');
+            }
+          });
+        }, 500);
+      }
+    }
   }
 
   public activateRoom(roomNumber: number): void {
@@ -62,13 +95,15 @@ export class MapComponent {
   }
 
   public coinsEinloesen(): void {
-    this.modalService.openDialog(RewardCoinsComponent, false, this.game).subscribe(() => {
+    this.modalService.openDialog(RewardCoinsComponent, false, {
+      game: this.game,
+      progress: this.progress
     });
   }
 
   public isRoomUnlocked(roomNumber: number): boolean {
     const room = this.getRoomByNumber(roomNumber);
-    return room && room.level <= this.progress.unlockedLevel;
+    return room && room.level <= this.progress.unlockedLevel && this.hasRoomAlreadyBeenSeen(room.level);
   }
 
   public getRoomClass(roomNumber: number): string {
@@ -79,5 +114,28 @@ export class MapComponent {
 
   private getRoomByNumber(roomNumber: number): RoomModel {
     return this.game.rooms[roomNumber];
+  }
+
+  private hasRoomAlreadyBeenSeen(roomNumber: number): boolean {
+    return this.progress.playedLevels
+      && this.progress.playedLevels.get(roomNumber)
+      && this.progress.playedLevels.get(roomNumber).hasAlreadyBeenSeen;
+  }
+
+  private getRoomRef(level): ElementRef {
+    switch (level) {
+      case 1:
+        return this.room1Ref;
+      case 2:
+        return this.room2Ref;
+      case 3:
+        return this.room3Ref;
+      case 4:
+        return this.room4Ref;
+      case 5:
+        return this.room5Ref;
+      case 6:
+        return this.room6Ref;
+    }
   }
 }

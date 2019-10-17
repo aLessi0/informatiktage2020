@@ -1,7 +1,41 @@
 <svg-icon src="\assets\sprites\Room\3-develop-and-testing\Satellit.svg" (click)="openQuestion(room.mandatoryQuestion)" class="satelite"></svg-icon>
 <svg-icon src="\assets\sprites\Room\3-develop-and-testing\Planets.svg" class="planets"></svg-icon>
-<svg-icon src="\assets\sprites\Room\3-develop-and-testing\Planet.svg" class="planet"></svg-icon>
-<svg-icon src="\assets\sprites\Room\3-develop-and-testing\Stars.svg" class="stars1"></svg-icon>
+
+<svg-icon src="\assets\sprites\Room\3-develop-and-testing\Stars1.svg" class="stars1"></svg-icon>
+<svg-icon src="\assets\sprites\Room\3-develop-and-testing\Stars1-gross1.svg"
+          class="stars1 gross1"
+          *ngIf="!isStarHidden(1)"
+          (click)="starClick(1)">
+</svg-icon>
+<svg-icon src="\assets\sprites\Room\3-develop-and-testing\Stars1-gross2.svg"
+          class="stars1 gross2"
+          *ngIf="!isStarHidden(2)"
+          (click)="starClick(2)">
+</svg-icon>
+
 <svg-icon src="\assets\sprites\Room\3-develop-and-testing\Stars2.svg" class="stars2"></svg-icon>
-<svg-icon src="\assets\sprites\Room\3-develop-and-testing\Sternbild.svg" (click)="openQuestion(room.optionalQuestions[0])" class="star-constellation"></svg-icon>
-<svg-icon src="\assets\sprites\Room\3-develop-and-testing\Teleskop.svg" (click)="openQuestion(room.optionalQuestions[1])" class="telescope"></svg-icon>
+<svg-icon src="\assets\sprites\Room\3-develop-and-testing\Stars2-gross1.svg"
+          class="stars2 gross1"
+          *ngIf="!isStarHidden(3)"
+          (click)="starClick(3)">
+</svg-icon>
+<svg-icon src="\assets\sprites\Room\3-develop-and-testing\Stars2-gross2.svg"
+          class="stars2 gross2"
+          *ngIf="!isStarHidden(4)"
+          (click)="starClick(4)">
+</svg-icon>
+
+
+<svg-icon src="\assets\sprites\Room\3-develop-and-testing\Sternbild.svg" class="star-constellation"></svg-icon>
+<svg-icon src="\assets\sprites\Room\3-develop-and-testing\Teleskop.svg" class="telescope"></svg-icon>
+
+<svg-icon src="\assets\sprites\Room\3-develop-and-testing\Planet.svg"
+          class="planet"
+          [ngClass]="'grow' + this.planetState"
+          (click)="planetClick()">
+</svg-icon>
+
+<svg-icon src="\assets\sprites\Room\3-develop-and-testing\Katrin.svg"
+          class="katrin"
+          (click)="this.openQuestion(room.mandatoryQuestion)">
+</svg-icon>

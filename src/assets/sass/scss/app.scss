@@ -6,12 +6,12 @@
 html, body {
   font-family: 'Rubik', sans-serif;
   font-weight: 500;
-  font-size: 4.266666667vw;
+  font-size: calc(4.266666667 * var(--vw));
 }
 
 html {
-  height: 100vh;
-  width: 100vw;
+  height: calc(100 * var(--vh));
+  width: calc(100 * var(--vw));
   display: flex;
 }
 
@@ -26,7 +26,7 @@ body {
 
 //texts
 h1 {
-  font-size: 4.923vw;
+  font-size: calc(4.923 * var(--vw));
   font-weight: 700;
   font-style: normal;
   font-stretch: normal;
@@ -55,15 +55,17 @@ button {
   background-color: transparent;
   border-radius: 0.2em;
   border: solid 0.2em #000000;
+  height: 2rem;
+  padding-left: .5rem;
 }
 
 @media (min-aspect-ratio: 9/20) {
   html, body {
-    font-size: 1.970vh;
+    font-size: calc(1.970 * var(--vh));
   }
 
   h1 {
-    font-size: 2.8325vh;
+    font-size: calc(2.8325 * var(--vh));
   }
 }
 

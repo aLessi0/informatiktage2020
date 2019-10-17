@@ -116,10 +116,30 @@
     }
   ],
   "feedback": [
-    { "number": 1, "frage": "Wie hat dir dein Besuch bei uns gefallen?", "isMandatory": true },
-    { "number": 2, "frage": "Wie gut weisst du nun, was der Beruf eines Informatikers beinhaltet?", "isMandatory": true },
-    { "number": 3, "frage": "Wie wahrscheinlich ist es, dass du dich bei der Zürcher Kantonalbank auf eine offene Stelle in der Informatik bewerben würdest?", "isMandatory": true },
-    { "number": 1, "frage": "Was hat dir besonders gefallen? (kein Pflichtfeld)", "isMandatory": false },
-    { "number": 1, "frage": "Was hättest du dir anders/zusätzlich gewünscht? (kein Pflichtfeld)", "isMandatory": false }
+    {
+      "number": 1,
+      "frage": "Wie hat dir dein Besuch bei uns gefallen?",
+      "isMandatory": true
+    },
+    {
+      "number": 2,
+      "frage": "Wie gut weisst du nun, was der Beruf eines Informatikers beinhaltet?",
+      "isMandatory": true
+    },
+    {
+      "number": 3,
+      "frage": "Wie wahrscheinlich ist es, dass du dich bei der Zürcher Kantonalbank auf eine offene Stelle in der Informatik bewerben würdest?",
+      "isMandatory": true
+    },
+    {
+      "number": 4,
+      "frage": "Was hat dir besonders gefallen? (kein Pflichtfeld)",
+      "isMandatory": false
+    },
+    {
+      "number": 5,
+      "frage": "Was hättest du dir anders/zusätzlich gewünscht? (kein Pflichtfeld)",
+      "isMandatory": false
+    }
   ]
 }

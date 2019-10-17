@@ -43,6 +43,7 @@ export class ProgressService {
     const playedLevel = new PlayedLevelModel();
     playedLevel.level = level;
     playedLevel.coins = [];
+    playedLevel.hasAlreadyBeenSeen = false;
     progress.unlockedLevel = level;
     progress.playedLevels.set(level, playedLevel);
     this.updateProgress(progress);
@@ -88,6 +89,7 @@ export class ProgressService {
         }
       });
       shallowCopy.playedLevels = Array.from(shallowCopy.playedLevels);
+      shallowCopy.feedbackAnswers = Array.from(shallowCopy.feedbackAnswers);
     }
     if (shallowCopy) {
       return AsyncLocalStorage.setItem('progress', JSON.stringify(shallowCopy));
@@ -104,10 +106,12 @@ export class ProgressService {
     progress.unlockedLevel = 1;
     progress.avatarType = avatarType;
     progress.avatarPos = 0;
+    progress.feedbackAnswers = new Map();
 
     const level1: PlayedLevelModel = new PlayedLevelModel();
     level1.level = 1;
     level1.coins = [];
+    level1.hasAlreadyBeenSeen = true;
     progress.playedLevels.set(level1.level, level1);
 
     return progress;
@@ -123,6 +127,8 @@ export class ProgressService {
       if (value && value !== 'undefined') {
         const partiallyDeserialized = JSON.parse(value);
         partiallyDeserialized.playedLevels = new Map(partiallyDeserialized.playedLevels);
+        partiallyDeserialized.feedbackAnswers = new Map(partiallyDeserialized.feedbackAnswers);
+
         partiallyDeserialized.playedLevels.forEach((playedLevel) => {
           playedLevel.answers = new Map(playedLevel.answers);
         });
