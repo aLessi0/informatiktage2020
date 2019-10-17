@@ -33,14 +33,21 @@ export class FeedbackInformatiktageComponent {
   }
 
   public sendFeedback() {
-    // const body = JSON.stringify(Array.from(this.progress.feedbackAnswers.entries()));
-    const body = Array.from(this.progress.feedbackAnswers.entries());
+    const roomsFeedback = [];
+    this.progress.playedLevels.forEach((value) => {
+      roomsFeedback.push(value.roomFeedback);
+    });
+
+    const body = {
+      informatiktage: Array.from(this.progress.feedbackAnswers.entries()),
+      raeume: roomsFeedback
+    };
     console.log(body);
     this.httpClient.post('/api/feedback', body).subscribe(() => {
       this.progress.canTakePartInContest = true;
       this.progress.feedbackCompleted = true;
       this.progressService.updateProgress(this.progress);
-      this.close()
+      this.close();
     });
   }
 
