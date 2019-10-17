@@ -20,7 +20,7 @@
           "givesCoin": false
         },
         {
-          "key": "room1coin2",
+          "key": "room1coin1",
           "text": "Cool du hast die Frage von Marie beantwortet! Ich gebe dir als Belohnung eine Münze!",
           "givesCoin": true
         }
