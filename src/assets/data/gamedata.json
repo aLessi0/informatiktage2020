@@ -106,7 +106,18 @@
           "isMandatory": false
         }
       ],
-      "infos": []
+      "infos": [
+        {
+          "key": "room5finishText",
+          "text": "Gratulation! Du hast es bis zum Ende geschafft. Fülle doch das Feedback aus und schalte den Playground frei!",
+          "givesCoin": false
+        },
+        {
+          "key": "room5feedbackDanke",
+          "text": "Vielen Dank für dein Feedback und viel Spass beim entdecken des Playgrounds!",
+          "givesCoin": false
+        }
+      ]
     },
     {
       "level": 6,

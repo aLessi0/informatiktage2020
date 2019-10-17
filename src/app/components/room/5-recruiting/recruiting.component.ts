@@ -18,8 +18,30 @@ export class RecruitingComponent extends AbstractRoom {
     super(dataService, progressService, modalService);
   }
 
+  public doFinish(): void {
+    if ( !this.level.key ) {
+      this.openInfo('room5finishText', '/assets/sprites/Room/1-welt-der-informatik/Reto.svg', () => {
+        this.openITDFeedback();
+      });
+    } else {
+      this.openInfo('room5feedbackDanke', '/assets/sprites/Room/1-welt-der-informatik/Reto.svg');
+    }
+  }
+
   public openITDFeedback(): void {
-    this.modalService.openDialog(FeedbackInformatiktageComponent, false).subscribe(() => 1);
+    if(!this.progress.feedbackCompleted) {
+      this.modalService.openDialog(FeedbackInformatiktageComponent, false).subscribe(() => {
+        if(this.progress.feedbackCompleted) {
+          this.unlockPlayground();
+        }
+      });
+    }
+  }
+
+  public unlockPlayground(): void {
+    this.level.key = true;
+    this.progressService.unlockLevel(this.level.level + 1);
+    this.openReward(true);
   }
 
 }
