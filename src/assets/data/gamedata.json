@@ -5,117 +5,114 @@
     {
       "level": 1,
       "roomClass": "room-welt-informatik",
-      "mandatoryQuestion": {
-        "questionText": "Dies ist die Mandatory-Frage. Was bekommt man wenn man bei Entwicklung \"Ent\" rausnimmt?",
-        "correctAnswer": "wicklung"
-      },
-      "optionalQuestions": [
+      "questions": [
         {
-          "number": 1,
+          "key": "room1key",
+          "questionText": "Dies ist die Mandatory-Frage. Was bekommt man wenn man bei Entwicklung \"Ent\" rausnimmt?",
+          "correctAnswer": "wicklung",
+          "isMandatory": true
+        },
+        {
+          "key": "room1coin1",
           "questionText": "Dies ist eine Optional-Frage. Was gibt 1+1?",
-          "correctAnswer": "2"
+          "correctAnswer": "2",
+          "isMandatory": false
+        }
+      ],
+      "infos": [
+        {
+          "key": "room1info1",
+          "text": "Such am besten mal weiter!",
+          "givesCoin": false
+        },
+        {
+          "key": "room1coin2",
+          "text": "Super du hast mich gefunden! Als Belohnung bekommst du ein Coin!",
+          "givesCoin": true
         }
       ]
     },
     {
       "level": 2,
       "roomClass": "room-req-design",
-      "mandatoryQuestion": {
-        "questionText": "Dies ist die Mandatory-Frage. Was bekommt man wenn man bei Build \"Bu\" rausnimmt?",
-        "correctAnswer": "ild"
-      },
-      "optionalQuestions": [
+      "questions": [
         {
-          "number": 1,
-          "questionText": "Dies ist eine Optional-Frage. Was gibt 2+2?",
-          "correctAnswer": "4"
+          "key": "room2key",
+          "questionText": "Dies ist die Mandatory-Frage. Was bekommt man wenn man bei Build \"Bu\" rausnimmt?",
+          "correctAnswer": "ild",
+          "isMandatory": true
         },
         {
-          "number": 2,
-          "questionText": "Dies ist eine Optional-Frage. Was gibt 22+22?",
-          "correctAnswer": "44"
+          "key":  "room2coin1",
+          "questionText": "Dies ist eine Optional-Frage. Was gibt 2+2?",
+          "correctAnswer": "4",
+          "isMandatory": false
         }
-      ]
+      ],
+      "infos": []
     },
     {
       "level": 3,
       "roomClass": "room-entwicklung-test",
-      "mandatoryQuestion": {
-        "questionText": "Dies ist die Mandatory-Frage. Was bekommt man wenn man bei Requirements \"Require\" rausnimmt?",
-        "correctAnswer": "ments"
-      },
-      "optionalQuestions": [
+      "questions": [
         {
-          "number": 1,
-          "questionText": "Dies ist eine Optional-Frage. Was gibt 3+3?",
-          "correctAnswer": "6"
+          "key": "room3key",
+          "questionText": "Dies ist die Mandatory-Frage. Was bekommt man wenn man bei Requirements \"Require\" rausnimmt?",
+          "correctAnswer": "ments",
+          "isMandatory": true
         },
         {
-          "number": 2,
-          "questionText": "Dies ist eine Optional-Frage. Was gibt 33+33?",
-          "correctAnswer": "66"
+          "key": "room3coin1",
+          "questionText": "Dies ist eine Optional-Frage. Was gibt 3+3?",
+          "correctAnswer": "6",
+          "isMandatory": false
         }
-      ]
+      ],
+      "infos": []
     },
     {
       "level": 4,
       "roomClass": "room-build-deploy",
-      "mandatoryQuestion": {
-        "questionText": "blabla",
-        "correctAnswer": "bla"
-      },
-      "optionalQuestions": [
+      "questions": [
         {
-          "number": 1,
+          "key": "room4key",
           "questionText": "blabla",
-          "correctAnswer": "bla"
+          "correctAnswer": "bla",
+          "isMandatory": true
         },
         {
-          "number": 2,
+          "key": "room4coin1",
           "questionText": "blabla",
-          "correctAnswer": "bla"
+          "correctAnswer": "bla",
+          "isMandatory": false
         }
-      ]
+      ],
+      "infos": []
     },
     {
       "level": 5,
       "roomClass": "room-recruiting",
-      "mandatoryQuestion": {
-        "questionText": "blabla",
-        "correctAnswer": "bla"
-      },
-      "optionalQuestions": [
+      "questions": [
         {
-          "number": 1,
+          "key": "room5key",
           "questionText": "blabla",
-          "correctAnswer": "bla"
+          "correctAnswer": "bla",
+          "isMandatory": true
         },
         {
-          "number": 2,
+          "key": "room5coin1",
           "questionText": "blabla",
-          "correctAnswer": "bla"
+          "correctAnswer": "bla",
+          "isMandatory": false
         }
-      ]
+      ],
+      "infos": []
     },
     {
       "level": 6,
       "roomClass": "room-playground",
-      "mandatoryQuestion": {
-        "questionText": "blabla",
-        "correctAnswer": "bla"
-      },
-      "optionalQuestions": [
-        {
-          "number": 1,
-          "questionText": "blabla",
-          "correctAnswer": "bla"
-        },
-        {
-          "number": 2,
-          "questionText": "blabla",
-          "correctAnswer": "bla"
-        }
-      ]
+      "questions": [],
+      "infos": []
     }
   ],
   "feedback": [

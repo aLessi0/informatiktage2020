@@ -30,7 +30,7 @@ export class RewardCoinsComponent {
 
     if (answerIsCorrect) {
       this.progressService.progress$.subscribe(progress => {
-        this.progress.collectedReward = true;
+        this.progress.coinsBereitsEingeloest = true;
       });
     }
 

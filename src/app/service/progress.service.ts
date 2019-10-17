@@ -42,8 +42,7 @@ export class ProgressService {
     const progress = this.progress;
     const playedLevel = new PlayedLevelModel();
     playedLevel.level = level;
-    playedLevel.answers = new Map();
-    playedLevel.coins = 0;
+    playedLevel.coins = [];
     progress.unlockedLevel = level;
     progress.playedLevels.set(level, playedLevel);
     this.updateProgress(progress);
@@ -99,8 +98,8 @@ export class ProgressService {
 
   private createProgressData(avatarType): ProgressModel {
     const progress: ProgressModel = new ProgressModel();
-    progress.collectedReward = false;
-    progress.coins = 0;
+    progress.coinsBereitsEingeloest = false;
+    progress.numberOfCollectedCoins = 0;
     progress.playedLevels = new Map();
     progress.unlockedLevel = 1;
     progress.avatarType = avatarType;
@@ -108,8 +107,7 @@ export class ProgressService {
 
     const level1: PlayedLevelModel = new PlayedLevelModel();
     level1.level = 1;
-    level1.coins = 0;
-    level1.answers = new Map();
+    level1.coins = [];
     progress.playedLevels.set(level1.level, level1);
 
     return progress;

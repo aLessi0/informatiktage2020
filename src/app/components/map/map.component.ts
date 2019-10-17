@@ -61,7 +61,7 @@ export class MapComponent {
     }
   }
 
-  public collectedReward(): void {
+  public coinsEinloesen(): void {
     this.modalService.openDialog(RewardCoinsComponent, false, this.game).subscribe(() => {
     });
   }

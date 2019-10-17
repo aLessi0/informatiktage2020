@@ -5,8 +5,8 @@ export class ProgressModel {
   public avatarType: string;
   public avatarPos: number;
   public unlockedLevel: number;
-  public coins: number;
-  public collectedReward: boolean;
+  public numberOfCollectedCoins: number;
+  public coinsBereitsEingeloest: boolean;
   public playedLevels: Map<number, PlayedLevelModel>;
   public contest: ContestModel;
 }

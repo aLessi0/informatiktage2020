@@ -1,5 +1,5 @@
 export class QuestionModel {
-  public number: number;
+  public key: string;
   public questionText: string;
   public correctAnswer: string;
   public isMandatory: boolean;
