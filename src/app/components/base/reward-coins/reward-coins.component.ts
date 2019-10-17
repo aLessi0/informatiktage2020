@@ -11,10 +11,10 @@ import {GameModel} from "../../../model/game/game.model";
   styleUrls: ['./reward-coins.component.scss']
 })
 export class RewardCoinsComponent {
-  private progress: ProgressModel;
-  private nrOfCoinsInGame: number = 12;
-  private password: string;
-  private alreadyCollected: boolean;
+  public progress: ProgressModel;
+  public nrOfCoinsInGame: number = 12;
+  public password: string;
+  public alreadyCollected: boolean;
 
   constructor(@Inject(DataService) private readonly dataService: DataService,
               @Inject(ProgressService) private readonly progressService: ProgressService
