@@ -1,15 +1,19 @@
-<h2>Wie fandest du diesen Raum?</h2>
+<h2>Wie war der Raum?</h2>
 <div class="feedback">
-  <a (click)="onFeedbackClick(4)">
-    <svg-icon class="feedback-smiley" src="\assets\sprites\Feedback\super-happy.svg"></svg-icon>
-  </a>
-  <a (click)="onFeedbackClick(3)">
-    <svg-icon class="feedback-smiley" src="\assets\sprites\Feedback\happy.svg"></svg-icon>
-  </a>
-  <a (click)="onFeedbackClick(2)">
-    <svg-icon class="feedback-smiley" src="\assets\sprites\Feedback\unsure.svg"></svg-icon>
-  </a>
-  <a (click)="onFeedbackClick(1)">
-    <svg-icon class="feedback-smiley" src="\assets\sprites\Feedback\sad.svg"></svg-icon>
-  </a>
+  <svg-icon class="feedback-smiley"
+            src="\assets\sprites\Feedback\super-happy.svg"
+            (click)="onFeedbackClick(4)">
+  </svg-icon>
+  <svg-icon class="feedback-smiley"
+            src="\assets\sprites\Feedback\happy.svg"
+            (click)="onFeedbackClick(3)">
+  </svg-icon>
+  <svg-icon class="feedback-smiley"
+            src="\assets\sprites\Feedback\unsure.svg"
+            (click)="onFeedbackClick(2)">
+  </svg-icon>
+  <svg-icon class="feedback-smiley"
+            src="\assets\sprites\Feedback\sad.svg"
+            (click)="onFeedbackClick(1)">
+  </svg-icon>
 </div>
