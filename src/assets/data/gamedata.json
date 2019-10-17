@@ -16,12 +16,12 @@
       "infos": [
         {
           "key": "room1info1",
-          "text": "Geh zu Marie!",
+          "text": "Ich glaube Marie hat eine Frage für dich. Frag sie doch mal!",
           "givesCoin": false
         },
         {
           "key": "room1coin2",
-          "text": "Super du hast mich gefunden! Als Belohnung bekommst du ein Coin!",
+          "text": "Cool du hast die Frage von Marie beantwortet! Ich gebe dir als Belohnung eine Münze!",
           "givesCoin": true
         }
       ]
