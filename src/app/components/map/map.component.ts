@@ -95,7 +95,10 @@ export class MapComponent implements AfterViewInit {
   }
 
   public collectedReward(): void {
-    this.modalService.openDialog(RewardCoinsComponent, false, true).subscribe(() => {
+    this.modalService.openDialog(RewardCoinsComponent, false, {
+      game: this.game,
+      progress: this.progress
+    }).subscribe(() => {
     });
   }
 
