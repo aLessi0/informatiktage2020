@@ -21,4 +21,5 @@ export class InfotextComponent {
 export interface InfotextData {
   text: string;
   icon: string;
+  isReward: boolean;
 }

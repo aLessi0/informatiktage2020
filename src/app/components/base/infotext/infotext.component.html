@@ -3,3 +3,7 @@
   </div>
   <div class="info-text">{{data.text}}</div>
   <app-button [btnTitle]="'OK'" (btnClicked)="closeInfo()"></app-button>
+  <div *ngIf="data.isReward" class="pyro">
+    <div class="before"></div>
+    <div class="after"></div>
+  </div>
