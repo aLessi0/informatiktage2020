@@ -1,8 +1,10 @@
 :host {
   display: flex;
+  flex-direction: column;
   height: 100%;
   width: 100%;
   justify-items: center;
+  align-items: center;
 
   .background {
     height: 100%;
@@ -21,7 +23,6 @@
     max-height: 88%;
     max-width: 80%;
     margin-top: 13%;
-    margin-left: 10%;
   }
 
   .child-title {
