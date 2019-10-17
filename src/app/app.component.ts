@@ -70,12 +70,12 @@ export class AppComponent implements OnInit, DoCheck {
   }
 
   public ngOnInit(): void {
-    this.metaService.updateTag({
-        name: 'viewport',
-        content: `height=${window.innerHeight}, width=${window.innerWidth}, initial-scale=1.0, maximum-scale=1.0, user-scalable=no`
-      },
-      `name='viewport'`
-    );
+    // this.metaService.updateTag({
+    //     name: 'viewport',
+    //     content: `height=${window.innerHeight}, width=${window.innerWidth}, initial-scale=1.0, maximum-scale=1.0, user-scalable=no`
+    //   },
+    //   `name='viewport'`
+    // );
   }
 
   public leaveActiveRoom(): void {
