@@ -27,25 +27,25 @@ export class EntwicklungComponent extends AbstractRoom {
     this.planetState++;
 
     if (this.planetState >= 3) {
-      this.openQuestion("room3coin1", "/assets/sprites/Room/3-develop-and-testing/Planet.svg");
+      this.openQuestion('room3coin1', '/assets/sprites/Room/3-develop-and-testing/Planet.svg');
     }
   }
 
   starClick(id) {
     console.log(id);
-    if ( !this.isStarHidden(id) ) {
+    if (!this.isStarHidden(id)) {
       this.starsHidden.push(id);
     }
 
     // check reward
-    if ( this.starsHidden.length === 4 ) {
-      this.openInfo("room3coin2", "/assets/sprites/Room/3-develop-and-testing/Stars1-gross1.svg");
+    if (this.starsHidden.length === 4) {
+      this.openInfo('room3coin2', '/assets/sprites/Room/3-develop-and-testing/Stars1-gross1.svg');
     }
     console.log(this.starsHidden);
   }
 
   isStarHidden(id) {
-    if ( this.starsHidden.indexOf(id) !== -1) {
+    if (this.starsHidden.indexOf(id) !== -1) {
       return true;
     }
     return false;

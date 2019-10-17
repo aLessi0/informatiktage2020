@@ -107,8 +107,8 @@
       "questions": [
         {
           "key": "room5key",
-          "questionText": "blabla",
-          "correctAnswer": "bla",
+          "questionText": "1+1?",
+          "correctAnswer": "2",
           "isMandatory": true
         },
         {
@@ -118,7 +118,13 @@
           "isMandatory": false
         }
       ],
-      "infos": []
+      "infos": [
+        {
+        "key": "room5coin2",
+        "text": "Crazyfish, hier eine Münze!",
+        "givesCoin": true
+      }
+      ]
     },
     {
       "level": 6,
