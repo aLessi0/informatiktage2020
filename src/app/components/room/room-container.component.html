@@ -1,8 +1,16 @@
 <div class="room {{room.roomClass}}">
 
-  <div class="bg-street">
-    <svg-icon src="/assets/sprites/Icon/Room/Street-Room-{{room.level}}.svg" [svgStyle]="{'height': '100%', 'width': '100%'}"></svg-icon>
-  </div>
+<!--  <svg viewBox="0 0 336 812"-->
+<!--       class="bg-street">-->
+<!--    <use xlink:href="/assets/sprites/Icon/Room/Street-Room-1.svg#App"></use>-->
+<!--  </svg>-->
+
+  <object data="/assets/sprites/Icon/Room/Street-Room-1.svg" type="image/svg+xml" class="bg-street"></object>
+
+<!--  <svg-icon src="/assets/sprites/Icon/Room/Street-Room-{{room.level}}.svg"-->
+<!--            class="bg-street"-->
+<!--            style="background-color: rgba(0,0,0,0.5)"-->
+<!--            [svgStyle]="{'height': '100%', 'width': '100%'}"></svg-icon>-->
   <div class="main-street-layer" (click)="onStreetMapTap()"></div>
 
   <div class="bg-rectangle">

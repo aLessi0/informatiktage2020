@@ -16,12 +16,12 @@
       "infos": [
         {
           "key": "room1info1",
-          "text": "Geh zu Marie!",
+          "text": "Ich glaube Marie hat eine Frage für dich. Frag sie doch mal!",
           "givesCoin": false
         },
         {
           "key": "room1coin2",
-          "text": "Super du hast mich gefunden! Als Belohnung bekommst du ein Coin!",
+          "text": "Cool du hast die Frage von Marie beantwortet! Ich gebe dir als Belohnung eine Münze!",
           "givesCoin": true
         }
       ]
@@ -43,7 +43,13 @@
           "isMandatory": false
         }
       ],
-      "infos": []
+      "infos": [
+        {
+          "key": "room2coin2",
+          "text": "Super du hast mich gefunden! Als Belohnung bekommst du ein Coin!",
+          "givesCoin": true
+        }
+      ]
     },
     {
       "level": 3,
@@ -76,8 +82,8 @@
       "questions": [
         {
           "key": "room4key",
-          "questionText": "blabla",
-          "correctAnswer": "bla",
+          "questionText": "Dies ist die Mandatory-Frage. Was bekommt man wenn man bei Testing \"Test\" rausnimmt?",
+          "correctAnswer": "ing",
           "isMandatory": true
         },
         {
@@ -87,25 +93,18 @@
           "isMandatory": false
         }
       ],
-      "infos": []
+      "infos": [
+        {
+          "key": "room4coin2",
+          "text": "LaLeLu wenn der Mond scheint..., hier eine Münze!",
+          "givesCoin": true
+        }
+      ]
     },
     {
       "level": 5,
       "roomClass": "room-recruiting",
-      "questions": [
-        {
-          "key": "room5key",
-          "questionText": "blabla",
-          "correctAnswer": "bla",
-          "isMandatory": true
-        },
-        {
-          "key": "room5coin1",
-          "questionText": "blabla",
-          "correctAnswer": "bla",
-          "isMandatory": false
-        }
-      ],
+      "questions": [],
       "infos": [
         {
           "key": "room5finishText",
@@ -116,6 +115,11 @@
           "key": "room5feedbackDanke",
           "text": "Vielen Dank für dein Feedback und viel Spass beim entdecken des Playgrounds!",
           "givesCoin": false
+        },
+        {
+          "key": "room5coin2",
+          "text": "Crazyfish, hier eine Münze!",
+          "givesCoin": true
         }
       ]
     },

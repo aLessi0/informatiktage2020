@@ -91,7 +91,7 @@ export class AbstractRoom {
 
     } else {
       // Frage wurde bereits einmal beantwortet
-      this.modalService.openDialog(InfotextComponent, false, { icon, text: 'Du hast diese Frage bereits beantwortet!' }).subscribe(() => {
+      this.modalService.openDialog(InfotextComponent, false, { icon, text: 'Du hast meine Frage bereits beantwortet!' }).subscribe(() => {
         if (callback) {
           callback();
         }
@@ -102,7 +102,7 @@ export class AbstractRoom {
   protected openReward(mandatory: boolean, callback?): void {
     const icon = mandatory ? '/assets/sprites/Room/Credits/Key-active.svg' : '/assets/sprites/Room/Credits/Coin-active.svg';
     const text = mandatory ? 'Gratulation! Du hast den Schlüssel für den nächsten Raum erhalten!' : 'Du hast eine Münze erhalten!';
-    this.modalService.openDialog(InfotextComponent, false, {icon, text}).subscribe(() => {
+    this.modalService.openDialog(InfotextComponent, false, {icon, text, isReward: true}).subscribe(() => {
       if (callback) {
         callback();
       }

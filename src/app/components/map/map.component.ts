@@ -98,7 +98,7 @@ export class MapComponent implements AfterViewInit {
     this.modalService.openDialog(RewardCoinsComponent, false, {
       game: this.game,
       progress: this.progress
-    });
+    }).subscribe(() => {});
   }
 
   public isRoomUnlocked(roomNumber: number): boolean {
