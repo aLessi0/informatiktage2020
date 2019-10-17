@@ -15,7 +15,7 @@ import {ContestModel} from '../../../model/user/contest.model';
 export class FeedbackInformatiktageComponent {
   public feedBackState: IFeedbackState;
   public contest: ContestModel;
-  private progress: ProgressModel;
+  public progress: ProgressModel;
 
   constructor(@Inject(ProgressService) private readonly progressService: ProgressService,
               @Inject(DataService) private readonly dataService: DataService,
