@@ -59,7 +59,6 @@ export class FeedbackInformatiktageComponent {
       this.httpClient.post('/api/wettbewerb', this.contest).subscribe(() => {
         this.progress.takesPartInContest = true;
         this.progressService.updateProgress(this.progress);
-        this.close();
       });
     }
   }
