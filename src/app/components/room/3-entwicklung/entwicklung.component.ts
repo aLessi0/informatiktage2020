@@ -30,7 +30,6 @@ export class EntwicklungComponent extends AbstractRoom {
     this.planetState++;
 
     if (this.planetState >= 3) {
-      console.log("QUESTION!");
       this.openQuestion(this.room.optionalQuestions[0]);
       this.planetRewardCollected = true;
     }
@@ -44,6 +43,7 @@ export class EntwicklungComponent extends AbstractRoom {
 
     //check reward
     if ( this.starsHidden.length == 4 &&  !this.starRewardCollected ) {
+      // @TODO: coin reward
       console.log('COIN!');
     }
     console.log(this.starsHidden)
