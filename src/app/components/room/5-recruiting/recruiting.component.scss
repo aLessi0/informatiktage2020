@@ -1,0 +1,64 @@
+:host {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  position: relative;
+
+  .fishgroup {
+    pointer-events: none;
+    position: absolute;
+    width: 30%;
+    top: 4%;
+    left: 22%;
+  }
+
+  .jellyfish {
+    pointer-events: none;
+    position: absolute;
+    width: 27%;
+    top: 20%;
+    left: 50%;
+  }
+
+  .franco {
+    position: absolute;
+    width: 18%;
+    top: 12%;
+    left: 88%;
+  }
+
+  .submarine {
+    pointer-events: none;
+    position: absolute;
+    width: 38%;
+    top: 41%;
+    left: 8%;
+  }
+
+  .fishgroup2 {
+    pointer-events: none;
+    position: absolute;
+    width: 34%;
+    top: 69%;
+    left: 48%;
+  }
+
+  .star1 {
+    pointer-events: none;
+    position: absolute;
+    width: 30%;
+    top: 80%;
+    left: 16%;
+  }
+
+  .star2 {
+    pointer-events: none;
+    position: absolute;
+    width: 15%;
+    top: 88%;
+    left: 40%;
+  }
+}
+
