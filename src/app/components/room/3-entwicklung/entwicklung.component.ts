@@ -10,16 +10,16 @@ import {ModalService} from '../../../service/modal.service';
 })
 export class EntwicklungComponent extends AbstractRoom {
 
+  public planetRewardCollected: boolean = false;
+  public planetState: number = 0;
+
+  public starRewardCollected: boolean = false;
+  public starsHidden = [];
+
   constructor(@Inject(DataService) protected readonly dataService: DataService,
               @Inject(ModalService) protected readonly modalService: ModalService) {
     super(dataService, modalService);
   }
-
-  private planetRewardCollected: boolean = false;
-  private planetState: number = 0;
-
-  private starRewardCollected: boolean = false;
-  private starsHidden = [];
 
   planetClick() {
     console.log(this.planetState);
