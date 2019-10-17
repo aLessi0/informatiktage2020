@@ -17,9 +17,9 @@
   .cactus2 {
     pointer-events: none;
     position: absolute;
-    width: 40%;
-    top: 10%;
-    left: 20%;
+    width: 31%;
+    top: 14%;
+    left: 27%;
   }
 
   .cactus3 {
@@ -42,6 +42,15 @@
     width: 40%;
     top: 65%;
     left: 0;
+  }
+
+  .blanca {
+    position: absolute;
+    width: 12%;
+    top: 77%;
+    left: 14%;
+
+    animation: blancaAnimation 5s linear;
   }
 
   .lucky {
@@ -83,8 +92,22 @@
     width: 110%;
     position: absolute;
     top: 25%;
+    z-index: 2;
 
     animation: wrapperAnimation 60s 30s linear infinite;
+  }
+
+  .night {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0,0,0,0.5);
+    pointer-events: none;
+    z-index: 1;
+
+    animation: nightAnimation 60s linear infinite;
   }
 
   @keyframes wrapperAnimation {
@@ -123,7 +146,7 @@
     }
     53% {
       opacity: 0;
-      transform: rotate(120deg);
+      transform: rotate(100deg);
     }
     56% {
       opacity: 1;
@@ -137,6 +160,42 @@
     100% {
       opacity: 0;
       transform: rotate(-50deg);
+    }
+  }
+
+  @keyframes nightAnimation {
+    0% {
+      opacity: 0;
+    }
+    55% {
+      opacity: 0;
+    }
+    58% {
+      opacity: 1;
+    }
+    95% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes blancaAnimation {
+    0% {
+      opacity: 0;
+      width: 10%;
+      top: 72%;
+      left: 15%;
+    }
+    25% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 1;
+      width: 12%;
+      top: 77%;
+      left: 14%;
     }
   }
 }
