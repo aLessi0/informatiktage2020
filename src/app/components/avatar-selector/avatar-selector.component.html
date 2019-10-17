@@ -7,31 +7,29 @@
       <h1>Wähle dein Charakter aus.</h1>
     </div>
 
-    <div class="child-avatar-family">
-      <svg-icon src="{{this.avatarImageBasePath}}/Julia.svg"
-                class="girl"
-                [ngClass]="{'selected': chosenAvatarType === 'Julia'}"
-                (click)="chooseAvatarType($event, 'Julia')">
-      </svg-icon>
+    <svg-icon src="{{this.avatarImageBasePath}}/Julia.svg"
+              class="avatar girl"
+              [ngClass]="{'selected': chosenAvatarType === 'Julia'}"
+              (click)="chooseAvatarType($event, 'Julia')">
+    </svg-icon>
 
-      <svg-icon src="{{this.avatarImageBasePath}}/Rolf.svg"
-                class="man"
-                [ngClass]="{'selected': chosenAvatarType === 'Rolf'}"
-                (click)="chooseAvatarType($event, 'Rolf')">
-      </svg-icon>
+    <svg-icon src="{{this.avatarImageBasePath}}/Rolf.svg"
+              class="avatar man"
+              [ngClass]="{'selected': chosenAvatarType === 'Rolf'}"
+              (click)="chooseAvatarType($event, 'Rolf')">
+    </svg-icon>
 
-      <svg-icon src="{{this.avatarImageBasePath}}/Sophie.svg"
-                class="woman"
-                [ngClass]="{'selected': chosenAvatarType === 'Sophie'}"
-                (click)="chooseAvatarType($event, 'Sophie')">
-      </svg-icon>
+    <svg-icon src="{{this.avatarImageBasePath}}/Sophie.svg"
+              class="avatar woman"
+              [ngClass]="{'selected': chosenAvatarType === 'Sophie'}"
+              (click)="chooseAvatarType($event, 'Sophie')">
+    </svg-icon>
 
-      <svg-icon src="{{this.avatarImageBasePath}}/John.svg"
-                class="boy"
-                [ngClass]="{'selected': chosenAvatarType === 'John'}"
-                (click)="chooseAvatarType($event, 'John')">
-      </svg-icon>
-    </div>
+    <svg-icon src="{{this.avatarImageBasePath}}/John.svg"
+              class="avatar boy"
+              [ngClass]="{'selected': chosenAvatarType === 'John'}"
+              (click)="chooseAvatarType($event, 'John')">
+    </svg-icon>
 
     <app-button id="btn-create-avatar" btnTitle="Los geht's" *ngIf="chosenAvatarType"
                 (btnClicked)="this.createAvatar()">

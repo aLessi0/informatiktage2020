@@ -5,4 +5,5 @@ export class PlayedLevelModel {
   public answers: Map<number, AnswerModel>;
   public coins: number;
   public key: boolean;
+  public hasAlreadyBeenSeen: boolean;
 }
