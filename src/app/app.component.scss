@@ -28,8 +28,8 @@
     position: fixed;
     top: 0;
     left: 0;
-    height: 100vh;
-    width: 100vw;
+    height: calc(100 * var(--vh));
+    width: calc(100 * var(--vw));
     background-color: transparent;
     pointer-events: none;
 
@@ -58,13 +58,13 @@
   }
 
   @media (max-aspect-ratio: 9/20) {
-    height: calc(100vw / 9 * 20);
-    width: 100vw;
+    height: calc((100 * var(--vw)) / 9 * 20);
+    width: calc(100 * var(--vw));
   }
 
   /* Maximum aspect ratio */
   @media (min-aspect-ratio: 9/20) {
-    height: 100vh;
-    width: calc(100vh / 20 * 9);
+    height: calc(100 * var(--vh));
+    width: calc((100 * var(--vh)) / 20 * 9);
   }
 }
