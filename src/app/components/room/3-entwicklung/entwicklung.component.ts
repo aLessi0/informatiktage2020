@@ -11,10 +11,7 @@ import {ProgressService} from '../../../service/progress.service';
 })
 export class EntwicklungComponent extends AbstractRoom {
 
-  public planetRewardCollected = false;
   public planetState = 0;
-
-  public starRewardCollected = false;
   public starsHidden = [];
 
   constructor(@Inject(DataService) protected readonly dataService: DataService,
@@ -25,15 +22,12 @@ export class EntwicklungComponent extends AbstractRoom {
 
   planetClick() {
     console.log(this.planetState);
-    if ( this.planetRewardCollected ) {
-      return;
-    }
+
 
     this.planetState++;
 
     if (this.planetState >= 3) {
-      // this.openQuestion(this.room.optionalQuestions[0]);
-      this.planetRewardCollected = true;
+      this.openQuestion("room3coin1", "/assets/sprites/Room/3-develop-and-testing/Planet.svg");
     }
   }
 
@@ -44,9 +38,8 @@ export class EntwicklungComponent extends AbstractRoom {
     }
 
     // check reward
-    if ( this.starsHidden.length === 4 &&  !this.starRewardCollected ) {
-      // @TODO: coin reward
-      console.log('COIN!');
+    if ( this.starsHidden.length === 4 ) {
+      this.openInfo("room3coin2", "/assets/sprites/Room/3-develop-and-testing/Stars1-gross1.svg");
     }
     console.log(this.starsHidden);
   }
