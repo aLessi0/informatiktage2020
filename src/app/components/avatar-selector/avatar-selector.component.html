@@ -1,8 +1,6 @@
 <ng-container>
 
-
   <div class="content">
-
     <div class="child-title">
       <h1>Wähle dein Charakter aus.</h1>
     </div>
@@ -31,15 +29,14 @@
               (click)="chooseAvatarType($event, 'John')">
     </svg-icon>
 
+    <div class="child-swipe">
+      <svg-icon src="/assets/sprites/Icon/Paging/3.svg" [svgStyle]="{'width': '80%'}"></svg-icon>
+    </div>
+
     <app-button id="btn-create-avatar" btnTitle="Los geht's" *ngIf="chosenAvatarType"
                 (btnClicked)="this.createAvatar()">
     </app-button>
 
   </div>
-
-  <div class="child-swipe">
-    <svg-icon src="/assets/sprites/Icon/Paging/3.svg" [svgStyle]="{'width': '80%'}"></svg-icon>
-  </div>
-
 
 </ng-container>
