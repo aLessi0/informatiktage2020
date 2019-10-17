@@ -1,0 +1,18 @@
+
+:host {
+  display: flex;
+  flex-direction: column;
+
+  .info-icon {
+    display: flex;
+    justify-content: center;
+
+    svg-icon {
+      width: 2rem;
+    }
+  }
+
+  .info-text {
+    margin: 1rem 0;
+  }
+}

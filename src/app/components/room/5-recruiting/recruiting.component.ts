@@ -2,6 +2,7 @@ import {Component, Inject} from '@angular/core';
 import {AbstractRoom} from '../abstract-room';
 import {DataService} from '../../../service/data.service';
 import {ModalService} from '../../../service/modal.service';
+import {ProgressService} from '../../../service/progress.service';
 import {FeedbackInformatiktageComponent} from '../../base/feedback/feedback-informatiktage.component';
 
 @Component({
@@ -12,8 +13,9 @@ import {FeedbackInformatiktageComponent} from '../../base/feedback/feedback-info
 export class RecruitingComponent extends AbstractRoom {
 
   constructor(@Inject(DataService) protected readonly dataService: DataService,
+              @Inject(ProgressService) protected readonly progressService: ProgressService,
               @Inject(ModalService) protected readonly modalService: ModalService) {
-    super(dataService, modalService);
+    super(dataService, progressService, modalService);
   }
 
   public openITDFeedback(): void {

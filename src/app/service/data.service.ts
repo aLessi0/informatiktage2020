@@ -46,10 +46,20 @@ export class DataService {
       .subscribe(data => {
         const game: GameModel = data as GameModel;
         game.numberOfCoinsInGame = 0;
+
         for (const room of game.rooms) {
-          game.numberOfCoinsInGame += room.optionalQuestions.length;
-          room.mandatoryQuestion.isMandatory = true;
+          room.numberOfCoinsInRoom = 0;
+          // count coins from questions
+          room.numberOfCoinsInRoom += (room.questions.length - 1);
+          // count coins from infos
+          for (const info of room.infos) {
+            if (info.givesCoin) {
+              room.numberOfCoinsInRoom++;
+            }
+          }
+          game.numberOfCoinsInGame += room.numberOfCoinsInRoom;
         }
+
         this.gameSource.next(game);
         this.progressService.init(avatarType);
         return AsyncLocalStorage.setItem('game', JSON.stringify(game));

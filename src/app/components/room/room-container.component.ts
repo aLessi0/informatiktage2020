@@ -41,7 +41,9 @@ export class RoomContainerComponent implements OnInit {
   }
 
   public onStreetMapTap(): void {
-    if (!this.room.feedback && !this.mandatoryQuestionWasAnsweredOnEntry && this.progressService.mandatoryQuestionForRoomIsAnswered(this.room)) {
+    if (!this.room.feedback && !this.mandatoryQuestionWasAnsweredOnEntry &&
+      this.progressService.mandatoryQuestionForRoomIsAnswered(this.room)) {
+
       this.modalService.openDialog(FeedbackComponent, true).subscribe(() => this.closeRoom.emit());
     } else {
       this.closeRoom.emit();
