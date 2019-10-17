@@ -23,7 +23,7 @@ import {Meta} from "@angular/platform-browser";
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit, DoCheck {
+export class AppComponent implements DoCheck {
   public progressAvailable = false;
   public progress: ProgressModel;
   public game: GameModel;
@@ -40,8 +40,7 @@ export class AppComponent implements OnInit, DoCheck {
               @Inject(KeyValueDiffers) readonly differs: KeyValueDiffers,
               @Inject(HttpClient) private readonly http: HttpClient,
               @Inject(ProgressService) private readonly progressService: ProgressService,
-              @Inject(Renderer2) private readonly renderer: Renderer2,
-              @Inject(Meta) private readonly metaService: Meta) {
+              @Inject(Renderer2) private readonly renderer: Renderer2) {
     this.differ = differs.find([]).create();
 
     this.dataService.game$.subscribe(game => {
@@ -67,15 +66,6 @@ export class AppComponent implements OnInit, DoCheck {
       this.progressAvailable = !!progress;
       this.progress = progress;
     });
-  }
-
-  public ngOnInit(): void {
-    // this.metaService.updateTag({
-    //     name: 'viewport',
-    //     content: `height=${window.innerHeight}, width=${window.innerWidth}, initial-scale=1.0, maximum-scale=1.0, user-scalable=no`
-    //   },
-    //   `name='viewport'`
-    // );
   }
 
   public leaveActiveRoom(): void {
