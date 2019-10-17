@@ -47,13 +47,8 @@
       "optionalQuestions": [
         {
           "number": 1,
-          "questionText": "Dies ist eine Optional-Frage. Was gibt 3+3?",
-          "correctAnswer": "6"
-        },
-        {
-          "number": 2,
-          "questionText": "Dies ist eine Optional-Frage. Was gibt 33+33?",
-          "correctAnswer": "66"
+          "questionText": "Wie macht die Schnecke?",
+          "correctAnswer": "zirp"
         }
       ]
     },
