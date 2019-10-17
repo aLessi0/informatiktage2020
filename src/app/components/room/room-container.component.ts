@@ -5,6 +5,7 @@ import {ModalService} from '../../service/modal.service';
 import {ProgressModel} from '../../model/user/progress.model';
 import {PlayedLevelModel} from '../../model/user/played-level.model';
 import {ProgressService} from '../../service/progress.service';
+import {DomSanitizer, SafeResourceUrl} from "@angular/platform-browser";
 
 @Component({
   selector: 'app-room-container',
@@ -18,9 +19,11 @@ export class RoomContainerComponent implements OnInit {
   private mandatoryQuestionWasAnsweredOnEntry: boolean;
   public progress: ProgressModel;
   public level: PlayedLevelModel;
+  public streetUrl: SafeResourceUrl;
 
   constructor(@Inject(ModalService) private readonly modalService: ModalService,
-              @Inject(ProgressService) private readonly progressService: ProgressService) {
+              @Inject(ProgressService) private readonly progressService: ProgressService,
+              @Inject(DomSanitizer) private readonly sanitizer: DomSanitizer) {
     this.progressService.progress$.subscribe((progress) => {
       this.progress = progress;
       if (this.progress) {
@@ -38,6 +41,8 @@ export class RoomContainerComponent implements OnInit {
       }
     }
     this.mandatoryQuestionWasAnsweredOnEntry = this.progressService.mandatoryQuestionForRoomIsAnswered(this.room);
+
+    this.streetUrl = this.getStreetUrl();
   }
 
   public onStreetMapTap(): void {
@@ -51,4 +56,7 @@ export class RoomContainerComponent implements OnInit {
 
   }
 
+  private getStreetUrl(): SafeResourceUrl {
+      return this.sanitizer.bypassSecurityTrustResourceUrl('/assets/sprites/Icon/Room/Street-Room-' + this.room.level + '.svg');
+  }
 }
