@@ -8,70 +8,65 @@
 
   .logo {
     position: absolute;
-    width: 90%;
+    width: 70%;
     top: 10%;
+    left: 5%;
   }
 
   .treeGroup1 {
     position: absolute;
-    width: 40%;
-    top: 63%;
-    left: 30%;
+    width: 36%;
+    top: 60%;
+    left: 32%;
   }
 
   .treeGroup2 {
     position: absolute;
     width: 46%;
-    top: 55%;
+    top: 62%;
     left: 27%;
   }
 
   .key {
     position: absolute;
-    width: 11%;
-    top: 25%;
-    left: -15%;
+    width: 10%;
+    top: 18%;
+    left: 5%;
   }
 
   .coin {
     position: absolute;
-    width: 11%;
-    top: 65%;
-    left: -15%;
-  }
-
-  .content {
-    position: absolute;
-    max-height: 88%;
-    max-width: 95%;
-    margin-top: 55%;
-  }
-
-  .content2 {
-    position: absolute;
-    margin-left: 10%;
-    max-height: 88%;
-    max-width: 95%;
-    margin-top: 10%;
+    width: 10%;
+    top: 37%;
+    left: 5%;
   }
 
   .title {
-    display: flex;
-    flex: 1 0 auto;
-    margin-top: 10%;
+    position: absolute;
+    width: 90%;
+    left: 5%;
+    top: 25%;
   }
 
   .title2 {
-    display: flex;
-    flex: 1 0 auto;
-    margin-top: 10%;
+    position: absolute;
+    width: 90%;
+    left: 20%;
+    top: 10%;
   }
 
-  .child-subtext {
-    display: flex;
-    flex: 1 0 auto;
-    margin-top: -5%;
-    flex-direction: row;
+  .subtext1 {
+    position: absolute;
+    width: 90%;
+    left: 5%;
+    top: 32%;
+  }
+
+  .subtext2{
+    position: absolute;
+    width: 75%;
+    left: 20%;
+    top: 15%;
   }
 
   .child-button {
