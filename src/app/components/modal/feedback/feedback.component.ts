@@ -13,7 +13,7 @@ import {PlayedLevelModel} from '../../../model/user/played-level.model';
 })
 export class FeedbackComponent {
   private progress: ProgressModel;
-  private room: RoomModel;
+  public room: RoomModel;
   public level: PlayedLevelModel;
 
   constructor(private dataService: DataService,
