@@ -157,7 +157,48 @@
           "isMandatory": false
         }
       ],
-      "infos": []
+      "infos": [
+        {
+          "key": "room6ScavengerHuntLeo1",
+          "text": "Hallo lieber Besucher, Kannst du mir helfen? Ich habe etwas auf dem SPielplatz verloren...",
+          "givesCoin": false
+        },
+        {
+          "key": "room6ScavengerHuntLeo2",
+          "text": "Du hast meine Angelrute immer noch nicht gefunden. Such bitte weiter für mich.",
+          "givesCoin": false
+        },
+        {
+          "key": "room6ScavengerHuntLeo3",
+          "text": "Vielen Ddank, du hast meine Angel gefunden. Lass uns doch zusammen angeln.",
+          "givesCoin": false
+        },
+        {
+          "key": "room6ScavengerHuntLilly1",
+          "text": "Tut mir leid ich habe zurzeit keine Zeit für dich.",
+          "givesCoin": false
+        },
+        {
+          "key": "room6ScavengerHuntLilly2",
+          "text": "Du suchst etwas? Schau doch mal im Wald und komm dann zurück.",
+          "givesCoin": false
+        },
+        {
+          "key": "room6ScavengerHuntLilly3",
+          "text": "Du hast den falschen Weg genommen.",
+          "givesCoin": false
+        },
+        {
+          "key": "room6ScavengerHuntLilly4",
+          "text": "Super du hast die Angel gefunden. Bring sie doch Leo.",
+          "givesCoin": false
+        },
+        {
+          "key": "room6ScavengerHuntHeidi1",
+          "text": "Siehst du nicht ich bin beschäftigt. Komm später wieder vorbei.",
+          "givesCoin": false
+        }
+      ]
     }
   ],
   "feedback": [

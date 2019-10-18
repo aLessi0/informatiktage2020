@@ -35,11 +35,39 @@
     left: 2%;
   }
 
-  .trees {
+  .tannenwald {
     position: absolute;
-    width: 60%;
-    top: 60%;
+    width: 40%;
+    top: 65%;
     left: 30%;
+  }
+
+  .tree1 {
+    position: absolute;
+    width: 12%;
+    top: 65%;
+    left: 42%;
+  }
+
+  .tree2 {
+    position: absolute;
+    width: 12%;
+    top: 57%;
+    left: 65%;
+  }
+
+  .tree3 {
+    position: absolute;
+    width: 12%;
+    top: 66%;
+    left: 77%;
+  }
+
+  .tree4 {
+    position: absolute;
+    width: 12%;
+    top: 60%;
+    left: 90%;
   }
 
   .lilly {
