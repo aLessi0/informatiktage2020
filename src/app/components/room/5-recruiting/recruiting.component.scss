@@ -11,7 +11,9 @@
     position: absolute;
     width: 30%;
     top: 4%;
-    left: 22%;
+    left: 51%;
+
+    animation: fishgroupAnimation 17s linear infinite;
   }
 
   .jellyfish {
@@ -20,6 +22,8 @@
     width: 27%;
     top: 20%;
     left: 50%;
+
+    animation: jellyfishAnimation 7s linear infinite;
   }
 
   .franco {
@@ -114,7 +118,7 @@
     top: 65%;
     left: 48%;
 
-    animation: fishgroupAnimation 20s linear infinite;
+    animation: fishgroup2Animation 20s linear infinite;
   }
 
   .star1 {
@@ -385,6 +389,29 @@
 
   @keyframes fishgroupAnimation {
     0% {
+      top: 4%;
+      left: 51%;
+    }
+    48% {
+      transform: scaleX(1);
+    }
+    50% {
+      transform: scaleX(-1);
+      top: 10%;
+      left: 10%;
+    }
+    98% {
+      transform: scaleX(-1);
+    }
+    100% {
+      transform: scaleX(1);
+      top: 4%;
+      left: 51%;
+    }
+  }
+
+  @keyframes fishgroup2Animation {
+    0% {
       top: 65%;
       left: 25%;
     }
@@ -403,6 +430,21 @@
       transform: scaleX(1);
       top: 65%;
       left: 25%;
+    }
+  }
+
+  @keyframes jellyfishAnimation {
+    0% {
+      top: 20%;
+      left: 50%;
+    }
+    50% {
+      top: 17%;
+      left: 51%;
+    }
+    100% {
+      top: 20%;
+      left: 50%;
     }
   }
 
