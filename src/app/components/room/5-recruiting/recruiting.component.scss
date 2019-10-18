@@ -11,7 +11,9 @@
     position: absolute;
     width: 30%;
     top: 4%;
-    left: 22%;
+    left: 51%;
+
+    animation: fishgroupAnimation 17s linear infinite;
   }
 
   .jellyfish {
@@ -20,6 +22,8 @@
     width: 27%;
     top: 20%;
     left: 50%;
+
+    animation: jellyfishAnimation 7s linear infinite;
   }
 
   .franco {
@@ -114,7 +118,7 @@
     top: 65%;
     left: 48%;
 
-    animation: fishgroupAnimation 20s linear infinite;
+    animation: fishgroup2Animation 20s linear infinite;
   }
 
   .star1 {
@@ -150,6 +154,123 @@
 
   .granitVisible {
     visibility: visible;
+  }
+
+  app-avatar {
+    position: absolute;
+    top: 33%;
+    left: 3%;
+
+    &.pos-zora {
+      top: 86%;
+      left: 8%;
+    }
+
+    &.pos-franco {
+      top: 34%;
+      left: 91%;
+    }
+
+    $doorZoraDuration: 1.73s;
+    $zoraFrancoDuration: 2.27s;
+
+    &.walk-door-zora {
+      animation: walkingDoor-Zora $doorZoraDuration linear;
+    }
+
+    &.walk-door-franco {
+      animation: walkingDoor-Zora $doorZoraDuration linear, walkingZora-Franco $zoraFrancoDuration $doorZoraDuration linear;
+    }
+
+    &.walk-zora-door {
+      animation: walkingDoor-Zora $doorZoraDuration reverse linear;
+    }
+
+    &.walk-zora-franco {
+      animation: walkingZora-Franco $zoraFrancoDuration linear;
+    }
+
+    &.walk-franco-door {
+      animation: walkingZora-Franco $zoraFrancoDuration reverse linear, walkingDoor-Zora $doorZoraDuration $zoraFrancoDuration reverse linear;
+    }
+
+    &.walk-franco-zora {
+      animation: walkingZora-Franco $zoraFrancoDuration reverse linear;
+    }
+
+    @keyframes walkingDoor-Zora {
+      0% {
+        top: 33%;
+        left: 3%;
+      }
+      23.08% {
+        top: 38%;
+        left: 50%;
+      }
+      30.77% {
+        top: 42%;
+        left: 63%;
+      }
+      38.46% {
+        top: 48%;
+        left: 70%;
+      }
+      46.15% {
+        top: 54%;
+        left: 68%;
+      }
+      69.23% {
+        top: 65%;
+        left: 32%;
+      }
+      84.62% {
+        top: 74%;
+        left: 13%;
+      }
+      100% {
+        top: 86%;
+        left: 8%;
+      }
+    }
+
+    @keyframes walkingZora-Franco {
+      0% {
+        top: 86%;
+        left: 8%;
+      }
+      5.88% {
+        top: 92%;
+        left: 11%;
+      }
+      11.76% {
+        top: 97%;
+        left: 18%;
+      }
+      23.53% {
+        top: 98%;
+        left: 47%;
+      }
+      35.29% {
+        top: 96%;
+        left: 78%;
+      }
+      47.06% {
+        top: 89%;
+        left: 102%;
+      }
+      52.94% {
+        top: 83%;
+        left: 105%;
+      }
+      94.12% {
+        top: 41%;
+        left: 90%;
+      }
+      100% {
+        top: 34%;
+        left: 91%;
+      }
+    }
   }
 
   .crazyfish {
@@ -268,6 +389,29 @@
 
   @keyframes fishgroupAnimation {
     0% {
+      top: 4%;
+      left: 51%;
+    }
+    48% {
+      transform: scaleX(1);
+    }
+    50% {
+      transform: scaleX(-1);
+      top: 10%;
+      left: 10%;
+    }
+    98% {
+      transform: scaleX(-1);
+    }
+    100% {
+      transform: scaleX(1);
+      top: 4%;
+      left: 51%;
+    }
+  }
+
+  @keyframes fishgroup2Animation {
+    0% {
       top: 65%;
       left: 25%;
     }
@@ -286,6 +430,21 @@
       transform: scaleX(1);
       top: 65%;
       left: 25%;
+    }
+  }
+
+  @keyframes jellyfishAnimation {
+    0% {
+      top: 20%;
+      left: 50%;
+    }
+    50% {
+      top: 17%;
+      left: 51%;
+    }
+    100% {
+      top: 20%;
+      left: 50%;
     }
   }
 

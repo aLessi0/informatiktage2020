@@ -14,7 +14,6 @@
   }
 
   .lake {
-    pointer-events: none;
     position: absolute;
     width: 40%;
     top: 78%;
@@ -35,11 +34,95 @@
     left: 2%;
   }
 
-  .trees {
+  .tannenwald {
     position: absolute;
-    width: 60%;
-    top: 60%;
+    width: 40%;
+    top: 65%;
     left: 30%;
+  }
+
+  .tree1 {
+    position: absolute;
+    width: 12%;
+    top: 65%;
+    left: 42%;
+
+    $light-color: #a3a35c;
+
+    &.treeClicked {
+      ::ng-deep {
+        svg {
+          ellipse {
+            &#Oval {
+              fill: $light-color;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .tree2 {
+    position: absolute;
+    width: 12%;
+    top: 57%;
+    left: 65%;
+
+    $light-color: #a3a35c;
+
+    &.treeClicked {
+      ::ng-deep {
+        svg {
+          ellipse {
+            &#Oval {
+              fill: $light-color;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .tree3 {
+    position: absolute;
+    width: 12%;
+    top: 66%;
+    left: 77%;
+
+    $light-color: #a3a35c;
+
+    &.treeClicked {
+      ::ng-deep {
+        svg {
+          ellipse {
+            &#Oval {
+              fill: $light-color;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .tree4 {
+    position: absolute;
+    width: 12%;
+    top: 60%;
+    left: 90%;
+
+    $light-color: #a3a35c;
+
+    &.treeClicked {
+      ::ng-deep {
+        svg {
+          ellipse {
+            &#Oval {
+              fill: $light-color;
+            }
+          }
+        }
+      }
+    }
   }
 
   .lilly {
