@@ -29,13 +29,46 @@
     left: 88%;
   }
 
+  .bubble1 {
+    pointer-events: none;
+    position: absolute;
+    width: 2%;
+    top: 8%;
+    left: 88%;
+    opacity: 0;
+
+    animation: bubbleAnimation 4s linear infinite;
+  }
+
+  .bubble2 {
+    pointer-events: none;
+    position: absolute;
+    width: 2%;
+    top: 5%;
+    left: 94%;
+    opacity: 0;
+
+    animation: bubbleAnimation 4s 1s linear infinite;
+  }
+
+  .bubble3 {
+    pointer-events: none;
+    position: absolute;
+    width: 2%;
+    top: 3%;
+    left: 90%;
+    opacity: 0;
+
+    animation: bubbleAnimation 4s 2s linear infinite;
+  }
+
   .submarine {
     position: absolute;
     width: 38%;
     top: 41%;
     left: 8%;
 
-    $light-color: yellow;
+    $light-color: #ba494c;
 
     &.mode1 {
       ::ng-deep {
@@ -78,8 +111,10 @@
     pointer-events: none;
     position: absolute;
     width: 34%;
-    top: 69%;
+    top: 65%;
     left: 48%;
+
+    animation: fishgroupAnimation 20s linear infinite;
   }
 
   .star1 {
@@ -105,6 +140,7 @@
   }
 
   .granit {
+    visibility: hidden;
     pointer-events: none;
     position: absolute;
     width: 8%;
@@ -112,16 +148,28 @@
     left: 24%;
   }
 
+  .granitVisible {
+    visibility: visible;
+  }
+
   .crazyfish {
     position: absolute;
-    width: 15%;
+    width: 18%;
     visibility: hidden;
+    z-index: 5;
+  }
+
+  .crazyfishStopAnimation {
+    visibility: visible;
+    top: 21%;
+    left: 10%;
   }
 
   .crazyfish0 {
-    animation: crazyfish0Animation 2s linear;
+    animation: crazyfish0Animation 1.3s linear;
   }
 
+  //bottom to top
   @keyframes crazyfish0Animation {
     0% {
       visibility: visible;
@@ -135,66 +183,115 @@
   }
 
   .crazyfish1 {
-    animation: crazyfish1Animation 2s linear;
+    animation: crazyfish1Animation 1.6s linear;
   }
 
+  //right to right
   @keyframes crazyfish1Animation {
     0% {
       visibility: visible;
-      top: 0;
-      left: 86%;
+      left: 90%;
+      top: 62%;
+    }
+    50% {
+      top: 10%;
+      left: 20%;
     }
     100% {
-      top: 100%;
-      left: 53%;
+      top: 10%;
+      left: 90%;
     }
   }
 
   .crazyfish2 {
-    animation: crazyfish2Animation 2s linear;
+    animation: crazyfish2Animation 1.4s linear;
   }
 
+  //top to bottom
   @keyframes crazyfish2Animation {
     0% {
       visibility: visible;
-      top: 100%;
-      left: 86%;
-    }
-    100% {
       top: 0;
       left: 53%;
+    }
+    100% {
+      top: 100%;
+      left: 40%;
     }
   }
 
   .crazyfish3 {
-    animation: crazyfish3Animation 2s linear;
+    animation: crazyfish3Animation 1s linear;
   }
 
+  //left to right
   @keyframes crazyfish3Animation {
     0% {
       visibility: visible;
-      top: 100%;
-      left: 86%;
+      top: 70%;
+      left: -10%;
     }
     100% {
-      top: 0;
-      left: 53%;
+      top: 55%;
+      left: 96%;
     }
   }
 
   .crazyfish4 {
-    animation: crazyfish4Animation 2s linear;
+    animation: crazyfish4Animation 1s linear;
   }
 
+  //right to left
   @keyframes crazyfish4Animation {
     0% {
       visibility: visible;
-      top: 100%;
-      left: 86%;
+      top: 5%;
+      left: 96%;
     }
     100% {
-      top: 0;
-      left: 53%;
+      top: 53%;
+      left: -12%;
+    }
+  }
+
+  @keyframes fishgroupAnimation {
+    0% {
+      top: 65%;
+      left: 25%;
+    }
+    48% {
+      transform: scaleX(1);
+    }
+    50% {
+      transform: scaleX(-1);
+      top: 62%;
+      left: 61%;
+    }
+    98% {
+      transform: scaleX(-1);
+    }
+    100% {
+      transform: scaleX(1);
+      top: 65%;
+      left: 25%;
+    }
+  }
+
+  @keyframes bubbleAnimation {
+    0% {
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    30% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
     }
   }
 }
