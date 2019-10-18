@@ -125,7 +125,7 @@
     width: 20%;
 
     border-radius: 50%;
-    animation: airplane2Animation 10s linear infinite;
+    animation: airplane2Animation 8s linear infinite;
   }
 
   .airport {
@@ -258,65 +258,23 @@
     }
   }
 
-  .wrapperAirplane2 {
-    width: 80%;
-    pointer-events: none;
-    position: absolute;
-    top: 85%;
-    left: 5%;
-    z-index: 10;
-
-    animation: wrapperAirplane2Animation 60s linear infinite;
-  }
-
-  @keyframes wrapperAirplane2Animation {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-
   @keyframes airplane2Animation {
     0% {
-      transform: rotate(-40deg);
-    }
-    10% {
-      transform: rotate(-40deg);
+      top: 75%;
+      left: 20%;
+      opacity: 0;
+      transform: rotate(40deg);
     }
     15% {
-      transform: rotate(-40deg);
+      opacity: 1;
     }
-    20% {
-      transform: rotate(-40deg);
-    }
-    30% {
-      transform: rotate(-40deg);
-    }
-    40% {
-      transform: rotate(-40deg);
-    }
-    45% {
-      transform: rotate(-40deg);
-    }
-    50% {
-      transform: rotate(-40deg);
-    }
-    60% {
-      transform: rotate(-40deg);
-    }
-    70% {
-      transform: rotate(-40deg);
-    }
-    80% {
-      transform: rotate(-40deg);
-    }
-    90% {
-      transform: rotate(-40deg);
+    85% {
+      opacity: 1;
     }
     100% {
-      transform: rotate(-40deg);
+      top: 60%;
+      left: 95%;
+      opacity: 0;
     }
   }
 }
