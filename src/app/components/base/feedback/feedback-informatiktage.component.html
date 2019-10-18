@@ -21,18 +21,10 @@
     </div>
   </div>
 
-  <div class="right">
-    <app-button btnTitle=">" (btnClicked)="(feedBackState = feedBackState.next())"
-                [hidden]="!feedBackState.canProceed()"></app-button>
+  <app-button btnTitle="Weiter" (btnClicked)="(feedBackState = feedBackState.next())" [hidden]="!feedBackState.canProceed()"></app-button>
+
+  <div *ngIf="!feedBackState && !progress.canTakePartInContest" class="feedback-senden">
+    <app-button (btnClicked)="sendFeedback()" btnTitle="Feedback senden"></app-button>
   </div>
 
-<div *ngIf="!feedBackState && !progress.canTakePartInContest" class="feedback-senden">
-  <app-button (btnClicked)="toLast()" btnTitle="Feeback bearbeiten" [style.paddingBottom.rem]="1"></app-button>
-  <app-button (btnClicked)="sendFeedback()" btnTitle="Feedback senden"></app-button>
-</div>
-
-  <app-button *ngIf="feedBackState.canProceed() && feedBackState.next().questionNr() === 5"
-              btnTitle="Feedback senden"
-              (btnClicked)="sendFeedback()">
-  </app-button>
 </div>
