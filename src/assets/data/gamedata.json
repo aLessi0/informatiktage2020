@@ -52,6 +52,11 @@
           "givesCoin": true
         },
         {
+          "key": "room2schnecke",
+          "text": "Zirp Zirp",
+          "givesCoin": false
+        },
+        {
           "key": "room2fire",
           "text": "Brennst du auch für die Informatik?",
           "givesCoin": false
@@ -144,7 +149,14 @@
       "name": "Playground",
       "level": 6,
       "roomClass": "room-playground",
-      "questions": [],
+      "questions": [
+        {
+          "key": "room6coin1",
+          "questionText": "Ich mag Schnecken, wie macht die Schnecke?",
+          "correctAnswer": "Zirp Zirp",
+          "isMandatory": false
+        }
+      ],
       "infos": []
     }
   ],
