@@ -55,6 +55,11 @@
           "key": "room2schnecke",
           "text": "Zirp Zirp",
           "givesCoin": false
+        },
+        {
+          "key": "room2fire",
+          "text": "Brennst du auch für die Informatik?",
+          "givesCoin": false
         }
       ]
     },
