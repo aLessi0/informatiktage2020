@@ -11,6 +11,7 @@
     width: 32%;
     top: 1%;
     left: 70%;
+    animation: sateliteSpin 60s linear infinite;
   }
 
   .planets {
@@ -40,7 +41,14 @@
     }
   }
 
-  .stars1 {
+  // small stars extension
+  %star-plus {
+    pointer-events: none;
+    position: absolute;
+    width: 100%;
+  }
+
+  .stars-klein-links {
     pointer-events: none;
     position: absolute;
     width: 30%;
@@ -62,12 +70,85 @@
     }
   }
 
-  .stars2 {
+  //small stars left side
+  .star-plus-left1 {
+    @extend %star-plus;
+    top: 64.5%;
+    left: 23%;
+    animation: starPlusAnimation 2.3s infinite;
+  }
+
+  .star-plus-left2 {
+    @extend %star-plus;
+    top: 60%;
+    left: 18%;
+    animation: starPlusAnimation 3.1s infinite;
+  }
+
+  .star-plus-left3 {
+    @extend %star-plus;
+    top: 62.8%;
+    left: 14%;
+    animation: starPlusAnimation 2.8s infinite;
+  }
+
+  .star-plus-left4 {
+    @extend %star-plus;
+    top: 60%;
+    left: 33%;
+    animation: starPlusAnimation 2.4s infinite;
+  }
+
+  .star-plus-left5 {
+    @extend %star-plus;
+    top: 64%;
+    left: 36%;
+    animation: starPlusAnimation 3.3s infinite;
+  }
+
+
+  //small stars right side
+  .star-plus-right1 {
+    @extend %star-plus;
+    top: 29.4%;
+    left: 83%;
+    animation: starPlusAnimation 3s infinite;
+  }
+
+  .star-plus-right2 {
+    @extend %star-plus;
+    top: 34%;
+    left: 89%;
+    animation: starPlusAnimation 3.5s infinite;
+  }
+
+  .star-plus-right3 {
+    @extend %star-plus;
+    top: 36%;
+    left: 96%;
+    animation: starPlusAnimation 2.5s infinite;
+  }
+
+  .star-plus-right4 {
+    @extend %star-plus;
+    top: 33%;
+    left: 100%;
+    animation: starPlusAnimation 2.2s infinite;
+  }
+
+  .star-plus-right5 {
+    @extend %star-plus;
+    top: 27%;
+    left: 97%;
+    animation: starPlusAnimation 2.4s infinite;
+  }
+
+  .stars-klein-rechts {
     pointer-events: none;
     position: absolute;
     width: 30%;
-    top: 26%;
-    left: 70%;
+    top: 27%;
+    left: 86%;
 
     &.gross1 {
       pointer-events: all;
@@ -248,6 +329,24 @@
   }
   100% {
     transform: scaleX(1.70) scaleY(1.70);
+  }
+}
+
+@keyframes sateliteSpin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes starPlusAnimation {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
 

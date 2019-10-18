@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="10px" height="9px" viewBox="0 0 10 9" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 58 (84663) - https://sketch.com -->
+    <title>Path</title>
+    <desc>Created with Sketch.</desc>
+    <g id="App" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Room-Entwicklung" transform="translate(-311.000000, -302.000000)" fill="#000000" fill-rule="nonzero">
+            <g id="Stars2" transform="translate(249.000000, 302.000000)">
+                <path d="M63.813,5.326 L66,5.326 L66,7.513 C66,8.066 66.448,8.513 67,8.513 C67.552,8.513 68,8.066 68,7.513 L68,5.326 L70.187,5.326 C70.739,5.326 71.187,4.879 71.187,4.326 C71.187,3.773 70.739,3.326 70.187,3.326 L68,3.326 L68,1.138 C68,0.585 67.552,0.138 67,0.138 C66.448,0.138 66,0.585 66,1.138 L66,3.326 L63.813,3.326 C63.261,3.326 62.813,3.773 62.813,4.326 C62.813,4.879 63.261,5.326 63.813,5.326 Z" id="Path"></path>
+            </g>
+        </g>
+    </g>
+</svg>
