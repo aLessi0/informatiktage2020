@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 37 9" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 58 (84663) - https://sketch.com -->
+    <title>Fatamorgana-right</title>
+    <desc>Created with Sketch.</desc>
+    <g id="App" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Room-Deploy" transform="translate(-281.000000, -445.000000)" fill="#000000" fill-rule="nonzero">
+            <g id="Cactus3" transform="translate(218.000000, 368.912840)">
+                <g transform="translate(0.000000, 3.087160)" id="Fatamorgana-right">
+                    <g transform="translate(63.000000, 73.000000)">
+                        <path d="M12.3375796,6 C11.5350318,6 11,6.6 11,7.5 C11,8.4 11.5350318,9 12.3375796,9 L30.6624204,9 C31.4649682,9 32,8.4 32,7.5 C32,6.6 31.4649682,6 30.6624204,6 L12.3375796,6 Z" id="Path"></path>
+                        <path d="M37,1.5 C37,0.6 36.4558824,0 35.6397059,0 L1.36029412,0 C0.544117647,0 0,0.6 0,1.5 C0,2.4 0.544117647,3 1.36029412,3 L35.5036765,3 C36.3198529,3 37,2.4 37,1.5 Z" id="Path"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

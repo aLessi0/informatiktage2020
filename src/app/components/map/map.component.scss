@@ -65,6 +65,24 @@
     left: 3%;
   }
 
+  .cloud-left {
+    pointer-events: none;
+    position: absolute;
+    width: 8%;
+    top: 37%;
+    left: 3%;
+    animation: moveCloudLeft 35s linear infinite;
+  }
+
+  .cloud-right {
+    pointer-events: none;
+    position: absolute;
+    width: 8%;
+    top: 34%;
+    left: 12%;
+    animation: moveCloudRight 35s linear infinite;
+  }
+
   .gondel-seil {
     pointer-events: none;
     position: absolute;
@@ -336,5 +354,38 @@ $rotation: 7deg;
     top: 41.8%;
     left: 104%;
     transform: rotate($rotation);
+  }
+}
+
+@keyframes moveCloudLeft {
+  0% {
+    left: 3%;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    left: 30%;
+    opacity: 0;
+  }
+}
+
+@keyframes moveCloudRight {
+  0% {
+    left: 25%;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    left: 8%;
   }
 }
