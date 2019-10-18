@@ -39,68 +39,75 @@ export class PlaygroundComponent extends AbstractRoom {
   }
 
   public entryAbaton(): void {
-    this.modalService.openDialog(MovieComponent, false, {
-    }).subscribe(() => {});
+    this.walkTo('arnold', () => this.modalService.openDialog(MovieComponent, false, {}));
   }
 
   public leoLogic() {
-    if (!this.scavengerHuntRunning) {
-      this.openInfo('room6ScavengerHuntLeo1', '/assets/sprites/Room/6-playground/Leo.svg');
-      this.scavengerHuntRunning = true;
-    } else if (this.scavengerHuntRunning && !this.foundFishingRod) {
-      this.openInfo('room6ScavengerHuntLeo2', '/assets/sprites/Room/6-playground/Leo.svg');
-    } else if (this.scavengerHuntRunning && this.foundFishingRod) {
-      this.broughtFishingRodToLeo = true;
-      this.openInfo('room6ScavengerHuntLeo3', '/assets/sprites/Room/6-playground/Leo.svg');
-    }
+    this.walkTo('leo', () => {
+      if (!this.scavengerHuntRunning) {
+        this.openInfo('room6ScavengerHuntLeo1', '/assets/sprites/Room/6-playground/Leo.svg');
+        this.scavengerHuntRunning = true;
+      } else if (this.scavengerHuntRunning && !this.foundFishingRod) {
+        this.openInfo('room6ScavengerHuntLeo2', '/assets/sprites/Room/6-playground/Leo.svg');
+      } else if (this.scavengerHuntRunning && this.foundFishingRod) {
+        this.broughtFishingRodToLeo = true;
+        this.openInfo('room6ScavengerHuntLeo3', '/assets/sprites/Room/6-playground/Leo.svg');
+      }
+    });
   }
 
   public lillyLogic() {
-    if (!this.scavengerHuntRunning) {
-      this.openInfo('room6ScavengerHuntLilly1', '/assets/sprites/Room/6-playground/Lilly.svg');
-    } else if (this.scavengerHuntRunning && !this.treeQuestRunning) {
-      this.treeQuestRunning = true;
-      this.openInfo('room6ScavengerHuntLilly2', '/assets/sprites/Room/6-playground/Lilly.svg');
-    } else if (this.scavengerHuntRunning && this.treeQuestRunning) {
-      if(this.solution === '3142') {
-        this.foundFishingRod = true;
-        this.treeQuestRunning = false;
-        this.openInfo('room6ScavengerHuntLilly4', '/assets/sprites/Room/6-playground/FishingRod.svg');
+    this.walkTo('lilly', () => {
+      if (!this.scavengerHuntRunning) {
+        this.openInfo('room6ScavengerHuntLilly1', '/assets/sprites/Room/6-playground/Lilly.svg');
+      } else if (this.scavengerHuntRunning && !this.treeQuestRunning) {
+        this.treeQuestRunning = true;
+        this.openInfo('room6ScavengerHuntLilly2', '/assets/sprites/Room/6-playground/Lilly.svg');
+      } else if (this.scavengerHuntRunning && this.treeQuestRunning) {
+        if (this.solution === '3142') {
+          this.foundFishingRod = true;
+          this.treeQuestRunning = false;
+          this.openInfo('room6ScavengerHuntLilly4', '/assets/sprites/Room/6-playground/FishingRod.svg');
+        } else {
+          this.openInfo('room6ScavengerHuntLilly3', '/assets/sprites/Room/6-playground/Lilly.svg');
+        }
+        this.resetTrees();
+        this.solution = '';
+      }
+    });
+  }
+
+  public heidiLogic() {
+    this.walkTo('heidi', () => {
+      if (!this.scavengerHuntRunning) {
+        this.openQuestion('room6coin1', '/assets/sprites/Room/6-playground/Heidi.svg');
       } else {
-        this.openInfo('room6ScavengerHuntLilly3', '/assets/sprites/Room/6-playground/Lilly.svg');
+        this.openInfo('room6ScavengerHuntHeidi1', '/assets/sprites/Room/6-playground/Heidi.svg')
       }
-      this.resetTrees();
-      this.solution = '';
-    }
+    });
   }
 
-  public heidiLogic(){
-    if (!this.scavengerHuntRunning) {
-      this.openQuestion('room6coin1', '/assets/sprites/Room/6-playground/Heidi.svg');
-    } else {
-      this.openInfo('room6ScavengerHuntHeidi1', '/assets/sprites/Room/6-playground/Heidi.svg')
-    }
-  }
-
-  public  treeClick(treeNumber: number) {
+  public treeClick(treeNumber: number) {
     if (this.treeQuestRunning) {
-      if (treeNumber === 1 && !this.tree1Clicked) {
-        this.tree1Clicked = true;
-        this.renderer.addClass(this.tree1.nativeElement, 'treeClicked');
-        this.solution = this.solution + '1';
-      } else if (treeNumber === 2 && !this.tree2Clicked) {
-        this.tree2Clicked = true;
-        this.renderer.addClass(this.tree2.nativeElement, 'treeClicked');
-        this.solution = this.solution + '2';
-      } else if (treeNumber === 3 && !this.tree3Clicked) {
-        this.tree3Clicked = true;
-        this.renderer.addClass(this.tree3.nativeElement, 'treeClicked');
-        this.solution = this.solution + '3';
-      } else if (treeNumber === 4 && !this.tree4Clicked) {
-        this.tree4Clicked = true;
-        this.renderer.addClass(this.tree4.nativeElement, 'treeClicked');
-        this.solution = this.solution + '4';
-      }
+      this.walkTo('lilly', () => {
+        if (treeNumber === 1 && !this.tree1Clicked) {
+          this.tree1Clicked = true;
+          this.renderer.addClass(this.tree1.nativeElement, 'treeClicked');
+          this.solution = this.solution + '1';
+        } else if (treeNumber === 2 && !this.tree2Clicked) {
+          this.tree2Clicked = true;
+          this.renderer.addClass(this.tree2.nativeElement, 'treeClicked');
+          this.solution = this.solution + '2';
+        } else if (treeNumber === 3 && !this.tree3Clicked) {
+          this.tree3Clicked = true;
+          this.renderer.addClass(this.tree3.nativeElement, 'treeClicked');
+          this.solution = this.solution + '3';
+        } else if (treeNumber === 4 && !this.tree4Clicked) {
+          this.tree4Clicked = true;
+          this.renderer.addClass(this.tree4.nativeElement, 'treeClicked');
+          this.solution = this.solution + '4';
+        }
+      });
     }
   }
 
@@ -118,11 +125,13 @@ export class PlaygroundComponent extends AbstractRoom {
 
   public fishing() {
     if (this.foundFishingRod && this.scavengerHuntRunning && this.broughtFishingRodToLeo) {
-      this.openInfo('room6ScavengerHuntCoin', '/assets/sprites/Icon/Map/Coin.svg');
-      this.scavengerHuntRunning = false;
-      this.foundFishingRod = false;
-      this.treeQuestRunning = false;
-      this.broughtFishingRodToLeo = false;
+      this.walkTo('leo', () => {
+        this.openInfo('room6ScavengerHuntCoin', '/assets/sprites/Icon/Map/Coin.svg');
+        this.scavengerHuntRunning = false;
+        this.foundFishingRod = false;
+        this.treeQuestRunning = false;
+        this.broughtFishingRodToLeo = false;
+      });
     }
   }
 

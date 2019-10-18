@@ -129,7 +129,9 @@
     }
 
     &.walk-door-petra {
-      animation: walkingDoor-Ueli $doorUeliDuration linear, walkingUeli-Urs $ueliUrsDuration $doorUeliDuration linear, walkingUrs-Petra $ursPetraDuration calc(#{$doorUeliDuration} + #{$ueliUrsDuration}) linear;
+      animation: walkingDoor-Ueli $doorUeliDuration linear,
+      walkingUeli-Urs $ueliUrsDuration $doorUeliDuration linear,
+      walkingUrs-Petra $ursPetraDuration #{$doorUeliDuration + $ueliUrsDuration} linear;
     }
 
     &.walk-ueli-door {
@@ -157,7 +159,9 @@
     }
 
     &.walk-petra-door {
-      animation: walkingUrs-Petra $ursPetraDuration reverse linear, walkingUeli-Urs $ueliUrsDuration $ursPetraDuration reverse linear, walkingDoor-Ueli $doorUeliDuration calc(#{$ursPetraDuration} + #{$ueliUrsDuration}) reverse linear;
+      animation: walkingUrs-Petra $ursPetraDuration reverse linear,
+      walkingUeli-Urs $ueliUrsDuration $ursPetraDuration reverse linear,
+      walkingDoor-Ueli $doorUeliDuration #{$ursPetraDuration + $ueliUrsDuration} reverse linear;
     }
 
     &.walk-petra-ueli {
