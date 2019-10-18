@@ -28,12 +28,16 @@ app.post('/api/write', (req, resp) => {
 });
 
 app.post('/api/feedback', (req, resp) => {
-  csv = [];
-  req.body.forEach((tuple) => csv[tuple[0] - 1] = tuple[1].answer ? tuple[1].answer : '');
-  console.log(csv);
-  fs.appendFile('feedback.csv', csv.join(',') + "\n", () => {
-    resp.send();
-  })
+  csvArrayInformatiktage = [];
+  csvRaeume = req.body.raeume.join(',') + '\n';
+  req.body.informatiktage.forEach((tuple) => csvArrayInformatiktage[tuple[0] - 1] = tuple[1].answer ? tuple[1].answer : '');
+  csvInformatiktage = csvArrayInformatiktage.join(',') + '\n';
+  fs.appendFile('feedback_informatiktage.csv', csvInformatiktage, () => {
+    fs.appendFile('feedback_raeume.csv', csvRaeume, () => {
+      resp.send();
+    });
+  });
+
 });
 
 app.post('/api/wettbewerb', (req, resp) => {

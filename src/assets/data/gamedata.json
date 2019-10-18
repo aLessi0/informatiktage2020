@@ -3,6 +3,7 @@
   "minCoinsRewardSmall": 6,
   "rooms": [
     {
+      "name": "Welt der Informatik",
       "level": 1,
       "roomClass": "room-welt-informatik",
       "questions": [
@@ -20,13 +21,14 @@
           "givesCoin": false
         },
         {
-          "key": "room1coin2",
+          "key": "room1coin1",
           "text": "Cool du hast die Frage von Marie beantwortet! Ich gebe dir als Belohnung eine Münze!",
           "givesCoin": true
         }
       ]
     },
     {
+      "name": "Requirements & Design",
       "level": 2,
       "roomClass": "room-req-design",
       "questions": [
@@ -46,12 +48,13 @@
       "infos": [
         {
           "key": "room2coin2",
-          "text": "Super du hast mich gefunden! Als Belohnung bekommst du ein Coin!",
+          "text": "Super du hast mich gefunden! Als Belohnung bekommst du eine Münze!",
           "givesCoin": true
         }
       ]
     },
     {
+      "name": "Entwicklung & Test",
       "level": 3,
       "roomClass": "room-entwicklung-test",
       "questions": [
@@ -77,6 +80,7 @@
       ]
     },
     {
+      "name": "Deploy & Operate",
       "level": 4,
       "roomClass": "room-build-deploy",
       "questions": [
@@ -102,9 +106,17 @@
       ]
     },
     {
+      "name": "Recruiting",
       "level": 5,
       "roomClass": "room-recruiting",
-      "questions": [],
+      "questions": [
+        {
+          "key": "room5coin1",
+          "questionText": "Bla?",
+          "correctAnswer": "bla",
+          "isMandatory": false
+        }
+      ],
       "infos": [
         {
           "key": "room5finishText",
@@ -124,6 +136,7 @@
       ]
     },
     {
+      "name": "Playground",
       "level": 6,
       "roomClass": "room-playground",
       "questions": [],

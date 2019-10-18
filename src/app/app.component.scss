@@ -7,7 +7,7 @@
     position: fixed;
     width: 100%;
     height: 100%;
-    left: 0%;
+    left: 0;
     background-color: var(--room-color);
   }
 
@@ -26,6 +26,9 @@
 
   .room-enter-leave-panel {
     position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     top: 0;
     left: 0;
     height: calc(100 * var(--vh));
@@ -33,26 +36,70 @@
     background-color: transparent;
     pointer-events: none;
 
-    &.animation {
+    &:before {
+      content: "Level " attr(level);
+      position: absolute;
+      top: 27%;
+      color: white;
+      opacity: 0;
+      white-space: pre-wrap;
+    }
+
+    &:after {
+      content: attr(title);
+      position: absolute;
+      top: 30%;
+      font-size: 1.5rem;
+      color: white;
+      opacity: 0;
+      white-space: pre-wrap;
+    }
+
+    &.animation-short {
       pointer-events: initial;
       animation: black-animation 1s 1 ease-in-out, transparent-animation 1s 1s 1 ease-in-out;
+    }
 
-      @keyframes black-animation {
-        0% {
-          background-color: transparent;
-        }
-        100% {
-          background-color: black;
-        }
+    &.animation {
+      pointer-events: initial;
+      background-color: black;
+      animation: black-animation 1s 1 ease-in-out, transparent-animation 1s 4s 1 ease-in-out;
+
+      &:after, &:before {
+        animation: text-animation 3s 1s ease-in-out;
       }
 
-      @keyframes transparent-animation {
+      @keyframes text-animation {
         0% {
-          background-color: black;
+          opacity: 0;
+        }
+        10% {
+          opacity: 1;
+        }
+        90% {
+          opacity: 1;
         }
         100% {
-          background-color: transparent;
+          opacity: 0;
         }
+      }
+    }
+
+    @keyframes black-animation {
+      0% {
+        background-color: transparent;
+      }
+      100% {
+        background-color: black;
+      }
+    }
+
+    @keyframes transparent-animation {
+      0% {
+        background-color: black;
+      }
+      100% {
+        background-color: transparent;
       }
     }
   }
@@ -60,11 +107,31 @@
   @media (max-aspect-ratio: 9/20) {
     height: calc((100 * var(--vw)) / 9 * 20);
     width: calc(100 * var(--vw));
+
+    .room-enter-leave-panel {
+      &:before {
+        width: calc(100 * var(--vw));
+      }
+
+      &:after {
+        width: calc(100 * var(--vw));
+      }
+    }
   }
 
   /* Maximum aspect ratio */
   @media (min-aspect-ratio: 9/20) {
     height: calc(100 * var(--vh));
     width: calc((100 * var(--vh)) / 20 * 9);
+
+    .room-enter-leave-panel {
+      &:before {
+        width: calc(((100 * var(--vh)) / 20 * 9) * 0.8);
+      }
+
+      &:after {
+        width: calc(((100 * var(--vh)) / 20 * 9) * 0.8);
+      }
+    }
   }
 }
