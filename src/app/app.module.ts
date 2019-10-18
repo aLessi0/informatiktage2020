@@ -46,7 +46,7 @@ import { AvatarComponent } from './components/avatar/avatar.component';
     PlaygroundComponent,
     RewardCoinsComponent,
     FeedbackInformatiktageComponent,
-    AvatarComponent
+    AvatarComponent,
     FeedbackInformatiktageComponent,
     MovieComponent
   ],
