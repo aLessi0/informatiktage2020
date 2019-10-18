@@ -3,6 +3,7 @@
   "minCoinsRewardSmall": 6,
   "rooms": [
     {
+      "name": "Welt der Informatik",
       "level": 1,
       "roomClass": "room-welt-informatik",
       "questions": [
@@ -27,6 +28,7 @@
       ]
     },
     {
+      "name": "Requirements & Design",
       "level": 2,
       "roomClass": "room-req-design",
       "questions": [
@@ -48,10 +50,16 @@
           "key": "room2coin2",
           "text": "Super du hast mich gefunden! Als Belohnung bekommst du eine Münze!",
           "givesCoin": true
+        },
+        {
+          "key": "room2schnecke",
+          "text": "Zirp Zirp",
+          "givesCoin": false
         }
       ]
     },
     {
+      "name": "Entwicklung & Test",
       "level": 3,
       "roomClass": "room-entwicklung-test",
       "questions": [
@@ -77,6 +85,7 @@
       ]
     },
     {
+      "name": "Deploy & Operate",
       "level": 4,
       "roomClass": "room-build-deploy",
       "questions": [
@@ -102,6 +111,7 @@
       ]
     },
     {
+      "name": "Recruiting",
       "level": 5,
       "roomClass": "room-recruiting",
       "questions": [
@@ -131,9 +141,17 @@
       ]
     },
     {
+      "name": "Playground",
       "level": 6,
       "roomClass": "room-playground",
-      "questions": [],
+      "questions": [
+        {
+          "key": "room6coin1",
+          "questionText": "Ich mag Schnecken, wie macht die Schnecke?",
+          "correctAnswer": "Zirp Zirp",
+          "isMandatory": false
+        }
+      ],
       "infos": []
     }
   ],
