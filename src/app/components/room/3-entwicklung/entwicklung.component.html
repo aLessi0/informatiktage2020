@@ -38,12 +38,15 @@
 
 
 <svg-icon src="\assets\sprites\Room\3-develop-and-testing\Sternbild.svg" class="star-constellation"></svg-icon>
-<svg-icon src="\assets\sprites\Room\3-develop-and-testing\Teleskop.svg" class="telescope"></svg-icon>
+<svg-icon src="\assets\sprites\Room\3-develop-and-testing\Teleskop.svg"
+          class="telescope">
+</svg-icon>
 
 <svg-icon src="\assets\sprites\Room\3-develop-and-testing\Planet.svg"
           class="planet"
           [ngClass]="'grow' + this.planetState"
-          (click)="planetClick()">
+          (click)="planetClick()"
+          (clickOutside)="this.planetState = 0">
 </svg-icon>
 
 <svg-icon src="\assets\sprites\Room\3-develop-and-testing\Katrin.svg"
@@ -52,3 +55,5 @@
 </svg-icon>
 
 <app-avatar [avatarType]="progress.avatarType"></app-avatar>
+
+<div (clickOutside)="this.starReset()"></div>

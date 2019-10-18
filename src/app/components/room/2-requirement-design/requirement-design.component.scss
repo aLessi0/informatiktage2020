@@ -93,6 +93,7 @@
     left: 77%;
     z-index: 8;
     transform: rotate(20deg);
+    animation: ueliAnimation 1s linear;
   }
 
   app-avatar {
@@ -262,6 +263,18 @@
       transform: scaleX(1);
       top: 91%;
       left: 31%;
+    }
+  }
+
+  @keyframes ueliAnimation {
+    0% {
+      opacity: 0;
+    }
+    25% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 1;
     }
   }
 

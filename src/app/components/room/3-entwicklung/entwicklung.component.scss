@@ -60,6 +60,7 @@
       width: 12%;
       left: 10%;
       top: 66%;
+      animation: starAnimation 1s linear;
     }
 
     &.gross2 {
@@ -67,6 +68,7 @@
       width: 12%;
       top: 61.5%;
       left: 39%;
+      animation: starAnimation 1s linear;
     }
   }
 
@@ -155,6 +157,7 @@
       width: 14%;
       left: 74%;
       top: 32%;
+      animation: starAnimation 1s linear;
     }
 
     &.gross2 {
@@ -162,6 +165,7 @@
       width: 11%;
       top: 30%;
       left: 90%;
+      animation: starAnimation 1s linear;
     }
   }
 
@@ -347,6 +351,19 @@
   }
   100% {
     opacity: 0;
+  }
+
+}
+
+@keyframes starAnimation {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
   }
 }
 

@@ -27,6 +27,7 @@ import { environment } from '../environments/environment';
 import {RewardCoinsComponent} from './components/base/reward-coins/reward-coins.component';
 import { MovieComponent } from './components/base/movie/movie.component';
 import { AvatarComponent } from './components/avatar/avatar.component';
+import {ClickOutsideModule} from "ng-click-outside";
 
 @NgModule({
   declarations: [
@@ -47,7 +48,6 @@ import { AvatarComponent } from './components/avatar/avatar.component';
     RewardCoinsComponent,
     FeedbackInformatiktageComponent,
     AvatarComponent,
-    FeedbackInformatiktageComponent,
     MovieComponent
   ],
   imports: [
@@ -57,6 +57,7 @@ import { AvatarComponent } from './components/avatar/avatar.component';
     AngularSvgIconModule,
     BrowserAnimationsModule,
     AngularMaterialModule,
+    ClickOutsideModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
