@@ -19,6 +19,7 @@ export class AbstractRoom implements OnInit {
   @ViewChild(AvatarComponent, {read: ElementRef}) private avatarRef: ElementRef;
 
   private currentAvatarPosition = 'door';
+  private isAvatarAnimationRunning: boolean = false;
 
   constructor(@Inject(DataService) protected readonly dataService: DataService,
               @Inject(ProgressService) protected readonly progressService: ProgressService,
@@ -34,16 +35,22 @@ export class AbstractRoom implements OnInit {
 
   public ngOnInit(): void {
     this.renderer.addClass(this.avatarRef.nativeElement, 'initialAnimation');
+    this.isAvatarAnimationRunning = true;
     this.avatarRef.nativeElement.addEventListener('animationend', () => {
       this.renderer.removeClass(this.avatarRef.nativeElement, 'initialAnimation');
+      this.isAvatarAnimationRunning = false;
     });
   }
 
   public walkTo(pos: string, callback: () => void): void {
+    if (this.isAvatarAnimationRunning) {
+      return;
+    }
     if (pos === this.currentAvatarPosition) {
       callback && callback();
       return;
     }
+    this.isAvatarAnimationRunning = true;
     const oldClassName: string = 'pos-' + this.currentAvatarPosition;
     this.renderer.removeClass(this.avatarRef.nativeElement, oldClassName);
 
@@ -64,6 +71,7 @@ export class AbstractRoom implements OnInit {
           this.avatarRef.nativeElement.removeEventListener('animationend', animationEndFunction);
           this.avatarRef.nativeElement.removeEventListener('animationstart', animationStartFunction);
           this.renderer.removeClass(this.avatarRef.nativeElement, animationClass);
+          this.isAvatarAnimationRunning = false;
           callback && callback();
         }
       }, 50);
@@ -83,7 +91,7 @@ export class AbstractRoom implements OnInit {
       if (this.level.coins.indexOf(key) < 0) { // prüfen ob coin nicht bereits erhalten
 
         // coin noch nicht erhalten
-        this.modalService.openDialog(InfotextComponent, true, { icon, text: info.text }).subscribe(() => {
+        this.modalService.openDialog(InfotextComponent, true, {icon, text: info.text}).subscribe(() => {
           this.level.coins.push(key);
           this.progress.numberOfCollectedCoins++;
           this.openReward(false, callback);
@@ -92,7 +100,10 @@ export class AbstractRoom implements OnInit {
       } else { // wenn coin bereits erhalten
 
         // meldung dass coin bereits erhalten anzeigen
-        this.modalService.openDialog(InfotextComponent, true, { icon, text: 'Du hast diese Münze bereits gefunden!' }).subscribe(() => {
+        this.modalService.openDialog(InfotextComponent, true, {
+          icon,
+          text: 'Du hast diese Münze bereits gefunden!'
+        }).subscribe(() => {
           if (callback) {
             callback();
           }
@@ -101,7 +112,7 @@ export class AbstractRoom implements OnInit {
 
     } else { // info anzeigen ohne coin
 
-      this.modalService.openDialog(InfotextComponent, true, { icon, text: info.text }).subscribe(() => {
+      this.modalService.openDialog(InfotextComponent, true, {icon, text: info.text}).subscribe(() => {
         if (callback) {
           callback();
         }
@@ -139,7 +150,10 @@ export class AbstractRoom implements OnInit {
 
     } else {
       // Frage wurde bereits einmal beantwortet
-      this.modalService.openDialog(InfotextComponent, true, { icon, text: 'Du hast meine Frage bereits beantwortet!' }).subscribe(() => {
+      this.modalService.openDialog(InfotextComponent, true, {
+        icon,
+        text: 'Du hast meine Frage bereits beantwortet!'
+      }).subscribe(() => {
         if (callback) {
           callback();
         }
