@@ -139,6 +139,11 @@
           "givesCoin": false
         },
         {
+          "key": "room5wettbewerb",
+          "text": "Du kannst jetzt am grossen Wettbewerb teilnehmen und tolle Preise gewinnen!",
+          "givesCoin": false
+        },
+        {
           "key": "room5coin2",
           "text": "Crazyfish, hier eine Münze!",
           "givesCoin": true
