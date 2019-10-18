@@ -124,10 +124,6 @@ export class ProgressService {
         const partiallyDeserialized = JSON.parse(value);
         partiallyDeserialized.playedLevels = new Map(partiallyDeserialized.playedLevels);
         partiallyDeserialized.feedbackAnswers = new Map(partiallyDeserialized.feedbackAnswers);
-
-        partiallyDeserialized.playedLevels.forEach((playedLevel) => {
-          playedLevel.answers = new Map(playedLevel.answers);
-        });
         return partiallyDeserialized;
       }
       return undefined;
