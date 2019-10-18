@@ -24,6 +24,15 @@ export class BuildDeployComponent extends AbstractRoom {
     super.ngOnInit();
   }
 
+  public luckyClick(): void {
+    this.walkTo('lucky', () => this.openQuestion('room4key', '/assets/sprites/Room/4-deploy-and-testing/Lucky.svg'));
+  }
+
+  public blancaClick(): void {
+
+    this.walkTo('lucky', () => this.openQuestion('room4coin1', '/assets/sprites/Room/4-deploy-and-testing/Blanca.svg'));
+  }
+
   blancaVisible() {
     this.blancaHidden = false;
   }
