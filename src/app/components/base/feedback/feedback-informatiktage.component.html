@@ -23,8 +23,9 @@
 
   <app-button btnTitle="Weiter" (btnClicked)="(feedBackState = feedBackState.next())" [hidden]="!feedBackState.canProceed()"></app-button>
 
-  <div *ngIf="!feedBackState && !progress.canTakePartInContest" class="feedback-senden">
-    <app-button (btnClicked)="sendFeedback()" btnTitle="Feedback senden"></app-button>
-  </div>
-
 </div>
+
+<div *ngIf="!feedBackState && !progress.canTakePartInContest" class="feedback-senden">
+  <app-button (btnClicked)="sendFeedback()" btnTitle="Feedback senden"></app-button>
+</div>
+
