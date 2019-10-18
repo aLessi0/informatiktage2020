@@ -25,6 +25,7 @@ import { PlaygroundComponent } from './components/room/6-playground/playground.c
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import {RewardCoinsComponent} from './components/base/reward-coins/reward-coins.component';
+import { AvatarComponent } from './components/avatar/avatar.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import {RewardCoinsComponent} from './components/base/reward-coins/reward-coins.
     RecruitingComponent,
     PlaygroundComponent,
     RewardCoinsComponent,
-    FeedbackInformatiktageComponent
+    FeedbackInformatiktageComponent,
+    AvatarComponent
   ],
   imports: [
     BrowserModule,

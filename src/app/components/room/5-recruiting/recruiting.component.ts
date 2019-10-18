@@ -27,8 +27,12 @@ export class RecruitingComponent extends AbstractRoom {
   constructor(@Inject(DataService) protected readonly dataService: DataService,
               @Inject(ProgressService) protected readonly progressService: ProgressService,
               @Inject(ModalService) protected readonly modalService: ModalService,
-              @Inject(Renderer2) private readonly renderer: Renderer2) {
-    super(dataService, progressService, modalService);
+              @Inject(Renderer2) protected readonly renderer: Renderer2) {
+    super(dataService, progressService, modalService, renderer);
+  }
+
+  public ngOnInit(): void {
+    super.ngOnInit();
   }
 
   public crazyfishClick() {
