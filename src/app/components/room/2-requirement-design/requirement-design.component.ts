@@ -25,6 +25,18 @@ export class RequirementDesignComponent extends AbstractRoom {
     super.ngOnInit();
   }
 
+  public ursClick(): void {
+    this.walkTo('urs', () => this.openQuestion('room2coin1', '/assets/sprites/Room/2-req-and-design/Urs.svg'));
+  }
+
+  public petraClick(): void {
+    this.walkTo('petra', () => this.openQuestion('room2key', '/assets/sprites/Room/2-req-and-design/Petra.svg'));
+  }
+
+  public ueliClick(): void {
+    this.walkTo('ueli', () => this.openInfo('room2coin2', '/assets/sprites/Room/2-req-and-design/Ueli.svg'));
+  }
+
   public ueliVisible() {
     this.counter = this.counter + 1;
     if (this.counter >= 2) {
