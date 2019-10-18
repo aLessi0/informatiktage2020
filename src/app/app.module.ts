@@ -25,6 +25,7 @@ import { PlaygroundComponent } from './components/room/6-playground/playground.c
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import {RewardCoinsComponent} from './components/base/reward-coins/reward-coins.component';
+import { MovieComponent } from './components/base/movie/movie.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import {RewardCoinsComponent} from './components/base/reward-coins/reward-coins.
     RecruitingComponent,
     PlaygroundComponent,
     RewardCoinsComponent,
-    FeedbackInformatiktageComponent
+    FeedbackInformatiktageComponent,
+    MovieComponent
   ],
   imports: [
     BrowserModule,
@@ -62,7 +64,8 @@ import {RewardCoinsComponent} from './components/base/reward-coins/reward-coins.
     InfotextComponent,
     QuizfrageComponent,
     FeedbackInformatiktageComponent,
-    RewardCoinsComponent
+    RewardCoinsComponent,
+    MovieComponent
   ] // define modal components
 })
 
