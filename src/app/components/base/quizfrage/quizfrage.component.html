@@ -1,7 +1,5 @@
 <div class="frage">
-  <div class="question-icon">
-    <svg-icon *ngIf="data.icon" [src]="data.icon"></svg-icon>
-  </div>
+  <svg-icon *ngIf="data.icon" [src]="data.icon" class="question-icon"></svg-icon>
   <div class="quizfrage">{{question.questionText}}</div>
 
   <div class="answer-wrong" *ngIf="answerIsWrong">
