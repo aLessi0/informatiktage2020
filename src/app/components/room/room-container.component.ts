@@ -41,19 +41,19 @@ export class RoomContainerComponent implements OnInit {
       }
     }
     this.mandatoryQuestionWasAnsweredOnEntry = this.progressService.mandatoryQuestionForRoomIsAnswered(this.room);
-
     this.streetUrl = this.getStreetUrl();
   }
 
   public onStreetMapTap(): void {
-    if (!this.level.roomFeedback && !this.mandatoryQuestionWasAnsweredOnEntry &&
-      this.progressService.mandatoryQuestionForRoomIsAnswered(this.room)) {
-
-      this.modalService.openDialog(FeedbackComponent, true).subscribe(() => this.closeRoom.emit());
+    if (!this.level.roomFeedback && this.level.level < 5 && this.progressService.mandatoryQuestionForRoomIsAnswered(this.room)) {
+      this.modalService.openDialog(FeedbackComponent, false).subscribe(() => {
+        if (this.level.roomFeedback) {
+          this.closeRoom.emit();
+        }
+      });
     } else {
       this.closeRoom.emit();
     }
-
   }
 
   private getStreetUrl(): SafeResourceUrl {
