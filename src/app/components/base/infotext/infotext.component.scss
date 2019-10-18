@@ -8,7 +8,7 @@
     justify-content: center;
 
     svg-icon {
-      width: 2rem;
+      width: 2.5rem;
     }
   }
 
@@ -25,12 +25,10 @@
   $box-shadow2: ();
   @for $i from 0 through $particles {
     $box-shadow: $box-shadow,
-    random($width)-$width / 2 + px
-    random($height)-$height / 1.2 + px
-    hsl(random(360), 100, 50);
+    random($width)-$width / 2 + px random($height)-$height / 1.2 + px hsl(random(360), 100, 50);
     $box-shadow2: $box-shadow2, 0 0 #fff
   }
-  @mixin keyframes ($animationName) {
+  @mixin keyframes($animationName) {
     @-webkit-keyframes #{$animationName} {
       @content;
     }
@@ -52,7 +50,7 @@
     }
   }
 
-  @mixin animation-delay ($settings) {
+  @mixin animation-delay($settings) {
     -moz-animation-delay: $settings;
     -webkit-animation-delay: $settings;
     -o-animation-delay: $settings;
@@ -60,7 +58,7 @@
     animation-delay: $settings;
   }
 
-  @mixin animation-duration ($settings) {
+  @mixin animation-duration($settings) {
     -moz-animation-duration: $settings;
     -webkit-animation-duration: $settings;
     -o-animation-duration: $settings;
@@ -68,7 +66,7 @@
     animation-duration: $settings;
   }
 
-  @mixin animation ($settings) {
+  @mixin animation($settings) {
     -moz-animation: $settings;
     -webkit-animation: $settings;
     -o-animation: $settings;
@@ -76,7 +74,7 @@
     animation: $settings;
   }
 
-  @mixin transform ($settings) {
+  @mixin transform($settings) {
     transform: $settings;
     -moz-transform: $settings;
     -webkit-transform: $settings;
@@ -85,8 +83,8 @@
   }
 
   body {
-    margin:0;
-    padding:0;
+    margin: 0;
+    padding: 0;
     background: #000;
     overflow: hidden;
   }
@@ -107,11 +105,11 @@
 
   @include keyframes(bang) {
     to {
-      box-shadow:$box-shadow;
+      box-shadow: $box-shadow;
     }
   }
 
-  @include keyframes(gravity)  {
+  @include keyframes(gravity) {
     to {
       @include transform(translateY(200px));
       opacity: 0;
