@@ -53,7 +53,12 @@
         },
         {
           "key": "room2schnecke",
-          "text": "Zirp Zirp",
+          "text": "Zirp Zirp!",
+          "givesCoin": false
+        },
+        {
+          "key": "room2fire",
+          "text": "Brennst du auch für die Informatik?",
           "givesCoin": false
         }
       ]
@@ -71,8 +76,8 @@
         },
         {
           "key": "room3coin1",
-          "questionText": "Wie macht die Schnecke?",
-          "correctAnswer": "zirp",
+          "questionText": "Was ist 2+2?",
+          "correctAnswer": "4",
           "isMandatory": false
         }
       ],
@@ -148,7 +153,7 @@
         {
           "key": "room6coin1",
           "questionText": "Ich mag Schnecken, wie macht die Schnecke?",
-          "correctAnswer": "Zirp Zirp",
+          "correctAnswer": "Zirp Zirp!",
           "isMandatory": false
         }
       ],
@@ -173,12 +178,12 @@
     },
     {
       "number": 4,
-      "frage": "Was hat dir besonders gefallen? (kein Pflichtfeld)",
+      "frage": "Was hat dir besonders gefallen? (optional)",
       "isMandatory": false
     },
     {
       "number": 5,
-      "frage": "Was hättest du dir anders/zusätzlich gewünscht? (kein Pflichtfeld)",
+      "frage": "Was hättest du dir anders/zusätzlich gewünscht? (optional)",
       "isMandatory": false
     }
   ]

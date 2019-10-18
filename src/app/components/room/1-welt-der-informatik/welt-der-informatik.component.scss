@@ -274,46 +274,49 @@
       transform: rotate(0deg);
     }
     100% {
-      transform: rotate(-360deg);
+      transform: rotate(360deg);
     }
   }
 
   @keyframes airplane2Animation {
     0% {
-      transform: rotate(40deg);
+      transform: rotate(-40deg);
     }
     10% {
-      transform: rotate(60deg);
+      transform: rotate(-40deg);
+    }
+    15% {
+      transform: rotate(-40deg);
     }
     20% {
-      transform: rotate(60deg);
+      transform: rotate(-40deg);
     }
     30% {
-      transform: rotate(60deg);
+      transform: rotate(-40deg);
     }
     40% {
-      transform: rotate(40deg);
+      transform: rotate(-40deg);
     }
     45% {
-      transform: rotate(40deg);
+      transform: rotate(-40deg);
     }
     50% {
-      transform: rotate(40deg);
+      transform: rotate(-40deg);
     }
     60% {
-      transform: rotate(40deg);
+      transform: rotate(-40deg);
     }
     70% {
-      transform: rotate(40deg);
+      transform: rotate(-40deg);
     }
     80% {
-      transform: rotate(40deg);
+      transform: rotate(-40deg);
     }
     90% {
-      transform: rotate(40deg);
+      transform: rotate(-40deg);
     }
     100% {
-      transform: rotate(40deg);
+      transform: rotate(-40deg);
     }
   }
 }

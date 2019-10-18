@@ -141,7 +141,7 @@ export class RecruitingComponent extends AbstractRoom {
 
   public openITDFeedback(): void {
     if (!this.progress.feedbackCompleted) {
-      this.modalService.openDialog(FeedbackInformatiktageComponent, false).subscribe(() => {
+      this.modalService.openDialog(FeedbackInformatiktageComponent, true).subscribe(() => {
         if (this.progress.feedbackCompleted) {
           this.unlockPlayground();
         }

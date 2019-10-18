@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 76 76" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 58 (84663) - https://sketch.com -->
+    <title>Play</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icon/Avatar/Arnold" transform="translate(-11.000000, -8.000000)" fill="#BA494C" fill-rule="nonzero">
+            <g id="Play" transform="translate(11.000000, 8.000000)">
+                <path d="M38,0 C17.0408,0 0,17.0408 0,38 C0,58.9592 17.0408,76 38,76 C58.9592,76 76,58.9592 76,38 C76,17.0408 58.9592,0 38,0 Z M50.2408,39.9184 L32.3192,51.84 C30.80048,52.88064 28.7192,51.758752 28.7192,49.92128 L28.7192,26.08048 C28.7192,24.23984 30.80048,23.12112 32.3192,24.16176 L50.2376,36.08016 C51.60008,36.95832 51.60008,39.03952 50.2407248,39.91768 L50.2408,39.9184 Z" id="Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>

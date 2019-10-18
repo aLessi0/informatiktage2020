@@ -42,6 +42,10 @@
     top: 8%;
     left: 70%;
     z-index: 9;
+
+    &.no-click {
+      pointer-events: none;
+    }
   }
 
   .tree3 {
@@ -234,5 +238,31 @@
     width: 14%;
     top: 91%;
     left: 31%;
+    animation: schneckeAnimation 60s linear infinite;
+    animation-delay: 5s;
   }
+
+  @keyframes schneckeAnimation {
+    0% {
+      top: 91%;
+      left: 31%;
+    }
+    48% {
+      transform: scaleX(1);
+    }
+    50% {
+      transform: scaleX(-1);
+      top: 91%;
+      left: 85%;
+    }
+    98% {
+      transform: scaleX(-1);
+    }
+    100% {
+      transform: scaleX(1);
+      top: 91%;
+      left: 31%;
+    }
+  }
+
 }
