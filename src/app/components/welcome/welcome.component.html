@@ -9,7 +9,7 @@
       Durchlaufe die verschiedenen Räume um die Welt der Informatik zu erkunden.</p>
   </div>
   <div class="child-swipe">
-    <svg-icon src="../../assets/sprites/Icon/Paging/1.svg" [svgStyle]="{'width': '80%'}"></svg-icon>
+    <svg-icon src="/assets/sprites/Icon/Paging/1.svg" [svgStyle]="{'width': '80%'}"></svg-icon>
   </div>
   <div class="child-button">
     <app-button btnTitle="Weiter" (btnClicked)="startLogin($event)"></app-button>
@@ -17,23 +17,26 @@
 </ng-container>
 
 <ng-container *ngIf="state == 1">
-  <svg-icon src="../../assets/sprites/Onboarding/onboarding2.svg" class="treeGroup2"></svg-icon>
-  <svg-icon src="../../assets/sprites/Onboarding/onboarding_key.svg" class="key"></svg-icon>
-  <svg-icon src="../../assets/sprites/Onboarding/onboarding_coin.svg" class="coin"></svg-icon>
   <div class="title2">
     <h1>Erklärung</h1>
   </div>
-  <div class="subtext2">
-    <p>Hole dir alle Schlüssel, um die Räume auf der Karte freizuschalten. Im letzen Raum wartet ein toller
-      Wettbewerb
-      auf dich!</p>
-    <p>Zusätzlich kannst du Münzen sammeln, indem du extra Aufgaben löst. Diese kannst du am Schluss an unserem
-      Sofortpreise-Stand einlösen.</p>
+
+  <div class="subtext2a">
+    <svg-icon src="/assets/sprites/Onboarding/onboarding_key.svg" class="key"></svg-icon>
+    <div class="text">Hole dir alle Schlüssel, um die Räume auf der Karte freizuschalten. Im letzen Raum wartet ein toller Wettbewerb auf dich!</div>
+  </div>
+
+  <div class="subtext2b">
+    <svg-icon src="assets/sprites/Onboarding/onboarding_coin.svg" class="coin"></svg-icon>
+    <div class="text">Zusätzlich kannst du Münzen sammeln, indem du extra Aufgaben löst. Diese kannst du am Schluss an unserem Sofortpreise-Stand einlösen.</div>
   </div>
 
   <div class="child-swipe">
-    <svg-icon src="../../assets/sprites/Icon/Paging/2.svg" [svgStyle]="{'width': '80%'}"></svg-icon>
+    <svg-icon src="/assets/sprites/Icon/Paging/2.svg" [svgStyle]="{'width': '80%'}"></svg-icon>
   </div>
+
+  <svg-icon src="/assets/sprites/Onboarding/onboarding2.svg" class="treeGroup2"></svg-icon>
+
   <div class="child-button">
     <app-button btnTitle="Weiter" (btnClicked)="startLogin($event)"></app-button>
   </div>
