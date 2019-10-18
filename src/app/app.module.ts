@@ -26,6 +26,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import {RewardCoinsComponent} from './components/base/reward-coins/reward-coins.component';
 import { MovieComponent } from './components/base/movie/movie.component';
+import { AvatarComponent } from './components/avatar/avatar.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,8 @@ import { MovieComponent } from './components/base/movie/movie.component';
     RecruitingComponent,
     PlaygroundComponent,
     RewardCoinsComponent,
+    FeedbackInformatiktageComponent,
+    AvatarComponent
     FeedbackInformatiktageComponent,
     MovieComponent
   ],

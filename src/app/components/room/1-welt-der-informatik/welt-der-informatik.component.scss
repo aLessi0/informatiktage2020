@@ -1,11 +1,115 @@
 
 :host {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    width: 100%;
-    position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  position: relative;
+
+  app-avatar {
+    top: 39%;
+    left: -3%;
+
+    &.pos-reto {
+      top: 51%;
+      left: 25%;
+    }
+
+    &.pos-marie {
+      top: 95%;
+      left: 80%;
+    }
+
+    $doorRetoDuration: 2.08s;
+    $retoMarieDuration: 1.92s;
+
+    &.walk-door-reto {
+      animation: walkingDoor-Reto $doorRetoDuration linear;
+    }
+
+    &.walk-door-marie {
+      animation: walkingDoor-Reto $doorRetoDuration linear, walkingReto-Marie $retoMarieDuration $doorRetoDuration linear;
+    }
+
+    &.walk-reto-marie {
+      animation: walkingReto-Marie $retoMarieDuration linear;
+    }
+
+    &.walk-reto-door {
+      animation: walkingDoor-Reto $doorRetoDuration reverse linear;
+    }
+
+    &.walk-marie-reto {
+      animation: walkingReto-Marie $retoMarieDuration reverse linear;
+    }
+
+    &.walk-marie-door {
+      animation: walkingReto-Marie $retoMarieDuration reverse linear, walkingDoor-Reto $doorRetoDuration $retoMarieDuration reverse linear;
+    }
+
+    @keyframes walkingDoor-Reto {
+      0% {
+        top: 39%;
+        left: -3%;
+      }
+      35.7% {
+        top: 37%;
+        left: 70%;
+      }
+      50% {
+        top: 40%;
+        left: 96%;
+      }
+      62.9% {
+        top: 51%;
+        left: 103%;
+      }
+      72.9% {
+        top: 56%;
+        left: 81%;
+      }
+      97.1% {
+        top: 49%;
+        left: 37%;
+      }
+      100% {
+        top: 51%;
+        left: 25%;
+      }
+    }
+
+    @keyframes walkingReto-Marie {
+      0% {
+        top: 51%;
+        left: 25%;
+      }
+      23.1% {
+        top: 64%;
+        left: 6%;
+      }
+      46.2% {
+        top: 82%;
+        left: 3%;
+      }
+      60% {
+        top: 92%;
+        left: 9%;
+      }
+      69.2% {
+        top: 98%;
+        left: 22%;
+      }
+      84.6% {
+        top: 99%;
+        left: 51%;
+      }
+      100% {
+        top: 95%;
+        left: 80%;
+      }
+    }
+  }
 
   .airplane1 {
     position: absolute;
@@ -142,7 +246,7 @@
     }
     70% {
       transform: rotate(40deg);
-         }
+    }
     80% {
       transform: rotate(40deg);
     }
@@ -158,58 +262,61 @@
     width: 80%;
     pointer-events: none;
     position: absolute;
-top: 85%;
-       left: 5%;
-              z-index: 10;
+    top: 85%;
+    left: 5%;
+    z-index: 10;
 
-animation: wrapperAirplane2Animation 60s linear infinite;
-}
+    animation: wrapperAirplane2Animation 60s linear infinite;
+  }
 
-@keyframes wrapperAirplane2Animation {
-  0% {
-    transform: rotate(0deg);
+  @keyframes wrapperAirplane2Animation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
   }
-  100% {
-    transform: rotate(-360deg);
-  }
-}
 
-@keyframes airplane2Animation {
-  0% {
-    transform: rotate(40deg);
+  @keyframes airplane2Animation {
+    0% {
+      transform: rotate(-40deg);
+    }
+    10% {
+      transform: rotate(-40deg);
+    }
+    15% {
+      transform: rotate(-40deg);
+    }
+    20% {
+      transform: rotate(-40deg);
+    }
+    30% {
+      transform: rotate(-40deg);
+    }
+    40% {
+      transform: rotate(-40deg);
+    }
+    45% {
+      transform: rotate(-40deg);
+    }
+    50% {
+      transform: rotate(-40deg);
+    }
+    60% {
+      transform: rotate(-40deg);
+    }
+    70% {
+      transform: rotate(-40deg);
+    }
+    80% {
+      transform: rotate(-40deg);
+    }
+    90% {
+      transform: rotate(-40deg);
+    }
+    100% {
+      transform: rotate(-40deg);
+    }
   }
-  10% {
-    transform: rotate(60deg);
-  }
-  20% {
-    transform: rotate(60deg);
-  }
-  30% {
-    transform: rotate(60deg);
-  }
-  40% {
-    transform: rotate(40deg);
-  }
-  45% {
-    transform: rotate(40deg);
-  }
-  50% {
-    transform: rotate(40deg);
-  }
-  60% {
-    transform: rotate(40deg);
-  }
-  70% {
-    transform: rotate(40deg);
-  }
-  80% {
-    transform: rotate(40deg);
-  }
-  90% {
-    transform: rotate(40deg);
-  }
-  100% {
-    transform: rotate(40deg);
-  }
-}
 }

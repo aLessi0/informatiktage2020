@@ -1,0 +1,34 @@
+:host {
+  position: absolute;
+  pointer-events: none;
+
+  .avatar {
+    display: flex;
+    transform: translate(-50%, -100%);
+    width: var(--width);
+    pointer-events: initial;
+
+    &.Julia {
+      --width: calc(6 * var(--vw));
+    }
+
+    &.John {
+      --width: calc(7 * var(--vw));
+    }
+
+    &.Sophie {
+      --width: calc(7 * var(--vw));
+    }
+
+    &.Rolf {
+      --width: calc(9 * var(--vw));
+    }
+
+    ::ng-deep {
+      svg {
+        width: var(--width);
+        pointer-events: none;
+      }
+    }
+  }
+}
