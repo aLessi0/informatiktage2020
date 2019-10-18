@@ -1,3 +1,14 @@
+.frage {
+  text-align: center;
+  font-size: larger;
+  font-weight: normal;
+  margin-bottom: 1rem;
+
+  .room-title {
+    font-weight: bold;
+  }
+}
+
 .feedback {
   display: flex;
   flex-direction: row;

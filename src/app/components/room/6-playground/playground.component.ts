@@ -3,6 +3,7 @@ import {AbstractRoom} from '../abstract-room';
 import {DataService} from '../../../service/data.service';
 import {ModalService} from '../../../service/modal.service';
 import {ProgressService} from '../../../service/progress.service';
+import {MovieComponent} from "../../base/movie/movie.component";
 
 @Component({
   selector: 'app-playground',
@@ -20,6 +21,11 @@ export class PlaygroundComponent extends AbstractRoom {
 
   public ngOnInit(): void {
     super.ngOnInit();
+  }
+
+  public entryAbaton(): void {
+    this.modalService.openDialog(MovieComponent, false, {
+    }).subscribe(() => {});
   }
 
 }

@@ -185,6 +185,115 @@
     left: 6%;
     bottom: 4%;
   }
+
+  app-avatar {
+    position: absolute;
+    top: 31%;
+    left: 1%;
+
+    &.pos-planet {
+      top: 42%;
+      left: 72%;
+    }
+
+    &.pos-katrin {
+      top: 95%;
+      left: 38%;
+    }
+
+    $doorPlanetDuration: 2s;
+    $planetKatrinDuration: 2s;
+
+    &.walk-door-planet {
+      animation: walkingDoor-Planet $doorPlanetDuration linear;
+    }
+
+    &.walk-door-katrin {
+      animation: walkingDoor-Planet $doorPlanetDuration linear, walkingPlanet-Katrin $planetKatrinDuration $doorPlanetDuration linear;
+    }
+
+    &.walk-planet-door {
+      animation: walkingDoor-Planet $doorPlanetDuration reverse linear;
+    }
+
+    &.walk-planet-katrin {
+      animation: walkingPlanet-Katrin $planetKatrinDuration linear;
+    }
+
+    &.walk-katrin-door {
+      animation: walkingPlanet-Katrin $planetKatrinDuration reverse linear, walkingDoor-Planet $doorPlanetDuration $planetKatrinDuration reverse linear;
+    }
+
+    &.walk-katrin-planet {
+      animation: walkingPlanet-Katrin $planetKatrinDuration reverse linear;
+    }
+
+    @keyframes walkingDoor-Planet {
+      0% {
+        top: 31%;
+        left: 1%;
+      }
+      8% {
+        top: 28%;
+        left: 14%;
+      }
+      25% {
+        top: 14%;
+        left: 16%;
+      }
+      33.33% {
+        top: 8%;
+        left: 23%;
+      }
+      41.67% {
+        top: 6%;
+        left: 37%;
+      }
+      50% {
+        top: 9%;
+        left: 53%;
+      }
+      58.33% {
+        top: 14%;
+        left: 63%;
+      }
+      91.67% {
+        top: 36%;
+        left: 63%;
+      }
+      100% {
+        top: 42%;
+        left: 72%;
+      }
+    }
+
+    @keyframes walkingPlanet-Katrin {
+      0% {
+        top: 42%;
+        left: 72%;
+      }
+      25% {
+        top: 58%;
+        left: 97%;
+      }
+      50% {
+        top: 76%;
+        left: 105%;
+      }
+      62.5% {
+        top: 85%;
+        left: 99%;
+      }
+      83.33% {
+        top: 93%;
+        left: 69%;
+      }
+      100% {
+        top: 95%;
+        left: 38%;
+      }
+    }
+  }
 }
 
 @keyframes planetAnimationStep1 {

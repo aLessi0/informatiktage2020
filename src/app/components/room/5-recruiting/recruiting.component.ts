@@ -141,7 +141,7 @@ export class RecruitingComponent extends AbstractRoom {
 
   public openITDFeedback(): void {
     if (!this.progress.feedbackCompleted) {
-      this.modalService.openDialog(FeedbackInformatiktageComponent, false).subscribe(() => {
+      this.modalService.openDialog(FeedbackInformatiktageComponent, true).subscribe(() => {
         if (this.progress.feedbackCompleted) {
           this.unlockPlayground();
         }
@@ -152,6 +152,8 @@ export class RecruitingComponent extends AbstractRoom {
   public unlockPlayground(): void {
     this.level.key = true;
     this.progressService.unlockLevel(this.level.level + 1);
-    this.openReward(true);
+    this.openReward(true, () => {
+      this.openInfo('room5wettbewerb', '/assets/sprites/Icon/Pokal.svg');
+    });
   }
 }
