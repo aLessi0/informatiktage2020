@@ -1,11 +1,11 @@
 
 :host {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    width: 100%;
-    position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  position: relative;
 
   .airplane1 {
     position: absolute;
@@ -142,7 +142,7 @@
     }
     70% {
       transform: rotate(40deg);
-         }
+    }
     80% {
       transform: rotate(40deg);
     }
@@ -158,58 +158,61 @@
     width: 80%;
     pointer-events: none;
     position: absolute;
-top: 85%;
-       left: 5%;
-              z-index: 10;
+    top: 85%;
+    left: 5%;
+    z-index: 10;
 
-animation: wrapperAirplane2Animation 60s linear infinite;
-}
+    animation: wrapperAirplane2Animation 60s linear infinite;
+  }
 
-@keyframes wrapperAirplane2Animation {
-  0% {
-    transform: rotate(0deg);
+  @keyframes wrapperAirplane2Animation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
   }
-  100% {
-    transform: rotate(-360deg);
-  }
-}
 
-@keyframes airplane2Animation {
-  0% {
-    transform: rotate(40deg);
+  @keyframes airplane2Animation {
+    0% {
+      transform: rotate(-40deg);
+    }
+    10% {
+      transform: rotate(-40deg);
+    }
+    15% {
+      transform: rotate(-40deg);
+    }
+    20% {
+      transform: rotate(-40deg);
+    }
+    30% {
+      transform: rotate(-40deg);
+    }
+    40% {
+      transform: rotate(-40deg);
+    }
+    45% {
+      transform: rotate(-40deg);
+    }
+    50% {
+      transform: rotate(-40deg);
+    }
+    60% {
+      transform: rotate(-40deg);
+    }
+    70% {
+      transform: rotate(-40deg);
+    }
+    80% {
+      transform: rotate(-40deg);
+    }
+    90% {
+      transform: rotate(-40deg);
+    }
+    100% {
+      transform: rotate(-40deg);
+    }
   }
-  10% {
-    transform: rotate(60deg);
-  }
-  20% {
-    transform: rotate(60deg);
-  }
-  30% {
-    transform: rotate(60deg);
-  }
-  40% {
-    transform: rotate(40deg);
-  }
-  45% {
-    transform: rotate(40deg);
-  }
-  50% {
-    transform: rotate(40deg);
-  }
-  60% {
-    transform: rotate(40deg);
-  }
-  70% {
-    transform: rotate(40deg);
-  }
-  80% {
-    transform: rotate(40deg);
-  }
-  90% {
-    transform: rotate(40deg);
-  }
-  100% {
-    transform: rotate(40deg);
-  }
-}
 }
