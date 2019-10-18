@@ -22,12 +22,36 @@
     left: 27%;
   }
 
-  .cactus3 {
+  .cactus-blue {
     pointer-events: none;
     position: absolute;
     width: 40%;
     top: 38%;
     left: 55%
+  }
+
+  .fatamorgana-left {
+    position: absolute;
+    width: 13%;
+    top: 49%;
+    left: 57%;
+    animation: moveFatamorgana-left 5s infinite;
+  }
+
+  .fatamorgana-right {
+    position: absolute;
+    width: 13%;
+    top: 48%;
+    left: 82%;
+    animation: moveFatamorgana-right 3.5s infinite;
+  }
+
+  .fatamorgana-bottom {
+    position: absolute;
+    width: 11%;
+    top: 50%;
+    left: 82%;
+    animation: moveFatamorgana-bottom 4.5s infinite;
   }
 
   .kirche {
@@ -196,6 +220,42 @@
       width: 12%;
       top: 77%;
       left: 14%;
+    }
+  }
+
+  @keyframes moveFatamorgana-left {
+    0% {
+      left: 55%;
+    }
+    50% {
+      left: 59%;
+    }
+    100% {
+      left: 55%;
+    }
+  }
+
+  @keyframes moveFatamorgana-right {
+    0% {
+      left: 78%;
+    }
+    50% {
+      left: 80%;
+    }
+    100% {
+      left: 78%;
+    }
+  }
+
+  @keyframes moveFatamorgana-bottom {
+    0% {
+      left: 79%;
+    }
+    50% {
+      left: 82%;
+    }
+    100% {
+      left: 79%;
     }
   }
 }

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 37 23" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 58 (84663) - https://sketch.com -->
+    <title>Fatamorgana-left</title>
+    <desc>Created with Sketch.</desc>
+    <g id="App" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Room-Deploy" transform="translate(-218.000000, -437.000000)" fill="#000000" fill-rule="nonzero">
+            <g id="Cactus3" transform="translate(218.000000, 368.912840)">
+                <g transform="translate(0.000000, 3.087160)" id="Fatamorgana-left">
+                    <g transform="translate(0.000000, 65.000000)">
+                        <path d="M19.6624204,3 C20.4649682,3 21,2.4 21,1.5 C21,0.6 20.4649682,0 19.6624204,0 L1.33757962,0 C0.535031847,0 0,0.6 0,1.5 C0,2.4 0.535031847,3 1.33757962,3 L19.6624204,3 Z" id="Path"></path>
+                        <path d="M34.6206897,3 C35.4482759,3 36,2.4 36,1.5 C36,0.6 35.4482759,0 34.6206897,0 L25.3793103,0 C24.5517241,0 24,0.6 24,1.5 C24,2.4 24.5517241,3 25.3793103,3 L34.6206897,3 Z" id="Path"></path>
+                        <path d="M13,21.5 C13,22.4 13.5517241,23 14.3793103,23 L23.6206897,23 C24.4482759,23 25,22.4 25,21.5 C25,20.6 24.4482759,20 23.6206897,20 L14.3793103,20 C13.6896552,20 13,20.6 13,21.5 Z" id="Path"></path>
+                        <path d="M16,15.5 C16,16.4 16.5350318,17 17.3375796,17 L35.6624204,17 C36.4649682,17 37,16.4 37,15.5 C37,14.6 36.4649682,14 35.6624204,14 L17.3375796,14 C16.5350318,14 16,14.75 16,15.5 Z" id="Path"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
