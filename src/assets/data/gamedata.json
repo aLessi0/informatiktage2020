@@ -178,12 +178,12 @@
     },
     {
       "number": 4,
-      "frage": "Was hat dir besonders gefallen? (kein Pflichtfeld)",
+      "frage": "Was hat dir besonders gefallen? (optional)",
       "isMandatory": false
     },
     {
       "number": 5,
-      "frage": "Was hättest du dir anders/zusätzlich gewünscht? (kein Pflichtfeld)",
+      "frage": "Was hättest du dir anders/zusätzlich gewünscht? (optional)",
       "isMandatory": false
     }
   ]

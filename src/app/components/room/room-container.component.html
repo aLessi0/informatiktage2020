@@ -11,10 +11,10 @@
     <div class="room-credits" *ngIf="level">
       <svg-icon src="/assets/sprites/Room/Credits/coin-border.svg"></svg-icon>
       <div class="credits">
-        <svg-icon class="key-credit" *ngIf="!level.key"
-                  src="/assets/sprites/Room/Credits/Key-inactive.svg"></svg-icon>
-        <svg-icon class="key-credit" *ngIf="level.key"
-                  src="/assets/sprites/Room/Credits/Key-active.svg"></svg-icon>
+        <div class="key-credit" *ngIf="level.level < 6">
+          <svg-icon *ngIf="!level.key" src="/assets/sprites/Room/Credits/Key-inactive.svg"></svg-icon>
+          <svg-icon *ngIf="level.key" src="/assets/sprites/Room/Credits/Key-active.svg"></svg-icon>
+        </div>
         <div class="coin-credit">
           <svg-icon *ngIf="level.coins.length > 0" src="/assets/sprites/Room/Credits/Coin-active.svg"></svg-icon>
           <svg-icon *ngIf="level.coins.length === 0" src="/assets/sprites/Room/Credits/Coin-inactive.svg"></svg-icon>
