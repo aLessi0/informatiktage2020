@@ -172,11 +172,13 @@
   //bottom to top
   @keyframes crazyfish0Animation {
     0% {
+      transform: scaleX(-1);
       visibility: visible;
       top: 100%;
       left: 86%;
     }
     100% {
+      transform: scaleX(-1);
       top: 0;
       left: 53%;
     }
@@ -189,15 +191,21 @@
   //right to right
   @keyframes crazyfish1Animation {
     0% {
+      transform: scaleX(-1);
       visibility: visible;
       left: 90%;
       top: 62%;
     }
+    49% {
+      transform: scaleX(-1);
+    }
     50% {
+      transform: scaleX(1);
       top: 10%;
       left: 20%;
     }
     100% {
+      transform: scaleX(1);
       top: 10%;
       left: 90%;
     }
@@ -210,11 +218,13 @@
   //top to bottom
   @keyframes crazyfish2Animation {
     0% {
+      transform: scaleX(-1);
       visibility: visible;
       top: 0;
       left: 53%;
     }
     100% {
+      transform: scaleX(-1);
       top: 100%;
       left: 40%;
     }
@@ -244,11 +254,13 @@
   //right to left
   @keyframes crazyfish4Animation {
     0% {
+      transform: scaleX(-1);
       visibility: visible;
       top: 5%;
       left: 96%;
     }
     100% {
+      transform: scaleX(-1);
       top: 53%;
       left: -12%;
     }
