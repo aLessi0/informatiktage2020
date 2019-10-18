@@ -50,6 +50,11 @@
           "key": "room2coin2",
           "text": "Super du hast mich gefunden! Als Belohnung bekommst du eine Münze!",
           "givesCoin": true
+        },
+        {
+          "key": "room2fire",
+          "text": "Brennst du auch für die Informatik?",
+          "givesCoin": false
         }
       ]
     },
