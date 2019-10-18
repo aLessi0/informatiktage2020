@@ -109,6 +109,20 @@
   }
 
   .room {
+
+    &.badge {
+
+      &::after {
+        content: '';
+        background-image: url("../../../assets/sprites/Icon/Map/medal.svg");
+        background-repeat: no-repeat;
+        width: 1.5rem;
+        height: 2rem;
+        position: absolute;
+        left: 0px;
+      }
+    }
+
     &.unlockAnimation {
       opacity: 0;
       animation: showing 0.5s ease-in-out, puff-out-center 1s 0.5s cubic-bezier(0.165, 0.840, 0.440, 1.000), puff-in-center 1s 1.5s cubic-bezier(0.470, 0.000, 0.745, 0.715);

@@ -111,6 +111,16 @@ export class MapComponent implements AfterViewInit {
     return room && room.roomClass;
   }
 
+  public getBadgeClass(roomNumber: number) {
+    const room = this.getRoomByNumber(roomNumber);
+    const roomProgress = this.progress.playedLevels.get(room.level);
+    if (roomProgress && room) {
+      if (roomProgress.coins.length === room.numberOfCoinsInRoom && roomProgress.key) {
+        return 'badge';
+      }
+    }
+    return '';
+  }
 
   private getRoomByNumber(roomNumber: number): RoomModel {
     return this.game.rooms[roomNumber];

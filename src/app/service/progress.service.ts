@@ -43,6 +43,7 @@ export class ProgressService {
     const playedLevel = new PlayedLevelModel();
     playedLevel.level = level;
     playedLevel.coins = [];
+    playedLevel.roomFeedback = 0;
     playedLevel.hasAlreadyBeenSeen = false;
     progress.unlockedLevel = level;
     progress.playedLevels.set(level, playedLevel);
@@ -82,12 +83,6 @@ export class ProgressService {
 
     if (shallowCopy && shallowCopy.playedLevels) {
       shallowCopy.playedLevels = Array.from(shallowCopy.playedLevels.entries());
-
-      shallowCopy.playedLevels.forEach((level: PlayedLevelModel, index) => {
-        if (level[1].answers) {
-          shallowCopy.playedLevels[index][1].answers = Array.from(level[1].answers.entries());
-        }
-      });
       shallowCopy.playedLevels = Array.from(shallowCopy.playedLevels);
       shallowCopy.feedbackAnswers = Array.from(shallowCopy.feedbackAnswers);
     }
@@ -111,6 +106,7 @@ export class ProgressService {
     const level1: PlayedLevelModel = new PlayedLevelModel();
     level1.level = 1;
     level1.coins = [];
+    level1.roomFeedback = 0;
     level1.hasAlreadyBeenSeen = true;
     progress.playedLevels.set(level1.level, level1);
 
