@@ -152,6 +152,8 @@ export class RecruitingComponent extends AbstractRoom {
   public unlockPlayground(): void {
     this.level.key = true;
     this.progressService.unlockLevel(this.level.level + 1);
-    this.openReward(true);
+    this.openReward(true, () => {
+      this.openInfo('room5wettbewerb', '/assets/sprites/Icon/Pokal.svg');
+    });
   }
 }
