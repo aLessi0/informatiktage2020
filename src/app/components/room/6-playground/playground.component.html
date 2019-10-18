@@ -1,13 +1,13 @@
 <!--UMGEBUNG-->
 <svg-icon src="\assets\sprites\Room\6-playground\Bank-und-Baume.svg" class="bank" (click)="entryAbaton()"></svg-icon>
-<svg-icon src="\assets\sprites\Room\6-playground\Lake.svg" class="lake"></svg-icon>
+<svg-icon src="\assets\sprites\Room\6-playground\Lake.svg" class="lake" (click)="fishing()"></svg-icon>
 <svg-icon src="\assets\sprites\Room\6-playground\Ringe.svg" class="ringe"></svg-icon>
 <svg-icon src="\assets\sprites\Room\6-playground\Schaukel.svg" class="schaukel"></svg-icon>
 <svg-icon src="\assets\sprites\Room\6-playground\Tannenwald.svg" class="tannenwald"></svg-icon>
-<svg-icon src="\assets\sprites\Room\6-playground\Tree.svg" class="tree1"></svg-icon>
-<svg-icon src="\assets\sprites\Room\6-playground\Tree.svg" class="tree2"></svg-icon>
-<svg-icon src="\assets\sprites\Room\6-playground\Tree.svg" class="tree3"></svg-icon>
-<svg-icon src="\assets\sprites\Room\6-playground\Tree.svg" class="tree4"></svg-icon>
+<svg-icon #tree1 src="\assets\sprites\Room\6-playground\Tree.svg" class="tree1" (click)="treeClick(1)"></svg-icon>
+<svg-icon #tree2 src="\assets\sprites\Room\6-playground\Tree.svg" class="tree2" (click)="treeClick(2)"></svg-icon>
+<svg-icon #tree3 src="\assets\sprites\Room\6-playground\Tree.svg" class="tree3" (click)="treeClick(3)"></svg-icon>
+<svg-icon #tree4 src="\assets\sprites\Room\6-playground\Tree.svg" class="tree4" (click)="treeClick(4)"></svg-icon>
 <svg-icon src="\assets\sprites\Room\6-playground\Lilly.svg" class="lilly" (click)="lillyLogic()"></svg-icon>
 <svg-icon src="\assets\sprites\Room\6-playground\Heidi.svg"
           class="heidi"

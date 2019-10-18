@@ -165,7 +165,7 @@
       "infos": [
         {
           "key": "room6ScavengerHuntLeo1",
-          "text": "Hallo lieber Besucher, Kannst du mir helfen? Ich habe etwas auf dem SPielplatz verloren...",
+          "text": "Yo Bro! Ich möchte gerne Angeln, kannst du mir eine Angelrute besorgen?",
           "givesCoin": false
         },
         {
@@ -175,7 +175,7 @@
         },
         {
           "key": "room6ScavengerHuntLeo3",
-          "text": "Vielen Ddank, du hast meine Angel gefunden. Lass uns doch zusammen angeln.",
+          "text": "Vielen Dank, du hast meine Angelrute gefunden. Lass uns doch zusammen fischen.",
           "givesCoin": false
         },
         {
@@ -185,23 +185,28 @@
         },
         {
           "key": "room6ScavengerHuntLilly2",
-          "text": "Du suchst etwas? Schau doch mal im Wald und komm dann zurück.",
+          "text": "Ich habe mein Spielzeug im Wald verloren. Kannst du mir helfen?",
           "givesCoin": false
         },
         {
           "key": "room6ScavengerHuntLilly3",
-          "text": "Du hast den falschen Weg genommen.",
+          "text": "Du hast den Gegenstand nicht gefunden.",
           "givesCoin": false
         },
         {
           "key": "room6ScavengerHuntLilly4",
-          "text": "Super du hast die Angel gefunden. Bring sie doch Leo.",
+          "text": "Super du hast mein Spielzeug gefunden. Hier als Geschenk eine Angelrute.",
           "givesCoin": false
         },
         {
           "key": "room6ScavengerHuntHeidi1",
           "text": "Siehst du nicht ich bin beschäftigt. Komm später wieder vorbei.",
           "givesCoin": false
+        },
+        {
+          "key": "room6ScavengerHuntCoin",
+          "text": "Ooh ein Münz-Fisch hat angebissen. Viel Spass damit.",
+          "givesCoin": true
         }
       ]
     }
