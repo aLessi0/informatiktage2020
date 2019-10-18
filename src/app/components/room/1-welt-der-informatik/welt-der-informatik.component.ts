@@ -1,4 +1,4 @@
-import {Component, Inject} from '@angular/core';
+import {Component, Inject, Renderer2} from '@angular/core';
 import {DataService} from '../../../service/data.service';
 import {ModalService} from '../../../service/modal.service';
 import {AbstractRoom} from '../abstract-room';
@@ -13,15 +13,26 @@ export class WeltDerInformatikComponent extends AbstractRoom {
 
   constructor(@Inject(DataService) protected readonly dataService: DataService,
               @Inject(ProgressService) protected readonly progressService: ProgressService,
-              @Inject(ModalService) protected readonly modalService: ModalService) {
-    super(dataService, progressService, modalService);
+              @Inject(ModalService) protected readonly modalService: ModalService,
+              @Inject(Renderer2) protected readonly renderer: Renderer2) {
+    super(dataService, progressService, modalService, renderer);
   }
 
-  public onRetoTab()  {
-    if (this.level.key) {
-      this.openInfo('room1coin1', '/assets/sprites/Room/1-welt-der-informatik/Reto.svg');
-    } else {
-      this.openInfo('room1info1', '/assets/sprites/Room/1-welt-der-informatik/Reto.svg');
-    }
+  public ngOnInit(): void {
+    super.ngOnInit();
+  }
+
+  public onRetoTab() {
+    this.walkTo('reto', () => {
+      if (this.level.key) {
+        this.openInfo('room1coin1', '/assets/sprites/Room/1-welt-der-informatik/Reto.svg');
+      } else {
+        this.openInfo('room1info1', '/assets/sprites/Room/1-welt-der-informatik/Reto.svg');
+      }
+    });
+  }
+
+  public onMarieTab() {
+    this.walkTo('marie', () => this.openQuestion('room1key', '/assets/sprites/Room/1-welt-der-informatik/Marie.svg'))
   }
 }

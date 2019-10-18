@@ -1,14 +1,12 @@
 <ng-container *ngIf="state == 0">
   <svg-icon src="../../assets/sprites/Logo/Informatiktage2020.svg" class="logo"></svg-icon>
   <svg-icon src="../../assets/sprites/Onboarding/onboarding1.svg" class="treeGroup1"></svg-icon>
-  <div class="content">
-    <div class="title ">
-      <h2>Herzlich Willkommen!</h2>
-    </div>
-    <div class="child-subtext">
-      <p> Wir haben für dich innerhalb einer Woche diese App entwickelt.<br><br>
-        Durchlaufe die verschiedenen Räume um die Welt der Informatik zu erkunden.</p>
-    </div>
+  <div class="title ">
+    <h2>Herzlich Willkommen!</h2>
+  </div>
+  <div class="subtext1">
+    <p> Wir haben für dich innerhalb einer Woche diese App entwickelt.<br><br>
+      Durchlaufe die verschiedenen Räume um die Welt der Informatik zu erkunden.</p>
   </div>
   <div class="child-swipe">
     <svg-icon src="../../assets/sprites/Icon/Paging/1.svg" [svgStyle]="{'width': '80%'}"></svg-icon>
@@ -20,21 +18,17 @@
 
 <ng-container *ngIf="state == 1">
   <svg-icon src="../../assets/sprites/Onboarding/onboarding2.svg" class="treeGroup2"></svg-icon>
-  <div class="content2">
-    <div class="title2">
-      <h1>Erklärung</h1>
-    </div>
-    <div class="child-subtext">
-      <svg-icon src="../../assets/sprites/Onboarding/onboarding_key.svg" class="key"></svg-icon>
-      <p>Hole dir alle Schlüssel, um die Räume auf der Karte freizuschalten. Im letzen Raum wartet ein toller
-        Wettbewerb
-        auf dich!</p>
-    </div>
-    <div class="child-subtext">
-      <svg-icon src="../../assets/sprites/Onboarding/onboarding_coin.svg" class="coin"></svg-icon>
-      <p>Zusätzlich kannst du Münzen sammeln, indem du extra Aufgaben löst. Diese kannst du am Schluss an unserem
-        Sofortpreise-Stand einlösen.</p>
-    </div>
+  <svg-icon src="../../assets/sprites/Onboarding/onboarding_key.svg" class="key"></svg-icon>
+  <svg-icon src="../../assets/sprites/Onboarding/onboarding_coin.svg" class="coin"></svg-icon>
+  <div class="title2">
+    <h1>Erklärung</h1>
+  </div>
+  <div class="subtext2">
+    <p>Hole dir alle Schlüssel, um die Räume auf der Karte freizuschalten. Im letzen Raum wartet ein toller
+      Wettbewerb
+      auf dich!</p>
+    <p>Zusätzlich kannst du Münzen sammeln, indem du extra Aufgaben löst. Diese kannst du am Schluss an unserem
+      Sofortpreise-Stand einlösen.</p>
   </div>
 
   <div class="child-swipe">

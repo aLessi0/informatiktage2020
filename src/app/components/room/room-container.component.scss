@@ -1,6 +1,27 @@
 :host {
   z-index: 0;
 
+  ::ng-deep {
+    app-avatar {
+      &.initialAnimation {
+        pointer-events: none;
+        opacity: 0;
+        animation: enterRoomAnimation 2s 3.5s ease-in-out;
+
+        @keyframes enterRoomAnimation {
+          from {
+            opacity: 0;
+            transform: translateX(-100%);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0%);
+          }
+        }
+      }
+    }
+  }
+
   .room {
     position: absolute;
     height: 100%;
