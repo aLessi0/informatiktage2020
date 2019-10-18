@@ -2,18 +2,13 @@
   display: flex;
 
   .feedback-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    .left {
-      margin-right: 1rem;
-    }
 
     .content {
 
       input {
-        margin-top: 1rem;
+        margin: 1rem 0;
+        width: calc(100% - 1rem);
+        height: 5rem;
       }
 
       .feedback {
@@ -38,24 +33,6 @@
 
     padding-bottom {
       padding-bottom: 1rem;
-    }
-  }
-
-  .wettbewerb {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-
-    h1 {
-      align-self: center;
-    }
-
-    input {
-      margin-bottom: 1rem;
-    }
-
-    .birthday {
-      width: 93%;
     }
   }
 }

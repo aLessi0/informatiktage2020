@@ -33,7 +33,7 @@
 <svg-icon
   class="info-woman"
   src="/assets/sprites/Room/1-welt-der-informatik/Marie.svg"
-  (click)="openQuestion('room1key', '/assets/sprites/Room/1-welt-der-informatik/Marie.svg')">
+  (click)="onMarieTab()">
 </svg-icon>
 <div class="wrapperAirplane1">
   <svg-icon
@@ -47,3 +47,5 @@
     src="/assets/sprites/Room/1-welt-der-informatik/Airplane2.svg">
   </svg-icon>
 </div>
+
+<app-avatar [avatarType]="progress.avatarType"></app-avatar>

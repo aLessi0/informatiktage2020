@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Inject, Input, OnInit, Output} from '@angular/core';
+import {Component, ContentChild, EventEmitter, Inject, Input, OnInit, Output} from '@angular/core';
 import {RoomModel} from '../../model/game/room.model';
 import {FeedbackComponent} from '../modal/feedback/feedback.component';
 import {ModalService} from '../../service/modal.service';
@@ -6,6 +6,7 @@ import {ProgressModel} from '../../model/user/progress.model';
 import {PlayedLevelModel} from '../../model/user/played-level.model';
 import {ProgressService} from '../../service/progress.service';
 import {DomSanitizer, SafeResourceUrl} from '@angular/platform-browser';
+import {AbstractRoom} from "./abstract-room";
 
 @Component({
   selector: 'app-room-container',
@@ -15,6 +16,8 @@ import {DomSanitizer, SafeResourceUrl} from '@angular/platform-browser';
 export class RoomContainerComponent implements OnInit {
   @Input() public room: RoomModel;
   @Output() private closeRoom: EventEmitter<void> = new EventEmitter();
+
+  @ContentChild('room') private abstractRoom: AbstractRoom;
 
   private mandatoryQuestionWasAnsweredOnEntry: boolean;
   public progress: ProgressModel;
@@ -45,18 +48,21 @@ export class RoomContainerComponent implements OnInit {
   }
 
   public onStreetMapTap(): void {
-    if (!this.level.roomFeedback && this.level.level < 5 && this.progressService.mandatoryQuestionForRoomIsAnswered(this.room)) {
-      this.modalService.openDialog(FeedbackComponent, false).subscribe(() => {
-        if (this.level.roomFeedback) {
-          this.closeRoom.emit();
-        }
-      });
-    } else {
-      this.closeRoom.emit();
-    }
+
+    this.abstractRoom.walkTo('door', () => {
+      if (!this.level.roomFeedback && this.level.level < 5 && this.progressService.mandatoryQuestionForRoomIsAnswered(this.room)) {
+        this.modalService.openDialog(FeedbackComponent, false).subscribe(() => {
+          if (this.level.roomFeedback) {
+            this.closeRoom.emit();
+          }
+        });
+      } else {
+        this.closeRoom.emit();
+      }
+    });
   }
 
   private getStreetUrl(): SafeResourceUrl {
-      return this.sanitizer.bypassSecurityTrustResourceUrl('/assets/sprites/Icon/Room/Street-Room-' + this.room.level + '.svg');
+    return this.sanitizer.bypassSecurityTrustResourceUrl('/assets/sprites/Icon/Room/Street-Room-' + this.room.level + '.svg');
   }
 }

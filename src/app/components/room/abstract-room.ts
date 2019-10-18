@@ -1,4 +1,4 @@
-import {Inject} from '@angular/core';
+import {ElementRef, Inject, OnInit, Renderer2, ViewChild} from '@angular/core';
 import {RoomModel} from '../../model/game/room.model';
 import {QuestionModel} from '../../model/game/question.model';
 import {QuizfrageComponent, QuizfrageData} from '../base/quizfrage/quizfrage.component';
@@ -9,21 +9,70 @@ import {InfoModel} from '../../model/game/info.model';
 import {ProgressModel} from '../../model/user/progress.model';
 import {ProgressService} from '../../service/progress.service';
 import {PlayedLevelModel} from '../../model/user/played-level.model';
+import {AvatarComponent} from '../avatar/avatar.component';
 
-export class AbstractRoom {
+export class AbstractRoom implements OnInit {
   public room: RoomModel;
   public progress: ProgressModel;
   public level: PlayedLevelModel;
 
+  @ViewChild(AvatarComponent, {read: ElementRef}) private avatarRef: ElementRef;
+
+  private currentAvatarPosition = 'door';
+
   constructor(@Inject(DataService) protected readonly dataService: DataService,
               @Inject(ProgressService) protected readonly progressService: ProgressService,
-              @Inject(ModalService) protected readonly modalService: ModalService) {
+              @Inject(ModalService) protected readonly modalService: ModalService,
+              @Inject(Renderer2) protected readonly renderer: Renderer2) {
 
     this.dataService.activeRoom$.subscribe(room => this.room = room);
     this.progressService.progress$.subscribe(progress => {
       this.progress = progress;
       this.level = this.progress.playedLevels.get(this.room.level);
     });
+  }
+
+  public ngOnInit(): void {
+    this.renderer.addClass(this.avatarRef.nativeElement, 'initialAnimation');
+    this.avatarRef.nativeElement.addEventListener('animationend', () => {
+      this.renderer.removeClass(this.avatarRef.nativeElement, 'initialAnimation');
+    });
+  }
+
+  public walkTo(pos: string, callback: () => void): void {
+    if (pos === this.currentAvatarPosition) {
+      callback && callback();
+      return;
+    }
+    const oldClassName: string = 'pos-' + this.currentAvatarPosition;
+    this.renderer.removeClass(this.avatarRef.nativeElement, oldClassName);
+
+    const className: string = 'pos-' + pos;
+    const animationClass: string = 'walk-' + this.currentAvatarPosition + '-' + pos;
+
+    this.currentAvatarPosition = pos;
+
+    if (pos !== 'door') {
+      this.renderer.addClass(this.avatarRef.nativeElement, className);
+    }
+    this.renderer.addClass(this.avatarRef.nativeElement, animationClass);
+    let animationRunning: boolean = false;
+    const animationEndFunction = () => {
+      animationRunning = false;
+      setTimeout(() => {
+        if (!animationRunning) {
+          this.avatarRef.nativeElement.removeEventListener('animationend', animationEndFunction);
+          this.avatarRef.nativeElement.removeEventListener('animationstart', animationStartFunction);
+          this.renderer.removeClass(this.avatarRef.nativeElement, animationClass);
+          callback && callback();
+        }
+      }, 50);
+    };
+    const animationStartFunction = () => {
+      animationRunning = true;
+    };
+    this.avatarRef.nativeElement.addEventListener('animationend', animationEndFunction);
+    this.avatarRef.nativeElement.addEventListener('animationstart', animationStartFunction);
   }
 
   public openInfo(key: string, icon: string, callback?): void {

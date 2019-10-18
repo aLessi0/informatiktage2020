@@ -15,23 +15,33 @@ export class RecruitingComponent extends AbstractRoom {
   @ViewChild('zora', {read: ElementRef}) private zora: ElementRef;
   @ViewChild('submarine', {read: ElementRef}) private submarine: ElementRef;
   @ViewChild('crazyfish', {read: ElementRef}) private crazyfish: ElementRef;
+  @ViewChild('granit', {read: ElementRef}) private granit: ElementRef;
 
   starClickCounter = 0;
   clickToGetZora = 10;
   submarineClickCounter = 0;
+  submarineClickable = true;
 
   crazyfishClass = 0;
+  lastCrazyfishClass = 0;
 
   waitTimer = 0;
 
   constructor(@Inject(DataService) protected readonly dataService: DataService,
               @Inject(ProgressService) protected readonly progressService: ProgressService,
               @Inject(ModalService) protected readonly modalService: ModalService,
-              @Inject(Renderer2) private readonly renderer: Renderer2) {
-    super(dataService, progressService, modalService);
+              @Inject(Renderer2) protected readonly renderer: Renderer2) {
+    super(dataService, progressService, modalService, renderer);
+  }
+
+  public ngOnInit(): void {
+    super.ngOnInit();
   }
 
   public crazyfishClick() {
+    console.log('click');
+    this.removeAllClassesFromCrazyfish();
+    this.renderer.addClass(this.crazyfish.nativeElement, 'crazyfishStopAnimation');
     this.openInfo('room5coin2', '/assets/sprites/Room/5-recruiting/Crazy-Fish.svg');
   }
 
@@ -49,41 +59,56 @@ export class RecruitingComponent extends AbstractRoom {
   }
 
   public async submarineClick() {
-    if (this.submarineClickCounter < 3) {
-      this.submarineClickCounter++;
-    }
+    if (this.submarineClickable) {
+      if (this.submarineClickCounter < 3) {
+        this.submarineClickCounter++;
+      }
 
+      switch (this.submarineClickCounter) {
+        case 1:
+          this.renderer.addClass(this.submarine.nativeElement, 'mode1');
+          break;
+        case 2:
+          this.renderer.addClass(this.submarine.nativeElement, 'mode2');
+          this.renderer.removeClass(this.submarine.nativeElement, 'mode1');
+          break;
+        case 3:
+          this.renderer.addClass(this.submarine.nativeElement, 'mode3');
+          this.renderer.removeClass(this.submarine.nativeElement, 'mode2');
+          break;
+      }
 
-    switch (this.submarineClickCounter) {
-      case 1:
-        this.renderer.addClass(this.submarine.nativeElement, 'mode1');
-        break;
-      case 2:
-        this.renderer.addClass(this.submarine.nativeElement, 'mode2');
-        this.renderer.removeClass(this.submarine.nativeElement, 'mode1');
-        break;
-      case 3:
-        this.renderer.addClass(this.submarine.nativeElement, 'mode3');
-        this.renderer.removeClass(this.submarine.nativeElement, 'mode2');
-        break;
-    }
+      if (this.submarineClickCounter === 3) {
 
-    if (this.submarineClickCounter === 3) {
-      this.submarineClickCounter = 0;
+        this.renderer.addClass(this.granit.nativeElement, 'granitVisible');
 
-      this.waitTimer = this.getRandomInt(3000);
-      await this.delay(this.waitTimer);
-      this.waitTimer = 0;
+        this.submarineClickable = false;
+        this.submarineClickCounter = 0;
 
-      this.startCrazyFish();
-      this.renderer.removeClass(this.submarine.nativeElement, 'mode3');
+        this.waitTimer = this.getRandomInt(3000);
+        await this.delay(this.waitTimer);
+        this.waitTimer = 0;
+
+        this.startCrazyFish();
+        this.renderer.removeClass(this.submarine.nativeElement, 'mode3');
+        await this.delay(2000);
+
+        this.renderer.removeClass(this.granit.nativeElement, 'granitVisible');
+        this.submarineClickable = true;
+      }
     }
   }
 
   public startCrazyFish() {
     this.removeAllClassesFromCrazyfish();
 
-    this.crazyfishClass = this.getRandomInt(4);
+    this.crazyfishClass = this.getRandomInt(5);
+
+    while (this.crazyfishClass === this.lastCrazyfishClass) {
+      this.crazyfishClass = this.getRandomInt(5);
+    }
+
+    this.lastCrazyfishClass = this.crazyfishClass;
     this.renderer.addClass(this.crazyfish.nativeElement, 'crazyfish' + this.crazyfishClass);
   }
 
@@ -96,7 +121,7 @@ export class RecruitingComponent extends AbstractRoom {
   }
 
   private removeAllClassesFromCrazyfish() {
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < 5; i++) {
       this.renderer.removeClass(this.crazyfish.nativeElement, 'crazyfish' + i);
     }
   }
@@ -104,19 +129,18 @@ export class RecruitingComponent extends AbstractRoom {
   /*
    * Request Feedback and unlock Playground if feedback is completed.
    */
-
   public francoClick(): void {
-    if(!this.level.key) {
-        this.openInfo('room5finishText', '/assets/sprites/Room/5-recruiting/Franco.svg', () => {
-          this.openITDFeedback();
-        });
-    }  else {
+    if (!this.level.key) {
+      this.openInfo('room5finishText', '/assets/sprites/Room/5-recruiting/Franco.svg', () => {
+        this.openITDFeedback();
+      });
+    } else {
       this.openInfo('room5feedbackDanke', '/assets/sprites/Room/5-recruiting/Franco.svg');
     }
   }
 
   public openITDFeedback(): void {
-    if(!this.progress.feedbackCompleted) {
+    if (!this.progress.feedbackCompleted) {
       this.modalService.openDialog(FeedbackInformatiktageComponent, true).subscribe(() => {
         if (this.progress.feedbackCompleted) {
           this.unlockPlayground();

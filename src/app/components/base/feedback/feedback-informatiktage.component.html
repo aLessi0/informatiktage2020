@@ -1,10 +1,5 @@
 <div *ngIf="feedBackState && !progress.canTakePartInContest" class="feedback-container">
 
-  <div class="left">
-    <app-button btnTitle="<" (btnClicked)="(feedBackState = feedBackState.back())"
-                *ngIf="feedBackState.canGoBack()"></app-button>
-  </div>
-
   <div class="content">
     <span>{{feedBackState.feedbackModel.frage}}</span>
 
@@ -31,26 +26,13 @@
                 [hidden]="!feedBackState.canProceed()"></app-button>
   </div>
 
-</div>
-
 <div *ngIf="!feedBackState && !progress.canTakePartInContest" class="feedback-senden">
   <app-button (btnClicked)="toLast()" btnTitle="Feeback bearbeiten" [style.paddingBottom.rem]="1"></app-button>
   <app-button (btnClicked)="sendFeedback()" btnTitle="Feedback senden"></app-button>
 </div>
 
-<!--  WETTBEWERB removed
-<div class="wettbewerb" *ngIf="progress.canTakePartInContest">
-  <h1>Wettbewerb</h1>
-  <div *ngIf="!this.progress.takesPartInContest" class="wettbewerb-formular">
-    <input type="text" placeholder="Vorname" [(ngModel)]="contest.firstName" class="input-field"/>
-    <input type="text" placeholder="Nachname" [(ngModel)]="contest.lastName" class="input-field"/>
-    <input type="text" placeholder="Email" [(ngModel)]="contest.eMail" class="input-field"/>
-    <input type="number" placeholder="Geburtsjahr" [(ngModel)]="contest.yearOfBirth" class="input-field birthday"/>
-    <app-button (btnClicked)="teilnehmen()" btnTitle="Teilnehmen"></app-button>
-  </div>
-  <div *ngIf="this.progress.takesPartInContest">
-    <p>Vielen Dank für deine Teilnahme.</p>
-    <app-button (btnClicked)="close()" btnTitle="Schliessen"></app-button>
-  </div>
+  <app-button *ngIf="feedBackState.canProceed() && feedBackState.next().questionNr() === 5"
+              btnTitle="Feedback senden"
+              (btnClicked)="sendFeedback()">
+  </app-button>
 </div>
--->
