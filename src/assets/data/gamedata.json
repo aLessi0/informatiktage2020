@@ -3,6 +3,7 @@
   "minCoinsRewardSmall": 6,
   "rooms": [
     {
+      "name": "Welt der Informatik",
       "level": 1,
       "roomClass": "room-welt-informatik",
       "questions": [
@@ -27,6 +28,7 @@
       ]
     },
     {
+      "name": "Requirements & Design",
       "level": 2,
       "roomClass": "room-req-design",
       "questions": [
@@ -52,6 +54,7 @@
       ]
     },
     {
+      "name": "Entwicklung & Test",
       "level": 3,
       "roomClass": "room-entwicklung-test",
       "questions": [
@@ -77,6 +80,7 @@
       ]
     },
     {
+      "name": "Deploy & Operate",
       "level": 4,
       "roomClass": "room-build-deploy",
       "questions": [
@@ -102,6 +106,7 @@
       ]
     },
     {
+      "name": "Recruiting",
       "level": 5,
       "roomClass": "room-recruiting",
       "questions": [],
@@ -124,6 +129,7 @@
       ]
     },
     {
+      "name": "Playground",
       "level": 6,
       "roomClass": "room-playground",
       "questions": [],

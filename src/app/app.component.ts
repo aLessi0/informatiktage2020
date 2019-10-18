@@ -49,14 +49,20 @@ export class AppComponent implements DoCheck {
 
     this.dataService.activeRoom$.subscribe(activeRoom => {
       if (this.currentRoom !== activeRoom) {
-        this.renderer.addClass(this.animationPanelRef.nativeElement, 'animation');
+        const animationClass = activeRoom ? 'animation' : 'animation-short';
+        const maxAnimationCounter = activeRoom ? 4 : 2;
+        this.renderer.addClass(this.animationPanelRef.nativeElement, animationClass);
+        this.renderer.setAttribute(this.animationPanelRef.nativeElement, 'title', activeRoom ? activeRoom.name : '');
+        this.renderer.setAttribute(this.animationPanelRef.nativeElement, 'level', activeRoom ? '' + activeRoom.level : '');
         let animationCounter = 0;
         this.animationPanelRef.nativeElement.addEventListener('animationend', () => {
           animationCounter++;
           if (animationCounter === 1) {
             this.currentRoom = activeRoom;
-          } else if (animationCounter === 2) {
-            this.renderer.removeClass(this.animationPanelRef.nativeElement, 'animation');
+          } else if (animationCounter === maxAnimationCounter) {
+            this.renderer.removeClass(this.animationPanelRef.nativeElement, animationClass);
+            this.renderer.setAttribute(this.animationPanelRef.nativeElement, 'title', '');
+            this.renderer.setAttribute(this.animationPanelRef.nativeElement, 'level', '');
           }
         });
       }
