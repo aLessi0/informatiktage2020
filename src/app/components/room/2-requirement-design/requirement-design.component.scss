@@ -41,7 +41,6 @@
     width: 15%;
     top: 8%;
     left: 70%;
-    z-index: 9;
 
     &.no-click {
       pointer-events: none;
@@ -91,7 +90,6 @@
     width: 10%;
     top: 8%;
     left: 77%;
-    z-index: 8;
     transform: rotate(20deg);
     animation: ueliAnimation 1s linear;
   }

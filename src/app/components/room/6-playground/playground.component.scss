@@ -199,11 +199,11 @@
     }
 
     &.walk-door-lilly {
-      animation: walkingDoor-Arnold $doorArnoldDuration linear, walkingArnold-Heidi $arnoldHeidiDuration $doorArnoldDuration linear, walkingHeidi-Lilly $heidiLillyDuration calc(#{$doorArnoldDuration} + #{$arnoldHeidiDuration}) linear;
+      animation: walkingDoor-Arnold $doorArnoldDuration linear, walkingArnold-Heidi $arnoldHeidiDuration $doorArnoldDuration linear, walkingHeidi-Lilly $heidiLillyDuration #{$doorArnoldDuration + $arnoldHeidiDuration} linear;
     }
 
     &.walk-door-leo {
-      animation: walkingDoor-Arnold $doorArnoldDuration linear, walkingArnold-Heidi $arnoldHeidiDuration $doorArnoldDuration linear, walkingHeidi-Lilly $heidiLillyDuration calc(#{$doorArnoldDuration} + #{$arnoldHeidiDuration}) linear, walkingLilly-Leo $lillyLeoDuration calc(#{$doorArnoldDuration} + #{$arnoldHeidiDuration} + #{$heidiLillyDuration}) linear;
+      animation: walkingDoor-Arnold $doorArnoldDuration linear, walkingArnold-Heidi $arnoldHeidiDuration $doorArnoldDuration linear, walkingHeidi-Lilly $heidiLillyDuration #{$doorArnoldDuration + $arnoldHeidiDuration} linear, walkingLilly-Leo $lillyLeoDuration #{$doorArnoldDuration + $arnoldHeidiDuration + $heidiLillyDuration} linear;
     }
 
     &.walk-arnold-door {
@@ -219,7 +219,7 @@
     }
 
     &.walk-arnold-leo {
-      animation: walkingArnold-Heidi $arnoldHeidiDuration linear, walkingHeidi-Lilly $heidiLillyDuration $arnoldHeidiDuration linear, walkingLilly-Leo $lillyLeoDuration calc(#{$arnoldHeidiDuration} + #{$heidiLillyDuration}) linear;
+      animation: walkingArnold-Heidi $arnoldHeidiDuration linear, walkingHeidi-Lilly $heidiLillyDuration $arnoldHeidiDuration linear, walkingLilly-Leo $lillyLeoDuration #{$arnoldHeidiDuration + $heidiLillyDuration} linear;
     }
 
     &.walk-heidi-door {
@@ -239,7 +239,7 @@
     }
 
     &.walk-lilly-door {
-      animation: walkingHeidi-Lilly $heidiLillyDuration reverse linear, walkingArnold-Heidi $arnoldHeidiDuration $heidiLillyDuration reverse linear, walkingDoor-Arnold $doorArnoldDuration calc(#{$heidiLillyDuration} + #{$arnoldHeidiDuration}) reverse linear;
+      animation: walkingHeidi-Lilly $heidiLillyDuration reverse linear, walkingArnold-Heidi $arnoldHeidiDuration $heidiLillyDuration reverse linear, walkingDoor-Arnold $doorArnoldDuration #{$heidiLillyDuration + $arnoldHeidiDuration} reverse linear;
     }
 
     &.walk-lilly-arnold {
@@ -255,11 +255,11 @@
     }
 
     &.walk-leo-door {
-      animation: walkingLilly-Leo $lillyLeoDuration reverse linear, walkingHeidi-Lilly $heidiLillyDuration $lillyLeoDuration reverse linear, walkingArnold-Heidi $arnoldHeidiDuration calc(#{$lillyLeoDuration} + #{$heidiLillyDuration}) reverse linear, walkingDoor-Arnold $doorArnoldDuration calc(#{$lillyLeoDuration} + #{$heidiLillyDuration} + #{$arnoldHeidiDuration}) reverse linear;
+      animation: walkingLilly-Leo $lillyLeoDuration reverse linear, walkingHeidi-Lilly $heidiLillyDuration $lillyLeoDuration reverse linear, walkingArnold-Heidi $arnoldHeidiDuration #{$lillyLeoDuration + $heidiLillyDuration} reverse linear, walkingDoor-Arnold $doorArnoldDuration #{$lillyLeoDuration + $heidiLillyDuration + $arnoldHeidiDuration} reverse linear;
     }
 
     &.walk-leo-arnold {
-      animation: walkingLilly-Leo $lillyLeoDuration reverse linear, walkingHeidi-Lilly $heidiLillyDuration $lillyLeoDuration reverse linear, walkingArnold-Heidi $arnoldHeidiDuration calc(#{$lillyLeoDuration} + #{$heidiLillyDuration}) reverse linear;
+      animation: walkingLilly-Leo $lillyLeoDuration reverse linear, walkingHeidi-Lilly $heidiLillyDuration $lillyLeoDuration reverse linear, walkingArnold-Heidi $arnoldHeidiDuration #{$lillyLeoDuration + $heidiLillyDuration} reverse linear;
     }
 
     &.walk-leo-heidi {

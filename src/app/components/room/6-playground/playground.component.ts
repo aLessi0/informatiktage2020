@@ -3,7 +3,7 @@ import {AbstractRoom} from '../abstract-room';
 import {DataService} from '../../../service/data.service';
 import {ModalService} from '../../../service/modal.service';
 import {ProgressService} from '../../../service/progress.service';
-import {MovieComponent} from "../../base/movie/movie.component";
+import {MovieComponent} from '../../base/movie/movie.component';
 
 @Component({
   selector: 'app-playground',
@@ -25,7 +25,7 @@ export class PlaygroundComponent extends AbstractRoom {
   public tree2Clicked = false;
   public tree3Clicked = false;
   public tree4Clicked = false;
-  public solution: string = '';
+  public solution = '';
 
   constructor(@Inject(DataService) protected readonly dataService: DataService,
               @Inject(ProgressService) protected readonly progressService: ProgressService,
@@ -39,7 +39,7 @@ export class PlaygroundComponent extends AbstractRoom {
   }
 
   public entryAbaton(): void {
-    this.walkTo('arnold', () => this.modalService.openDialog(MovieComponent, false, {}));
+    this.walkTo('arnold', () => this.modalService.openDialog(MovieComponent, false, {}).subscribe(() => {}));
   }
 
   public leoLogic() {
@@ -82,7 +82,7 @@ export class PlaygroundComponent extends AbstractRoom {
       if (!this.scavengerHuntRunning) {
         this.openQuestion('room6coin1', '/assets/sprites/Room/6-playground/Heidi.svg');
       } else {
-        this.openInfo('room6ScavengerHuntHeidi1', '/assets/sprites/Room/6-playground/Heidi.svg')
+        this.openInfo('room6ScavengerHuntHeidi1', '/assets/sprites/Room/6-playground/Heidi.svg');
       }
     });
   }
