@@ -26,14 +26,15 @@ export class EntwicklungComponent extends AbstractRoom {
   }
 
   planetClick() {
-    console.log(this.planetState);
-
-
     this.planetState++;
 
     if (this.planetState >= 3) {
-      this.openQuestion('room3coin1', '/assets/sprites/Room/3-develop-and-testing/Planet.svg');
+      this.walkTo('planet', () => this.openQuestion('room3coin1', '/assets/sprites/Room/3-develop-and-testing/Planet.svg'));
     }
+  }
+
+  public katrinClick(): void {
+    this.walkTo('katrin', () => this.openQuestion('room3key', '/assets/sprites/Room/3-develop-and-testing/Katrin.svg'));
   }
 
   starClick(id) {

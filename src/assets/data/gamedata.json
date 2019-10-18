@@ -9,8 +9,8 @@
       "questions": [
         {
           "key": "room1key",
-          "questionText": "Dies ist die Mandatory-Frage. Was bekommt man wenn man bei Entwicklung \"Ent\" rausnimmt?",
-          "correctAnswer": "wicklung",
+          "questionText": "Dies ist die Mandatory-Frage. Was bekommt man wenn man bei Informatik \"Info\" rausnimmt?",
+          "correctAnswer": "rmatik",
           "isMandatory": true
         }
       ],
@@ -34,8 +34,8 @@
       "questions": [
         {
           "key": "room2key",
-          "questionText": "Dies ist die Mandatory-Frage. Was bekommt man wenn man bei Build \"Bu\" rausnimmt?",
-          "correctAnswer": "ild",
+          "questionText": "Dies ist die Mandatory-Frage. Was bekommt man wenn man bei Requirements \"Require\" rausnimmt?",
+          "correctAnswer": "ments",
           "isMandatory": true
         },
         {
@@ -70,8 +70,8 @@
       "questions": [
         {
           "key": "room3key",
-          "questionText": "Dies ist die Mandatory-Frage. Was bekommt man wenn man bei Requirements \"Require\" rausnimmt?",
-          "correctAnswer": "ments",
+          "questionText": "Dies ist die Mandatory-Frage. Was bekommt man wenn man bei Entwicklung \"Ent\" rausnimmt?",
+          "correctAnswer": "wicklung",
           "isMandatory": true
         },
         {
@@ -96,8 +96,8 @@
       "questions": [
         {
           "key": "room4key",
-          "questionText": "Dies ist die Mandatory-Frage. Was bekommt man wenn man bei Testing \"Test\" rausnimmt?",
-          "correctAnswer": "ing",
+          "questionText": "Dies ist die Mandatory-Frage. Was bekommt man wenn man bei Deploy \"Dep\" rausnimmt?",
+          "correctAnswer": "loy",
           "isMandatory": true
         },
         {
@@ -136,6 +136,11 @@
         {
           "key": "room5feedbackDanke",
           "text": "Vielen Dank für dein Feedback und viel Spass beim entdecken des Playgrounds!",
+          "givesCoin": false
+        },
+        {
+          "key": "room5wettbewerb",
+          "text": "Du kannst jetzt am grossen Wettbewerb teilnehmen und tolle Preise gewinnen!",
           "givesCoin": false
         },
         {

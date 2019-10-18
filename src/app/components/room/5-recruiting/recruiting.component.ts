@@ -54,7 +54,9 @@ export class RecruitingComponent extends AbstractRoom {
 
   public zoraClick() {
     if (this.starClickCounter >= this.clickToGetZora) {
-      this.openQuestion('room5coin1', '/assets/sprites/Room/5-recruiting/Zora.svg');
+      this.walkTo('zora', () => {
+        this.openQuestion('room5coin1', '/assets/sprites/Room/5-recruiting/Zora.svg');
+      });
     }
   }
 
@@ -130,13 +132,15 @@ export class RecruitingComponent extends AbstractRoom {
    * Request Feedback and unlock Playground if feedback is completed.
    */
   public francoClick(): void {
-    if (!this.level.key) {
-      this.openInfo('room5finishText', '/assets/sprites/Room/5-recruiting/Franco.svg', () => {
-        this.openITDFeedback();
-      });
-    } else {
-      this.openInfo('room5feedbackDanke', '/assets/sprites/Room/5-recruiting/Franco.svg');
-    }
+    this.walkTo('franco', () => {
+      if (!this.level.key) {
+        this.openInfo('room5finishText', '/assets/sprites/Room/5-recruiting/Franco.svg', () => {
+          this.openITDFeedback();
+        });
+      } else {
+        this.openInfo('room5feedbackDanke', '/assets/sprites/Room/5-recruiting/Franco.svg');
+      }
+    });
   }
 
   public openITDFeedback(): void {
@@ -152,6 +156,8 @@ export class RecruitingComponent extends AbstractRoom {
   public unlockPlayground(): void {
     this.level.key = true;
     this.progressService.unlockLevel(this.level.level + 1);
-    this.openReward(true);
+    this.openReward(true, () => {
+      this.openInfo('room5wettbewerb', '/assets/sprites/Icon/Pokal.svg');
+    });
   }
 }

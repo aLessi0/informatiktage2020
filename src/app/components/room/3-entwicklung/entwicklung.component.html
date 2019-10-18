@@ -1,29 +1,40 @@
 <svg-icon src="\assets\sprites\Room\3-develop-and-testing\Satellit.svg" class="satelite"></svg-icon>
 <svg-icon src="\assets\sprites\Room\3-develop-and-testing\Planets.svg" class="planets"></svg-icon>
 
-<svg-icon src="\assets\sprites\Room\3-develop-and-testing\Stars1.svg" class="stars1"></svg-icon>
+<svg-icon src="\assets\sprites\Room\3-develop-and-testing\stars-klein-links.svg" class="stars-klein-links"></svg-icon>
 <svg-icon src="\assets\sprites\Room\3-develop-and-testing\Stars1-gross1.svg"
-          class="stars1 gross1"
+          class="stars-klein-links gross1"
           *ngIf="!isStarHidden(1)"
           (click)="starClick(1)">
 </svg-icon>
 <svg-icon src="\assets\sprites\Room\3-develop-and-testing\Stars1-gross2.svg"
-          class="stars1 gross2"
+          class="stars-klein-links gross2"
           *ngIf="!isStarHidden(2)"
           (click)="starClick(2)">
 </svg-icon>
+<svg-icon src="\assets\sprites\Room\3-develop-and-testing\star-plus.svg" class="star-plus-left1"></svg-icon>
+<svg-icon src="\assets\sprites\Room\3-develop-and-testing\star-plus.svg" class="star-plus-left2"></svg-icon>
+<svg-icon src="\assets\sprites\Room\3-develop-and-testing\star-plus.svg" class="star-plus-left3"></svg-icon>
+<svg-icon src="\assets\sprites\Room\3-develop-and-testing\star-plus.svg" class="star-plus-left4"></svg-icon>
+<svg-icon src="\assets\sprites\Room\3-develop-and-testing\star-plus.svg" class="star-plus-left5"></svg-icon>
 
-<svg-icon src="\assets\sprites\Room\3-develop-and-testing\Stars2.svg" class="stars2"></svg-icon>
+<svg-icon src="\assets\sprites\Room\3-develop-and-testing\stars-klein-rechts.svg" class="stars-klein-rechts"></svg-icon>
 <svg-icon src="\assets\sprites\Room\3-develop-and-testing\Stars2-gross1.svg"
-          class="stars2 gross1"
+          class="stars-klein-rechts gross1"
           *ngIf="!isStarHidden(3)"
           (click)="starClick(3)">
 </svg-icon>
 <svg-icon src="\assets\sprites\Room\3-develop-and-testing\Stars2-gross2.svg"
-          class="stars2 gross2"
+          class="stars-klein-rechts gross2"
           *ngIf="!isStarHidden(4)"
           (click)="starClick(4)">
 </svg-icon>
+<svg-icon src="\assets\sprites\Room\3-develop-and-testing\star-plus.svg" class="star-plus-right1"></svg-icon>
+<svg-icon src="\assets\sprites\Room\3-develop-and-testing\star-plus.svg" class="star-plus-right2"></svg-icon>
+<svg-icon src="\assets\sprites\Room\3-develop-and-testing\star-plus.svg" class="star-plus-right3"></svg-icon>
+<svg-icon src="\assets\sprites\Room\3-develop-and-testing\star-plus.svg" class="star-plus-right4"></svg-icon>
+<svg-icon src="\assets\sprites\Room\3-develop-and-testing\star-plus.svg" class="star-plus-right5"></svg-icon>
+
 
 
 <svg-icon src="\assets\sprites\Room\3-develop-and-testing\Sternbild.svg" class="star-constellation"></svg-icon>
@@ -37,5 +48,7 @@
 
 <svg-icon src="\assets\sprites\Room\3-develop-and-testing\Katrin.svg"
           class="katrin"
-          (click)="this.openQuestion('room3key', '/assets/sprites/Room/3-develop-and-testing/Katrin.svg')">
+          (click)="katrinClick()">
 </svg-icon>
+
+<app-avatar [avatarType]="progress.avatarType"></app-avatar>

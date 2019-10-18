@@ -11,6 +11,7 @@
     width: 32%;
     top: 1%;
     left: 70%;
+    animation: sateliteSpin 60s linear infinite;
   }
 
   .planets {
@@ -30,15 +31,24 @@
     &.grow1 {
       animation: planetAnimationStep1 ease-in 0.4s forwards;
     }
+
     &.grow2 {
       animation: planetAnimationStep2 ease-in 0.4s forwards;
     }
+
     &.grow3 {
       animation: planetAnimationStep3 ease-in 0.4s forwards;
     }
   }
 
-  .stars1 {
+  // small stars extension
+  %star-plus {
+    pointer-events: none;
+    position: absolute;
+    width: 100%;
+  }
+
+  .stars-klein-links {
     pointer-events: none;
     position: absolute;
     width: 30%;
@@ -51,6 +61,7 @@
       left: 10%;
       top: 66%;
     }
+
     &.gross2 {
       pointer-events: all;
       width: 12%;
@@ -59,12 +70,85 @@
     }
   }
 
-  .stars2 {
+  //small stars left side
+  .star-plus-left1 {
+    @extend %star-plus;
+    top: 64.5%;
+    left: 23%;
+    animation: starPlusAnimation 2.3s infinite;
+  }
+
+  .star-plus-left2 {
+    @extend %star-plus;
+    top: 60%;
+    left: 18%;
+    animation: starPlusAnimation 3.1s infinite;
+  }
+
+  .star-plus-left3 {
+    @extend %star-plus;
+    top: 62.8%;
+    left: 14%;
+    animation: starPlusAnimation 2.8s infinite;
+  }
+
+  .star-plus-left4 {
+    @extend %star-plus;
+    top: 60%;
+    left: 33%;
+    animation: starPlusAnimation 2.4s infinite;
+  }
+
+  .star-plus-left5 {
+    @extend %star-plus;
+    top: 64%;
+    left: 36%;
+    animation: starPlusAnimation 3.3s infinite;
+  }
+
+
+  //small stars right side
+  .star-plus-right1 {
+    @extend %star-plus;
+    top: 29.4%;
+    left: 83%;
+    animation: starPlusAnimation 3s infinite;
+  }
+
+  .star-plus-right2 {
+    @extend %star-plus;
+    top: 34%;
+    left: 89%;
+    animation: starPlusAnimation 3.5s infinite;
+  }
+
+  .star-plus-right3 {
+    @extend %star-plus;
+    top: 36%;
+    left: 96%;
+    animation: starPlusAnimation 2.5s infinite;
+  }
+
+  .star-plus-right4 {
+    @extend %star-plus;
+    top: 33%;
+    left: 100%;
+    animation: starPlusAnimation 2.2s infinite;
+  }
+
+  .star-plus-right5 {
+    @extend %star-plus;
+    top: 27%;
+    left: 97%;
+    animation: starPlusAnimation 2.4s infinite;
+  }
+
+  .stars-klein-rechts {
     pointer-events: none;
     position: absolute;
     width: 30%;
-    top: 26%;
-    left: 70%;
+    top: 27%;
+    left: 86%;
 
     &.gross1 {
       pointer-events: all;
@@ -72,6 +156,7 @@
       left: 74%;
       top: 32%;
     }
+
     &.gross2 {
       pointer-events: all;
       width: 11%;
@@ -100,41 +185,168 @@
     left: 6%;
     bottom: 4%;
   }
+
+  app-avatar {
+    position: absolute;
+    top: 31%;
+    left: 1%;
+
+    &.pos-planet {
+      top: 42%;
+      left: 72%;
+    }
+
+    &.pos-katrin {
+      top: 95%;
+      left: 38%;
+    }
+
+    $doorPlanetDuration: 2s;
+    $planetKatrinDuration: 2s;
+
+    &.walk-door-planet {
+      animation: walkingDoor-Planet $doorPlanetDuration linear;
+    }
+
+    &.walk-door-katrin {
+      animation: walkingDoor-Planet $doorPlanetDuration linear, walkingPlanet-Katrin $planetKatrinDuration $doorPlanetDuration linear;
+    }
+
+    &.walk-planet-door {
+      animation: walkingDoor-Planet $doorPlanetDuration reverse linear;
+    }
+
+    &.walk-planet-katrin {
+      animation: walkingPlanet-Katrin $planetKatrinDuration linear;
+    }
+
+    &.walk-katrin-door {
+      animation: walkingPlanet-Katrin $planetKatrinDuration reverse linear, walkingDoor-Planet $doorPlanetDuration $planetKatrinDuration reverse linear;
+    }
+
+    &.walk-katrin-planet {
+      animation: walkingPlanet-Katrin $planetKatrinDuration reverse linear;
+    }
+
+    @keyframes walkingDoor-Planet {
+      0% {
+        top: 31%;
+        left: 1%;
+      }
+      8% {
+        top: 28%;
+        left: 14%;
+      }
+      25% {
+        top: 14%;
+        left: 16%;
+      }
+      33.33% {
+        top: 8%;
+        left: 23%;
+      }
+      41.67% {
+        top: 6%;
+        left: 37%;
+      }
+      50% {
+        top: 9%;
+        left: 53%;
+      }
+      58.33% {
+        top: 14%;
+        left: 63%;
+      }
+      91.67% {
+        top: 36%;
+        left: 63%;
+      }
+      100% {
+        top: 42%;
+        left: 72%;
+      }
+    }
+
+    @keyframes walkingPlanet-Katrin {
+      0% {
+        top: 42%;
+        left: 72%;
+      }
+      25% {
+        top: 58%;
+        left: 97%;
+      }
+      50% {
+        top: 76%;
+        left: 105%;
+      }
+      62.5% {
+        top: 85%;
+        left: 99%;
+      }
+      83.33% {
+        top: 93%;
+        left: 69%;
+      }
+      100% {
+        top: 95%;
+        left: 38%;
+      }
+    }
+  }
 }
 
 @keyframes planetAnimationStep1 {
   0% {
-    transform:  scaleX(1.00) scaleY(1.00) ;
+    transform: scaleX(1.00) scaleY(1.00);
   }
   90% {
-    transform:  scaleX(1.50) scaleY(1.50) ;
+    transform: scaleX(1.50) scaleY(1.50);
   }
   100% {
-    transform:  scaleX(1.30) scaleY(1.30) ;
+    transform: scaleX(1.30) scaleY(1.30);
   }
 }
 
 @keyframes planetAnimationStep2 {
   0% {
-    transform:  scaleX(1.30) scaleY(1.30) ;
+    transform: scaleX(1.30) scaleY(1.30);
   }
   90% {
-    transform:  scaleX(1.70) scaleY(1.70) ;
+    transform: scaleX(1.70) scaleY(1.70);
   }
   100% {
-    transform:  scaleX(1.50) scaleY(1.50) ;
+    transform: scaleX(1.50) scaleY(1.50);
   }
 }
 
 @keyframes planetAnimationStep3 {
   0% {
-    transform:  scaleX(1.50) scaleY(1.50) ;
+    transform: scaleX(1.50) scaleY(1.50);
   }
   90% {
-    transform:  scaleX(1.90) scaleY(1.90) ;
+    transform: scaleX(1.90) scaleY(1.90);
   }
   100% {
-    transform:  scaleX(1.70) scaleY(1.70) ;
+    transform: scaleX(1.70) scaleY(1.70);
+  }
+}
+
+@keyframes sateliteSpin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes starPlusAnimation {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
 
