@@ -35,6 +35,8 @@
     width: 40%;
     top: 11.5%;
     left: 56%;
+    z-index: 2;
+    pointer-events: none;
   }
 
   .saloon {
@@ -163,22 +165,9 @@
     width: 110%;
     position: absolute;
     top: 25%;
-    z-index: 2;
-
-    animation: wrapperAnimation 60s 30s linear infinite;
-  }
-
-  .night {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: calc(100 * var(--vh));
-    width: calc(100 * var(--vw));
-    background-color: rgba(0, 0, 0, 0.5);
-    pointer-events: none;
     z-index: 1;
 
-    animation: nightAnimation 60s linear infinite;
+    animation: wrapperAnimation 60s 30s linear infinite;
   }
 
   @keyframes wrapperAnimation {
