@@ -52,6 +52,11 @@ export class RecruitingComponent extends AbstractRoom {
     }
   }
 
+  public starReset() {
+    this.starClickCounter = 0;
+    this.renderer.setStyle(this.zora.nativeElement, 'transform', `translateY(0)`);
+  }
+
   public zoraClick() {
     if (this.starClickCounter >= this.clickToGetZora) {
       this.walkTo('zora', () => {
@@ -99,6 +104,13 @@ export class RecruitingComponent extends AbstractRoom {
         this.submarineClickable = true;
       }
     }
+  }
+
+  public submarineReset() {
+    this.submarineClickCounter = 0;
+    this.renderer.removeClass(this.submarine.nativeElement, 'mode1');
+    this.renderer.removeClass(this.submarine.nativeElement, 'mode2');
+    this.renderer.removeClass(this.submarine.nativeElement, 'mode3');
   }
 
   public startCrazyFish() {
