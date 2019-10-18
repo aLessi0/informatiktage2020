@@ -12,7 +12,7 @@ import {ProgressService} from '../../../service/progress.service';
 export class RequirementDesignComponent extends AbstractRoom {
 
   ueliHidden = true;
-  counter: number = 0;
+  treeCounter: number = 0;
 
   constructor(@Inject(DataService) protected readonly dataService: DataService,
               @Inject(ProgressService) protected readonly progressService: ProgressService,
@@ -38,10 +38,17 @@ export class RequirementDesignComponent extends AbstractRoom {
   }
 
   public ueliVisible() {
-    this.counter = this.counter + 1;
-    if (this.counter >= 2) {
+    this.treeCounter++;
+    if (this.treeCounter >= 2) {
       this.ueliHidden = false;
+    } else {
+      this.ueliHidden = true;
     }
+  }
+
+  ueliReset() {
+    this.treeCounter = 0;
+    this.ueliHidden = true;
   }
 
 }

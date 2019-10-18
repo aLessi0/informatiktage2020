@@ -3,6 +3,7 @@ import {AbstractRoom} from '../abstract-room';
 import {DataService} from '../../../service/data.service';
 import {ModalService} from '../../../service/modal.service';
 import {ProgressService} from '../../../service/progress.service';
+import { ClickOutsideModule } from 'ng-click-outside';
 
 @Component({
   selector: 'app-entwicklung',
@@ -13,6 +14,7 @@ export class EntwicklungComponent extends AbstractRoom {
 
   public planetState = 0;
   public starsHidden = [];
+  public clickedStar = false;
 
   constructor(@Inject(DataService) protected readonly dataService: DataService,
               @Inject(ProgressService) protected readonly progressService: ProgressService,
@@ -25,6 +27,11 @@ export class EntwicklungComponent extends AbstractRoom {
     super.ngOnInit();
   }
 
+  public katrinClick(): void {
+    this.walkTo('katrin', () => this.openQuestion('room3key', '/assets/sprites/Room/3-develop-and-testing/Katrin.svg'));
+  }
+
+
   planetClick() {
     this.planetState++;
 
@@ -33,11 +40,9 @@ export class EntwicklungComponent extends AbstractRoom {
     }
   }
 
-  public katrinClick(): void {
-    this.walkTo('katrin', () => this.openQuestion('room3key', '/assets/sprites/Room/3-develop-and-testing/Katrin.svg'));
-  }
-
   starClick(id) {
+
+    this.clickedStar = true;
     console.log(id);
     if (!this.isStarHidden(id)) {
       this.starsHidden.push(id);
@@ -55,6 +60,15 @@ export class EntwicklungComponent extends AbstractRoom {
       return true;
     }
     return false;
+  }
+
+  starReset() {
+    if ( this.clickedStar == false ) {
+      console.log('stars reset');
+      this.starsHidden = [];
+    } else {
+      this.clickedStar = false;
+    }
   }
 
 }
