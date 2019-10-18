@@ -26,6 +26,7 @@
 </div>
 
 <div *ngIf="!feedBackState && !progress.canTakePartInContest" class="feedback-senden">
+  <div class="feedback-senden-text">Vielen Dank fürs Ausfüllen!</div>
   <app-button (btnClicked)="sendFeedback()" btnTitle="Feedback senden"></app-button>
 </div>
 
