@@ -67,7 +67,9 @@ export class PlaygroundComponent extends AbstractRoom {
         if (this.solution === '3142') {
           this.foundFishingRod = true;
           this.treeQuestRunning = false;
-          this.openInfo('room6ScavengerHuntLilly4', '/assets/sprites/Room/6-playground/FishingRod.svg');
+          this.openInfo('room6ScavengerHuntLilly4', '/assets/sprites/Room/6-playground/Lilly.svg', () => {
+            this.openInfo('room6ScavengerHuntLilly5', '/assets/sprites/Room/6-playground/FishingRod.svg');
+          });
         } else {
           this.openInfo('room6ScavengerHuntLilly3', '/assets/sprites/Room/6-playground/Lilly.svg');
         }
