@@ -55,7 +55,7 @@ export class RewardCoinsComponent implements OnInit {
   }
 
   public validateAnswer(): void {
-    if (this.password === '123456789') {
+    if (this.password === '314159') {
       this.progressService.progress$.subscribe(progress => {
         this.progress.coinsBereitsEingeloest = true;
       });
