@@ -18,6 +18,7 @@
     width: 36%;
     top: 63%;
     left: 32%;
+    display: none;
   }
 
   .treeGroup2 {
@@ -25,6 +26,7 @@
     width: 46%;
     top: 66%;
     left: 27%;
+    display: none;
   }
 
   .title {
@@ -59,7 +61,6 @@
 
     font-size: large;
     font-weight: normal;
-    margin-left: 5%;
 
     .text {
       margin-left: 5%;
@@ -97,6 +98,21 @@
     left: 35%;
     text-align: center;
     bottom: 17%;
+  }
+
+  @media screen and (min-height: 640px) {
+
+    .subtext2a, .subtext2b {
+      margin-left: 5%;
+    }
+
+    .treeGroup1 {
+      display: block;
+    }
+
+    .treeGroup2 {
+      display: block;
+    }
   }
 }
 
