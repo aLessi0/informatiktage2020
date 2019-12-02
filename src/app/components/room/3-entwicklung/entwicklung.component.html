@@ -46,7 +46,7 @@
           class="planet"
           [ngClass]="'grow' + this.planetState"
           (click)="planetClick()"
-          (clickOutside)="this.planetState = 0">
+          (clickOutside)="planetReset()">
 </svg-icon>
 
 <svg-icon src="\assets\sprites\Room\3-develop-and-testing\Katrin.svg"
