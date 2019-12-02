@@ -25,6 +25,7 @@ export class PlaygroundComponent extends AbstractRoom {
   public tree2Clicked = false;
   public tree3Clicked = false;
   public tree4Clicked = false;
+  public francoFished = false;
   public solution = '';
 
   constructor(@Inject(DataService) protected readonly dataService: DataService,
@@ -130,13 +131,17 @@ export class PlaygroundComponent extends AbstractRoom {
   public fishing() {
     if (this.foundFishingRod && this.scavengerHuntRunning && this.broughtFishingRodToLeo) {
       this.walkTo('leo', () => {
-        this.openInfo('room6ScavengerHuntCoin', '/assets/sprites/Icon/Map/Coin.svg');
-        this.scavengerHuntRunning = false;
-        this.foundFishingRod = false;
-        this.treeQuestRunning = false;
-        this.broughtFishingRodToLeo = false;
+        this.francoFished = true;
       });
     }
+  }
+
+  public francoClick() {
+    this.openInfo('room6ScavengerHuntCoin', '/assets/sprites/Room/5-recruiting/Franco.svg');
+    this.scavengerHuntRunning = false;
+    this.foundFishingRod = false;
+    this.treeQuestRunning = false;
+    this.broughtFishingRodToLeo = false;
   }
 
 }

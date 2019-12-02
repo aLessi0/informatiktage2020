@@ -160,6 +160,15 @@
     left: 32%;
   }
 
+  .franco {
+    position: absolute;
+    width: 16%;
+    top: 72%;
+    left: 50%;
+
+    animation: francoAnimation 2s linear;
+  }
+
   app-avatar {
     position: absolute;
     top: 30%;
@@ -268,6 +277,24 @@
 
     &.walk-leo-lilly {
       animation: walkingLilly-Leo $lillyLeoDuration reverse linear;
+    }
+
+    @keyframes francoAnimation {
+      0% {
+        opacity: 0;
+        width: 14%;
+        top: 75%;
+        left: 52%;
+      }
+      25% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 1;
+        width: 16%;
+        top: 72%;
+        left: 50%;
+      }
     }
 
     @keyframes walkingDoor-Arnold {
