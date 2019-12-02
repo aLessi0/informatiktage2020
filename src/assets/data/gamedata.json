@@ -9,9 +9,15 @@
       "questions": [
         {
           "key": "room1key",
-          "questionText": "Dies ist die Mandatory-Frage. Was bekommt man wenn man bei Informatik \"Info\" rausnimmt?",
-          "correctAnswer": "rmatik",
+          "questionText": "Welches Jubiläum feiert die Zürcher Kantonalbank in diesem Jahr?",
+          "correctAnswer": "150",
           "isMandatory": true
+        },
+        {
+          "key": "room1coin1",
+          "questionText": "Cool du hast die Frage von Marie beantwortet! Jetzt habe ich noch eine Frage für dich! \n\n An welchem Standort arbeiten die meisten Mitarbeitenden der Informatik?",
+          "correctAnswer": "Zürich Neue Hard",
+          "givesCoin": true
         }
       ],
       "infos": [
@@ -19,11 +25,6 @@
           "key": "room1info1",
           "text": "Ich glaube Marie hat eine Frage für dich. Frag sie doch mal!",
           "givesCoin": false
-        },
-        {
-          "key": "room1coin1",
-          "text": "Cool du hast die Frage von Marie beantwortet! Ich gebe dir als Belohnung eine Münze!",
-          "givesCoin": true
         }
       ]
     },
@@ -34,14 +35,14 @@
       "questions": [
         {
           "key": "room2key",
-          "questionText": "Dies ist die Mandatory-Frage. Was bekommt man wenn man bei Requirements \"Require\" rausnimmt?",
-          "correctAnswer": "ments",
+          "questionText": "Wie nennt man die Testversion eines Produktes, die verwendet wird um Benutzertests durchzuführen?",
+          "correctAnswer": "Prototyp",
           "isMandatory": true
         },
         {
           "key":  "room2coin1",
-          "questionText": "Dies ist eine Optional-Frage. Was gibt 2+2?",
-          "correctAnswer": "4",
+          "questionText": "Wessen Meinung sollte man immer beachten, wenn man ein Produkt designt?",
+          "correctAnswer": "Kunde",
           "isMandatory": false
         }
       ],
@@ -70,14 +71,14 @@
       "questions": [
         {
           "key": "room3key",
-          "questionText": "Dies ist die Mandatory-Frage. Was bekommt man wenn man bei Entwicklung \"Ent\" rausnimmt?",
-          "correctAnswer": "wicklung",
+          "questionText": "Welcher Test wird bei Einführung durchgeführt?",
+          "correctAnswer": "Regressionstest",
           "isMandatory": true
         },
         {
           "key": "room3coin1",
-          "questionText": "Was ist 2+2?",
-          "correctAnswer": "4",
+          "questionText": "Mit welcher Programmiersprache wurde unsere WebApp entwickelt?",
+          "correctAnswer": "Angular",
           "isMandatory": false
         }
       ],
@@ -96,14 +97,14 @@
       "questions": [
         {
           "key": "room4key",
-          "questionText": "Dies ist die Mandatory-Frage. Was bekommt man wenn man bei Deploy \"Dep\" rausnimmt?",
-          "correctAnswer": "loy",
+          "questionText": "Welches Gerät wird für die Überwachung von Systemen benötigt?",
+          "correctAnswer": "Monitor",
           "isMandatory": true
         },
         {
           "key": "room4coin1",
-          "questionText": "blabla",
-          "correctAnswer": "bla",
+          "questionText": "Welches Betriebssystem gibt es neben Windows auch noch?",
+          "correctAnswer": "Unix",
           "isMandatory": false
         }
       ],
@@ -122,8 +123,14 @@
       "questions": [
         {
           "key": "room5coin1",
-          "questionText": "Bla?",
-          "correctAnswer": "bla",
+          "questionText": "Wie viele Mitarbeitende beschäftigt die Zürcher Kantonalbank im IT-Bereich?",
+          "correctAnswer": "900",
+          "isMandatory": true
+        },
+        {
+          "key": "room5coin3",
+          "questionText": "Welche IT-Fachrichtungen bildet die Zürcher Kantonalbank aus?",
+          "correctAnswer": "Applikationsentwickler",
           "isMandatory": false
         }
       ],
