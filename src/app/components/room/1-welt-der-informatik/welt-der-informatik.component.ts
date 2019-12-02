@@ -18,10 +18,6 @@ export class WeltDerInformatikComponent extends AbstractRoom {
     super(dataService, progressService, modalService, renderer);
   }
 
-  public ngOnInit(): void {
-    super.ngOnInit();
-  }
-
   public onRetoTab() {
     this.walkTo('reto', () => {
       if (this.level.key) {
@@ -33,6 +29,6 @@ export class WeltDerInformatikComponent extends AbstractRoom {
   }
 
   public onMarieTab() {
-    this.walkTo('marie', () => this.openQuestion('room1key', '/assets/sprites/Room/1-welt-der-informatik/Marie.svg'))
+    this.walkTo('marie', () => this.openQuestion('room1key', '/assets/sprites/Room/1-welt-der-informatik/Marie.svg'));
   }
 }

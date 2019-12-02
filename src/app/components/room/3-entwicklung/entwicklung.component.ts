@@ -3,7 +3,6 @@ import {AbstractRoom} from '../abstract-room';
 import {DataService} from '../../../service/data.service';
 import {ModalService} from '../../../service/modal.service';
 import {ProgressService} from '../../../service/progress.service';
-import { ClickOutsideModule } from 'ng-click-outside';
 
 @Component({
   selector: 'app-entwicklung',
@@ -21,10 +20,6 @@ export class EntwicklungComponent extends AbstractRoom {
               @Inject(ModalService) protected readonly modalService: ModalService,
               @Inject(Renderer2) protected readonly renderer: Renderer2) {
     super(dataService, progressService, modalService, renderer);
-  }
-
-  public ngOnInit(): void {
-    super.ngOnInit();
   }
 
   public katrinClick(): void {
