@@ -42,7 +42,7 @@
         {
           "key":  "room2coin1",
           "questionText": "Wessen Meinung sollte man immer beachten, wenn man ein Produkt designt?",
-          "correctAnswers": ["Kunde", "Benutzer", "User"],
+          "correctAnswers": ["Kunde", "Kunden", "Benutzer", "User"],
           "isMandatory": false
         }
       ],

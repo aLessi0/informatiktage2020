@@ -16,6 +16,9 @@ export class RecruitingComponent extends AbstractRoom {
   @ViewChild('submarine', {read: ElementRef}) private submarine: ElementRef;
   @ViewChild('crazyfish', {read: ElementRef}) private crazyfish: ElementRef;
   @ViewChild('granit', {read: ElementRef}) private granit: ElementRef;
+  @ViewChild('jellyfish', {read: ElementRef}) private jellyfish: ElementRef;
+  @ViewChild('franco', {read: ElementRef}) private franco: ElementRef;
+  @ViewChild('seestern', {read: ElementRef}) private seestern: ElementRef;
 
   starClickCounter = 0;
   clickToGetZora = 10;
@@ -34,12 +37,7 @@ export class RecruitingComponent extends AbstractRoom {
     super(dataService, progressService, modalService, renderer);
   }
 
-  public ngOnInit(): void {
-    super.ngOnInit();
-  }
-
   public crazyfishClick() {
-    console.log('click');
     this.removeAllClassesFromCrazyfish();
     this.renderer.addClass(this.crazyfish.nativeElement, 'crazyfishStopAnimation');
     this.openInfo('room5coin2', '/assets/sprites/Room/5-recruiting/Crazy-Fish.svg');
@@ -68,7 +66,9 @@ export class RecruitingComponent extends AbstractRoom {
   }
 
   public jellyFishClick() {
-        this.openQuestion('room5coin3', '/assets/sprites/Room/5-recruiting/Jellyfish.svg');
+    this.walkTo('jellyfish', () => {
+      this.openQuestion('room5coin3', '/assets/sprites/Room/5-recruiting/Jellyfish.svg');
+    });
   }
 
   public async submarineClick() {
@@ -92,6 +92,7 @@ export class RecruitingComponent extends AbstractRoom {
       }
 
       if (this.submarineClickCounter === 3) {
+        this.pointerEvents(true);
 
         this.renderer.addClass(this.granit.nativeElement, 'granitVisible');
 
@@ -108,6 +109,7 @@ export class RecruitingComponent extends AbstractRoom {
 
         this.renderer.removeClass(this.granit.nativeElement, 'granitVisible');
         this.submarineClickable = true;
+        this.pointerEvents(false);
       }
     }
   }
@@ -151,7 +153,7 @@ export class RecruitingComponent extends AbstractRoom {
    */
   public francoClick(): void {
     this.walkTo('franco', () => {
-    if (!this.progress.feedbackCompleted) {
+      if (!this.progress.feedbackCompleted) {
         this.openInfo('room5finishText', '/assets/sprites/Room/5-recruiting/Franco.svg', () => {
           this.openITDFeedback();
         });
@@ -177,5 +179,23 @@ export class RecruitingComponent extends AbstractRoom {
     this.openReward(true, () => {
       this.openInfo('room5wettbewerb', '/assets/sprites/Icon/Pokal.svg');
     });
+  }
+
+  private pointerEvents(disabled: boolean) {
+    if (disabled) {
+      this.renderer.addClass(this.zora.nativeElement, 'no-pointer-events');
+      this.renderer.addClass(this.submarine.nativeElement, 'no-pointer-events');
+      this.renderer.addClass(this.granit.nativeElement, 'no-pointer-events');
+      this.renderer.addClass(this.jellyfish.nativeElement, 'no-pointer-events');
+      this.renderer.addClass(this.franco.nativeElement, 'no-pointer-events');
+      this.renderer.addClass(this.seestern.nativeElement, 'no-pointer-events');
+    } else {
+      this.renderer.removeClass(this.zora.nativeElement, 'no-pointer-events');
+      this.renderer.removeClass(this.submarine.nativeElement, 'no-pointer-events');
+      this.renderer.removeClass(this.granit.nativeElement, 'no-pointer-events');
+      this.renderer.removeClass(this.jellyfish.nativeElement, 'no-pointer-events');
+      this.renderer.removeClass(this.franco.nativeElement, 'no-pointer-events');
+      this.renderer.removeClass(this.seestern.nativeElement, 'no-pointer-events');
+    }
   }
 }
