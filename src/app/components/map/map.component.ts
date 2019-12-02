@@ -115,7 +115,7 @@ export class MapComponent implements AfterViewInit {
     const room = this.getRoomByNumber(roomNumber);
     const roomProgress = this.progress.playedLevels.get(room.level);
     if (roomProgress && room) {
-      if (roomProgress.coins.length === room.numberOfCoinsInRoom && roomProgress.key) {
+      if (roomProgress.coins.length === room.numberOfCoinsInRoom && (roomProgress.key || roomNumber > 4)) { // room 6 hat kein key mehr
         return 'badge';
       }
     }

@@ -10,7 +10,7 @@
         {
           "key": "room1key",
           "questionText": "Dies ist die Mandatory-Frage. Was bekommt man wenn man bei Informatik \"Info\" rausnimmt?",
-          "correctAnswer": "rmatik",
+          "correctAnswers": ["rmatik", "zirp"],
           "isMandatory": true
         }
       ],
@@ -35,13 +35,13 @@
         {
           "key": "room2key",
           "questionText": "Dies ist die Mandatory-Frage. Was bekommt man wenn man bei Requirements \"Require\" rausnimmt?",
-          "correctAnswer": "ments",
+          "correctAnswers": ["ments"],
           "isMandatory": true
         },
         {
           "key":  "room2coin1",
           "questionText": "Dies ist eine Optional-Frage. Was gibt 2+2?",
-          "correctAnswer": "4",
+          "correctAnswers": ["4"],
           "isMandatory": false
         }
       ],
@@ -71,13 +71,13 @@
         {
           "key": "room3key",
           "questionText": "Dies ist die Mandatory-Frage. Was bekommt man wenn man bei Entwicklung \"Ent\" rausnimmt?",
-          "correctAnswer": "wicklung",
+          "correctAnswers": ["wicklung"],
           "isMandatory": true
         },
         {
           "key": "room3coin1",
           "questionText": "Was ist 2+2?",
-          "correctAnswer": "4",
+          "correctAnswers": ["4"],
           "isMandatory": false
         }
       ],
@@ -97,13 +97,13 @@
         {
           "key": "room4key",
           "questionText": "Dies ist die Mandatory-Frage. Was bekommt man wenn man bei Deploy \"Dep\" rausnimmt?",
-          "correctAnswer": "loy",
+          "correctAnswers": ["loy"],
           "isMandatory": true
         },
         {
           "key": "room4coin1",
           "questionText": "blabla",
-          "correctAnswer": "bla",
+          "correctAnswers": ["bla"],
           "isMandatory": false
         }
       ],
@@ -123,7 +123,7 @@
         {
           "key": "room5coin1",
           "questionText": "Bla?",
-          "correctAnswer": "bla",
+          "correctAnswers": ["bla"],
           "isMandatory": false
         }
       ],
@@ -158,7 +158,7 @@
         {
           "key": "room6coin1",
           "questionText": "Ich mag Schnecken, wie macht die Schnecke?",
-          "correctAnswer": "Zirp Zirp!",
+          "correctAnswers": ["Zirp Zirp!"],
           "isMandatory": false
         }
       ],
