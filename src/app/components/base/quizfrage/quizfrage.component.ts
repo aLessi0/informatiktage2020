@@ -1,5 +1,4 @@
 import {Component, Inject} from '@angular/core';
-import {DataService} from '../../../service/data.service';
 import {QuestionModel} from '../../../model/game/question.model';
 import {MAT_DIALOG_DATA} from '@angular/material';
 import {ModalService} from '../../../service/modal.service';
@@ -20,7 +19,11 @@ export class QuizfrageComponent {
   }
 
   public validateAnswer(): void {
-    this.answerIsWrong = !(this.answerGiven && this.question.correctAnswer.toLowerCase() === this.answerGiven.toLowerCase());
+    const answrs = [];
+    this.question.correctAnswers.forEach((answer) => {
+      answrs.push(answer.toLowerCase());
+    });
+    this.answerIsWrong = !(this.answerGiven && answrs.indexOf(this.answerGiven.toLowerCase()) > -1);
 
     if (!this.answerIsWrong) {
       this.data.correctlyAnswered = true;
