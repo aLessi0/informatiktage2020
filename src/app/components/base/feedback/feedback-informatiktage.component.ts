@@ -40,10 +40,9 @@ export class FeedbackInformatiktageComponent {
 
     const body = {
       informatiktage: Array.from(this.progress.feedbackAnswers.entries()),
-      raeume: roomsFeedback
     };
     console.log(body);
-    this.httpClient.post('/api/feedback', body).subscribe(
+    this.httpClient.post('/api/feedback/informatiktage', body).subscribe(
       data => {
         console.log('POST: sending feedback successful');
         this.progress.canTakePartInContest = true;
