@@ -15,7 +15,7 @@
         },
         {
           "key": "room1coin1",
-          "questionText": "Cool, du hast die Frage von Marie korrekt beantwortet! Jetzt habe ich noch eine Frage für dich! \n\n An welchem Standort arbeiten die meisten Mitarbeitenden der Informatik?",
+          "questionText": "Cool, du hast die Frage von Marie korrekt beantwortet! Jetzt habe ich noch eine Frage für dich! \n\n An welchem ZKB-Standort arbeiten die meisten Mitarbeitenden der Informatik?",
           "correctAnswers": ["Zürich Neue Hard", "Neue Hard", "Neue Hard Zürich"],
           "isMandatory": false
         }
@@ -29,7 +29,7 @@
       ]
     },
     {
-      "name": "Kreieren & Designen",
+      "name": "Entwerfen & Designen",
       "level": 2,
       "roomClass": "room-req-design",
       "questions": [
