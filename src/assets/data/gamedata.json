@@ -104,7 +104,7 @@
         {
           "key": "room4coin1",
           "questionText": "Welches Betriebssystem gibt es neben Windows auch noch?",
-          "correctAnswers": ["Unix"],
+          "correctAnswers": ["Unix", "Linux", "MacOS", "Solaris"],
           "isMandatory": false
         }
       ],
@@ -125,7 +125,7 @@
           "key": "room5coin1",
           "questionText": "Wie viele Mitarbeitende beschäftigt die Zürcher Kantonalbank im IT-Bereich?",
           "correctAnswers": ["900", "ca. 900", "ca.900", "ca 900"],
-          "isMandatory": true
+          "isMandatory": false
         },
         {
           "key": "room5coin3",
@@ -142,7 +142,7 @@
         },
         {
           "key": "room5feedbackDanke",
-          "text": "Danke für dein Feedback und viel Spass beim Experimentieren im letzen Raum!",
+          "text": "Danke für dein Feedback und viel Spass beim Experimentieren im letzten Raum!",
           "givesCoin": false
         },
         {
