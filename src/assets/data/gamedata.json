@@ -9,39 +9,40 @@
       "questions": [
         {
           "key": "room1key",
-          "questionText": "Dies ist die Mandatory-Frage. Was bekommt man wenn man bei Informatik \"Info\" rausnimmt?",
-          "correctAnswers": ["rmatik", "zirp"],
+          "questionText": "Welches Jubiläum feiert die Zürcher Kantonalbank in diesem Jahr?",
+          "correctAnswers": ["150"],
           "isMandatory": true
+        },
+        {
+          "key": "room1coin1",
+          "questionText": "Cool, du hast die Frage von Marie korrekt beantwortet! Jetzt habe ich noch eine Frage für dich! \n\n An welchem Standort arbeiten die meisten Mitarbeitenden der Informatik?",
+          "correctAnswers": ["Zürich Neue Hard"],
+          "isMandatory": false
         }
       ],
       "infos": [
         {
           "key": "room1info1",
-          "text": "Ich glaube Marie hat eine Frage für dich. Frag sie doch mal!",
+          "text": "Ich glaube, Marie hat eine Frage für dich. Frag sie doch mal!",
           "givesCoin": false
-        },
-        {
-          "key": "room1coin1",
-          "text": "Cool du hast die Frage von Marie beantwortet! Ich gebe dir als Belohnung eine Münze!",
-          "givesCoin": true
         }
       ]
     },
     {
-      "name": "Requirements & Design",
+      "name": "Kreieren & Designen",
       "level": 2,
       "roomClass": "room-req-design",
       "questions": [
         {
           "key": "room2key",
-          "questionText": "Dies ist die Mandatory-Frage. Was bekommt man wenn man bei Requirements \"Require\" rausnimmt?",
-          "correctAnswers": ["ments"],
+          "questionText": "Wie nennt man die Testversion eines Produktes, die verwendet wird um Benutzertests durchzuführen?",
+          "correctAnswers": ["Prototyp"],
           "isMandatory": true
         },
         {
           "key":  "room2coin1",
-          "questionText": "Dies ist eine Optional-Frage. Was gibt 2+2?",
-          "correctAnswers": ["4"],
+          "questionText": "Wessen Meinung sollte man immer beachten, wenn man ein Produkt designt?",
+          "correctAnswers": ["Kunde"],
           "isMandatory": false
         }
       ],
@@ -64,20 +65,20 @@
       ]
     },
     {
-      "name": "Entwicklung & Test",
+      "name": "Entwickeln & Testen",
       "level": 3,
       "roomClass": "room-entwicklung-test",
       "questions": [
         {
           "key": "room3key",
-          "questionText": "Dies ist die Mandatory-Frage. Was bekommt man wenn man bei Entwicklung \"Ent\" rausnimmt?",
-          "correctAnswers": ["wicklung"],
+          "questionText": "Welcher Test wird bei Einführung durchgeführt?",
+          "correctAnswers": ["Regressionstest"],
           "isMandatory": true
         },
         {
           "key": "room3coin1",
-          "questionText": "Was ist 2+2?",
-          "correctAnswers": ["4"],
+          "questionText": "Mit welcher Programmiersprache wurde unsere WebApp entwickelt?",
+          "correctAnswers": ["Angular"],
           "isMandatory": false
         }
       ],
@@ -90,20 +91,20 @@
       ]
     },
     {
-      "name": "Deploy & Operate",
+      "name": "Betreiben & Überwachen",
       "level": 4,
       "roomClass": "room-build-deploy",
       "questions": [
         {
           "key": "room4key",
-          "questionText": "Dies ist die Mandatory-Frage. Was bekommt man wenn man bei Deploy \"Dep\" rausnimmt?",
-          "correctAnswers": ["loy"],
+          "questionText": "Welches Gerät wird für die Überwachung von Systemen benötigt?",
+          "correctAnswers": ["Monitor"],
           "isMandatory": true
         },
         {
           "key": "room4coin1",
-          "questionText": "blabla",
-          "correctAnswers": ["bla"],
+          "questionText": "Welches Betriebssystem gibt es neben Windows auch noch?",
+          "correctAnswers": ["Unix"],
           "isMandatory": false
         }
       ],
@@ -116,31 +117,37 @@
       ]
     },
     {
-      "name": "Recruiting",
+      "name": "Jobs & Wettbewerb",
       "level": 5,
       "roomClass": "room-recruiting",
       "questions": [
         {
           "key": "room5coin1",
-          "questionText": "Bla?",
-          "correctAnswers": ["bla"],
+          "questionText": "Wie viele Mitarbeitende beschäftigt die Zürcher Kantonalbank im IT-Bereich?",
+          "correctAnswers": ["900"],
+          "isMandatory": true
+        },
+        {
+          "key": "room5coin3",
+          "questionText": "Welche IT-Fachrichtungen bildet die Zürcher Kantonalbank aus?",
+          "correctAnswers": ["Applikationsentwickler"],
           "isMandatory": false
         }
       ],
       "infos": [
         {
           "key": "room5finishText",
-          "text": "Gratulation! Du hast es bis zum Ende geschafft. Fülle doch das Feedback aus und schalte den Playground frei!",
+          "text": "Gratulation! Gut gemacht. Du hast es bis zum Ende geschafft. Fülle doch das Feedback aus und schalte den zusätzlichen Raum \"Experimentieren\" frei.",
           "givesCoin": false
         },
         {
           "key": "room5feedbackDanke",
-          "text": "Vielen Dank für dein Feedback und viel Spass beim entdecken des Playgrounds!",
+          "text": "Danke für dein Feedback und viel Spass beim Experimentieren im letzen Raum!",
           "givesCoin": false
         },
         {
           "key": "room5wettbewerb",
-          "text": "Du kannst jetzt am grossen Wettbewerb teilnehmen und tolle Preise gewinnen!",
+          "text": "Du kannst nun an der Verlosung des Hauptpreises teilnehmen und tolle Preise gewinnen!",
           "givesCoin": false
         },
         {
@@ -151,7 +158,7 @@
       ]
     },
     {
-      "name": "Playground",
+      "name": "Experimentieren",
       "level": 6,
       "roomClass": "room-playground",
       "questions": [
@@ -165,7 +172,7 @@
       "infos": [
         {
           "key": "room6ScavengerHuntLeo1",
-          "text": "Yo Bro! Ich möchte gerne Angeln, kannst du mir eine Angelrute besorgen?",
+          "text": "Hi, Bro! Ich möchte liebend gerne Angeln. Kannst du mir eine Angelrute besorgen?",
           "givesCoin": false
         },
         {
@@ -195,12 +202,12 @@
         },
         {
           "key": "room6ScavengerHuntLilly4",
-          "text": "Super du hast mein Spielzeug gefunden. Hier als Geschenk eine Angelrute.",
+          "text": "Super du hast mein Spielzeug gefunden! Hier als Geschenk eine Angelrute.",
           "givesCoin": false
         },
         {
           "key": "room6ScavengerHuntHeidi1",
-          "text": "Siehst du nicht ich bin beschäftigt. Komm später wieder vorbei.",
+          "text": "Siehst du nicht, dass ich bin beschäftigt bin? Schau doch besser später nochmals vorbei...",
           "givesCoin": false
         },
         {
