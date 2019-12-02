@@ -39,6 +39,7 @@ export class FeedbackInformatiktageComponent {
     });
 
     const body = {
+      userId: this.progress.uid,
       informatiktage: Array.from(this.progress.feedbackAnswers.entries()),
     };
     console.log(body);

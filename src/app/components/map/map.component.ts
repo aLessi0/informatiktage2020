@@ -25,6 +25,8 @@ export class MapComponent implements AfterViewInit {
   @ViewChild('room6', {read: ElementRef}) room6Ref: ElementRef<HTMLElement>;
 
   private isWalking = false;
+  private isWalkingInsideRoom = false;
+  private isLeavingRoom = false;
   private roomActivatingAnimationRunning: boolean;
 
   constructor(@Inject(DataService) private readonly dataService: DataService,
@@ -35,40 +37,64 @@ export class MapComponent implements AfterViewInit {
   }
 
   public ngAfterViewInit(): void {
-    for (const levelNumber of Array.from(this.progress.playedLevels.keys())) {
-      const playedLevel = this.progress.playedLevels.get(levelNumber);
-      if (!playedLevel.hasAlreadyBeenSeen) {
-        this.roomActivatingAnimationRunning = true;
-        const roomRef = this.getRoomRef(playedLevel.level);
-        setTimeout(() => {
-          this.renderer.addClass(roomRef.nativeElement, 'unlockAnimation');
+    const runUnlockAnimation = () => {
+      for (const levelNumber of Array.from(this.progress.playedLevels.keys())) {
+        const playedLevel = this.progress.playedLevels.get(levelNumber);
+        if (!playedLevel.hasAlreadyBeenSeen) {
+          this.roomActivatingAnimationRunning = true;
+          const roomRef = this.getRoomRef(playedLevel.level);
+          setTimeout(() => {
+            this.renderer.addClass(roomRef.nativeElement, 'unlockAnimation');
 
-          let animationCount = 0;
-          roomRef.nativeElement.addEventListener('animationend', () => {
-            animationCount++;
-            if (animationCount === 2) {
-              this.zone.run(() => {
-                playedLevel.hasAlreadyBeenSeen = true;
-              });
-            } else if (animationCount === 3) {
-              this.renderer.removeClass(roomRef.nativeElement, 'unlockAnimation');
-            }
-          });
-        }, 500);
+            let animationCount = 0;
+            roomRef.nativeElement.addEventListener('animationend', () => {
+              animationCount++;
+              if (animationCount === 2) {
+                this.zone.run(() => {
+                  playedLevel.hasAlreadyBeenSeen = true;
+                });
+              } else if (animationCount === 3) {
+                this.renderer.removeClass(roomRef.nativeElement, 'unlockAnimation');
+              }
+            });
+          }, 200);
+        }
       }
-    }
+    };
+
+    this.isLeavingRoom = true;
+    this.renderer.addClass(this.personRef.nativeElement, 'leaveRoomAnimation');
+    let leaveRoomAnimationEvent = () => {
+      this.isLeavingRoom = false;
+      this.renderer.removeClass(this.personRef.nativeElement, 'leaveRoomAnimation');
+      this.personRef.nativeElement.removeEventListener('animationend', leaveRoomAnimationEvent);
+      runUnlockAnimation();
+    };
+    this.personRef.nativeElement.addEventListener('animationend', leaveRoomAnimationEvent);
   }
 
   public activateRoom(roomNumber: number): void {
-    if (this.isRoomUnlocked(roomNumber)) {
+    if (this.isRoomUnlocked(roomNumber) && !this.isWalking && !this.isWalkingInsideRoom && !this.isLeavingRoom) {
       const room = this.getRoomByNumber(roomNumber);
 
       const startLevel: number = this.progress.avatarPos;
       const endLevel: number = room.level;
 
       const openRoom = () => {
-        this.progress.avatarPos = room.level;
-        this.dataService.activateRoom(room);
+        // DO ANIMATION HERE FOR ENTERING ROOM!!!!!
+        const walkingInClass: string = 'animation-walkingIn-' + endLevel;
+        this.renderer.addClass(this.personRef.nativeElement, walkingInClass);
+        let startInsideRoomEvent = () => {
+          this.isWalkingInsideRoom = true;
+          this.personRef.nativeElement.removeEventListener('animationstart', startInsideRoomEvent);
+        };
+        let endInsideRoomListener = () => {
+          this.dataService.activateRoom(room);
+          this.personRef.nativeElement.removeEventListener('animationEnd', endInsideRoomListener);
+        };
+
+        this.personRef.nativeElement.addEventListener('animationend', endInsideRoomListener);
+        this.personRef.nativeElement.addEventListener('animationstart', startInsideRoomEvent);
       };
 
       if (startLevel === endLevel) {
@@ -76,20 +102,25 @@ export class MapComponent implements AfterViewInit {
       } else {
         const animationClass: string = 'animation' + startLevel + '-' + endLevel;
         this.renderer.addClass(this.personRef.nativeElement, animationClass);
-        this.personRef.nativeElement.addEventListener('animationend', () => {
+
+        let endWalkingEvent = () => {
           this.isWalking = false;
           setTimeout(() => {
             if (!this.isWalking) {
+              this.renderer.removeClass(this.personRef.nativeElement, animationClass);
+              this.personRef.nativeElement.removeEventListener('animationend', endWalkingEvent);
+              this.personRef.nativeElement.removeEventListener('animationstart', startWalkingEvent);
               openRoom();
             }
           }, 50);
-        });
-        this.personRef.nativeElement.addEventListener('animationstart', () => {
+        };
+        let startWalkingEvent = () => {
           this.isWalking = true;
+          this.progress.avatarPos = room.level;
+        };
 
-          this.renderer.removeClass(this.personRef.nativeElement, 'pos' + startLevel);
-          this.renderer.addClass(this.personRef.nativeElement, 'pos' + endLevel);
-        });
+        this.personRef.nativeElement.addEventListener('animationend', endWalkingEvent);
+        this.personRef.nativeElement.addEventListener('animationstart', startWalkingEvent);
       }
     }
   }
@@ -98,7 +129,8 @@ export class MapComponent implements AfterViewInit {
     this.modalService.openDialog(RewardCoinsComponent, false, {
       game: this.game,
       progress: this.progress
-    }).subscribe(() => {});
+    }).subscribe(() => {
+    });
   }
 
   public isRoomUnlocked(roomNumber: number): boolean {

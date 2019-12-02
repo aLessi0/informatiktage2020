@@ -32,8 +32,12 @@
 </svg-icon>
 
 <!--PERSON-->
-<svg-icon #person src="\assets\sprites\Icon\Avatar\{{progress.avatarType}}.svg"
-          class="person pos{{progress.avatarPos}}"></svg-icon>
+
+<app-avatar #person
+            [avatarType]="progress.avatarType"
+            class="person pos{{progress.avatarPos}}"
+            [ngClass]="{'walking-in-room': isWalkingInsideRoom}">
+</app-avatar>
 
 <!--UMGEBUNG-->
 <svg-icon src="\assets\sprites\Icon\Map\Simple-Forest.svg" class="forest"></svg-icon>

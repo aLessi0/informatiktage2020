@@ -1,11 +1,20 @@
-import {Component, ContentChild, EventEmitter, Inject, Input, OnInit, Output} from '@angular/core';
+import {
+  Component,
+  ContentChild,
+  ElementRef,
+  EventEmitter,
+  Inject,
+  Input,
+  OnInit,
+  Output,
+  Renderer2
+} from '@angular/core';
 import {RoomModel} from '../../model/game/room.model';
 import {FeedbackComponent} from '../modal/feedback/feedback.component';
 import {ModalService} from '../../service/modal.service';
 import {ProgressModel} from '../../model/user/progress.model';
 import {PlayedLevelModel} from '../../model/user/played-level.model';
 import {ProgressService} from '../../service/progress.service';
-import {DomSanitizer, SafeResourceUrl} from '@angular/platform-browser';
 import {AbstractRoom} from './abstract-room';
 
 @Component({
@@ -17,16 +26,19 @@ export class RoomContainerComponent implements OnInit {
   @Input() public room: RoomModel;
   @Output() private closeRoom: EventEmitter<void> = new EventEmitter();
 
+  private avatarRef: ElementRef;
+
+
   @ContentChild('room') private abstractRoom: AbstractRoom;
 
   private mandatoryQuestionWasAnsweredOnEntry: boolean;
   public progress: ProgressModel;
   public level: PlayedLevelModel;
-  public streetUrl: SafeResourceUrl;
+  public streetUrl: string;
 
   constructor(@Inject(ModalService) private readonly modalService: ModalService,
-              @Inject(ProgressService) private readonly progressService: ProgressService,
-              @Inject(DomSanitizer) private readonly sanitizer: DomSanitizer) {
+              @Inject(Renderer2) private readonly renderer: Renderer2,
+              @Inject(ProgressService) private readonly progressService: ProgressService) {
     this.progressService.progress$.subscribe((progress) => {
       this.progress = progress;
       if (this.progress) {
@@ -48,21 +60,30 @@ export class RoomContainerComponent implements OnInit {
   }
 
   public onStreetMapTap(): void {
+    let leaveRoom = () => {
+      this.renderer.addClass(this.abstractRoom.avatarRef.nativeElement, 'leaveRoomAnimation');
+      let leaveRoomAnimation = () => {
+        this.abstractRoom.avatarRef.nativeElement.removeEventListener('animationend', leaveRoomAnimation);
+        this.closeRoom.emit();
+      };
+      this.abstractRoom.avatarRef.nativeElement.addEventListener('animationend', leaveRoomAnimation);
+    };
+
 
     this.abstractRoom.walkTo('door', () => {
       if (!this.level.roomFeedback && this.level.level < 5 && this.progressService.mandatoryQuestionForRoomIsAnswered(this.room)) {
         this.modalService.openDialog(FeedbackComponent, false).subscribe(() => {
           if (this.level.roomFeedback) {
-            this.closeRoom.emit();
+            leaveRoom();
           }
         });
       } else {
-        this.closeRoom.emit();
+        leaveRoom();
       }
     });
   }
 
-  private getStreetUrl(): SafeResourceUrl {
-    return this.sanitizer.bypassSecurityTrustResourceUrl('/assets/sprites/Icon/Room/Street-Room-' + this.room.level + '.svg');
+  private getStreetUrl(): string {
+    return '/assets/sprites/Icon/Room/Street-Room-' + this.room.level + '.svg';
   }
 }

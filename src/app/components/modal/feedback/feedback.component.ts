@@ -32,6 +32,7 @@ export class FeedbackComponent {
   onFeedbackClick(feedback) {
     this.level.roomFeedback = feedback;
     this.http.post('/api/feedback/raum', {
+      userId: this.progress.uid,
       roomNumber: this.room.level,
       roomName: this.room.name,
       roomFeedback: this.level.roomFeedback
