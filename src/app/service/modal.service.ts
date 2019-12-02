@@ -13,7 +13,12 @@ export class ModalService {
 
   public openDialog<T>(component: ComponentType<any>, disableDialogClose: boolean, data?: T): Observable<any> {
     return Observable.create((subscriber) => {
-      const dialogRef = this.dialog.open(component, {data, disableClose: disableDialogClose, minWidth: 280});
+      const dialogRef = this.dialog.open(component, {
+        data,
+        disableClose: disableDialogClose,
+        minWidth: 350,
+        maxWidth: 350,
+      });
 
       dialogRef.afterClosed().subscribe(res => {
         subscriber.next(res);

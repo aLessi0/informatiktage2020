@@ -9,19 +9,19 @@
     pointer-events: initial;
 
     &.Julia {
-      --width: calc(6 * var(--vw));
+      --width: calc(6 * var(--cw));
     }
 
     &.John {
-      --width: calc(7 * var(--vw));
+      --width: calc(7 * var(--cw));
     }
 
     &.Sophie {
-      --width: calc(7 * var(--vw));
+      --width: calc(7 * var(--cw));
     }
 
     &.Rolf {
-      --width: calc(9 * var(--vw));
+      --width: calc(9 * var(--cw));
     }
 
     ::ng-deep {

@@ -6,7 +6,7 @@
 html, body {
   font-family: 'Rubik', sans-serif;
   font-weight: 500;
-  font-size: calc(4.266666667 * var(--vw));
+  font-size: calc(4.266666667 * var(--cw));
 }
 
 html {
@@ -26,7 +26,7 @@ body {
 
 //texts
 h1 {
-  font-size: calc(4.923 * var(--vw));
+  font-size: calc(4.923 * var(--cw));
   font-weight: 700;
   font-style: normal;
   font-stretch: normal;
@@ -61,11 +61,11 @@ button {
 
 @media (min-aspect-ratio: 9/20) {
   html, body {
-    font-size: calc(1.970 * var(--vh));
+    font-size: calc(1.970 * var(--ch));
   }
 
   h1 {
-    font-size: calc(2.8325 * var(--vh));
+    font-size: calc(2.8325 * var(--ch));
   }
 }
 

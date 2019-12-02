@@ -23,6 +23,10 @@
           <svg-icon *ngIf="level.coins.length > 1" src="/assets/sprites/Room/Credits/Coin-active.svg"></svg-icon>
           <svg-icon *ngIf="level.coins.length <= 1" src="/assets/sprites/Room/Credits/Coin-inactive.svg"></svg-icon>
         </div>
+        <div class="coin-credit" *ngIf="room.numberOfCoinsInRoom > 2">
+          <svg-icon *ngIf="level.coins.length > 2" src="/assets/sprites/Room/Credits/Coin-active.svg"></svg-icon>
+          <svg-icon *ngIf="level.coins.length <= 2" src="/assets/sprites/Room/Credits/Coin-inactive.svg"></svg-icon>
+        </div>
       </div>
 
     </div>

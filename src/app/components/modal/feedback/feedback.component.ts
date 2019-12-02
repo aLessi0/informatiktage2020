@@ -1,10 +1,11 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {DataService} from '../../../service/data.service';
 import {ModalService} from '../../../service/modal.service';
 import {RoomModel} from '../../../model/game/room.model';
 import {ProgressService} from '../../../service/progress.service';
 import {ProgressModel} from '../../../model/user/progress.model';
 import {PlayedLevelModel} from '../../../model/user/played-level.model';
+import {HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'app-feedback',
@@ -18,7 +19,8 @@ export class FeedbackComponent {
 
   constructor(private dataService: DataService,
               private progressService: ProgressService,
-              private modalService: ModalService) {
+              private modalService: ModalService,
+              private http: HttpClient) {
 
     this.dataService.activeRoom$.subscribe(room => this.room = room);
     this.progressService.progress$.subscribe(progress => {
@@ -29,8 +31,15 @@ export class FeedbackComponent {
 
   onFeedbackClick(feedback) {
     this.level.roomFeedback = feedback;
-    this.progressService.updateProgress(this.progress);
-    this.modalService.closeDialog();
+    this.http.post('/api/feedback/raum', {
+      roomNumber: this.room.level,
+      roomName: this.room.name,
+      roomFeedback: this.level.roomFeedback
+    }).subscribe(() => {
+      this.progressService.updateProgress(this.progress);
+      this.modalService.closeDialog();
+    });
+
   }
 
 }
