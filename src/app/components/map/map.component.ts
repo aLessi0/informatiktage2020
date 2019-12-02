@@ -24,9 +24,9 @@ export class MapComponent implements AfterViewInit {
   @ViewChild('room5', {read: ElementRef}) room5Ref: ElementRef<HTMLElement>;
   @ViewChild('room6', {read: ElementRef}) room6Ref: ElementRef<HTMLElement>;
 
-  private isWalking = false;
-  private isWalkingInsideRoom = false;
-  private isLeavingRoom = false;
+  public isWalking = false;
+  public isWalkingInsideRoom = false;
+  public isLeavingRoom = false;
   private roomActivatingAnimationRunning: boolean;
 
   constructor(@Inject(DataService) private readonly dataService: DataService,
