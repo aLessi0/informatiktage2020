@@ -1,6 +1,6 @@
 export class QuestionModel {
   public key: string;
   public questionText: string;
-  public correctAnswer: string;
+  public correctAnswers: string[];
   public isMandatory: boolean;
 }

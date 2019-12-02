@@ -10,14 +10,14 @@
         {
           "key": "room1key",
           "questionText": "Welches Jubiläum feiert die Zürcher Kantonalbank in diesem Jahr?",
-          "correctAnswer": "150",
+          "correctAnswers": ["150"],
           "isMandatory": true
         },
         {
           "key": "room1coin1",
           "questionText": "Cool, du hast die Frage von Marie korrekt beantwortet! Jetzt habe ich noch eine Frage für dich! \n\n An welchem Standort arbeiten die meisten Mitarbeitenden der Informatik?",
-          "correctAnswer": "Zürich Neue Hard",
-          "givesCoin": true
+          "correctAnswers": ["Zürich Neue Hard"],
+          "isMandatory": false
         }
       ],
       "infos": [
@@ -29,20 +29,20 @@
       ]
     },
     {
-      "name": "Kreiren & Designen",
+      "name": "Kreieren & Designen",
       "level": 2,
       "roomClass": "room-req-design",
       "questions": [
         {
           "key": "room2key",
           "questionText": "Wie nennt man die Testversion eines Produktes, die verwendet wird um Benutzertests durchzuführen?",
-          "correctAnswer": "Prototyp",
+          "correctAnswers": ["Prototyp"],
           "isMandatory": true
         },
         {
           "key":  "room2coin1",
           "questionText": "Wessen Meinung sollte man immer beachten, wenn man ein Produkt designt?",
-          "correctAnswer": "Kunde",
+          "correctAnswers": ["Kunde"],
           "isMandatory": false
         }
       ],
@@ -72,13 +72,13 @@
         {
           "key": "room3key",
           "questionText": "Welcher Test wird bei Einführung durchgeführt?",
-          "correctAnswer": "Regressionstest",
+          "correctAnswers": ["Regressionstest"],
           "isMandatory": true
         },
         {
           "key": "room3coin1",
           "questionText": "Mit welcher Programmiersprache wurde unsere WebApp entwickelt?",
-          "correctAnswer": "Angular",
+          "correctAnswers": ["Angular"],
           "isMandatory": false
         }
       ],
@@ -98,13 +98,13 @@
         {
           "key": "room4key",
           "questionText": "Welches Gerät wird für die Überwachung von Systemen benötigt?",
-          "correctAnswer": "Monitor",
+          "correctAnswers": ["Monitor"],
           "isMandatory": true
         },
         {
           "key": "room4coin1",
           "questionText": "Welches Betriebssystem gibt es neben Windows auch noch?",
-          "correctAnswer": "Unix",
+          "correctAnswers": ["Unix"],
           "isMandatory": false
         }
       ],
@@ -124,13 +124,13 @@
         {
           "key": "room5coin1",
           "questionText": "Wie viele Mitarbeitende beschäftigt die Zürcher Kantonalbank im IT-Bereich?",
-          "correctAnswer": "900",
+          "correctAnswers": ["900"],
           "isMandatory": true
         },
         {
           "key": "room5coin3",
           "questionText": "Welche IT-Fachrichtungen bildet die Zürcher Kantonalbank aus?",
-          "correctAnswer": "Applikationsentwickler",
+          "correctAnswers": ["Applikationsentwickler"],
           "isMandatory": false
         }
       ],
@@ -165,7 +165,7 @@
         {
           "key": "room6coin1",
           "questionText": "Ich mag Schnecken, wie macht die Schnecke?",
-          "correctAnswer": "Zirp Zirp!",
+          "correctAnswers": ["Zirp Zirp!"],
           "isMandatory": false
         }
       ],
