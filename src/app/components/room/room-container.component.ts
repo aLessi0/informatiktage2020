@@ -6,7 +6,7 @@ import {ProgressModel} from '../../model/user/progress.model';
 import {PlayedLevelModel} from '../../model/user/played-level.model';
 import {ProgressService} from '../../service/progress.service';
 import {DomSanitizer, SafeResourceUrl} from '@angular/platform-browser';
-import {AbstractRoom} from "./abstract-room";
+import {AbstractRoom} from './abstract-room';
 
 @Component({
   selector: 'app-room-container',
