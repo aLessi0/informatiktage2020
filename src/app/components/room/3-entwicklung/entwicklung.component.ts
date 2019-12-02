@@ -31,7 +31,6 @@ export class EntwicklungComponent extends AbstractRoom {
     this.walkTo('katrin', () => this.openQuestion('room3key', '/assets/sprites/Room/3-develop-and-testing/Katrin.svg'));
   }
 
-
   planetClick() {
     if (this.planetState < 3) {
       this.planetState++;
@@ -71,7 +70,7 @@ export class EntwicklungComponent extends AbstractRoom {
   }
 
   starReset() {
-    if (this.clickedStar === false ) {
+    if (this.clickedStar === false) {
       console.log('stars reset');
       this.starsHidden = [];
     } else {

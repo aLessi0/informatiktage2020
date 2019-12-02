@@ -19,7 +19,7 @@ export class AbstractRoom implements OnInit {
   @ViewChild(AvatarComponent, {read: ElementRef}) private avatarRef: ElementRef;
 
   private currentAvatarPosition = 'door';
-  private isAvatarAnimationRunning: boolean = false;
+  private isAvatarAnimationRunning = false;
 
   constructor(@Inject(DataService) protected readonly dataService: DataService,
               @Inject(ProgressService) protected readonly progressService: ProgressService,
@@ -63,7 +63,7 @@ export class AbstractRoom implements OnInit {
       this.renderer.addClass(this.avatarRef.nativeElement, className);
     }
     this.renderer.addClass(this.avatarRef.nativeElement, animationClass);
-    let animationRunning: boolean = false;
+    let animationRunning = false;
     const animationEndFunction = () => {
       animationRunning = false;
       setTimeout(() => {
