@@ -1,4 +1,5 @@
 import {
+  AfterViewInit,
   Component,
   DoCheck,
   ElementRef,
@@ -23,7 +24,7 @@ import {animation} from '@angular/animations';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements DoCheck {
+export class AppComponent implements DoCheck, AfterViewInit {
   public progressAvailable = false;
   public progress: ProgressModel;
   public game: GameModel;
@@ -72,6 +73,20 @@ export class AppComponent implements DoCheck {
       this.progressAvailable = !!progress;
       this.progress = progress;
     });
+  }
+
+  public ngAfterViewInit(): void {
+    let vh = window.innerHeight * 0.01;
+    let vw = window.innerWidth * 0.01;
+    setTimeout(function() {
+      const clientRect = document.getElementsByTagName('app-root')[0].getBoundingClientRect();
+      const cw = clientRect.width * 0.01;
+      const ch = clientRect.height * 0.01;
+      document.documentElement.style.setProperty('--ch', `${ch}px`);
+      document.documentElement.style.setProperty('--cw', `${cw}px`);
+    });
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+    document.documentElement.style.setProperty('--vw', `${vw}px`);
   }
 
   public leaveActiveRoom(): void {
