@@ -65,6 +65,10 @@ export class RecruitingComponent extends AbstractRoom {
     }
   }
 
+  public jellyFishClick() {
+        this.openQuestion('room5coin3', '/assets/sprites/Room/5-recruiting/Jellyfish.svg');
+  }
+
   public async submarineClick() {
     if (this.submarineClickable) {
       if (this.submarineClickCounter < 3) {
@@ -145,7 +149,7 @@ export class RecruitingComponent extends AbstractRoom {
    */
   public francoClick(): void {
     this.walkTo('franco', () => {
-      if (!this.level.key) {
+    if (!this.progress.feedbackCompleted) {
         this.openInfo('room5finishText', '/assets/sprites/Room/5-recruiting/Franco.svg', () => {
           this.openITDFeedback();
         });
