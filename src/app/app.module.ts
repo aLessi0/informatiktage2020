@@ -16,18 +16,20 @@ import {AvatarSelectorComponent} from './components/avatar-selector/avatar-selec
 import {InfotextComponent} from './components/base/infotext/infotext.component';
 import {FeedbackInformatiktageComponent} from './components/base/feedback/feedback-informatiktage.component';
 import {FeedbackComponent} from './components/modal/feedback/feedback.component';
-import { WeltDerInformatikComponent } from './components/room/1-welt-der-informatik/welt-der-informatik.component';
-import { RequirementDesignComponent } from './components/room/2-requirement-design/requirement-design.component';
-import { EntwicklungComponent } from './components/room/3-entwicklung/entwicklung.component';
-import { BuildDeployComponent } from './components/room/4-build-deploy/build-deploy.component';
-import { RecruitingComponent } from './components/room/5-recruiting/recruiting.component';
-import { PlaygroundComponent } from './components/room/6-playground/playground.component';
-import { ServiceWorkerModule } from '@angular/service-worker';
-import { environment } from '../environments/environment';
+import {WeltDerInformatikComponent} from './components/room/1-welt-der-informatik/welt-der-informatik.component';
+import {RequirementDesignComponent} from './components/room/2-requirement-design/requirement-design.component';
+import {EntwicklungComponent} from './components/room/3-entwicklung/entwicklung.component';
+import {BuildDeployComponent} from './components/room/4-build-deploy/build-deploy.component';
+import {RecruitingComponent} from './components/room/5-recruiting/recruiting.component';
+import {PlaygroundComponent} from './components/room/6-playground/playground.component';
+import {ServiceWorkerModule} from '@angular/service-worker';
+import {environment} from '../environments/environment';
 import {RewardCoinsComponent} from './components/base/reward-coins/reward-coins.component';
-import { MovieComponent } from './components/base/movie/movie.component';
-import { AvatarComponent } from './components/avatar/avatar.component';
-import {ClickOutsideModule} from "ng-click-outside";
+import {MovieComponent} from './components/base/movie/movie.component';
+import {AvatarComponent} from './components/avatar/avatar.component';
+import {ClickOutsideModule} from 'ng-click-outside';
+import {AnalyticsComponent} from './components/base/analytics/analytics.component';
+import {RouterModule} from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -48,7 +50,8 @@ import {ClickOutsideModule} from "ng-click-outside";
     RewardCoinsComponent,
     FeedbackInformatiktageComponent,
     AvatarComponent,
-    MovieComponent
+    MovieComponent,
+    AnalyticsComponent
   ],
   imports: [
     BrowserModule,
@@ -58,7 +61,8 @@ import {ClickOutsideModule} from "ng-click-outside";
     BrowserAnimationsModule,
     AngularMaterialModule,
     ClickOutsideModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
+    RouterModule.forRoot([]),
+    ServiceWorkerModule.register('ngsw-worker.js', {enabled: environment.production})
   ],
   providers: [],
   bootstrap: [AppComponent],
