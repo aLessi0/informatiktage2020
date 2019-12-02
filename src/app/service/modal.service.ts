@@ -16,8 +16,7 @@ export class ModalService {
       const dialogRef = this.dialog.open(component, {
         data,
         disableClose: disableDialogClose,
-        minWidth: 350,
-        maxWidth: 350,
+        panelClass: 'modal',
       });
 
       dialogRef.afterClosed().subscribe(res => {
