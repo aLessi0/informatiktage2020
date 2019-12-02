@@ -67,8 +67,6 @@ export class PlaygroundComponent extends AbstractRoom {
         } else {
           this.openInfo('room6ScavengerHuntLilly3', '/assets/sprites/Room/6-playground/Lilly.svg');
         }
-        this.resetTrees();
-        this.solution = '';
       }
     });
   }
@@ -102,6 +100,16 @@ export class PlaygroundComponent extends AbstractRoom {
           this.tree4Clicked = true;
           this.renderer.addClass(this.tree4.nativeElement, 'treeClicked');
           this.solution = this.solution + '4';
+        }
+
+        if (this.tree1Clicked && this.tree2Clicked && this.tree3Clicked && this.tree4Clicked) {
+          if (this.solution === '3142') {
+            this.openInfo('room6ScavengerHuntTreeCorrect', '/assets/sprites/Room/6-playground/Tree.svg');
+          } else {
+            this.openInfo('room6ScavengerHuntTreeWrong', '/assets/sprites/Room/6-playground/Tree.svg');
+            this.resetTrees();
+            this.solution = '';
+          }
         }
       });
     }

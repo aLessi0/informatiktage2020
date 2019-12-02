@@ -16,15 +16,17 @@
   .treeGroup1 {
     position: absolute;
     width: 36%;
-    top: 63%;
+    bottom: 22%;
     left: 32%;
+    display: none;
   }
 
   .treeGroup2 {
     position: absolute;
     width: 46%;
-    top: 66%;
+    bottom: 22%;
     left: 27%;
+    display: none;
   }
 
   .title {
@@ -96,6 +98,21 @@
     left: 35%;
     text-align: center;
     bottom: 17%;
+  }
+
+  @media screen and (min-height: 640px) {
+
+    .subtext2a, .subtext2b {
+      margin-left: 5%;
+    }
+
+    .treeGroup1 {
+      display: block;
+    }
+
+    .treeGroup2 {
+      display: block;
+    }
   }
 }
 

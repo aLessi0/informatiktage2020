@@ -192,17 +192,17 @@
         },
         {
           "key": "room6ScavengerHuntLilly2",
-          "text": "Ich habe mein Spielzeug im Wald verloren. Kannst du mir helfen?",
+          "text": "Suchst du eine Angelrute? Finde den richtigen Weg durch den Wald, dann kann ich dir weiterhelfen!",
           "givesCoin": false
         },
         {
           "key": "room6ScavengerHuntLilly3",
-          "text": "Du hast den Gegenstand nicht gefunden.",
+          "text": "Du hast den richtigen Weg noch nicht gefunden!",
           "givesCoin": false
         },
         {
           "key": "room6ScavengerHuntLilly4",
-          "text": "Super du hast mein Spielzeug gefunden! Hier als Geschenk eine Angelrute.",
+          "text": "Super das war der richtige Weg! Hier als Geschenk eine Angelrute.",
           "givesCoin": false
         },
         {
@@ -214,6 +214,16 @@
           "key": "room6ScavengerHuntCoin",
           "text": "Ooh ein Münz-Fisch hat angebissen. Viel Spass damit.",
           "givesCoin": true
+        },
+        {
+          "key": "room6ScavengerHuntTreeWrong",
+          "text": "Das war leider der falsche Weg. Versuch es noch einmal.",
+          "givesCoin": false
+        },
+        {
+          "key": "room6ScavengerHuntTreeCorrect",
+          "text": "Gratuliere! Du hast den richtigen Weg gefunden. Geh zu Lilly und hol dir deine Belohnung ab.",
+          "givesCoin": false
         }
       ]
     }

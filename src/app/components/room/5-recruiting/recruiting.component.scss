@@ -155,6 +155,10 @@
     visibility: visible;
   }
 
+  .no-pointer-events {
+    pointer-events: none !important;
+  }
+
   app-avatar {
     position: absolute;
     top: 33%;
