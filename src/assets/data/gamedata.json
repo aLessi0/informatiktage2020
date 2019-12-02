@@ -182,7 +182,7 @@
         },
         {
           "key": "room6ScavengerHuntLeo3",
-          "text": "Vielen Dank, du hast meine Angelrute gefunden. Lass uns doch zusammen fischen.",
+          "text": "Vielen Dank, du hast eine Angelrute gefunden. Lass uns doch zusammen fischen.",
           "givesCoin": false
         },
         {
@@ -203,6 +203,11 @@
         {
           "key": "room6ScavengerHuntLilly4",
           "text": "Super das war der richtige Weg! Hier als Geschenk eine Angelrute.",
+          "givesCoin": false
+        },
+        {
+          "key": "room6ScavengerHuntLilly5",
+          "text": "Gratuliere! Du hast eine Angelrute erhalten.",
           "givesCoin": false
         },
         {
