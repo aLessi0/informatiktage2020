@@ -53,8 +53,10 @@ export class RecruitingComponent extends AbstractRoom {
   }
 
   public starReset() {
-    this.starClickCounter = 0;
-    this.renderer.setStyle(this.zora.nativeElement, 'transform', `translateY(0)`);
+    if (this.starClickCounter < this.clickToGetZora) {
+      this.starClickCounter = 0;
+      this.renderer.setStyle(this.zora.nativeElement, 'transform', `translateY(0)`);
+    }
   }
 
   public zoraClick() {
