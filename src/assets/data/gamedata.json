@@ -10,13 +10,13 @@
         {
           "key": "room1key",
           "questionText": "Welches Jubiläum feiert die Zürcher Kantonalbank in diesem Jahr?",
-          "correctAnswers": ["150"],
+          "correctAnswers": ["150", "150 Jahre"],
           "isMandatory": true
         },
         {
           "key": "room1coin1",
           "questionText": "Cool, du hast die Frage von Marie korrekt beantwortet! Jetzt habe ich noch eine Frage für dich! \n\n An welchem Standort arbeiten die meisten Mitarbeitenden der Informatik?",
-          "correctAnswers": ["Zürich Neue Hard"],
+          "correctAnswers": ["Zürich Neue Hard", "Neue Hard", "Neue Hard Zürich"],
           "isMandatory": false
         }
       ],
@@ -42,7 +42,7 @@
         {
           "key":  "room2coin1",
           "questionText": "Wessen Meinung sollte man immer beachten, wenn man ein Produkt designt?",
-          "correctAnswers": ["Kunde"],
+          "correctAnswers": ["Kunde", "Benutzer", "User"],
           "isMandatory": false
         }
       ],
@@ -111,7 +111,7 @@
       "infos": [
         {
           "key": "room4coin2",
-          "text": "LaLeLu wenn der Mond scheint..., hier eine Münze!",
+          "text": "Du hast den Mann hinter dem Mond gefunden. Hier eine Münze!",
           "givesCoin": true
         }
       ]
@@ -124,13 +124,13 @@
         {
           "key": "room5coin1",
           "questionText": "Wie viele Mitarbeitende beschäftigt die Zürcher Kantonalbank im IT-Bereich?",
-          "correctAnswers": ["900"],
+          "correctAnswers": ["900", "ca. 900", "ca.900", "ca 900"],
           "isMandatory": true
         },
         {
           "key": "room5coin3",
           "questionText": "Welche IT-Fachrichtungen bildet die Zürcher Kantonalbank aus?",
-          "correctAnswers": ["Applikationsentwickler"],
+          "correctAnswers": ["Applikationsentwickler", "Systemtechnik", "Systemtechniker", "Applikationsentwicklung"],
           "isMandatory": false
         }
       ],
