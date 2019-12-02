@@ -34,10 +34,6 @@ export class PlaygroundComponent extends AbstractRoom {
     super(dataService, progressService, modalService, renderer);
   }
 
-  public ngOnInit(): void {
-    super.ngOnInit();
-  }
-
   public entryAbaton(): void {
     this.walkTo('arnold', () => this.modalService.openDialog(MovieComponent, false, {}).subscribe(() => {}));
   }

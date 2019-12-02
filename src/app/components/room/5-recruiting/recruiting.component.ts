@@ -37,10 +37,6 @@ export class RecruitingComponent extends AbstractRoom {
     super(dataService, progressService, modalService, renderer);
   }
 
-  public ngOnInit(): void {
-    super.ngOnInit();
-  }
-
   public crazyfishClick() {
     this.removeAllClassesFromCrazyfish();
     this.renderer.addClass(this.crazyfish.nativeElement, 'crazyfishStopAnimation');
@@ -70,7 +66,9 @@ export class RecruitingComponent extends AbstractRoom {
   }
 
   public jellyFishClick() {
-    this.openQuestion('room5coin3', '/assets/sprites/Room/5-recruiting/Jellyfish.svg');
+    this.walkTo('jellyfish', () => {
+      this.openQuestion('room5coin3', '/assets/sprites/Room/5-recruiting/Jellyfish.svg');
+    });
   }
 
   public async submarineClick() {

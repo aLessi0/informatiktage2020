@@ -20,10 +20,6 @@ export class BuildDeployComponent extends AbstractRoom {
     super(dataService, progressService, modalService, renderer);
   }
 
-  public ngOnInit(): void {
-    super.ngOnInit();
-  }
-
   public luckyClick(): void {
     this.walkTo('lucky', () => this.openQuestion('room4key', '/assets/sprites/Room/4-deploy-and-testing/Lucky.svg'));
   }

@@ -21,10 +21,6 @@ export class RequirementDesignComponent extends AbstractRoom {
     super(dataService, progressService, modalService, renderer);
   }
 
-  public ngOnInit(): void {
-    super.ngOnInit();
-  }
-
   public ursClick(): void {
     this.walkTo('urs', () => this.openQuestion('room2coin1', '/assets/sprites/Room/2-req-and-design/Urs.svg'));
   }
