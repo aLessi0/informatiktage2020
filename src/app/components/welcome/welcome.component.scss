@@ -16,15 +16,17 @@
   .treeGroup1 {
     position: absolute;
     width: 36%;
-    top: 63%;
+    bottom: 22%;
     left: 32%;
+    display: none;
   }
 
   .treeGroup2 {
     position: absolute;
     width: 46%;
-    top: 66%;
+    bottom: 22%;
     left: 27%;
+    display: none;
   }
 
   .title {
@@ -48,38 +50,39 @@
     top: 32%;
   }
 
-  .subtext2a, .subtext2b {
+  .wrapper {
     position: absolute;
+    top: 15%;
+  }
+
+  .subtext2a, .subtext2b {
+    display: flex;
+    flex: 1 0 auto;
+
     font-size: large;
     font-weight: normal;
 
     .text {
-      margin-left: 20%;
-      width: 75%;
+      margin-left: 5%;
+      width: 80%;
     }
 
     .key {
-      position: absolute;
       width: 10%;
-      top: 10%;
-      left: 5%;
+
     }
 
     .coin {
-      position: absolute;
       width: 10%;
-      top: 10%;
-      left: 5%;
     }
 
   }
 
   .subtext2a {
-    top: 12%;
   }
 
   .subtext2b {
-    top: 37%;
+    margin-top: 5%;
   }
 
   .child-button {
@@ -95,6 +98,21 @@
     left: 35%;
     text-align: center;
     bottom: 17%;
+  }
+
+  @media screen and (min-height: 640px) {
+
+    .subtext2a, .subtext2b {
+      margin-left: 5%;
+    }
+
+    .treeGroup1 {
+      display: block;
+    }
+
+    .treeGroup2 {
+      display: block;
+    }
   }
 }
 

@@ -15,7 +15,7 @@
         },
         {
           "key": "room1coin1",
-          "questionText": "Cool, du hast die Frage von Marie korrekt beantwortet! Jetzt habe ich noch eine Frage für dich! \n\n An welchem Standort arbeiten die meisten Mitarbeitenden der Informatik?",
+          "questionText": "Cool, du hast die Frage von Marie korrekt beantwortet! Jetzt habe ich noch eine Frage für dich! \n\n An welchem ZKB-Standort arbeiten die meisten Mitarbeitenden der Informatik?",
           "correctAnswers": ["Zürich Neue Hard", "Neue Hard", "Neue Hard Zürich"],
           "isMandatory": false
         }
@@ -29,7 +29,7 @@
       ]
     },
     {
-      "name": "Kreieren & Designen",
+      "name": "Entwerfen & Designen",
       "level": 2,
       "roomClass": "room-req-design",
       "questions": [
@@ -42,7 +42,7 @@
         {
           "key":  "room2coin1",
           "questionText": "Wessen Meinung sollte man immer beachten, wenn man ein Produkt designt?",
-          "correctAnswers": ["Kunde", "Benutzer", "User"],
+          "correctAnswers": ["Kunde", "Kunden", "Benutzer", "User"],
           "isMandatory": false
         }
       ],
@@ -104,7 +104,7 @@
         {
           "key": "room4coin1",
           "questionText": "Welches Betriebssystem gibt es neben Windows auch noch?",
-          "correctAnswers": ["Unix"],
+          "correctAnswers": ["Unix", "Linux", "MacOS", "Solaris"],
           "isMandatory": false
         }
       ],
@@ -125,7 +125,7 @@
           "key": "room5coin1",
           "questionText": "Wie viele Mitarbeitende beschäftigt die Zürcher Kantonalbank im IT-Bereich?",
           "correctAnswers": ["900", "ca. 900", "ca.900", "ca 900"],
-          "isMandatory": true
+          "isMandatory": false
         },
         {
           "key": "room5coin3",
@@ -142,7 +142,7 @@
         },
         {
           "key": "room5feedbackDanke",
-          "text": "Danke für dein Feedback und viel Spass beim Experimentieren im letzen Raum!",
+          "text": "Danke für dein Feedback und viel Spass beim Experimentieren im letzten Raum!",
           "givesCoin": false
         },
         {
@@ -182,7 +182,7 @@
         },
         {
           "key": "room6ScavengerHuntLeo3",
-          "text": "Vielen Dank, du hast meine Angelrute gefunden. Lass uns doch zusammen fischen.",
+          "text": "Vielen Dank, du hast eine Angelrute gefunden. Lass uns doch zusammen fischen.",
           "givesCoin": false
         },
         {
@@ -192,17 +192,22 @@
         },
         {
           "key": "room6ScavengerHuntLilly2",
-          "text": "Ich habe mein Spielzeug im Wald verloren. Kannst du mir helfen?",
+          "text": "Suchst du eine Angelrute? Finde den richtigen Weg durch den Wald, dann kann ich dir weiterhelfen!",
           "givesCoin": false
         },
         {
           "key": "room6ScavengerHuntLilly3",
-          "text": "Du hast den Gegenstand nicht gefunden.",
+          "text": "Du hast den richtigen Weg noch nicht gefunden!",
           "givesCoin": false
         },
         {
           "key": "room6ScavengerHuntLilly4",
-          "text": "Super du hast mein Spielzeug gefunden! Hier als Geschenk eine Angelrute.",
+          "text": "Super das war der richtige Weg! Hier als Geschenk eine Angelrute.",
+          "givesCoin": false
+        },
+        {
+          "key": "room6ScavengerHuntLilly5",
+          "text": "Gratuliere! Du hast eine Angelrute erhalten.",
           "givesCoin": false
         },
         {
@@ -212,8 +217,18 @@
         },
         {
           "key": "room6ScavengerHuntCoin",
-          "text": "Ooh ein Münz-Fisch hat angebissen. Viel Spass damit.",
+          "text": "Ooh du hast mich am Haken! Endlich bin ich frei! Ich schenke dir als Belohnung eine Münze, die ich beim Tauchen gefunden habe!",
           "givesCoin": true
+        },
+        {
+          "key": "room6ScavengerHuntTreeWrong",
+          "text": "Das war leider der falsche Weg. Versuch es noch einmal.",
+          "givesCoin": false
+        },
+        {
+          "key": "room6ScavengerHuntTreeCorrect",
+          "text": "Gratuliere! Du hast den richtigen Weg gefunden. Geh zu Lilly und hol dir deine Belohnung ab.",
+          "givesCoin": false
         }
       ]
     }

@@ -2,12 +2,13 @@
   <div class="question-icon">
     <svg-icon *ngIf="data.icon" [src]="data.icon"></svg-icon>
   </div>
-  <div class="quizfrage">{{question.questionText}}</div>
+  <div class="quizfrage" #quizfrage></div>
 
   <div class="answer-wrong" *ngIf="answerIsWrong">
     <svg-icon [src]="'/assets/sprites/Icon/Cross.svg'"></svg-icon>
   </div>
 
   <input type="text" class="input-field answer-field" [(ngModel)]="answerGiven"/>
-  <app-button class="check-answer" [btnTitle]="'Prüfen'" (btnClicked)="validateAnswer()"></app-button>
+  <app-button class="check-answer" [btnTitle]="'Prüfen'" [style.visibility]="textFinished ? 'visible':'hidden'"
+              (btnClicked)="validateAnswer()"></app-button>
 </div>

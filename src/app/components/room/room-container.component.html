@@ -1,6 +1,8 @@
 <div class="room {{room.roomClass}}">
 
-  <object [data]="streetUrl" type="image/svg+xml" class="bg-street"></object>
+  <div class="bg-street">
+    <svg-icon src="{{streetUrl}}"></svg-icon>
+  </div>
 
   <div class="main-street-layer" (click)="onStreetMapTap()"></div>
 
@@ -22,6 +24,10 @@
         <div class="coin-credit" *ngIf="room.numberOfCoinsInRoom > 1">
           <svg-icon *ngIf="level.coins.length > 1" src="/assets/sprites/Room/Credits/Coin-active.svg"></svg-icon>
           <svg-icon *ngIf="level.coins.length <= 1" src="/assets/sprites/Room/Credits/Coin-inactive.svg"></svg-icon>
+        </div>
+        <div class="coin-credit" *ngIf="room.numberOfCoinsInRoom > 2">
+          <svg-icon *ngIf="level.coins.length > 2" src="/assets/sprites/Room/Credits/Coin-active.svg"></svg-icon>
+          <svg-icon *ngIf="level.coins.length <= 2" src="/assets/sprites/Room/Credits/Coin-inactive.svg"></svg-icon>
         </div>
       </div>
 

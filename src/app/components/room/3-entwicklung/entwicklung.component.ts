@@ -3,7 +3,6 @@ import {AbstractRoom} from '../abstract-room';
 import {DataService} from '../../../service/data.service';
 import {ModalService} from '../../../service/modal.service';
 import {ProgressService} from '../../../service/progress.service';
-import { ClickOutsideModule } from 'ng-click-outside';
 
 @Component({
   selector: 'app-entwicklung',
@@ -23,14 +22,9 @@ export class EntwicklungComponent extends AbstractRoom {
     super(dataService, progressService, modalService, renderer);
   }
 
-  public ngOnInit(): void {
-    super.ngOnInit();
-  }
-
   public katrinClick(): void {
     this.walkTo('katrin', () => this.openQuestion('room3key', '/assets/sprites/Room/3-develop-and-testing/Katrin.svg'));
   }
-
 
   planetClick() {
     if (this.planetState < 3) {
@@ -71,7 +65,7 @@ export class EntwicklungComponent extends AbstractRoom {
   }
 
   starReset() {
-    if (this.clickedStar === false ) {
+    if (this.clickedStar === false) {
       console.log('stars reset');
       this.starsHidden = [];
     } else {

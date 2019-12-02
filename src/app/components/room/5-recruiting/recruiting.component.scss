@@ -155,10 +155,19 @@
     visibility: visible;
   }
 
+  .no-pointer-events {
+    pointer-events: none !important;
+  }
+
   app-avatar {
     position: absolute;
     top: 33%;
     left: 3%;
+
+    &.pos-jellyfish {
+      top: 42%;
+      left: 63%;
+    }
 
     &.pos-zora {
       top: 86%;
@@ -170,19 +179,44 @@
       left: 91%;
     }
 
-    $doorZoraDuration: 1.73s;
+    $doorJellyfishDuration: 0.6s;
+    $jellyfishZoraDuration: 1.13s;
     $zoraFrancoDuration: 2.27s;
 
+    &.walk-door-jellyfish {
+      animation: walkingDoor-Jellyfish $doorJellyfishDuration linear;
+    }
+
+    &.walk-jellyfish-door {
+      animation: walkingDoor-Jellyfish $doorJellyfishDuration reverse linear;
+    }
+
+    &.walk-jellyfish-zora {
+      animation: walkingJellyfish-Zora $jellyfishZoraDuration linear;
+    }
+
+    &.walk-zora-jellyfish {
+      animation: walkingJellyfish-Zora $jellyfishZoraDuration reverse linear;
+    }
+
+    &.walk-jellyfish-franco {
+      animation: walkingJellyfish-Zora $jellyfishZoraDuration linear, walkingZora-Franco $zoraFrancoDuration $jellyfishZoraDuration linear;
+    }
+
+    &.walk-franco-jellyfish {
+      animation: walkingZora-Franco $zoraFrancoDuration reverse linear, walkingJellyfish-Zora $jellyfishZoraDuration $zoraFrancoDuration reverse linear;
+    }
+
     &.walk-door-zora {
-      animation: walkingDoor-Zora $doorZoraDuration linear;
+      animation: walkingDoor-Jellyfish $doorJellyfishDuration linear, walkingJellyfish-Zora $jellyfishZoraDuration $doorJellyfishDuration linear;
     }
 
     &.walk-door-franco {
-      animation: walkingDoor-Zora $doorZoraDuration linear, walkingZora-Franco $zoraFrancoDuration $doorZoraDuration linear;
+      animation: walkingDoor-Jellyfish $doorJellyfishDuration linear, walkingJellyfish-Zora $jellyfishZoraDuration $doorJellyfishDuration linear, walkingZora-Franco $zoraFrancoDuration #{$doorJellyfishDuration + $jellyfishZoraDuration} linear;
     }
 
     &.walk-zora-door {
-      animation: walkingDoor-Zora $doorZoraDuration reverse linear;
+      animation: walkingJellyfish-Zora $jellyfishZoraDuration reverse linear, walkingDoor-Jellyfish $doorJellyfishDuration $jellyfishZoraDuration reverse linear;
     }
 
     &.walk-zora-franco {
@@ -190,39 +224,46 @@
     }
 
     &.walk-franco-door {
-      animation: walkingZora-Franco $zoraFrancoDuration reverse linear, walkingDoor-Zora $doorZoraDuration $zoraFrancoDuration reverse linear;
+      animation: walkingZora-Franco $zoraFrancoDuration reverse linear, walkingJellyfish-Zora $jellyfishZoraDuration $zoraFrancoDuration reverse linear, walkingDoor-Jellyfish $doorJellyfishDuration #{$zoraFrancoDuration + $jellyfishZoraDuration} reverse linear;
     }
 
     &.walk-franco-zora {
       animation: walkingZora-Franco $zoraFrancoDuration reverse linear;
     }
 
-    @keyframes walkingDoor-Zora {
+    @keyframes walkingDoor-Jellyfish {
       0% {
         top: 33%;
         left: 3%;
       }
-      23.08% {
+      50% {
         top: 38%;
         left: 50%;
       }
-      30.77% {
+      100% {
         top: 42%;
         left: 63%;
       }
-      38.46% {
+    }
+
+    @keyframes walkingJellyfish-Zora {
+      0% {
+        top: 42%;
+        left: 63%;
+      }
+      20% {
         top: 48%;
         left: 70%;
       }
-      46.15% {
+      36% {
         top: 54%;
         left: 68%;
       }
-      69.23% {
+      64% {
         top: 65%;
         left: 32%;
       }
-      84.62% {
+      80% {
         top: 74%;
         left: 13%;
       }

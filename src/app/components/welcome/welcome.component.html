@@ -1,6 +1,5 @@
 <ng-container *ngIf="state == 0">
   <svg-icon src="../../assets/sprites/Logo/Informatiktage2020.svg" class="logo"></svg-icon>
-  <svg-icon src="../../assets/sprites/Onboarding/onboarding1.svg" class="treeGroup1"></svg-icon>
   <div class="title ">
     <h2>Herzlich Willkommen!</h2>
   </div>
@@ -8,6 +7,7 @@
     <p>Wir freuen uns, dich in unsere virtuelle Welt aufzunehmen. Begib dich mit uns auf eine spannende Erlebnisreise.<br><br>
       Durchlaufe die verschiedenen Räumlichkeiten um die Welt der Informatik zu erkunden.</p>
   </div>
+  <svg-icon src="/assets/sprites/Onboarding/onboarding1.svg" class="treeGroup1"></svg-icon>
   <div class="child-swipe">
     <svg-icon src="/assets/sprites/Icon/Paging/1.svg" [svgStyle]="{'width': '80%'}"></svg-icon>
   </div>
@@ -21,22 +21,24 @@
     <h1>Spielerklärung</h1>
   </div>
 
-  <div class="subtext2a">
-    <svg-icon src="/assets/sprites/Onboarding/onboarding_key.svg" class="key"></svg-icon>
-    <div class="text">Hole dir alle Schlüssel, um die Räume auf der Erlebniskarte freizuschalten. Wenn du bis am Ende mitmachst, wartet im letzen Raum ein toller Wettbewerb auf dich!</div>
+  <div class="wrapper">
+    <div class="subtext2a">
+      <svg-icon src="/assets/sprites/Onboarding/onboarding_key.svg" class="key"></svg-icon>
+      <div class="text">Hole dir alle Schlüssel, um die Räume auf der Erlebniskarte freizuschalten. Wenn du bis am Ende mitmachst, wartet im letzen Raum ein toller Wettbewerb auf dich!</div>
+    </div>
+
+    <div class="subtext2b">
+      <svg-icon src="/assets/sprites/Onboarding/onboarding_coin.svg" class="coin"></svg-icon>
+      <div class="text">Zusätzlich kannst du mit extra Aufgaben wertvolle Münzen sammeln und zum Schluss an unserem Sofortpreise-Stand einlösen.</div>
+    </div>
   </div>
 
-  <div class="subtext2b">
-    <svg-icon src="assets/sprites/Onboarding/onboarding_coin.svg" class="coin"></svg-icon>
-    <div class="text">Ausserdem kannst du wertvolle Münzen sammeln, indem du zusätzliche Aufgaben löst.
-    Die Münzen lassen sich am Schluss an unserem Sofortpreise-Stand einlösen.</div>
-  </div>
+  <svg-icon src="/assets/sprites/Onboarding/onboarding2.svg" class="treeGroup2"></svg-icon>
 
   <div class="child-swipe">
     <svg-icon src="/assets/sprites/Icon/Paging/2.svg" [svgStyle]="{'width': '80%'}"></svg-icon>
   </div>
 
-  <svg-icon src="/assets/sprites/Onboarding/onboarding2.svg" class="treeGroup2"></svg-icon>
 
   <div class="child-button">
     <app-button btnTitle="Weiter" (btnClicked)="startLogin($event)"></app-button>

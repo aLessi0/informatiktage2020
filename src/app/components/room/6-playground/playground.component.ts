@@ -25,6 +25,7 @@ export class PlaygroundComponent extends AbstractRoom {
   public tree2Clicked = false;
   public tree3Clicked = false;
   public tree4Clicked = false;
+  public francoFished = false;
   public solution = '';
 
   constructor(@Inject(DataService) protected readonly dataService: DataService,
@@ -32,10 +33,6 @@ export class PlaygroundComponent extends AbstractRoom {
               @Inject(ModalService) protected readonly modalService: ModalService,
               @Inject(Renderer2) protected readonly renderer: Renderer2) {
     super(dataService, progressService, modalService, renderer);
-  }
-
-  public ngOnInit(): void {
-    super.ngOnInit();
   }
 
   public entryAbaton(): void {
@@ -67,12 +64,12 @@ export class PlaygroundComponent extends AbstractRoom {
         if (this.solution === '3142') {
           this.foundFishingRod = true;
           this.treeQuestRunning = false;
-          this.openInfo('room6ScavengerHuntLilly4', '/assets/sprites/Room/6-playground/FishingRod.svg');
+          this.openInfo('room6ScavengerHuntLilly4', '/assets/sprites/Room/6-playground/Lilly.svg', () => {
+            this.openInfo('room6ScavengerHuntLilly5', '/assets/sprites/Room/6-playground/FishingRod.svg');
+          });
         } else {
           this.openInfo('room6ScavengerHuntLilly3', '/assets/sprites/Room/6-playground/Lilly.svg');
         }
-        this.resetTrees();
-        this.solution = '';
       }
     });
   }
@@ -107,6 +104,16 @@ export class PlaygroundComponent extends AbstractRoom {
           this.renderer.addClass(this.tree4.nativeElement, 'treeClicked');
           this.solution = this.solution + '4';
         }
+
+        if (this.tree1Clicked && this.tree2Clicked && this.tree3Clicked && this.tree4Clicked) {
+          if (this.solution === '3142') {
+            this.openInfo('room6ScavengerHuntTreeCorrect', '/assets/sprites/Room/6-playground/Tree.svg');
+          } else {
+            this.openInfo('room6ScavengerHuntTreeWrong', '/assets/sprites/Room/6-playground/Tree.svg');
+            this.resetTrees();
+            this.solution = '';
+          }
+        }
       });
     }
   }
@@ -126,13 +133,17 @@ export class PlaygroundComponent extends AbstractRoom {
   public fishing() {
     if (this.foundFishingRod && this.scavengerHuntRunning && this.broughtFishingRodToLeo) {
       this.walkTo('leo', () => {
-        this.openInfo('room6ScavengerHuntCoin', '/assets/sprites/Icon/Map/Coin.svg');
-        this.scavengerHuntRunning = false;
-        this.foundFishingRod = false;
-        this.treeQuestRunning = false;
-        this.broughtFishingRodToLeo = false;
+        this.francoFished = true;
       });
     }
+  }
+
+  public francoClick() {
+    this.openInfo('room6ScavengerHuntCoin', '/assets/sprites/Room/5-recruiting/Franco.svg');
+    this.scavengerHuntRunning = false;
+    this.foundFishingRod = false;
+    this.treeQuestRunning = false;
+    this.broughtFishingRodToLeo = false;
   }
 
 }
