@@ -74,7 +74,7 @@ export class AbstractRoom implements OnInit {
           this.isAvatarAnimationRunning = false;
           callback && callback();
         }
-      }, 50);
+      }, 150);
     };
     const animationStartFunction = () => {
       animationRunning = true;
