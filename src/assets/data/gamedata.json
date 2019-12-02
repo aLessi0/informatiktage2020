@@ -28,7 +28,7 @@
       ]
     },
     {
-      "name": "Requirements & Design",
+      "name": "Kreiren & Designen",
       "level": 2,
       "roomClass": "room-req-design",
       "questions": [
@@ -64,7 +64,7 @@
       ]
     },
     {
-      "name": "Entwicklung & Test",
+      "name": "Entwickeln & Testen",
       "level": 3,
       "roomClass": "room-entwicklung-test",
       "questions": [
@@ -90,7 +90,7 @@
       ]
     },
     {
-      "name": "Deploy & Operate",
+      "name": "Betreiben & Überwachen",
       "level": 4,
       "roomClass": "room-build-deploy",
       "questions": [
@@ -116,7 +116,7 @@
       ]
     },
     {
-      "name": "Recruiting",
+      "name": "Jobs & Wettbewerb",
       "level": 5,
       "roomClass": "room-recruiting",
       "questions": [
@@ -151,7 +151,7 @@
       ]
     },
     {
-      "name": "Playground",
+      "name": "Experimentieren",
       "level": 6,
       "roomClass": "room-playground",
       "questions": [
