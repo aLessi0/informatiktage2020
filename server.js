@@ -137,9 +137,17 @@ function getInsights(callback) {
       nmb_of_feedback_raum = feedbackRaueme.length;
       nmb_of_feedback_it = feedbackIt.length;
 
+      nmb_of_feedback_per_raum = new Map();
+      feedbackRaueme.forEach((raum) => {
+        if (!nmb_of_feedback_per_raum.has(raum.roomNumber)) {
+          nmb_of_feedback_per_raum.set(raum.roomNumber, 0);
+        }
+        nmb_of_feedback_per_raum.set(raum.roomNumber, nmb_of_feedback_per_raum.get(raum.roomNumber) + 1);
+      });
+
       avg_raum = [];
       feedbackRaueme.forEach((raum) => {
-        avg_raum[raum.roomNumber] = (avg_raum[raum.roomNumber] ? avg_raum[raum.roomNumber] : 0) + (1 / nmb_of_feedback_raum) * raum.roomFeedback;
+        avg_raum[raum.roomNumber] = (avg_raum[raum.roomNumber] ? avg_raum[raum.roomNumber] : 0) + (1 / nmb_of_feedback_per_raum.get(raum.roomNumber)) * raum.roomFeedback;
       });
 
       avg_it = [];

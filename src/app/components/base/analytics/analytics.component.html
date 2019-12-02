@@ -1,6 +1,22 @@
-<div>
-  <div *ngFor="let feedback of raumFeedback">{{feedback.roomName}} - {{feedback.roomFeedback}}</div>
+<div *ngIf="insights">
+  <!--<div *ngFor="let feedback of raumFeedback">{{feedback.roomName}} - {{feedback.roomFeedback}}</div>-->
   <!--<div *ngFor="let feedbackIT of informatiktageFeedback">{{feedbackIT | json}}</div>-->
-  {{insights | json}}
+  <!--{{insights | json}}-->
 
+  <div>
+    <br/>
+    <span>Anzahl Raumfeedbacks: {{insights.nmbOfFeedbackRaum}}</span><br/>
+    <span>Anzahl ITDays Feedbacks: {{insights.nmbOfFeedbackIt}}</span>
+    <ul>
+      <li *ngFor="let raum of insights.avgRaum; let i = index">
+        RaumNr. {{i}} - Durschnittliches Feedback: {{raum}}
+      </li>
+    </ul>
+
+    <ul>
+      <li *ngFor="let feedback of insights.avgIt; let i = index">
+        Feedbackfrage. {{i}} - Durschnittliches Feedback: {{feedback}}
+      </li>
+    </ul>
+  </div>
 </div>
