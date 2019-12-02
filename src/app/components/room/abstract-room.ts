@@ -16,7 +16,7 @@ export class AbstractRoom implements OnInit {
   public progress: ProgressModel;
   public level: PlayedLevelModel;
 
-  @ViewChild(AvatarComponent, {read: ElementRef}) private avatarRef: ElementRef;
+  @ViewChild(AvatarComponent, {read: ElementRef}) public avatarRef: ElementRef;
 
   private currentAvatarPosition = 'door';
   private isAvatarAnimationRunning: boolean = false;

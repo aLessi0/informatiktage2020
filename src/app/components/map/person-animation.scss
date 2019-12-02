@@ -126,49 +126,198 @@
   &.animation6-5 {
     animation: animation5-6 1s 1 reverse linear;
   }
+
+  &.leaveRoomAnimation {
+    opacity: 0;
+
+    &.pos0 {
+      animation: walkingInRight 1s 1 reverse linear;
+    }
+
+    &.pos1 {
+      animation: walkingInRight 1s 1s 1 reverse linear;
+    }
+
+    &.pos2 {
+      animation: walkingInRight 1s 1s 1 reverse linear;
+    }
+
+    &.pos3 {
+      animation: walkingInRight 1s 1s 1 reverse linear;
+    }
+
+    &.pos4 {
+      animation: walkingInRight 1s 1s 1 reverse linear;
+    }
+
+    &.pos5 {
+      animation: walkingInUp 1s 1s 1 reverse linear;
+    }
+
+    &.pos6 {
+      animation: walkingInUp 1s 1s 1 reverse linear;
+    }
+  }
+
+  &.walking-in-room {
+    opacity: 0;
+  }
+
+  &.animation-walkingIn-1 {
+    animation: walkingInRight 1s 1 linear;
+  }
+
+  &.animation-walkingIn-2 {
+    animation: walkingInRight 1s 1 linear;
+  }
+
+  &.animation-walkingIn-3 {
+    animation: walkingInRight 1s 1 linear;
+  }
+
+  &.animation-walkingIn-4 {
+    animation: walkingInRight 1s 1 linear;
+  }
+
+  &.animation-walkingIn-5 {
+    animation: walkingInUp 1s 1 linear;
+  }
+
+  &.animation-walkingIn-6 {
+    animation: walkingInUp 1s 1 linear;
+  }
+
+  @keyframes walkingInRight {
+    from {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateX(110%);
+      opacity: 0;
+    }
+  }
+
+  @keyframes walkingInUp {
+    from {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateY(-50%);
+      opacity: 0;
+    }
+  }
 }
 
 @keyframes animation0-1 {
-  0% {top: 93%; left: 75%;}
-  10% {left: 71%;}
-  20% {left: 69%;}
-  30% {left: 67%;}
-  40% {left: 66%;}
-  50% {left: 65%;}
-  60% {left: 64%;}
-  70% {left: 63%;}
-  80% {left: 62%;}
-  90% {left: 61%;}
-  100% {top: 76%; left: 61%;}
+  0% {
+    top: 93%;
+    left: 75%;
+  }
+  10% {
+    left: 71%;
+  }
+  20% {
+    left: 69%;
+  }
+  30% {
+    left: 67%;
+  }
+  40% {
+    left: 66%;
+  }
+  50% {
+    left: 65%;
+  }
+  60% {
+    left: 64%;
+  }
+  70% {
+    left: 63%;
+  }
+  80% {
+    left: 62%;
+  }
+  90% {
+    left: 61%;
+  }
+  100% {
+    top: 76%;
+    left: 61%;
+  }
 }
 
 @keyframes animation1-2 {
-  0% {top: 76%; left: 61%;}
-  50% {left: 61%;}
-  80% {left: 59%;}
-  100% {top: 61%; left: 58%;}
+  0% {
+    top: 76%;
+    left: 61%;
+  }
+  50% {
+    left: 61%;
+  }
+  80% {
+    left: 59%;
+  }
+  100% {
+    top: 61%;
+    left: 58%;
+  }
 }
 
 @keyframes animation2-3 {
-  0% {top: 61%; left: 58%;}
-  100% {top: 46%;left: 61%;}
+  0% {
+    top: 61%;
+    left: 58%;
+  }
+  100% {
+    top: 46%;
+    left: 61%;
+  }
 }
 
 @keyframes animation3-4 {
-  0% {top: 46%; left: 61%;}
-  25% {left: 64%;}
-  100% {top: 29%; left: 63%;}
+  0% {
+    top: 46%;
+    left: 61%;
+  }
+  25% {
+    left: 64%;
+  }
+  100% {
+    top: 29%;
+    left: 63%;
+  }
 }
 
 @keyframes animation4-5 {
-  0% {top: 29%; left: 63%;}
-  40% {top: 22%; left: 62%;}
-  100% {top: 21%; left: 54%;}
+  0% {
+    top: 29%;
+    left: 63%;
+  }
+  40% {
+    top: 25%;
+    left: 62%;
+  }
+  100% {
+    top: 24%;
+    left: 54%;
+  }
 }
 
 @keyframes animation5-6 {
-  0% {top: 21%; left: 54%;}
-  40% {top: 19.5%;}
-  80% {top: 20%;}
-  100% {top: 21%; left: 16%;}
+  0% {
+    top: 24%;
+    left: 54%;
+  }
+  40% {
+    top: 22.5%;
+  }
+  80% {
+    top: 23%;
+  }
+  100% {
+    top: 23%;
+    left: 16%;
+  }
 }
