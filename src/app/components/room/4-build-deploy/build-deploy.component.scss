@@ -98,7 +98,7 @@
   .moon {
     position: absolute;
     width: 20%;
-    opacity: 0;
+    pointer-events: none;
 
     border-radius: 50%;
     animation: moonAnimation 60s linear infinite;
@@ -225,13 +225,15 @@
   @keyframes moonAnimation {
     0% {
       opacity: 0;
+      pointer-events: none;
     }
     53% {
       opacity: 0;
+      pointer-events: none;
       transform: rotate(100deg);
     }
     56% {
-      pointer-events: initial;
+      pointer-events: all;
       opacity: 1;
     }
     75% {
@@ -239,10 +241,11 @@
     }
     97% {
       opacity: 1;
-      pointer-events: none;
+      pointer-events: all;
     }
     100% {
       opacity: 0;
+      pointer-events: none;
       transform: rotate(-50deg);
     }
   }
