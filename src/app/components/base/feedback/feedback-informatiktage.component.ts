@@ -6,6 +6,7 @@ import {DataService} from '../../../service/data.service';
 import {ModalService} from '../../../service/modal.service';
 import {HttpClient} from '@angular/common/http';
 import {ContestModel} from '../../../model/user/contest.model';
+import {DatePipe} from "@angular/common";
 
 @Component({
   selector: 'app-feedback-detailliert',
@@ -39,6 +40,7 @@ export class FeedbackInformatiktageComponent {
     });
 
     const body = {
+      timestamp: new Date().getTime(),
       userId: this.progress.uid,
       informatiktage: Array.from(this.progress.feedbackAnswers.entries()),
     };
