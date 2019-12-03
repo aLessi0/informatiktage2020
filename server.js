@@ -135,12 +135,12 @@ app.post('/api/feedback/informatiktage', (req, resp) => {
 });
 
 app.get('/api/feedback/download/informatiktage', (req, resp) => {
-  let timestring = new Date().toLocaleString('de-CH', {timezone: "Europe/Zurich"});
+  let timestring = new Date().toLocaleString('de-CH', {timezone: "Europe/Zurich", hourCycle: "h24"});
   resp.download(feedback_file_informatiktage, 'feedback-informatiktage-' + timestring + '.csv');
 });
 
 app.get('/api/feedback/download/raum', (req, resp) => {
-  let timestring = new Date().toLocaleString('de-CH', {timezone: "Europe/Zurich"});
+  let timestring = new Date().toLocaleString('de-CH', {timezone: "Europe/Zurich", hourCycle: "h24"});
   resp.download(feedback_file_raeume, 'feedback-raeume-' + timestring + '.csv');
 });
 
