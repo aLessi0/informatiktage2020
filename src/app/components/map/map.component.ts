@@ -115,8 +115,10 @@ export class MapComponent implements AfterViewInit {
 
         let endWalkingEvent = () => {
           this.isWalking = false;
+          console.log('END EVENT!');
           setTimeout(() => {
             if (!this.isWalking) {
+              console.log('NOT WALKING ANYMORE!');
               this.renderer.removeClass(this.personRef.nativeElement, animationClass);
               this.personRef.nativeElement.removeEventListener('animationend', endWalkingEvent);
               this.personRef.nativeElement.removeEventListener('animationstart', startWalkingEvent);
@@ -125,6 +127,7 @@ export class MapComponent implements AfterViewInit {
           }, 300);
         };
         let startWalkingEvent = () => {
+          console.log('START EVENT!');
           this.isWalking = true;
           this.progress.avatarPos = room.level;
         };
