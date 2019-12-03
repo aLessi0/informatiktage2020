@@ -1,6 +1,6 @@
 {
   "minCoinsRewardBig": 10,
-  "minCoinsRewardSmall": 6,
+  "minCoinsRewardSmall": 8,
   "rooms": [
     {
       "name": "Welt der Informatik",
