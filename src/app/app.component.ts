@@ -17,7 +17,7 @@ import {HttpClient} from '@angular/common/http';
 import {RoomModel} from './model/game/room.model';
 import {GameModel} from './model/game/game.model';
 import {ProgressService} from './service/progress.service';
-import {animation} from '@angular/animations';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -29,6 +29,7 @@ export class AppComponent implements DoCheck, AfterViewInit {
   public progress: ProgressModel;
   public game: GameModel;
   public currentRoom: RoomModel;
+  public isAnalytics = false;
 
   @ViewChild('animationPanel', {read: ElementRef}) public animationPanelRef: ElementRef;
 
@@ -41,7 +42,15 @@ export class AppComponent implements DoCheck, AfterViewInit {
               @Inject(KeyValueDiffers) readonly differs: KeyValueDiffers,
               @Inject(HttpClient) private readonly http: HttpClient,
               @Inject(ProgressService) private readonly progressService: ProgressService,
-              @Inject(Renderer2) private readonly renderer: Renderer2) {
+              @Inject(Renderer2) private readonly renderer: Renderer2,
+              @Inject(ActivatedRoute) private readonly route: ActivatedRoute) {
+    this.route.queryParams.subscribe((params) => {
+      if (params && params.analytics && params.analytics === 'on') {
+        this.isAnalytics = true;
+      } else {
+        this.isAnalytics = false;
+      }
+    });
     this.differ = differs.find([]).create();
 
     this.dataService.game$.subscribe(game => {
