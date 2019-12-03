@@ -1,15 +1,21 @@
 <div *ngIf="insights">
-  <!--<div *ngFor="let feedback of raumFeedback">{{feedback.roomName}} - {{feedback.roomFeedback}}</div>-->
-  <!--<div *ngFor="let feedbackIT of informatiktageFeedback">{{feedbackIT | json}}</div>-->
-  <!--{{insights | json}}-->
 
   <div>
     <br/>
     <span>Anzahl Raumfeedbacks: {{insights.nmbOfFeedbackRaum}}</span><br/>
-    <span>Anzahl ITDays Feedbacks: {{insights.nmbOfFeedbackIt}}</span>
+    <span>Anzahl ITDays Feedbacks: {{insights.nmbOfFeedbackIt}}</span><br/>
+    <span>Durchschnittliche Anzahl Raumfeedbacks per user: {{insights.avgUserFeedbackAnzahl}}</span><br/>
+    <span>Verhältnis Raumfeedback/ITDaysfeedback per user: {{insights.verhaeltnisUserRaumFeedbackItFeedback}}</span><br/>
+
     <ul>
-      <li *ngFor="let raum of insights.avgRaum; let i = index">
-        RaumNr. {{i}} - Durschnittliches Feedback: {{raum}}
+      <li *ngFor="let raum of filteredRaeume(insights.avgRaum); let i = index">
+        RaumNr. {{i + 1}} - Durschnittliches Feedback: {{raum}}
+      </li>
+    </ul>
+
+    <ul>
+      <li *ngFor="let nmbrOfFeedbacks of filteredRaeume(insights.nmbOfFeedbacksPerRaum); let i = index">
+        Anzahl feedbacks für Raum {{i + 1}}: {{nmbrOfFeedbacks}}
       </li>
     </ul>
 
@@ -19,4 +25,6 @@
       </li>
     </ul>
   </div>
+
+  <canvas id="feedbackOverTime" width="600" height="400"></canvas>
 </div>

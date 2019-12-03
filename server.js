@@ -109,6 +109,8 @@ wss_aggregated.on("connection", (ws) => {
 
 app.post('/api/feedback/raum', (req, resp) => {
   csvRaeume = req.body.timestamp + ',' + req.body.userId + ',' + req.body.roomNumber + ',' + req.body.roomName + ',' + req.body.roomFeedback + '\n';
+  req.body.uuid = req.body.userId;
+  delete req.body.userId;
   console.log('writing feebdack raum:', csvRaeume);
   fs.appendFile('feedback_raeume.csv', csvRaeume, () => {
     /* stupid eventemitter only works with array like data */
@@ -122,6 +124,8 @@ app.post('/api/feedback/informatiktage', (req, resp) => {
   csvArrayInformatiktage = [];
   req.body.informatiktage.forEach((tuple) => csvArrayInformatiktage[tuple[0] - 1] = tuple[1].answer ? tuple[1].answer : '');
   csvInformatiktage = req.body.timestamp + ',' + req.body.userId + ',' + csvArrayInformatiktage.join(',') + '\n';
+  req.body.uuid = req.body.userId;
+  delete req.body.userId;
   console.log('writing feedback informatiktage:', csvInformatiktage);
   fs.appendFile('feedback_informatiktage.csv', csvInformatiktage, () => {
     eventEmitter.emit('informatiktage_msg', req.body);
@@ -134,15 +138,23 @@ app.post('/api/feedback/informatiktage', (req, resp) => {
 function getInsights(callback) {
   getAllRaueme((feedbackRaueme) => {
     getAllITFeedback((feedbackIt) => {
-      nmb_of_feedback_raum = feedbackRaueme.length;
-      nmb_of_feedback_it = feedbackIt.length;
+      const nmb_of_feedback_raum = feedbackRaueme.length;
+      const nmb_of_feedback_it = feedbackIt.length;
 
-      nmb_of_feedback_per_raum = new Map();
+      const nmb_of_feedback_per_raum = new Map();
+      const feedback_per_user = new Map();
+
       feedbackRaueme.forEach((raum) => {
         if (!nmb_of_feedback_per_raum.has(raum.roomNumber)) {
           nmb_of_feedback_per_raum.set(raum.roomNumber, 0);
         }
         nmb_of_feedback_per_raum.set(raum.roomNumber, nmb_of_feedback_per_raum.get(raum.roomNumber) + 1);
+
+        if (!feedback_per_user.has(raum.uuid)) {
+          feedback_per_user.set(raum.uuid, []);
+        }
+        feedback_per_user.get(raum.uuid).push(raum);
+
       });
 
       avg_raum = [];
@@ -160,11 +172,26 @@ function getInsights(callback) {
 
       });
 
+      let avg_user_feedback_anzahl = 0;
+      feedback_per_user.forEach((feedbacks, userId) => {
+        avg_user_feedback_anzahl += 1 / feedback_per_user.size * feedbacks.length;
+      });
+
+      console.log(feedback_per_user.size);
+      console.log(feedbackIt.length);
+      const nmbOfFeedbacksPerRaum = [];
+      nmb_of_feedback_per_raum.forEach((anzahlFeedbacks, raumNr) => {
+        nmbOfFeedbacksPerRaum[raumNr] = anzahlFeedbacks;
+      });
+
       callback({
+        nmbOfFeedbacksPerRaum,
         nmbOfFeedbackRaum: nmb_of_feedback_raum,
         nmbOfFeedbackIt: nmb_of_feedback_it,
         avgRaum: avg_raum,
-        avgIt: avg_it
+        avgIt: avg_it,
+        avgUserFeedbackAnzahl: avg_user_feedback_anzahl,
+        verhaeltnisUserRaumFeedbackItFeedback: feedbackIt.length / feedback_per_user.size
       })
 
     });
@@ -181,10 +208,10 @@ function getFeedbackFromCsv(callback) {
   rl.on('line', (line) => {
     const values = line.split(',');
     feedback = [
-      {feedbackNumber: 0, feedback: values[0]},
-      {feedbackNumber: 1, feedback: values[1]},
-      {feedbackNumber: 2, feedback: values[2]},
-      {feedbackNumber: 3, feedback: values[3]}
+      {feedbackNumber: 0, feedback: values[2], uuid: values[1], timestamp: values[0]},
+      {feedbackNumber: 1, feedback: values[3], uuid: values[1], timestamp: values[0]},
+      {feedbackNumber: 2, feedback: values[4], uuid: values[1], timestamp: values[0]},
+      {feedbackNumber: 3, feedback: values[5], uuid: values[1], timestamp: values[0]}
     ];
     callback(feedback);
   });
@@ -198,7 +225,13 @@ function getRaeumeFeedback(callback) {
 
   rl.on('line', (line) => {
     const values = line.split(',');
-    callback({roomNumber: values[0], roomName: values[1], roomFeedback: values[2]})
+    callback({
+      timestamp: values[0],
+      uuid: values[1],
+      roomNumber: values[2],
+      roomName: values[3],
+      roomFeedback: values[4]
+    })
   });
 }
 
@@ -211,7 +244,13 @@ function getAllRaueme(callback) {
 
   rl.on('line', (line) => {
     const values = line.split(',');
-    raeume.push({roomNumber: values[0], roomName: values[1], roomFeedback: values[2]})
+    raeume.push({
+      roomNumber: values[2],
+      roomName: values[3],
+      roomFeedback: values[4],
+      uuid: values[1],
+      timestamp: values[0]
+    })
   });
 
   rl.on('close', () => {
@@ -229,10 +268,10 @@ function getAllITFeedback(callback) {
   rl.on('line', (line) => {
     const values = line.split(',');
     feedback = [
-      {feedbackNumber: 0, feedback: values[0]},
-      {feedbackNumber: 1, feedback: values[1]},
-      {feedbackNumber: 2, feedback: values[2]},
-      {feedbackNumber: 3, feedback: values[3]}
+      {feedbackNumber: 0, feedback: values[2], uuid: values[1], timestamp: values[0]},
+      {feedbackNumber: 1, feedback: values[3], uuid: values[1], timestamp: values[0]},
+      {feedbackNumber: 2, feedback: values[4], uuid: values[1], timestamp: values[0]},
+      {feedbackNumber: 3, feedback: values[5], uuid: values[1], timestamp: values[0]}
     ];
     feedbacks.push(feedback);
   });
