@@ -19,25 +19,14 @@ import {FeedbackComponent} from './components/modal/feedback/feedback.component'
 import {WeltDerInformatikComponent} from './components/room/1-welt-der-informatik/welt-der-informatik.component';
 import {RequirementDesignComponent} from './components/room/2-requirement-design/requirement-design.component';
 import {EntwicklungComponent} from './components/room/3-entwicklung/entwicklung.component';
-import {BuildDeployComponent} from './components/room/4-build-deploy/build-deploy.component';
-import {RecruitingComponent} from './components/room/5-recruiting/recruiting.component';
-import {PlaygroundComponent} from './components/room/6-playground/playground.component';
-import {WeltDerInformatikComponent} from './components/room/1-welt-der-informatik/welt-der-informatik.component';
-import {RequirementDesignComponent} from './components/room/2-requirement-design/requirement-design.component';
-import {EntwicklungComponent} from './components/room/3-entwicklung/entwicklung.component';
-import {BuildDeployComponent} from './components/room/4-build-deploy/build-deploy.component';
-import {RecruitingComponent} from './components/room/5-recruiting/recruiting.component';
-import {PlaygroundComponent} from './components/room/6-playground/playground.component';
-import {ServiceWorkerModule} from '@angular/service-worker';
-import {environment} from '../environments/environment';
 import {RewardCoinsComponent} from './components/base/reward-coins/reward-coins.component';
-import {MovieComponent} from './components/base/movie/movie.component';
+import {PlaygroundComponent} from './components/room/6-playground/playground.component';
+import {RecruitingComponent} from './components/room/5-recruiting/recruiting.component';
+import {BuildDeployComponent} from './components/room/4-build-deploy/build-deploy.component';
 import {AvatarComponent} from './components/avatar/avatar.component';
-import {ClickOutsideModule} from "ng-click-outside";
-import {MovieComponent} from './components/base/movie/movie.component';
-import {AvatarComponent} from './components/avatar/avatar.component';
-import {ClickOutsideModule} from 'ng-click-outside';
 import {AnalyticsComponent} from './components/base/analytics/analytics.component';
+import {MovieComponent} from './components/base/movie/movie.component';
+import {ClickOutsideModule} from 'ng-click-outside';
 import {RouterModule} from '@angular/router';
 
 @NgModule({
@@ -69,7 +58,7 @@ import {RouterModule} from '@angular/router';
     AngularSvgIconModule,
     BrowserAnimationsModule,
     AngularMaterialModule,
-    ClickOutsideModule
+    ClickOutsideModule,
     RouterModule.forRoot([]),
   ],
   providers: [],
