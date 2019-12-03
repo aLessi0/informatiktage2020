@@ -3,6 +3,7 @@ import {AbstractRoom} from '../abstract-room';
 import {DataService} from '../../../service/data.service';
 import {ModalService} from '../../../service/modal.service';
 import {ProgressService} from '../../../service/progress.service';
+import {Howl} from 'howler';
 
 @Component({
   selector: 'app-build-deploy',
@@ -12,6 +13,9 @@ import {ProgressService} from '../../../service/progress.service';
 export class BuildDeployComponent extends AbstractRoom {
 
   blancaHidden = true;
+  private saloonSound = new Howl({
+    src: ['/assets/sound/saloon.mp3']
+  });
 
   constructor(@Inject(DataService) protected readonly dataService: DataService,
               @Inject(ProgressService) protected readonly progressService: ProgressService,
@@ -33,6 +37,9 @@ export class BuildDeployComponent extends AbstractRoom {
   }
 
   blancaVisible() {
+    if (this.blancaHidden) {
+      this.saloonSound.play();
+    }
     this.blancaHidden = false;
   }
 

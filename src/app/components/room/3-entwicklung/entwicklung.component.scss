@@ -15,11 +15,81 @@
   }
 
   .planets {
-    pointer-events: none;
     position: absolute;
     width: 30%;
     top: 13%;
     left: 23%;
+  }
+
+  .alien {
+    pointer-events: none;
+    position: absolute;
+    width: 12%;
+    top: 19.6%;
+    left: 27.1%;
+    opacity: 0;
+
+    &.animation-0 {
+      --rotation: 100deg;
+      --translateY: -99%;
+      animation: giggling 1.5s 1 ease-in-out;
+    }
+
+    &.animation-1 {
+      --rotation: 150deg;
+      --translateY: -99%;
+      animation: giggling 1.5s 1 ease-in-out;
+    }
+
+    &.animation-2 {
+      --rotation: 200deg;
+      --translateY: -99%;
+      animation: giggling 1.5s 1 ease-in-out;
+    }
+
+    &.animation-3 {
+      --rotation: 250deg;
+      --translateY: -96%;
+      animation: giggling 1.5s 1 ease-in-out;
+    }
+
+    &.animation-4 {
+      --rotation: 330deg;
+      --translateY: -94%;
+      animation: giggling 1.5s 1 ease-in-out;
+    }
+
+    @keyframes giggling {
+      0% {
+        transform: rotate(var(--rotation)) translateY(0%);
+        opacity: 0;
+      }
+      1% {
+        opacity: 1;
+      }
+      30% {
+        transform: rotate(var(--rotation)) translateY(var(--translateY));
+      }
+      40% {
+        transform: rotate(var(--rotation)) translateY(var(--translateY)) skew(5deg);
+      }
+      50% {
+        transform: rotate(var(--rotation)) translateY(var(--translateY)) skew(-5deg);
+      }
+      60% {
+        transform: rotate(var(--rotation)) translateY(var(--translateY)) skew(5deg);
+      }
+      70% {
+        transform: rotate(var(--rotation)) translateY(var(--translateY)) skew(0);
+      }
+      99% {
+        opacity: 1;
+      }
+      100% {
+        transform: rotate(var(--rotation)) translateY(0%);
+        opacity: 0;
+      }
+    }
   }
 
   .planet {
@@ -178,27 +248,35 @@
     &.rotate-0 {
       transform: rotate(0deg);
     }
+
     &.rotate-40 {
       transform: rotate(40deg);
     }
+
     &.rotate-80 {
       transform: rotate(80deg);
     }
+
     &.rotate-120 {
       transform: rotate(120deg);
     }
+
     &.rotate-160 {
       transform: rotate(160deg);
     }
+
     &.rotate-200 {
       transform: rotate(200deg);
     }
+
     &.rotate-240 {
       transform: rotate(240deg);
     }
+
     &.rotate-280 {
       transform: rotate(280deg);
     }
+
     &.rotate-320 {
       transform: rotate(320deg);
     }

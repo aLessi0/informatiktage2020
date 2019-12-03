@@ -1,8 +1,9 @@
-import {Component, Inject, Renderer2} from '@angular/core';
+import {Component, ElementRef, Inject, Renderer2, ViewChild} from '@angular/core';
 import {AbstractRoom} from '../abstract-room';
 import {DataService} from '../../../service/data.service';
 import {ModalService} from '../../../service/modal.service';
 import {ProgressService} from '../../../service/progress.service';
+import {Howl} from 'howler';
 
 @Component({
   selector: 'app-entwicklung',
@@ -16,12 +17,38 @@ export class EntwicklungComponent extends AbstractRoom {
   public starsHidden = [];
   public clickedStar = false;
   public invertTelescope = false;
+  public alienAnimationRunning = false;
+
+  private alienSound = new Howl({
+    src: ['/assets/sound/alien.mp3']
+  });
+  private satelliteSound = new Howl({
+    src: ['/assets/sound/satellite.mp3']
+  });
+
+  @ViewChild('alien', {read: ElementRef}) private alienRef: ElementRef;
 
   constructor(@Inject(DataService) protected readonly dataService: DataService,
               @Inject(ProgressService) protected readonly progressService: ProgressService,
               @Inject(ModalService) protected readonly modalService: ModalService,
               @Inject(Renderer2) protected readonly renderer: Renderer2) {
     super(dataService, progressService, modalService, renderer);
+  }
+
+  public animateAlien(): void {
+    if (this.alienAnimationRunning) {
+      return;
+    }
+    this.alienSound.play();
+    this.alienAnimationRunning = true;
+    let randomNumber = Math.floor(Math.random() * Math.floor(5));
+    let animationClass = 'animation-' + randomNumber;
+    this.renderer.addClass(this.alienRef.nativeElement, animationClass);
+
+    this.alienRef.nativeElement.addEventListener('animationend', () => {
+      this.alienAnimationRunning = false;
+      this.renderer.removeClass(this.alienRef.nativeElement, animationClass);
+    });
   }
 
   public katrinClick(): void {
@@ -45,6 +72,9 @@ export class EntwicklungComponent extends AbstractRoom {
   }
 
   public satelliteClick() {
+    if (!this.satelliteSound.playing()) {
+      this.satelliteSound.play();
+    }
     this.openInfo('room3satellite', '/assets/sprites/Room/3-develop-and-testing/Satellit.svg');
   }
 

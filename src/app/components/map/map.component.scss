@@ -50,11 +50,40 @@
   }
 
   .trees {
-    pointer-events: none;
     position: absolute;
     width: 21%;
     top: 72%;
     left: 37%;
+    transform-origin: 50% 100%;
+
+    animation: treeAnimation 5s ease-in-out infinite;
+
+    @keyframes treeAnimation {
+      0% {
+        transform: skew(0deg);
+      }
+      10% {
+        transform: skew(3deg);
+      }
+      25% {
+        transform: skew(1deg);
+      }
+      50% {
+        transform: skew(2deg);
+      }
+      60% {
+        transform: skew(1deg);
+      }
+      70% {
+        transform: skew(3deg);
+      }
+      80% {
+        transform: skew(0deg);
+      }
+      100% {
+        transform: skew(0deg);
+      }
+    }
   }
 
   .mountains {

@@ -3,6 +3,7 @@ import {DataService} from '../../../service/data.service';
 import {ModalService} from '../../../service/modal.service';
 import {AbstractRoom} from '../abstract-room';
 import {ProgressService} from '../../../service/progress.service';
+import {Howl} from 'howler';
 
 @Component({
   selector: 'app-welt-der-informatik',
@@ -10,6 +11,10 @@ import {ProgressService} from '../../../service/progress.service';
   styleUrls: ['./welt-der-informatik.component.scss']
 })
 export class WeltDerInformatikComponent extends AbstractRoom {
+
+  private planeSound = new Howl({
+    src: ['/assets/sound/flugzeug.mp3']
+  });
 
   constructor(@Inject(DataService) protected readonly dataService: DataService,
               @Inject(ProgressService) protected readonly progressService: ProgressService,
@@ -30,5 +35,12 @@ export class WeltDerInformatikComponent extends AbstractRoom {
 
   public onMarieTab() {
     this.walkTo('marie', () => this.openQuestion('room1key', '/assets/sprites/Room/1-welt-der-informatik/Marie.svg'));
+  }
+
+  public onPlaneTab() {
+    if (!this.planeSound.playing()) {
+      this.planeSound.play();
+    }
+    this.openInfo('room1flugi', '/assets/sprites/Room/1-welt-der-informatik/Airplane.svg')
   }
 }

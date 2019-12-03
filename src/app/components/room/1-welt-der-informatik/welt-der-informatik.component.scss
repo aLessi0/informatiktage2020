@@ -115,7 +115,6 @@
     position: absolute;
     top: 75%;
     left: 25%;
-    pointer-events: none;
     width: 22%;
 
     opacity: 0;
@@ -123,9 +122,9 @@
   }
 
   .airplane2 {
+    position: absolute;
     top: 75%;
     left: 25%;
-    position: absolute;
     width: 20%;
 
     animation: airplane2Animation 9s 1s linear infinite;

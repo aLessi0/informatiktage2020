@@ -30,8 +30,12 @@ export class MapComponent implements AfterViewInit {
   public isLeavingRoom = false;
   private roomActivatingAnimationRunning: boolean;
 
-  sound = new Howl({
+  jodelSound = new Howl({
     src: ['/assets/sound/jodel.mp3']
+  });
+
+  windSound = new Howl({
+    src: ['/assets/sound/wind.mp3']
   });
 
 
@@ -188,10 +192,16 @@ export class MapComponent implements AfterViewInit {
   }
 
   public onGondelTab() {
-    if( this.sound.playing() ) {
-      this.sound.stop();
+    if (this.jodelSound.playing()) {
+      this.jodelSound.stop();
     } else {
-      this.sound.play();
+      this.jodelSound.play();
+    }
+  }
+
+  public treeClick() {
+    if (!this.windSound.playing()) {
+      this.windSound.play();
     }
   }
 }

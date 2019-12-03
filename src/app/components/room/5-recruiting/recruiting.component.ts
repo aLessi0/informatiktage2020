@@ -4,6 +4,7 @@ import {DataService} from '../../../service/data.service';
 import {ModalService} from '../../../service/modal.service';
 import {ProgressService} from '../../../service/progress.service';
 import {FeedbackInformatiktageComponent} from '../../base/feedback/feedback-informatiktage.component';
+import {Howl} from 'howler';
 
 @Component({
   selector: 'app-recruiting',
@@ -30,6 +31,10 @@ export class RecruitingComponent extends AbstractRoom {
   lastCrazyfishClass = 0;
 
   waitTimer = 0;
+
+  private sonarSound = new Howl({
+    src: ['/assets/sound/sonar.mp3']
+  });
 
   constructor(@Inject(DataService) protected readonly dataService: DataService,
               @Inject(ProgressService) protected readonly progressService: ProgressService,
@@ -77,6 +82,9 @@ export class RecruitingComponent extends AbstractRoom {
   }
 
   public async submarineClick() {
+    if (!this.sonarSound.playing()) {
+      this.sonarSound.play();
+    }
     if (this.submarineClickable) {
       if (this.submarineClickCounter < 3) {
         this.submarineClickCounter++;

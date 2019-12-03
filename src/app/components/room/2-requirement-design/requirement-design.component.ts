@@ -3,6 +3,7 @@ import {AbstractRoom} from '../abstract-room';
 import {DataService} from '../../../service/data.service';
 import {ModalService} from '../../../service/modal.service';
 import {ProgressService} from '../../../service/progress.service';
+import {Howl} from 'howler';
 
 @Component({
   selector: 'app-requirement-design',
@@ -13,6 +14,10 @@ export class RequirementDesignComponent extends AbstractRoom {
 
   ueliHidden = true;
   treeCounter = 0;
+
+  private fireSound = new Howl({
+    src: ['/assets/sound/feuer.mp3']
+  });
 
   constructor(@Inject(DataService) protected readonly dataService: DataService,
               @Inject(ProgressService) protected readonly progressService: ProgressService,
@@ -31,6 +36,13 @@ export class RequirementDesignComponent extends AbstractRoom {
 
   public ueliClick(): void {
     this.walkTo('ueli', () => this.openInfo('room2coin2', '/assets/sprites/Room/2-req-and-design/Ueli.svg'));
+  }
+
+  public fireClick(): void {
+    if (!this.fireSound.playing()) {
+      this.fireSound.play();
+    }
+    this.openInfo('room2fire', '/assets/sprites/Room/2-req-and-design/Fire.svg', () => this.fireSound.stop());
   }
 
   public ueliVisible() {
