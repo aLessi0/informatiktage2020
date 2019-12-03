@@ -177,8 +177,6 @@ function getInsights(callback) {
         avg_user_feedback_anzahl += 1 / feedback_per_user.size * feedbacks.length;
       });
 
-      console.log(feedback_per_user.size);
-      console.log(feedbackIt.length);
       const nmbOfFeedbacksPerRaum = [];
       nmb_of_feedback_per_raum.forEach((anzahlFeedbacks, raumNr) => {
         nmbOfFeedbacksPerRaum[raumNr] = anzahlFeedbacks;

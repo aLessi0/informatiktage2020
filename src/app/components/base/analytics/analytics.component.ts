@@ -52,7 +52,6 @@ export class AnalyticsComponent implements OnInit {
     const ws = new WebSocket(host + this.URL_AGGREGATED);
 
     ws.onmessage = (msg) => this.onMessage(msg).then((insights: Insights) => {
-      console.log(insights);
       this.insights = insights;
     });
   }
@@ -66,7 +65,6 @@ export class AnalyticsComponent implements OnInit {
   private onMessage(msg): Promise<any> {
     return new Promise((resolve, reject) => {
       const parsedValue = JSON.parse(msg.data);
-      console.log(parsedValue);
       resolve(parsedValue);
     });
 
