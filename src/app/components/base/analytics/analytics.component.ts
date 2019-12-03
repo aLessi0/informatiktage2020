@@ -98,7 +98,7 @@ export class AnalyticsComponent implements OnInit {
         data: {
           datasets: [
             {
-              data: aggregatedData.slice(Math.max(0, aggregatedData.length - 30), aggregatedData.length - 1),
+              data: aggregatedData.slice(Math.max(0, aggregatedData.length - 30), aggregatedData.length),
               label: 'Anzahl Feedbacks über Zeit'
             }
           ]
@@ -111,6 +111,11 @@ export class AnalyticsComponent implements OnInit {
                 displayFormats: {
                   minute: 'h:mm'
                 }
+              }
+            }],
+            yAxes: [{
+              ticks: {
+                min: 0
               }
             }]
           }
