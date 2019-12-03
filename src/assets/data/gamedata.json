@@ -97,6 +97,11 @@
           "key": "room3coin2",
           "text": "Puff, hier eine Münze!",
           "givesCoin": true
+        },
+        {
+          "key": "room3satellite",
+          "text": "Erde an Mond, bitte kommen...!?",
+          "givesCoin": false
         }
       ]
     },
