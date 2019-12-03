@@ -28,7 +28,7 @@
         },
         {
           "key": "room1flugi",
-          "text": "Ready for takeoff in die Informatiktage!",
+          "text": "ready for take off?",
           "givesCoin": false
         },
         {
@@ -137,7 +137,7 @@
       ]
     },
     {
-      "name": "Jobs & Wettbewerb",
+      "name": "Talentgewinnung & Wettbewerb",
       "level": 5,
       "roomClass": "room-recruiting",
       "questions": [
@@ -162,7 +162,7 @@
         },
         {
           "key": "room5feedbackDanke",
-          "text": "Danke für dein Feedback und viel Spass beim Experimentieren im letzten Raum!",
+          "text": "Danke für dein Feedback und für deinen Besuch. Wir hoffen, dir hat die Erlebnisreise durch die Welt der Informatik gefallen. Viel Spass beim Experimentieren im letzten Raum!",
           "givesCoin": false
         },
         {
