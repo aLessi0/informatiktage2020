@@ -82,7 +82,7 @@
         },
         {
           "key": "room3coin1",
-          "questionText": "Mit welcher Programmiersprache wurde unsere WebApp entwickelt?",
+          "questionText": "Mit welcher Programmiersprache wurde diese WebApp entwickelt?",
           "correctAnswers": ["Angular", "TypeScript", "JavaScript"],
           "isMandatory": false
         }
@@ -123,6 +123,11 @@
           "key": "room4coin2",
           "text": "Du hast den Mann hinter dem Mond gefunden. Hier eine Münze!",
           "givesCoin": true
+        },
+        {
+          "key": "room4cactus",
+          "text": "Au, das sticht!!",
+          "givesCoin": false
         }
       ]
     },
