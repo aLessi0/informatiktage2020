@@ -74,7 +74,7 @@ export class AbstractRoom implements OnInit {
           this.isAvatarAnimationRunning = false;
           callback && callback();
         }
-      }, 150);
+      });
     };
     const animationStartFunction = () => {
       animationRunning = true;
@@ -84,6 +84,9 @@ export class AbstractRoom implements OnInit {
   }
 
   public openInfo(key: string, icon: string, callback?): void {
+    if (this.isAvatarAnimationRunning) {
+      return;
+    }
     const info = this.getInfoByKey(key);
 
     if (info.givesCoin) { // info anzeigen mit coin
