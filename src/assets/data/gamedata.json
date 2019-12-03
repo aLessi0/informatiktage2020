@@ -52,7 +52,7 @@
         {
           "key": "room2coin1",
           "questionText": "Wessen Meinung sollte man immer beachten, wenn man ein Produkt designt?",
-          "correctAnswers": ["Kunde", "Kunden", "Benutzer", "User"],
+          "correctAnswers": ["Kunde", "Kundin", "Kunden", "Benutzer", "Benutzerin", "User"],
           "isMandatory": false
         }
       ],
@@ -150,7 +150,7 @@
         {
           "key": "room5coin3",
           "questionText": "Welche IT-Fachrichtungen bildet die Zürcher Kantonalbank aus?",
-          "correctAnswers": ["Applikationsentwickler", "Systemtechnik", "Systemtechniker", "Applikationsentwicklung"],
+          "correctAnswers": ["Applikationsentwickler", "Applikationsentwicklerin", "Systemtechnik", "Systemtechniker", "Systemtechnikerin", "Applikationsentwicklung"],
           "isMandatory": false
         }
       ],
