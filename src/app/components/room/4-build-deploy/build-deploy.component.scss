@@ -98,7 +98,6 @@
   .moon {
     position: absolute;
     width: 20%;
-    pointer-events: none;
 
     border-radius: 50%;
     animation: moonAnimation 60s linear infinite;
@@ -184,17 +183,25 @@
   }
 
   .moon-wrapper {
-    width: 110%;
+    width: 105%;
     position: absolute;
     top: 25%;
-    z-index: 1;
+    left: 2%;
+    z-index: -1;
 
     animation: wrapperAnimation 60s 30s linear infinite;
   }
 
   @keyframes wrapperAnimation {
     0% {
+      z-index: -1;
       transform: rotate(0deg);
+    }
+    6% {
+      z-index: 1;
+    }
+    60% {
+      z-index: -1;
     }
     100% {
       transform: rotate(360deg);
@@ -225,15 +232,12 @@
   @keyframes moonAnimation {
     0% {
       opacity: 0;
-      pointer-events: none;
     }
     53% {
       opacity: 0;
-      pointer-events: none;
       transform: rotate(100deg);
     }
     56% {
-      pointer-events: all;
       opacity: 1;
     }
     75% {
@@ -241,11 +245,9 @@
     }
     97% {
       opacity: 1;
-      pointer-events: all;
     }
     100% {
       opacity: 0;
-      pointer-events: none;
       transform: rotate(-50deg);
     }
   }
