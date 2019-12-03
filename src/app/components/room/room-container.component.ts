@@ -1,7 +1,6 @@
 import {
   Component,
   ContentChild,
-  ElementRef,
   EventEmitter,
   Inject,
   Input,
@@ -25,10 +24,6 @@ import {AbstractRoom} from './abstract-room';
 export class RoomContainerComponent implements OnInit {
   @Input() public room: RoomModel;
   @Output() private closeRoom: EventEmitter<void> = new EventEmitter();
-
-  private avatarRef: ElementRef;
-
-
   @ContentChild('room') private abstractRoom: AbstractRoom;
 
   private mandatoryQuestionWasAnsweredOnEntry: boolean;
@@ -60,9 +55,9 @@ export class RoomContainerComponent implements OnInit {
   }
 
   public onStreetMapTap(): void {
-    let leaveRoom = () => {
+    const leaveRoom = () => {
       this.renderer.addClass(this.abstractRoom.avatarRef.nativeElement, 'leaveRoomAnimation');
-      let leaveRoomAnimation = () => {
+      const leaveRoomAnimation = () => {
         this.abstractRoom.avatarRef.nativeElement.removeEventListener('animationend', leaveRoomAnimation);
         this.closeRoom.emit();
       };
