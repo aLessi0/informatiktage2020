@@ -35,6 +35,10 @@ export class PlaygroundComponent extends AbstractRoom {
     super(dataService, progressService, modalService, renderer);
   }
 
+  public cloudClick(): void {
+    this.openInfo('room6credits', '/assets/sprites/Icon/Map/cloud-right.svg');
+  }
+
   public entryAbaton(): void {
     this.walkTo('arnold', () => this.modalService.openDialog(MovieComponent, false, {}).subscribe(() => {}));
   }
