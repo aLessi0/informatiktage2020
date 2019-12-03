@@ -207,7 +207,7 @@ function getInsights(callback) {
       })
 
     });
-  }, 300)
+  })
 }
 
 

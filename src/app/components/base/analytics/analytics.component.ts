@@ -76,58 +76,57 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
 
   private createTimeSeriesRaum() {
     setTimeout(() => {
-        const canvas = (document.getElementById('feedbackOverTime') as HTMLCanvasElement);
-        if (canvas) {
-          const ctx = canvas.getContext('2d');
-          const feedbackPer10Min = new Map();
+      const canvas = (document.getElementById('feedbackOverTime') as HTMLCanvasElement);
+      if (canvas) {
+        const ctx = canvas.getContext('2d');
+        const feedbackPer10Min = new Map();
 
-          this.raumFeedback.forEach((raum) => {
-            const feedbackDate = new Date(parseInt(raum.timestamp as any));
+        this.raumFeedback.forEach((raum) => {
+          const feedbackDate = new Date(parseInt(raum.timestamp as any));
 
-            feedbackDate.setMilliseconds(0);
-            feedbackDate.setSeconds(0);
-            feedbackDate.setMinutes(Math.floor(feedbackDate.getMinutes() / 10) * 10);
+          feedbackDate.setMilliseconds(0);
+          feedbackDate.setSeconds(0);
+          feedbackDate.setMinutes(Math.floor(feedbackDate.getMinutes() / 10) * 10);
 
-            if (!feedbackPer10Min.has(feedbackDate.getTime())) {
-              feedbackPer10Min.set(feedbackDate.getTime(), 0);
-            }
-            feedbackPer10Min.set(feedbackDate.getTime(), feedbackPer10Min.get(feedbackDate.getTime()) + 1);
-          });
-          const aggregatedData = Array.from(feedbackPer10Min.entries()).map((tuple) => {
-            return {x: new Date(tuple[0]), y: tuple[1]};
-          });
+          if (!feedbackPer10Min.has(feedbackDate.getTime())) {
+            feedbackPer10Min.set(feedbackDate.getTime(), 0);
+          }
+          feedbackPer10Min.set(feedbackDate.getTime(), feedbackPer10Min.get(feedbackDate.getTime()) + 1);
+        });
+        const aggregatedData = Array.from(feedbackPer10Min.entries()).map((tuple) => {
+          return {x: new Date(tuple[0]), y: tuple[1]};
+        });
 
-          const myLineChart = new Chart(ctx, {
-            type: 'line',
-            data: {
-              datasets: [
-                {
-                  data: aggregatedData.slice(Math.max(0, aggregatedData.length - 30), aggregatedData.length),
-                  label: 'Anzahl Feedbacks über Zeit'
-                }
-              ]
-            },
-            options: {
-              scales: {
-                xAxes: [{
-                  type: 'time',
-                  time: {
-                    displayFormats: {
-                      minute: 'h:mm'
-                    }
-                  }
-                }],
-                yAxes: [{
-                  ticks: {
-                    min: 0
-                  }
-                }]
+        const myLineChart = new Chart(ctx, {
+          type: 'line',
+          data: {
+            datasets: [
+              {
+                data: aggregatedData.slice(Math.max(0, aggregatedData.length - 30), aggregatedData.length),
+                label: 'Anzahl Feedbacks über Zeit'
               }
+            ]
+          },
+          options: {
+            scales: {
+              xAxes: [{
+                type: 'time',
+                time: {
+                  displayFormats: {
+                    minute: 'h:mm'
+                  }
+                }
+              }],
+              yAxes: [{
+                ticks: {
+                  min: 0
+                }
+              }]
             }
-          });
-        }
+          }
+        });
       }
-    );
+    }, 1000);
   }
 
 }
