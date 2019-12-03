@@ -25,6 +25,11 @@
           "key": "room1info1",
           "text": "Ich glaube, Marie hat eine Frage für dich. Frag sie doch mal!",
           "givesCoin": false
+        },
+        {
+          "key": "room1flugi",
+          "text": "Ready for takeoff in die Informatiktage!",
+          "givesCoin": false
         }
       ]
     },
