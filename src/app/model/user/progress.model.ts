@@ -3,6 +3,7 @@ import {ContestModel} from './contest.model';
 import {FeedbackAnswer} from './feedback-answer.model';
 
 export class ProgressModel {
+  public uid: string;
   public avatarType: string;
   public avatarPos: number;
   public unlockedLevel: number;

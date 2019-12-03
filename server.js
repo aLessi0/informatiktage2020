@@ -108,8 +108,8 @@ wss_aggregated.on("connection", (ws) => {
 
 
 app.post('/api/feedback/raum', (req, resp) => {
-  csvRaeume = req.body.roomNumber + ',' + req.body.roomName + ',' + req.body.roomFeedback + '\n';
-  console.log('writing:', csvRaeume);
+  csvRaeume = req.body.userId + ',' + req.body.roomNumber + ',' + req.body.roomName + ',' + req.body.roomFeedback + '\n';
+  console.log('writing feebdack raum:', csvRaeume);
   fs.appendFile('feedback_raeume.csv', csvRaeume, () => {
     /* stupid eventemitter only works with array like data */
     eventEmitter.emit('raum_msg', [req.body]);
@@ -121,8 +121,8 @@ app.post('/api/feedback/raum', (req, resp) => {
 app.post('/api/feedback/informatiktage', (req, resp) => {
   csvArrayInformatiktage = [];
   req.body.informatiktage.forEach((tuple) => csvArrayInformatiktage[tuple[0] - 1] = tuple[1].answer ? tuple[1].answer : '');
-  csvInformatiktage = csvArrayInformatiktage.join(',') + '\n';
-  console.log('writing:', csvInformatiktage);
+  csvInformatiktage = req.body.userId + ',' + csvArrayInformatiktage.join(',') + '\n';
+  console.log('writing feedback informatiktage:', csvInformatiktage);
   fs.appendFile('feedback_informatiktage.csv', csvInformatiktage, () => {
     eventEmitter.emit('informatiktage_msg', req.body);
     eventEmitter.emit('aggregated_msg');

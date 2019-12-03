@@ -1,6 +1,8 @@
 <div class="room {{room.roomClass}}">
 
-  <object [data]="streetUrl" type="image/svg+xml" class="bg-street"></object>
+  <div class="bg-street">
+    <svg-icon src="{{streetUrl}}" [svgStyle]="{'max-width': '100%', 'max-height': '100%'}"></svg-icon>
+  </div>
 
   <div class="main-street-layer" (click)="onStreetMapTap()"></div>
 

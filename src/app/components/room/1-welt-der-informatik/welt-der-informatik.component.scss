@@ -117,7 +117,8 @@
     width: 22%;
 
     border-radius: 50%;
-    animation: airplane1Animation 10s linear infinite;
+    opacity: 0;
+    animation: airplane1Animation 9s 4s linear infinite;
   }
 
   .airplane2 {
@@ -125,7 +126,7 @@
     width: 20%;
 
     border-radius: 50%;
-    animation: airplane2Animation 8s linear infinite;
+    animation: airplane2Animation 9s linear infinite;
   }
 
   .airport {
@@ -148,7 +149,6 @@
     left: 17%;
     top: 6%;
     width: 14%;
-
   }
 
   .cloud3 {
@@ -196,74 +196,12 @@
     right: 87%;
   }
 
-  .wrapperAirplane1 {
-    width: 80%;
-    pointer-events: none;
-    position: absolute;
-    left: 20%;
-    bottom: 50%;
-    z-index: 10;
-
-    animation: wrapperAirplane1Animation 60s linear infinite;
-  }
-
-  @keyframes wrapperAirplane1Animation {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(359deg);
-    }
-  }
-
   @keyframes airplane1Animation {
     0% {
-      transform: rotate(40deg);
-    }
-    10% {
-      transform: rotate(40deg);
-    }
-    15% {
-      transform: rotate(40deg);
-    }
-    20% {
-      transform: rotate(40deg);
-    }
-    30% {
-      transform: rotate(40deg);
-    }
-    40% {
-      transform: rotate(40deg);
-    }
-    45% {
-      transform: rotate(40deg);
-    }
-    50% {
-      transform: rotate(40deg);
-    }
-    60% {
-      transform: rotate(40deg);
-    }
-    70% {
-      transform: rotate(40deg);
-    }
-    80% {
-      transform: rotate(40deg);
-    }
-    90% {
-      transform: rotate(40deg);
-    }
-    100% {
-      transform: rotate(40deg);
-    }
-  }
-
-  @keyframes airplane2Animation {
-    0% {
       top: 75%;
-      left: 20%;
+      left: 25%;
       opacity: 0;
-      transform: rotate(40deg);
+      transform: rotate(120deg);
     }
     15% {
       opacity: 1;
@@ -272,9 +210,31 @@
       opacity: 1;
     }
     100% {
-      top: 60%;
-      left: 95%;
+      top: 65%;
+      left: 90%;
       opacity: 0;
+      transform: rotate(115deg);
+    }
+  }
+
+  @keyframes airplane2Animation {
+    0% {
+      top: 75%;
+      left: 25%;
+      opacity: 0;
+      transform: rotate(10deg);
+    }
+    15% {
+      opacity: 1;
+    }
+    85% {
+      opacity: 1;
+    }
+    100% {
+      top: 50%;
+      left: 90%;
+      opacity: 0;
+      transform: rotate(10deg);
     }
   }
 }

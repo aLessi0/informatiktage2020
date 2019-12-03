@@ -6,17 +6,23 @@
       &.initialAnimation {
         pointer-events: none;
         opacity: 0;
-        animation: enterRoomAnimation 2s 3.5s ease-in-out;
+        animation: enterRoomAnimation 1s 3.5s ease-in-out;
+      }
 
-        @keyframes enterRoomAnimation {
-          from {
-            opacity: 0;
-            transform: translateX(-100%);
-          }
-          to {
-            opacity: 1;
-            transform: translateX(0%);
-          }
+      &.leaveRoomAnimation {
+        pointer-events: none;
+        opacity: 0;
+        animation: enterRoomAnimation 1s ease-in-out reverse;
+      }
+
+      @keyframes enterRoomAnimation {
+        from {
+          opacity: 0;
+          transform: translateX(-100%);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0%);
         }
       }
     }
@@ -33,6 +39,12 @@
       height: 100%;
       width: 100%;
       pointer-events: none;
+
+      svg-icon {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
     }
 
     .main-street-layer {

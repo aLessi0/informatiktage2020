@@ -3,6 +3,7 @@ import {BehaviorSubject, Observable} from 'rxjs';
 import {ProgressModel} from '../model/user/progress.model';
 import {PlayedLevelModel} from '../model/user/played-level.model';
 import {RoomModel} from '../model/game/room.model';
+import { v4 as uuid } from 'uuid';
 import * as _ from 'lodash';
 
 class AsyncLocalStorage {
@@ -102,6 +103,7 @@ export class ProgressService {
     progress.avatarType = avatarType;
     progress.avatarPos = 0;
     progress.feedbackAnswers = new Map();
+    progress.uid = uuid();
 
     const level1: PlayedLevelModel = new PlayedLevelModel();
     level1.level = 1;
