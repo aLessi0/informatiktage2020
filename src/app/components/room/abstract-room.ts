@@ -63,21 +63,22 @@ export class AbstractRoom implements OnInit {
       this.renderer.addClass(this.avatarRef.nativeElement, className);
     }
     this.renderer.addClass(this.avatarRef.nativeElement, animationClass);
-    let animationRunning = false;
+    let animationStartCounter = 0;
+    let animationEndCounter = 0;
     const animationEndFunction = () => {
-      animationRunning = false;
+      animationEndCounter++;
       setTimeout(() => {
-        if (!animationRunning) {
+        if (animationStartCounter === animationEndCounter) {
           this.avatarRef.nativeElement.removeEventListener('animationend', animationEndFunction);
           this.avatarRef.nativeElement.removeEventListener('animationstart', animationStartFunction);
           this.renderer.removeClass(this.avatarRef.nativeElement, animationClass);
           this.isAvatarAnimationRunning = false;
           callback && callback();
         }
-      });
+      }, 50);
     };
     const animationStartFunction = () => {
-      animationRunning = true;
+      animationStartCounter++;
     };
     this.avatarRef.nativeElement.addEventListener('animationend', animationEndFunction);
     this.avatarRef.nativeElement.addEventListener('animationstart', animationStartFunction);

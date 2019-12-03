@@ -110,24 +110,25 @@ export class MapComponent implements AfterViewInit {
       if (startLevel === endLevel) {
         openRoom();
       } else {
+        let animationStartCounter = 0;
+        let animationEndCounter = 0;
         const animationClass: string = 'animation' + startLevel + '-' + endLevel;
         this.renderer.addClass(this.personRef.nativeElement, animationClass);
 
         let endWalkingEvent = () => {
-          this.isWalking = false;
-          console.log('END EVENT!');
+          animationEndCounter++;
           setTimeout(() => {
-            if (!this.isWalking) {
-              console.log('NOT WALKING ANYMORE!');
+            if (animationStartCounter === animationEndCounter) {
+              this.isWalking = false;
               this.renderer.removeClass(this.personRef.nativeElement, animationClass);
               this.personRef.nativeElement.removeEventListener('animationend', endWalkingEvent);
               this.personRef.nativeElement.removeEventListener('animationstart', startWalkingEvent);
               openRoom();
             }
-          }, 300);
+          }, 50);
         };
         let startWalkingEvent = () => {
-          console.log('START EVENT!');
+          animationStartCounter++;
           this.isWalking = true;
           this.progress.avatarPos = room.level;
         };
