@@ -21,12 +21,15 @@ export class BuildDeployComponent extends AbstractRoom {
   }
 
   public luckyClick(): void {
-    this.walkTo('lucky', () => this.openQuestion('room4key', '/assets/sprites/Room/4-deploy-and-testing/Lucky.svg'));
+    this.walkTo('lucky', () => this.openQuestion('room4key', '/assets/sprites/Room/4-deploy-and-operate/Lucky.svg'));
+  }
+
+  public cactusBlueClick(): void {
+    this.openInfo('room4cactus', '/assets/sprites/Room/4-deploy-and-operate/Cactus-blue.svg');
   }
 
   public blancaClick(): void {
-
-    this.walkTo('lucky', () => this.openQuestion('room4coin1', '/assets/sprites/Room/4-deploy-and-testing/Blanca.svg'));
+    this.walkTo('lucky', () => this.openQuestion('room4coin1', '/assets/sprites/Room/4-deploy-and-operate/Blanca.svg'));
   }
 
   blancaVisible() {
