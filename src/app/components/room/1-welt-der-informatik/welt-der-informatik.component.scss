@@ -141,6 +141,8 @@
     width: 13%;
     left: 46%;
     top: 8%;
+
+    animation: moveCloud1 70s linear infinite;
   }
 
   .cloud2 {
@@ -149,6 +151,8 @@
     left: 17%;
     top: 6%;
     width: 14%;
+
+    animation: moveCloud2 60s linear infinite;
   }
 
   .cloud3 {
@@ -194,6 +198,30 @@
     bottom: 47%;
     width: 11%;
     right: 87%;
+  }
+
+  @keyframes moveCloud1 {
+    0% {
+      left: 46%;
+    }
+    50% {
+      left: 10%;
+    }
+    100% {
+      left: 46%;
+    }
+  }
+
+  @keyframes moveCloud2 {
+    0% {
+      left: 17%;
+    }
+    50% {
+      left: 50%;
+    }
+    100% {
+      left: 17%;
+    }
   }
 
   @keyframes airplane1Animation {
