@@ -161,7 +161,6 @@ export class RecruitingComponent extends AbstractRoom {
       if (!this.progress.feedbackCompleted) {
         this.openInfo('room5finishText', '/assets/sprites/Room/5-recruiting/Franco.svg', () => {
           this.openITDFeedback();
-          this.openInfo('room5feedbackDanke', '/assets/sprites/Room/5-recruiting/Franco.svg');
         });
       } else {
         this.openInfo('room5feedbackDanke', '/assets/sprites/Room/5-recruiting/Franco.svg');
