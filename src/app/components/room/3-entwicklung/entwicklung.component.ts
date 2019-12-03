@@ -12,8 +12,10 @@ import {ProgressService} from '../../../service/progress.service';
 export class EntwicklungComponent extends AbstractRoom {
 
   public planetState = 0;
+  public sternbildState = 0;
   public starsHidden = [];
   public clickedStar = false;
+  public invertTelescope = false;
 
   constructor(@Inject(DataService) protected readonly dataService: DataService,
               @Inject(ProgressService) protected readonly progressService: ProgressService,
@@ -26,7 +28,7 @@ export class EntwicklungComponent extends AbstractRoom {
     this.walkTo('katrin', () => this.openQuestion('room3key', '/assets/sprites/Room/3-develop-and-testing/Katrin.svg'));
   }
 
-  planetClick() {
+  public planetClick() {
     if (this.planetState < 3) {
       this.planetState++;
     }
@@ -36,16 +38,29 @@ export class EntwicklungComponent extends AbstractRoom {
     }
   }
 
-  planetReset() {
+  public planetReset() {
     if (this.planetState < 3) {
       this.planetState = 0;
     }
   }
 
-  starClick(id) {
+  public satelliteClick() {
+    this.openInfo('room3satellite', '/assets/sprites/Room/3-develop-and-testing/Satellit.svg');
+  }
 
+  public sternbildClick() {
+    this.sternbildState = this.sternbildState + 40;
+    if (this.sternbildState === 360) {
+      this.sternbildState = 0;
+    }
+  }
+
+  public telescopeClick() {
+    this.invertTelescope = !this.invertTelescope;
+  }
+
+  public starClick(id) {
     this.clickedStar = true;
-    console.log(id);
     if (!this.isStarHidden(id)) {
       this.starsHidden.push(id);
     }
@@ -54,19 +69,17 @@ export class EntwicklungComponent extends AbstractRoom {
     if (this.starsHidden.length === 4) {
       this.openInfo('room3coin2', '/assets/sprites/Room/3-develop-and-testing/Stars1-gross1.svg');
     }
-    console.log(this.starsHidden);
   }
 
-  isStarHidden(id) {
+  public isStarHidden(id) {
     if (this.starsHidden.indexOf(id) !== -1) {
       return true;
     }
     return false;
   }
 
-  starReset() {
+  public starReset() {
     if (this.clickedStar === false) {
-      console.log('stars reset');
       this.starsHidden = [];
     } else {
       this.clickedStar = false;

@@ -174,6 +174,34 @@
     width: 32%;
     top: 64%;
     left: 63%;
+
+    &.rotate-0 {
+      transform: rotate(0deg);
+    }
+    &.rotate-40 {
+      transform: rotate(40deg);
+    }
+    &.rotate-80 {
+      transform: rotate(80deg);
+    }
+    &.rotate-120 {
+      transform: rotate(120deg);
+    }
+    &.rotate-160 {
+      transform: rotate(160deg);
+    }
+    &.rotate-200 {
+      transform: rotate(200deg);
+    }
+    &.rotate-240 {
+      transform: rotate(240deg);
+    }
+    &.rotate-280 {
+      transform: rotate(280deg);
+    }
+    &.rotate-320 {
+      transform: rotate(320deg);
+    }
   }
 
   .telescope {
@@ -181,6 +209,10 @@
     width: 31%;
     top: 76%;
     left: 26%;
+
+    &.inverted {
+      transform: scaleX(-1);
+    }
   }
 
   .katrin {

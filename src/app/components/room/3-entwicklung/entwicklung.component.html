@@ -1,4 +1,4 @@
-<svg-icon src="\assets\sprites\Room\3-develop-and-testing\Satellit.svg" class="satelite"></svg-icon>
+<svg-icon src="\assets\sprites\Room\3-develop-and-testing\Satellit.svg" class="satelite" (click)="satelliteClick()"></svg-icon>
 <svg-icon src="\assets\sprites\Room\3-develop-and-testing\Planets.svg" class="planets"></svg-icon>
 
 <svg-icon src="\assets\sprites\Room\3-develop-and-testing\stars-klein-links.svg" class="stars-klein-links"></svg-icon>
@@ -35,12 +35,8 @@
 <svg-icon src="\assets\sprites\Room\3-develop-and-testing\star-plus.svg" class="star-plus-right4"></svg-icon>
 <svg-icon src="\assets\sprites\Room\3-develop-and-testing\star-plus.svg" class="star-plus-right5"></svg-icon>
 
-
-
-<svg-icon src="\assets\sprites\Room\3-develop-and-testing\Sternbild.svg" class="star-constellation"></svg-icon>
-<svg-icon src="\assets\sprites\Room\3-develop-and-testing\Teleskop.svg"
-          class="telescope">
-</svg-icon>
+<svg-icon src="\assets\sprites\Room\3-develop-and-testing\Sternbild.svg" class="star-constellation" (click)="sternbildClick()" [ngClass]="'rotate-' + sternbildState"></svg-icon>
+<svg-icon src="\assets\sprites\Room\3-develop-and-testing\Teleskop.svg" class="telescope" [ngClass]="{'inverted': invertTelescope}" (click)="telescopeClick()"></svg-icon>
 
 <svg-icon src="\assets\sprites\Room\3-develop-and-testing\Planet.svg"
           class="planet"
