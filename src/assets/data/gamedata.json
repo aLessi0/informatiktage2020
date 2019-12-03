@@ -1,6 +1,6 @@
 {
   "minCoinsRewardBig": 10,
-  "minCoinsRewardSmall": 6,
+  "minCoinsRewardSmall": 8,
   "rooms": [
     {
       "name": "Welt der Informatik",
@@ -126,7 +126,7 @@
       "infos": [
         {
           "key": "room4coin2",
-          "text": "Dies ist ein kleiner Schritt für einen Menschen, aber ein riesiger Sprung für die Menschheit. Hier eine Mondmünze!",
+          "text": "Dies ist ein kleiner Schritt für einen Menschen, aber ein riesiger Sprung für die Menschheit.",
           "givesCoin": true
         },
         {
