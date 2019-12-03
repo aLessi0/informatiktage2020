@@ -122,7 +122,7 @@ export class MapComponent implements AfterViewInit {
               this.personRef.nativeElement.removeEventListener('animationstart', startWalkingEvent);
               openRoom();
             }
-          }, 150);
+          });
         };
         let startWalkingEvent = () => {
           this.isWalking = true;
