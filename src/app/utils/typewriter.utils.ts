@@ -9,6 +9,11 @@ export class TypewriterUtils {
         let letterIndex = 0;
 
         const intervalId = setInterval(() => {
+
+          if (text[letterIndex] === '\n' ) {
+            element.innerHTML = element.innerHTML += '<br/>';
+          }
+
           element.innerHTML = element.innerHTML += text[letterIndex];
           letterIndex++;
           if (letterIndex === text.length) {

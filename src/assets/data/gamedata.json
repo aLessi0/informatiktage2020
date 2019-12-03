@@ -254,6 +254,11 @@
           "key": "room6ScavengerHuntTreeCorrect",
           "text": "Gratuliere! Du hast den richtigen Weg gefunden. Geh zu Lilly und hol dir deine Belohnung ab.",
           "givesCoin": false
+        },
+        {
+          "key": "room6credits",
+          "text": "Entwicklungs- & Filmteam:\n\nAlessio Romagnolo\nBenjamin Pereto\nCéline Hofstetter\nGian Andrea Tschopp\nJonas Höhn\nNicola Demuth\nNicola Parpan\nRobin Frehner\nRoman Mathys\nSeverin Kilchhofer\n",
+          "givesCoin": false
         }
       ]
     }
