@@ -36,7 +36,8 @@
     "tslib": "^1.9.0",
     "uuid": "^3.3.3",
     "ws": "^6.1.3",
-    "zone.js": "~0.8.26"
+    "zone.js": "~0.8.26",
+    "howler": "latest"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.13.0",

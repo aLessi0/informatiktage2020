@@ -5,6 +5,7 @@ import {ProgressModel} from '../../model/user/progress.model';
 import {RoomModel} from '../../model/game/room.model';
 import {ModalService} from '../../service/modal.service';
 import {RewardCoinsComponent} from '../base/reward-coins/reward-coins.component';
+import {Howl, Howler} from 'howler';
 
 @Component({
   selector: 'app-map',
@@ -28,6 +29,11 @@ export class MapComponent implements AfterViewInit {
   public isWalkingInsideRoom = false;
   public isLeavingRoom = false;
   private roomActivatingAnimationRunning: boolean;
+
+  sound = new Howl({
+    src: ['/assets/sound/jodel.mp3']
+  });
+
 
   constructor(@Inject(DataService) private readonly dataService: DataService,
               @Inject(Renderer2) private readonly renderer: Renderer2,
@@ -178,6 +184,14 @@ export class MapComponent implements AfterViewInit {
         return this.room5Ref;
       case 6:
         return this.room6Ref;
+    }
+  }
+
+  public onGondelTab() {
+    if( this.sound.playing() ) {
+      this.sound.stop();
+    } else {
+      this.sound.play();
     }
   }
 }
