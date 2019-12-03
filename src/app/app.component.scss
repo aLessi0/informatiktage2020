@@ -3,6 +3,16 @@
   display: flex;
   position: relative;
 
+  .analytics {
+    position: fixed;
+    display: flex;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow-y: scroll;
+  }
+
   .app-background {
     position: fixed;
     width: 100%;

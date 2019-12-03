@@ -25,6 +25,11 @@
           "key": "room1info1",
           "text": "Ich glaube, Marie hat eine Frage für dich. Frag sie doch mal!",
           "givesCoin": false
+        },
+        {
+          "key": "room1flugi",
+          "text": "Ready for takeoff in die Informatiktage!",
+          "givesCoin": false
         }
       ]
     },
@@ -40,7 +45,7 @@
           "isMandatory": true
         },
         {
-          "key":  "room2coin1",
+          "key": "room2coin1",
           "questionText": "Wessen Meinung sollte man immer beachten, wenn man ein Produkt designt?",
           "correctAnswers": ["Kunde", "Kunden", "Benutzer", "User"],
           "isMandatory": false
@@ -71,14 +76,14 @@
       "questions": [
         {
           "key": "room3key",
-          "questionText": "Welcher Test wird bei Einführung durchgeführt?",
-          "correctAnswers": ["Regressionstest"],
+          "questionText": "Welche Testart wird bei der Einführung durchgeführt?",
+          "correctAnswers": ["Regressionstest", "Regressionstests"],
           "isMandatory": true
         },
         {
           "key": "room3coin1",
           "questionText": "Mit welcher Programmiersprache wurde unsere WebApp entwickelt?",
-          "correctAnswers": ["Angular"],
+          "correctAnswers": ["Angular", "TypeScript", "JavaScript"],
           "isMandatory": false
         }
       ],
@@ -103,7 +108,7 @@
         },
         {
           "key": "room4coin1",
-          "questionText": "Welches Betriebssystem gibt es neben Windows auch noch?",
+          "questionText": "Nenne ein weiteres Betriebssystem neben Windows.",
           "correctAnswers": ["Unix", "Linux", "MacOS", "Solaris"],
           "isMandatory": false
         }
