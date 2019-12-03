@@ -156,6 +156,11 @@
       ],
       "infos": [
         {
+          "key": "room5granit",
+          "text": "Ich versuche seit einiger Zeit den Crazy-Fisch zu fangen und schaffe es einfach nicht. Kannst du mir helfen?",
+          "givesCoin": false
+        },
+        {
           "key": "room5finishText",
           "text": "Gratulation! Gut gemacht. Du hast es bis zum Ende geschafft. Fülle doch das Feedback aus und schalte den zusätzlichen Raum \"Experimentieren\" frei.",
           "givesCoin": false

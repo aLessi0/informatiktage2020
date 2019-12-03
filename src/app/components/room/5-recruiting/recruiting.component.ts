@@ -32,6 +32,8 @@ export class RecruitingComponent extends AbstractRoom {
 
   waitTimer = 0;
 
+  private granitWhined = false;
+
   private sonarSound = new Howl({
     src: ['/assets/sound/sonar.mp3']
   });
@@ -108,21 +110,29 @@ export class RecruitingComponent extends AbstractRoom {
         this.pointerEvents(true);
 
         this.renderer.addClass(this.granit.nativeElement, 'granitVisible');
+        let goCrazyFish = async () => {
+          this.submarineClickable = false;
+          this.submarineClickCounter = 0;
 
-        this.submarineClickable = false;
-        this.submarineClickCounter = 0;
+          this.waitTimer = this.getRandomInt(3000);
+          await this.delay(this.waitTimer);
+          this.waitTimer = 0;
 
-        this.waitTimer = this.getRandomInt(3000);
-        await this.delay(this.waitTimer);
-        this.waitTimer = 0;
+          this.startCrazyFish();
+          this.renderer.removeClass(this.submarine.nativeElement, 'mode3');
+          await this.delay(2000);
 
-        this.startCrazyFish();
-        this.renderer.removeClass(this.submarine.nativeElement, 'mode3');
-        await this.delay(2000);
+          this.renderer.removeClass(this.granit.nativeElement, 'granitVisible');
+          this.submarineClickable = true;
+          this.pointerEvents(false);
+        };
 
-        this.renderer.removeClass(this.granit.nativeElement, 'granitVisible');
-        this.submarineClickable = true;
-        this.pointerEvents(false);
+        if (this.granitWhined) {
+          goCrazyFish();
+        } else {
+          this.granitWhined = true;
+          this.openInfo('room5granit', '/assets/sprites/Room/5-recruiting/Granit.svg', () => goCrazyFish());
+        }
       }
     }
   }
