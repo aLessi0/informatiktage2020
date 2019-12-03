@@ -30,6 +30,11 @@
           "key": "room1flugi",
           "text": "Ready for takeoff in die Informatiktage!",
           "givesCoin": false
+        },
+        {
+          "key": "room1houses",
+          "text": "Unsere App wurde im Freiraum an der Bahnhofstrasse in Zürich entwickelt.",
+          "givesCoin": false
         }
       ]
     },
