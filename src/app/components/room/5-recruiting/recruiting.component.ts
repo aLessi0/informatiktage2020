@@ -19,6 +19,7 @@ export class RecruitingComponent extends AbstractRoom {
   @ViewChild('jellyfish', {read: ElementRef}) private jellyfish: ElementRef;
   @ViewChild('franco', {read: ElementRef}) private franco: ElementRef;
   @ViewChild('seestern', {read: ElementRef}) private seestern: ElementRef;
+  @ViewChild('fishgroup', {read: ElementRef}) private fishgroup: ElementRef;
 
   starClickCounter = 0;
   clickToGetZora = 10;
@@ -69,6 +70,10 @@ export class RecruitingComponent extends AbstractRoom {
     this.walkTo('jellyfish', () => {
       this.openQuestion('room5coin3', '/assets/sprites/Room/5-recruiting/Jellyfish.svg');
     });
+  }
+
+  public fishgroupClick() {
+    this.openInfo('room5coin4', '/assets/sprites/Room/5-recruiting/Fishgroup.svg');
   }
 
   public async submarineClick() {
@@ -189,6 +194,7 @@ export class RecruitingComponent extends AbstractRoom {
       this.renderer.addClass(this.jellyfish.nativeElement, 'no-pointer-events');
       this.renderer.addClass(this.franco.nativeElement, 'no-pointer-events');
       this.renderer.addClass(this.seestern.nativeElement, 'no-pointer-events');
+      this.renderer.addClass(this.fishgroup.nativeElement, 'no-pointer-events');
     } else {
       this.renderer.removeClass(this.zora.nativeElement, 'no-pointer-events');
       this.renderer.removeClass(this.submarine.nativeElement, 'no-pointer-events');
@@ -196,6 +202,7 @@ export class RecruitingComponent extends AbstractRoom {
       this.renderer.removeClass(this.jellyfish.nativeElement, 'no-pointer-events');
       this.renderer.removeClass(this.franco.nativeElement, 'no-pointer-events');
       this.renderer.removeClass(this.seestern.nativeElement, 'no-pointer-events');
+      this.renderer.removeClass(this.fishgroup.nativeElement, 'no-pointer-events');
     }
   }
 }

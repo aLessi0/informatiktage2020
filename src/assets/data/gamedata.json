@@ -169,6 +169,11 @@
           "key": "room5coin2",
           "text": "Crazyfish, hier eine Münze!",
           "givesCoin": true
+        },
+        {
+          "key": "room5coin4",
+          "text": "Blub, blub!",
+          "givesCoin": false
         }
       ]
     },
