@@ -174,7 +174,7 @@ function getInsights(callback) {
 
       let avg_user_feedback_anzahl = 0;
       feedback_per_user.forEach((feedbacks, userId) => {
-        avg_user_feedback_anzahl += 1 / feedback_per_user.size * feedbacks.length;
+        avg_user_feedback_anzahl += (1 / feedback_per_user.size) * feedbacks.length;
       });
 
       const nmbOfFeedbacksPerRaum = [];
@@ -193,7 +193,7 @@ function getInsights(callback) {
       })
 
     });
-  })
+  }, 300)
 }
 
 
