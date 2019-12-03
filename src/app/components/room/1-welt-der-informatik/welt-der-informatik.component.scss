@@ -217,8 +217,6 @@
 
   @keyframes airplane2Animation {
     0% {
-      //top: 75%;
-      //left: 25%;
       opacity: 0;
       transform: rotate(10deg);
     }
@@ -229,10 +227,8 @@
       opacity: 1;
     }
     100% {
-      //top: 50%;
-      //left: 90%;
       opacity: 0;
-      transform: translate(290%, -200%) rotate(10deg);
+      transform: rotate(10deg) translate(230%, -230%);
     }
   }
 }
