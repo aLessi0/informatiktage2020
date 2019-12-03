@@ -17,6 +17,10 @@ const server = http.createServer(app);
 const port = 4300;
 server.listen(port);
 
+const feedback_file_informatiktage = 'feedback_informatiktage.csv';
+const feedback_file_raeume = 'feedback_raeume.csv';
+
+
 /* websocket for analysis */
 const wss_raum = new WebSocketServer({noServer: true});
 const wss_informatiktage = new WebSocketServer({noServer: true});
@@ -110,7 +114,7 @@ wss_aggregated.on("connection", (ws) => {
 app.post('/api/feedback/raum', (req, resp) => {
   csvRaeume = req.body.userId + ',' + req.body.roomNumber + ',' + req.body.roomName + ',' + req.body.roomFeedback + '\n';
   console.log('writing feebdack raum:', csvRaeume);
-  fs.appendFile('feedback_raeume.csv', csvRaeume, () => {
+  fs.appendFile(feedback_file_raeume, csvRaeume, () => {
     /* stupid eventemitter only works with array like data */
     eventEmitter.emit('raum_msg', [req.body]);
     eventEmitter.emit('aggregated_msg');
@@ -123,11 +127,21 @@ app.post('/api/feedback/informatiktage', (req, resp) => {
   req.body.informatiktage.forEach((tuple) => csvArrayInformatiktage[tuple[0] - 1] = tuple[1].answer ? tuple[1].answer : '');
   csvInformatiktage = req.body.userId + ',' + csvArrayInformatiktage.join(',') + '\n';
   console.log('writing feedback informatiktage:', csvInformatiktage);
-  fs.appendFile('feedback_informatiktage.csv', csvInformatiktage, () => {
+  fs.appendFile(feedback_file_informatiktage, csvInformatiktage, () => {
     eventEmitter.emit('informatiktage_msg', req.body);
     eventEmitter.emit('aggregated_msg');
     resp.send();
   });
+});
+
+app.get('/api/feedback/download/informatiktage', (req, resp) => {
+  let timestring = new Date().toLocaleString('de-CH', {timezone: "Europe/Zurich"});
+  resp.download(feedback_file_informatiktage, 'feedback-informatiktage-' + timestring + '.csv');
+});
+
+app.get('/api/feedback/download/raum', (req, resp) => {
+  let timestring = new Date().toLocaleString('de-CH', {timezone: "Europe/Zurich"});
+  resp.download(feedback_file_raeume, 'feedback-raeume-' + timestring + '.csv');
 });
 
 
@@ -174,7 +188,7 @@ function getInsights(callback) {
 
 function getFeedbackFromCsv(callback) {
   const rl = readline.createInterface({
-    input: fs.createReadStream('feedback_informatiktage.csv'),
+    input: fs.createReadStream(feedback_file_informatiktage),
     crlfDelay: Infinity
   });
 
@@ -192,7 +206,7 @@ function getFeedbackFromCsv(callback) {
 
 function getRaeumeFeedback(callback) {
   const rl = readline.createInterface({
-    input: fs.createReadStream('feedback_raeume.csv'),
+    input: fs.createReadStream(feedback_file_raeume),
     crlfDelay: Infinity
   });
 
@@ -205,7 +219,7 @@ function getRaeumeFeedback(callback) {
 function getAllRaueme(callback) {
   const raeume = [];
   const rl = readline.createInterface({
-    input: fs.createReadStream('feedback_raeume.csv'),
+    input: fs.createReadStream(feedback_file_raeume),
     crlfDelay: Infinity
   });
 
@@ -222,7 +236,7 @@ function getAllRaueme(callback) {
 function getAllITFeedback(callback) {
   const feedbacks = []
   const rl = readline.createInterface({
-    input: fs.createReadStream('feedback_informatiktage.csv'),
+    input: fs.createReadStream(feedback_file_informatiktage),
     crlfDelay: Infinity
   });
 
