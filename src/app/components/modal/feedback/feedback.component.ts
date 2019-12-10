@@ -42,7 +42,6 @@ export class FeedbackComponent {
       roomNumber: this.room.level,
       roomName: this.room.name,
       roomFeedback: this.level.roomFeedback
-    }).subscribe(undefined, undefined, () => afterPost());
+    }).subscribe(() => afterPost(), () => afterPost());
   }
-
 }
