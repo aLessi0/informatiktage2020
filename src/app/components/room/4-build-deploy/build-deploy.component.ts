@@ -1,5 +1,5 @@
 import {Component, Inject, Renderer2} from '@angular/core';
-import {AbstractRoom} from '../abstract-room';
+import {AbstractRoom, Path} from '../abstract-room';
 import {DataService} from '../../../service/data.service';
 import {ModalService} from '../../../service/modal.service';
 import {ProgressService} from '../../../service/progress.service';
@@ -41,6 +41,26 @@ export class BuildDeployComponent extends AbstractRoom {
       this.saloonSound.play();
     }
     this.blancaHidden = false;
+  }
+
+  protected initializePath(): Path {
+    return {
+      pathPoints: [
+        {top: 33, left: 3, name: 'door'},
+        {top: 36, left: 36},
+        {top: 40, left: 44},
+        {top: 45, left: 41},
+        {top: 50, left: 23},
+        {top: 54, left: 21},
+        {top: 57.6, left: 32},
+        {top: 64, left: 92},
+        {top: 67, left: 103},
+        {top: 84, left: 102},
+        {top: 95, left: 86},
+        {top: 95, left: 75, name: 'lucky'}
+      ],
+      timeInMs: 4000
+    };
   }
 
 }

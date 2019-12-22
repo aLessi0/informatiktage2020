@@ -1,7 +1,7 @@
 import {Component, Inject, Renderer2} from '@angular/core';
 import {DataService} from '../../../service/data.service';
 import {ModalService} from '../../../service/modal.service';
-import {AbstractRoom} from '../abstract-room';
+import {AbstractRoom, Path} from '../abstract-room';
 import {ProgressService} from '../../../service/progress.service';
 import {Howl} from 'howler';
 
@@ -42,5 +42,26 @@ export class WeltDerInformatikComponent extends AbstractRoom {
       this.planeSound.play();
     }
     this.openInfo('room1flugi', '/assets/sprites/Room/1-welt-der-informatik/Airplane.svg')
+  }
+
+  protected initializePath(): Path {
+    return {
+      pathPoints: [
+        {top: 39, left: -3, name: 'door'},
+        {top: 37, left: 70},
+        {top: 40, left: 96},
+        {top: 51, left: 103},
+        {top: 56, left: 81},
+        {top: 49, left: 37},
+        {top: 51, left: 25, name: 'reto'},
+        {top: 64, left: 6},
+        {top: 82, left: 3},
+        {top: 92, left: 9},
+        {top: 98, left: 22},
+        {top: 99, left: 51},
+        {top: 95, left: 80, name: 'marie'}
+      ],
+      timeInMs: 4000
+    };
   }
 }

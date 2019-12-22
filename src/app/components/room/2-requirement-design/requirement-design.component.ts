@@ -1,5 +1,5 @@
 import {Component, Inject, Renderer2} from '@angular/core';
-import {AbstractRoom} from '../abstract-room';
+import {AbstractRoom, Path} from '../abstract-room';
 import {DataService} from '../../../service/data.service';
 import {ModalService} from '../../../service/modal.service';
 import {ProgressService} from '../../../service/progress.service';
@@ -52,5 +52,25 @@ export class RequirementDesignComponent extends AbstractRoom {
     } else {
       this.ueliHidden = true;
     }
+  }
+
+  protected initializePath(): Path {
+    return {
+      pathPoints: [
+        {top: 34, left: -4, name: 'door'},
+        {top: 11, left: 18},
+        {top: 23, left: 63, name: 'ueli'},
+        {top: 39, left: 101},
+        {top: 45, left: 106},
+        {top: 51, left: 97},
+        {top: 58, left: 75, name: 'urs'},
+        {top: 68, left: 38},
+        {top: 75, left: 38},
+        {top: 83, left: 48},
+        {top: 86, left: 46},
+        {top: 86.5, left: 34, name: 'petra'}
+      ],
+      timeInMs: 4000
+    };
   }
 }

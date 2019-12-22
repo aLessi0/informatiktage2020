@@ -1,5 +1,5 @@
 import {Component, ElementRef, Inject, Renderer2, ViewChild} from '@angular/core';
-import {AbstractRoom} from '../abstract-room';
+import {AbstractRoom, Path} from '../abstract-room';
 import {DataService} from '../../../service/data.service';
 import {ModalService} from '../../../service/modal.service';
 import {ProgressService} from '../../../service/progress.service';
@@ -114,6 +114,28 @@ export class EntwicklungComponent extends AbstractRoom {
     } else {
       this.clickedStar = false;
     }
+  }
+
+  protected initializePath(): Path {
+    return {
+      pathPoints: [
+        {top: 31, left: 1, name: 'door'},
+        {top: 28, left: 14},
+        {top: 14, left: 16},
+        {top: 8, left: 23},
+        {top: 6, left: 37},
+        {top: 9, left: 53},
+        {top: 14, left: 63},
+        {top: 36, left: 63},
+        {top: 42, left: 72, name: 'planet'},
+        {top: 58, left: 97},
+        {top: 76, left: 105},
+        {top: 85, left: 99},
+        {top: 93, left: 69},
+        {top: 95, left: 38, name: 'katrin'}
+      ],
+      timeInMs: 4000
+    };
   }
 
 }

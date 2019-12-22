@@ -1,5 +1,5 @@
 import {Component, ElementRef, Inject, Renderer2, ViewChild} from '@angular/core';
-import {AbstractRoom} from '../abstract-room';
+import {AbstractRoom, Path} from '../abstract-room';
 import {DataService} from '../../../service/data.service';
 import {ModalService} from '../../../service/modal.service';
 import {ProgressService} from '../../../service/progress.service';
@@ -148,6 +148,30 @@ export class PlaygroundComponent extends AbstractRoom {
     this.foundFishingRod = false;
     this.treeQuestRunning = false;
     this.broughtFishingRodToLeo = false;
+  }
+
+  protected initializePath(): Path {
+    return {
+      pathPoints: [
+        {top: 30, left: 3, name: 'door'},
+        {top: 25, left: 33},
+        {top: 26, left: 50, name: 'arnold'},
+        {top: 43, left: 68, name: 'heidi'},
+        {top: 49, left: 72},
+        {top: 54, left: 68},
+        {top: 56, left: 53, name: 'lilly'},
+        {top: 57, left: 39},
+        {top: 61, left: 25},
+        {top: 71, left: 8},
+        {top: 77, left: 4},
+        {top: 82, left: 4},
+        {top: 88, left: 12},
+        {top: 92, left: 21},
+        {top: 96, left: 50},
+        {top: 94.5, left: 64, name: 'leo'}
+      ],
+      timeInMs: 4000
+    };
   }
 
 }

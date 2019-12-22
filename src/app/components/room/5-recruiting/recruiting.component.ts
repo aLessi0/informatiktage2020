@@ -1,5 +1,5 @@
 import {Component, ElementRef, Inject, Renderer2, ViewChild} from '@angular/core';
-import {AbstractRoom} from '../abstract-room';
+import {AbstractRoom, Path} from '../abstract-room';
 import {DataService} from '../../../service/data.service';
 import {ModalService} from '../../../service/modal.service';
 import {ProgressService} from '../../../service/progress.service';
@@ -222,5 +222,29 @@ export class RecruitingComponent extends AbstractRoom {
       this.renderer.removeClass(this.seestern.nativeElement, 'no-pointer-events');
       this.renderer.removeClass(this.fishgroup.nativeElement, 'no-pointer-events');
     }
+  }
+
+  protected initializePath(): Path {
+    return {
+      pathPoints: [
+        {top: 33, left: 3, name: 'door'},
+        {top: 38, left: 50},
+        {top: 42, left: 63, name: 'jellyfish'},
+        {top: 48, left: 70},
+        {top: 54, left: 68},
+        {top: 65, left: 32},
+        {top: 74, left: 13},
+        {top: 86, left: 8, name: 'zora'},
+        {top: 92, left: 11},
+        {top: 97, left: 18},
+        {top: 98, left: 47},
+        {top: 96, left: 78},
+        {top: 89, left: 102},
+        {top: 83, left: 105},
+        {top: 41, left: 90},
+        {top: 34, left: 91, name: 'franco'}
+      ],
+      timeInMs: 4000
+    };
   }
 }
