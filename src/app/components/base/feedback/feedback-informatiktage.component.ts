@@ -1,4 +1,4 @@
-import {Component, Inject} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, Inject, ViewChild} from '@angular/core';
 import {ProgressService} from '../../../service/progress.service';
 import {FeedbackAnswer} from '../../../model/user/feedback-answer.model';
 import {ProgressModel} from '../../../model/user/progress.model';
@@ -6,17 +6,23 @@ import {DataService} from '../../../service/data.service';
 import {ModalService} from '../../../service/modal.service';
 import {HttpClient} from '@angular/common/http';
 import {ContestModel} from '../../../model/user/contest.model';
-import {DatePipe} from "@angular/common";
+import {TypewriterUtils} from "../../../utils/typewriter.utils";
 
 @Component({
   selector: 'app-feedback-detailliert',
   templateUrl: './feedback-informatiktage.component.html',
   styleUrls: ['./feedback-informatiktage.component.scss']
 })
-export class FeedbackInformatiktageComponent {
+export class FeedbackInformatiktageComponent implements AfterViewInit {
   public feedBackState: IFeedbackState;
   public contest: ContestModel;
   public progress: ProgressModel;
+  public showButton;
+  private _frageDiv: ElementRef<HTMLElement>;
+  @ViewChild('fragetext')
+  public set frageDiv(frageDiv: ElementRef) {
+    this._frageDiv = frageDiv;
+  }
 
   constructor(@Inject(ProgressService) private readonly progressService: ProgressService,
               @Inject(DataService) private readonly dataService: DataService,
@@ -31,6 +37,20 @@ export class FeedbackInformatiktageComponent {
       this.progress = progress;
       this.contest = this.progress.contest;
     });
+  }
+
+  public ngAfterViewInit(): void {
+    this.typeQuestion();
+  }
+
+  public feedbackClicked(answer: number): void {
+    this.feedBackState.answer.answer = answer;
+    this.nextFeedbackState();
+  }
+
+  public nextFeedbackState(): void {
+    this.feedBackState = this.feedBackState.next();
+      this.typeQuestion();
   }
 
   public sendFeedback() {
@@ -70,6 +90,16 @@ export class FeedbackInformatiktageComponent {
   public isValidEmail(): boolean {
     return this.contest.eMail &&
       /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/.test(this.contest.eMail);
+  }
+
+  private typeQuestion(): void {
+    if (this._frageDiv && this.feedBackState) {
+      this.showButton = false;
+      this._frageDiv.nativeElement.innerHTML = '';
+      TypewriterUtils.typewrite(this._frageDiv.nativeElement, this.feedBackState.feedbackModel.frage).then(() => {
+        setTimeout(() => this.showButton = true, 500);
+      });
+    }
   }
 }
 

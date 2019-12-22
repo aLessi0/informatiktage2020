@@ -1,27 +1,31 @@
 <div *ngIf="feedBackState && !progress.canTakePartInContest" class="feedback-container">
 
   <div class="content">
-    <span>{{feedBackState.feedbackModel.frage}}</span>
+    <span #fragetext></span>
 
-    <input *ngIf="!feedBackState.isSelection" type="text" class="input-field"
+    <input *ngIf="!feedBackState.isSelection"
+           type="text" class="input-field"
            [(ngModel)]="feedBackState.answer.answer"/>
-    <div *ngIf="feedBackState.isSelection" class="feedback">
-      <a (click)="(feedBackState.answer.answer = 4) && (feedBackState = feedBackState.next())">
+    <div *ngIf="feedBackState.isSelection" [style.visibility]="showButton ? 'visible' : 'hidden'" class="feedback">
+      <a (click)="feedbackClicked(4)">
         <svg-icon class="feedback-smiley-small" src="\assets\sprites\Feedback\super-happy.svg"></svg-icon>
       </a>
-      <a (click)="(feedBackState.answer.answer = 3) && (feedBackState = feedBackState.next())">
+      <a (click)="feedbackClicked(3)">
         <svg-icon class="feedback-smiley-small" src="\assets\sprites\Feedback\happy.svg"></svg-icon>
       </a>
-      <a (click)="(feedBackState.answer.answer = 2) && (feedBackState = feedBackState.next())">
+      <a (click)="feedbackClicked(2)">
         <svg-icon class="feedback-smiley-small" src="\assets\sprites\Feedback\unsure.svg"></svg-icon>
       </a>
-      <a (click)="(feedBackState.answer.answer = 1) && (feedBackState = feedBackState.next())">
+      <a (click)="feedbackClicked(1)">
         <svg-icon class="feedback-smiley-small" src="\assets\sprites\Feedback\sad.svg"></svg-icon>
       </a>
     </div>
   </div>
 
-  <app-button btnTitle="Weiter" (btnClicked)="(feedBackState = feedBackState.next())" [hidden]="!feedBackState.canProceed()"></app-button>
+  <app-button [style.visibility]="showButton ? 'visible' : 'hidden'"
+              btnTitle="Weiter"
+              (btnClicked)="nextFeedbackState()"
+              [hidden]="!feedBackState.canProceed()"></app-button>
 
 </div>
 

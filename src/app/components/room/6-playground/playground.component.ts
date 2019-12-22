@@ -27,6 +27,7 @@ export class PlaygroundComponent extends AbstractRoom {
   public tree4Clicked = false;
   public francoFished = false;
   public solution = '';
+  private wasAlreadyWrong: boolean = false;
 
   constructor(@Inject(DataService) protected readonly dataService: DataService,
               @Inject(ProgressService) protected readonly progressService: ProgressService,
@@ -40,7 +41,8 @@ export class PlaygroundComponent extends AbstractRoom {
   }
 
   public entryAbaton(): void {
-    this.walkTo('arnold', () => this.modalService.openDialog(MovieComponent, false, {}).subscribe(() => {}));
+    this.walkTo('arnold', () => this.modalService.openDialog(MovieComponent, false, {}).subscribe(() => {
+    }));
   }
 
   public leoLogic() {
@@ -113,9 +115,14 @@ export class PlaygroundComponent extends AbstractRoom {
           if (this.solution === '3142') {
             this.openInfo('room6ScavengerHuntTreeCorrect', '/assets/sprites/Room/6-playground/Tree.svg');
           } else {
-            this.openInfo('room6ScavengerHuntTreeWrong', '/assets/sprites/Room/6-playground/Tree.svg');
+            let infoKey: string = 'room6ScavengerHuntTreeWrong';
+            if (this.wasAlreadyWrong) {
+              infoKey = 'room6ScavengerHuntTreeWrongShort';
+            }
+            this.openInfo(infoKey, '/assets/sprites/Room/6-playground/Tree.svg');
             this.resetTrees();
             this.solution = '';
+            this.wasAlreadyWrong = true;
           }
         }
       });

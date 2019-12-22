@@ -256,6 +256,11 @@
           "givesCoin": false
         },
         {
+          "key": "room6ScavengerHuntTreeWrongShort",
+          "text": "Leider falsch",
+          "givesCoin": false
+        },
+        {
           "key": "room6ScavengerHuntTreeCorrect",
           "text": "Gratuliere! Du hast den richtigen Weg gefunden. Geh zu Lilly und hol dir deine Belohnung ab.",
           "givesCoin": false
