@@ -31,17 +31,17 @@ export class FeedbackComponent {
 
   onFeedbackClick(feedback) {
     this.level.roomFeedback = feedback;
+    const afterPost = () => {
+      this.progressService.updateProgress(this.progress);
+      this.modalService.closeDialog();
+    }
+    
     this.http.post('/api/feedback/raum', {
       timestamp: new Date().getTime(),
       userId: this.progress.uid,
       roomNumber: this.room.level,
       roomName: this.room.name,
       roomFeedback: this.level.roomFeedback
-    }).subscribe(() => {
-      this.progressService.updateProgress(this.progress);
-      this.modalService.closeDialog();
-    });
-
+    }).subscribe(() => afterPost(), () => afterPost());
   }
-
 }
