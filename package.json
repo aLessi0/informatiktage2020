@@ -29,7 +29,7 @@
     "body-parser": "^1.18.3",
     "chart.js": "^2.9.3",
     "core-js": "^2.5.4",
-    "express": "^4.10.2",
+    "express": "^4.17.3",
     "lodash": "^4.17.15",
     "morgan": "^1.5.0",
     "ng-click-outside": "^5.1.1",
