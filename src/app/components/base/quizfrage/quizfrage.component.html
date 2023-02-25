@@ -8,7 +8,7 @@
     <svg-icon [src]="'/assets/sprites/Icon/Cross.svg'"></svg-icon>
   </div>
 
-  <input type="text" class="input-field answer-field" [(ngModel)]="answerGiven"/>
-  <app-button class="check-answer" [btnTitle]="'Prüfen'" [style.visibility]="textFinished ? 'visible':'hidden'"
-              (btnClicked)="validateAnswer()"></app-button>
+  <div *ngFor="let buttonText of buttonTexts">
+    <app-button class="check-answer" [btnTitle]="buttonText" [style.visibility]="textFinished ? 'visible':'hidden'" (btnClicked)="validateAnswer(buttonText)"></app-button>
+  </div>
 </div>

@@ -9,14 +9,23 @@
       "questions": [
         {
           "key": "room1key",
-          "questionText": "Welches Jubiläum feiert die Zürcher Kantonalbank in diesem Jahr?",
-          "correctAnswers": ["150", "150 Jahre"],
+          "questionText": "Wie oft begegnet dem Protagonisten auf dem Weg zu seiner Arbeit die Informatik?",
+          "correctAnswers": [
+            "Nie",
+            "6-Mal"
+          ],
+          "correctAnswer": "6-Mal",
           "isMandatory": true
         },
         {
           "key": "room1coin1",
-          "questionText": "Cool, du hast die Frage von Marie korrekt beantwortet! Jetzt habe ich noch eine Frage für dich! \n\n An welchem ZKB-Standort arbeiten die meisten Mitarbeitenden der Informatik?",
-          "correctAnswers": ["Zürich Neue Hard", "Neue Hard", "Neue Hard Zürich"],
+          "questionText": "Cool, du hast die Frage von Marie korrekt beantwortet! Wie du merkst, begegnest du der Informatik in vielen Bereichen deines Alltags. \n\n  Wo kannst du der Informatik noch begegnen?",
+          "correctAnswers": [
+            "Zähne putzen",
+            "Backen",
+            "Beides"
+          ],
+          "correctAnswer": "Beides",
           "isMandatory": false
         }
       ],
@@ -39,20 +48,30 @@
       ]
     },
     {
-      "name": "Entwerfen & Designen",
+      "name": "Planen & Spezifizieren",
       "level": 2,
       "roomClass": "room-req-design",
       "questions": [
         {
           "key": "room2key",
-          "questionText": "Wie nennt man die Testversion eines Produktes, die verwendet wird um Benutzertests durchzuführen?",
-          "correctAnswers": ["Prototyp"],
+          "questionText": "Welcher Lehrberuf plant neue Apps und schreibt Spezifikationen?",
+          "correctAnswers": [
+            "Entwickler digitales Business",
+            "Applikationsentwickler",
+            "Plattformentwickler"
+          ],
+          "correctAnswer": "Entwickler digitales Business",
           "isMandatory": true
         },
         {
           "key": "room2coin1",
-          "questionText": "Wessen Meinung sollte man immer beachten, wenn man ein Produkt designt?",
-          "correctAnswers": ["Kunde", "Kundin", "Kunden", "Benutzer", "Benutzerin", "User"],
+          "questionText": "Wessen Meinung ist die wichtigste, wenn man ein Produkt designt?",
+          "correctAnswers": [
+            "Seine eigene",
+            "Kunden",
+            "Chef"
+          ],
+          "correctAnswer": "Kunden",
           "isMandatory": false
         }
       ],
@@ -81,14 +100,24 @@
       "questions": [
         {
           "key": "room3key",
-          "questionText": "Welche Testart wird bei der Einführung durchgeführt?",
-          "correctAnswers": ["Regressionstest", "Regressionstests"],
+          "questionText": "Welcher Lehrberuf entwickelt und testet neue Apps?",
+          "correctAnswers": [
+            "Entwickler digitales Business",
+            "Applikationsentwickler",
+            "Plattformentwickler"
+          ],
+          "correctAnswer": "Applikationsentwickler",
           "isMandatory": true
         },
         {
           "key": "room3coin1",
-          "questionText": "Mit welcher Programmiersprache wurde diese WebApp entwickelt?",
-          "correctAnswers": ["Angular", "TypeScript", "JavaScript"],
+          "questionText": "Welche der Antworten ist eine Programmiersprache?",
+          "correctAnswers": [
+            "Python",
+            "Ant",
+            "Snake"
+          ],
+          "correctAnswer": "Python",
           "isMandatory": false
         }
       ],
@@ -106,20 +135,30 @@
       ]
     },
     {
-      "name": "Betreiben & Überwachen",
+      "name": "Hosten & Services Bereitstellen",
       "level": 4,
       "roomClass": "room-build-deploy",
       "questions": [
         {
           "key": "room4key",
-          "questionText": "Welches Gerät wird für die Überwachung von Systemen benötigt?",
-          "correctAnswers": ["Monitor"],
+          "questionText": "Welcher Lehrberuf hostet Clients und stellt Services bereit?",
+          "correctAnswers": [
+            "Entwickler digitales Business",
+            "Applikationsentwickler",
+            "Plattformentwickler"
+          ],
+          "correctAnswer": "Plattformentwickler",
           "isMandatory": true
         },
         {
           "key": "room4coin1",
           "questionText": "Nenne ein weiteres Betriebssystem neben Windows.",
-          "correctAnswers": ["Unix", "Linux", "MacOS", "Solaris"],
+          "correctAnswers": [
+            "Chrome",
+            "Fox",
+            "Linux"
+          ],
+          "correctAnswer": "Linux",
           "isMandatory": false
         }
       ],
@@ -137,20 +176,31 @@
       ]
     },
     {
-      "name": "Talentgewinnung & Wettbewerb",
+      "name": "Teamwork",
       "level": 5,
       "roomClass": "room-recruiting",
       "questions": [
         {
           "key": "room5coin1",
-          "questionText": "Wie viele Mitarbeitende beschäftigt die Zürcher Kantonalbank im IT-Bereich?",
-          "correctAnswers": ["900", "ca. 900", "ca.900", "ca 900"],
+          "questionText": "Welchen beruf braucht es nicht unbedingt um eine App zu entwickeln?",
+          "correctAnswers": [
+            "Entwickler digitales Business",
+            "Applikationsentwickler",
+            "Plattformentwickler",
+            "Es braucht alle!"
+          ],
+          "correctAnswer": "Es braucht alle!",
           "isMandatory": false
         },
         {
           "key": "room5coin3",
-          "questionText": "Welche IT-Fachrichtungen bildet die Zürcher Kantonalbank aus?",
-          "correctAnswers": ["Applikationsentwickler", "Applikationsentwicklerin", "Systemtechnik", "Systemtechniker", "Systemtechnikerin", "Applikationsentwicklung"],
+          "questionText": "Welche der im Video gesehen Aktivitäten tragen zum Gruppenzusammenhalt bei?",
+          "correctAnswers": [
+            "Coden",
+            "Pizza essen",
+            "Zeichnen"
+          ],
+          "correctAnswer": "Pizza essen",
           "isMandatory": false
         }
       ],
@@ -195,7 +245,10 @@
         {
           "key": "room6coin1",
           "questionText": "Ich mag Schnecken, wie macht die Schnecke?",
-          "correctAnswers": ["Zirp Zirp!"],
+          "correctAnswers": [
+            "Zirp Zirp!", "Schlup Schlup!", "Bääh Bääh!"
+          ],
+          "correctAnswer": "Zirp Zirp",
           "isMandatory": false
         }
       ],
@@ -276,7 +329,7 @@
   "feedback": [
     {
       "number": 1,
-      "frage": "Wie hat dir dein Besuch bei uns gefallen?",
+      "frage": "Wie hat dir dein Besuch bei uns bis jetzt gefallen?",
       "isMandatory": true
     },
     {

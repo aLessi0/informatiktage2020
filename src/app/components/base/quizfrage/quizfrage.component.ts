@@ -14,11 +14,17 @@ export class QuizfrageComponent implements OnInit {
   public answerGiven: string;
   public answerIsWrong: boolean;
   public textFinished: boolean;
+  public buttonTexts: string [] = [];
+  public correctAnswer: string;
+
   @ViewChild('quizfrage') private quizfrageElement: ElementRef;
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: QuizfrageData,
               @Inject(ModalService) private readonly modalService: ModalService) {
     this.question = this.data.question;
+    this.buttonTexts = this.data.question.correctAnswers;
+    console.log(this.data.question.correctAnswers);
+    this.correctAnswer = this.data.question.correctAnswer;
   }
 
   public ngOnInit(): void {
@@ -29,16 +35,13 @@ export class QuizfrageComponent implements OnInit {
     }
   }
 
-  public validateAnswer(): void {
-    const answrs = [];
-    this.question.correctAnswers.forEach((answer) => {
-      answrs.push(answer.toLowerCase());
-    });
-    this.answerIsWrong = !(this.answerGiven && answrs.indexOf(this.answerGiven.toLowerCase()) > -1);
-
-    if (!this.answerIsWrong) {
+  public validateAnswer(answer: string): void {
+    if (answer === this.correctAnswer) {
+      this.answerIsWrong = false;
       this.data.correctlyAnswered = true;
       this.modalService.closeDialog();
+    } else {
+      this.answerIsWrong = true;
     }
   }
 }

@@ -41,7 +41,7 @@ export class WeltDerInformatikComponent extends AbstractRoom {
     if (!this.planeSound.playing()) {
       this.planeSound.play();
     }
-    this.openInfo('room1flugi', '/assets/sprites/Room/1-welt-der-informatik/Airplane.svg')
+    this.openInfo('room1flugi', '/assets/sprites/Room/1-welt-der-informatik/Airplane.svg');
   }
 
   protected initializePath(): Path {

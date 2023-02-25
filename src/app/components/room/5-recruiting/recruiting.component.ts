@@ -75,7 +75,7 @@ export class RecruitingComponent extends AbstractRoom {
 
   public jellyFishClick() {
     this.walkTo('jellyfish', () => {
-      this.openQuestion('room5coin3', '/assets/sprites/Room/5-recruiting/Jellyfish.svg');
+      this.openQuestion('room5coin3', '/assets/sprites/Room/5-recruiting/Jellyfish.svg', );
     });
   }
 
